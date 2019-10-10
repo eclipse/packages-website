@@ -12,15 +12,6 @@
     
     
     <item>
-      <title>Why do I need this?</title>
-      <link>https://eclipse.org/packages/faq/01_q1/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://eclipse.org/packages/faq/01_q1/</guid>
-      <description>Because it is cool.</description>
-    </item>
-    
-    <item>
       <title>What packages can use?</title>
       <link>https://eclipse.org/packages/faq/02_kubernetes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
