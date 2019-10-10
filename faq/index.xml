@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Eclipse IoT Packages™</title>
+    <link>https://eclipse.org/packages/faq/</link>
+    <description>Recent content on Eclipse IoT Packages™</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright © Eclipse Foundation, Inc. All Rights Reserved.</copyright>
+    
+	<atom:link href="https://eclipse.org/packages/faq/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Why do I need this?</title>
+      <link>https://eclipse.org/packages/faq/01_q1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://eclipse.org/packages/faq/01_q1/</guid>
+      <description>Because it is cool.</description>
+    </item>
+    
+    <item>
+      <title>What packages can use?</title>
+      <link>https://eclipse.org/packages/faq/02_kubernetes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://eclipse.org/packages/faq/02_kubernetes/</guid>
+      <description>Packages must be self-contained, and not require any additional external service in order to run.
+It should be possible to simply start up a local cluster in Minikube and deploy it right away. At the same time it should be possible to run them on any other Kubernetes based solution, in the real cloud.</description>
+    </item>
+    
+    <item>
+      <title>What is required to create a new package?</title>
+      <link>https://eclipse.org/packages/faq/03_new_package/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://eclipse.org/packages/faq/03_new_package/</guid>
+      <description>We have a full page dedicated to this question: Contribute.</description>
+    </item>
+    
+    <item>
+      <title>Who is involved in this project?</title>
+      <link>https://eclipse.org/packages/faq/04_who/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://eclipse.org/packages/faq/04_who/</guid>
+      <description>Take a look at the Who&amp;rsquo;s Involved page of the project.</description>
+    </item>
+    
+    <item>
+      <title>My question isn&#39;t answered here!</title>
+      <link>https://eclipse.org/packages/faq/xx_404/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://eclipse.org/packages/faq/xx_404/</guid>
+      <description>Your chance to contribute! Raise the question on GitHub, and we will take a look.</description>
+    </item>
+    
+  </channel>
+</rss>
