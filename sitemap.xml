@@ -59,6 +59,10 @@
   </url>
   
   <url>
+    <loc>https://eclipse.org/packages/kubernetes/</loc>
+  </url>
+  
+  <url>
     <loc>https://eclipse.org/packages/projects/</loc>
   </url>
   

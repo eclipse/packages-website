@@ -75,7 +75,7 @@ Improving an existing package There is always room for improvement. Found a bug,
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://eclipse.org/packages/packages/package-zero/installation/</guid>
-      <description></description>
+      <description>If you haven&amp;rsquo;t done so already, take a look at our Kubernetes installation page.</description>
     </item>
     
     <item>
@@ -85,6 +85,17 @@ Improving an existing package There is always room for improvement. Found a bug,
       
       <guid>https://eclipse.org/packages/packages/package-zero/learn/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>Pre-Requisites</title>
+      <link>https://eclipse.org/packages/kubernetes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://eclipse.org/packages/kubernetes/</guid>
+      <description>Kubernetes For the cloud side environment, you will need an installation of Kubernetes. Kubernetes comes in different forms, and we try to document a few of them for you. There are more, and you are welcome to try all of them. All packages should be able to run on any Kubernetes you provide.
+Minikube Minikube is Kubernetes in a bottle.
+Instead of provisioning a full blown cluster, it will create a virtual machine on your local system, and provision a small, single-node cluster in it.</description>
     </item>
     
     <item>

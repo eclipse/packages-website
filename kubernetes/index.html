@@ -8,15 +8,17 @@
 
     <link rel="stylesheet" href="/packages/bootstrap/bootstrap.min.css">
 
-    <title>Installation | Eclipse IoT Packages™</title>
+    <title>Pre-Requisites | Eclipse IoT Packages™</title>
 
    <style>body{padding-top:56px}.toc-anchor{display:block;position:relative;top:-70px;visibility:hidden}footer{background:#f0f0f0;padding:3rem;margin-top:3rem;font-size:small}.border-callout-left{border-left:solid 5px;padding-left:.5rem;border-radius:5px}pre{padding:1rem;background:#fafafa}@media(min-width:992px){pre{padding:1.5rem}}.toc-list{padding-left:0}.toc-list ul{padding-left:1rem}.toc-item{list-style:none;margin-left:0}</style>
 
     
 
     <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Installation"/>
-<meta name="twitter:description" content="If you haven&rsquo;t done so already, take a look at our Kubernetes installation page."/>
+<meta name="twitter:title" content="Pre-Requisites"/>
+<meta name="twitter:description" content="Kubernetes For the cloud side environment, you will need an installation of Kubernetes. Kubernetes comes in different forms, and we try to document a few of them for you. There are more, and you are welcome to try all of them. All packages should be able to run on any Kubernetes you provide.
+Minikube Minikube is Kubernetes in a bottle.
+Instead of provisioning a full blown cluster, it will create a virtual machine on your local system, and provision a small, single-node cluster in it."/>
 
 
   </head>
@@ -65,7 +67,7 @@
 
             
 
-            <a class="nav-link"
+            <a class="nav-link active"
                href="/packages/kubernetes/">Prerequisites</a>
         </li>
         
@@ -78,24 +80,151 @@
 <main id="main" role="main" >
 
 <div class="container mt-5">
-<h1>Package Zero</h1>
-<p class="lead">A package connecting and managing sensor style devices. Connecting sensors to the cloud, processing data with a digital twin platform, and managing device firmware.</p>
+<h1>Pre-Requisites</h1>
+<p class="lead">Getting you started with a common set of tools, used by all packages.</p>
 
+<section>
+<div class="row">
+<div class="col-12 col-md-8 col-lg-9 ">
+<h2 id="kubernetes">Kubernetes</h2>
 
+<p>For the cloud side environment, you will need an installation of Kubernetes. Kubernetes comes in
+different forms, and we try to document a few of them for you. There are more, and you are welcome
+to try all of them. All packages should be able to run on any Kubernetes you provide.</p>
 
-<nav class="nav nav-pills nav-fill mt-5 mb-5">
-  <a class="nav-item nav-link " href="/packages/packages/package-zero/">Overview</a>
+<h3 id="minikube">Minikube</h3>
 
-  
-  <a class="nav-item nav-link  active" href="/packages/packages/package-zero/installation/">Installation</a>
-  
-  <a class="nav-item nav-link " href="/packages/packages/package-zero/learn/">Learn more</a>
-  
-  <a class="nav-item nav-link " href="/packages/packages/package-zero/tour/">Take a tour</a>
-  
-</nav>
+<p><a href="https://kubernetes.io/docs/setup/learning-environment/minikube/">Minikube</a> is Kubernetes in a bottle.</p>
 
-<section><p>If you haven&rsquo;t done so already, take a look at our <a href="/packages/kubernetes/">Kubernetes installation</a> page.</p>
+<p>Instead of provisioning a full blown cluster, it will create a virtual machine on your local system, and
+provision a small, single-node cluster in it. As it puts the operating system in a VM, Minikube itself
+can run on all major operating systems, including Windows and Mac OS.</p>
+
+<p>Instead of duplicating the effort, documenting how to get Minikube up an running, we leave this to the
+excellent <a href="https://kubernetes.io/docs/tasks/tools/install-minikube/">documentation of Minikube</a> itself.</p>
+
+<h4 id="getting-started">Getting started</h4>
+
+<p>Once you have everything installed, you should be able to start a new cluster by executing:</p>
+
+<pre><code>minikube start
+</code></pre>
+
+<p>And you can switch <code>kubectl</code> to the context <code>minikube</code>, and interact with your cluster:</p>
+
+<pre><code>kubectl config use-context minikube
+</code></pre>
+
+<p>For example, get the current version of the client and server:</p>
+
+<pre><code>kubectl version
+</code></pre>
+
+<p>Which should print out something like:</p>
+
+<pre><code>Client Version: version.Info{Major:&quot;1&quot;, Minor:&quot;11+&quot;, GitVersion:&quot;v1.11.0+d4cacc0&quot;, GitCommit:&quot;d4cacc0&quot;, GitTreeState:&quot;clean&quot;, BuildDate:&quot;2018-10-10T16:38:01Z&quot;, GoVersion:&quot;go1.10.3&quot;, Compiler:&quot;gc&quot;, Platform:&quot;linux/amd64&quot;}
+Server Version: version.Info{Major:&quot;1&quot;, Minor:&quot;13+&quot;, GitVersion:&quot;v1.13.4+c2a5caf&quot;, GitCommit:&quot;c2a5caf&quot;, GitTreeState:&quot;clean&quot;, BuildDate:&quot;2019-09-21T02:12:52Z&quot;, GoVersion:&quot;go1.11.13&quot;, Compiler:&quot;gc&quot;, Platform:&quot;linux/amd64&quot;}
+</code></pre>
+
+<h4 id="starting-and-stopping">Starting and stopping</h4>
+
+<p>When you no longer need your cluster, you can stop it using:</p>
+
+<pre><code>minishift stop
+# and later on
+minishift start
+</code></pre>
+
+<p>Or delete it using:</p>
+
+<pre><code>minishift delete
+</code></pre>
+
+<h4 id="resources">Resources</h4>
+
+<p>Packages might need more resources than the default settings of Minikube allow. Packages are
+encouraged to give you an estimate of what resources they require, you can translate this
+into arguments to the <code>start</code> command:</p>
+
+<pre><code>minishift start --cpus &lt;cpus&gt; --disk-size &lt;size&gt; --memory &lt;memory&gt;
+</code></pre>
+
+<dl class="row">
+
+<dt class="col-sm-2">cpus</dt>
+<dd class="col-sm-10">The number of CPUs you allocate for Minikube (e.g. <code>--cpus 2</code>).</dd>
+
+<dt class="col-sm-2">size</dt>
+<dd class="col-sm-10">
+The size of the disk available for the cluster and persistent volumes. In the format <code>&lt;number&gt;&lt;unit&gt;</code>,
+where unit can be either <code>k</code>, <code>m</code>, or <code>g</code> (e.g. 20GiB means <code>--disk-size 20g</code>).
+</dd>
+
+<dt class="col-sm-2">memory</dt>
+<dd class="col-sm-10">
+The amount of RAM allocated to the virtual machine. This is the amount in MiB (e.g. for 8GiB means <code>--memory 8192</code>.
+</dd>
+
+</dl>
+
+</div>
+
+<div class="col-12 col-md-4 col-lg-3 ">
+<div class="position-sticky" style="top: 4rem;">
+<aside>
+<div class="card">
+<div class="card-body">
+<h5 class="card-title">Table of contents</h5>
+
+<ul id="toc" class="toc-list"></ul>
+
+</div>
+</div>
+</aside>
+
+<script>
+var callback = function() {
+
+    var toc = $("#toc");
+    toc.empty();
+
+    var prevItem = null;
+    var prevList = null;
+    var index = 0;
+
+    $("h2, h3").each(function() {
+
+        var id="toc-" + $(this).attr('id');
+        jQuery(this).before("<a class='toc-anchor' name='" + id + "'></a>");   
+
+        var li = "<li class='toc-item'><a class='text-muted' href='#" + id + "'>" + $(this).text() + "</a></li>";
+
+        if( $(this).is("h2") ){
+            prevList = $("<ul></ul>");
+            prevItem = $(li);
+            prevItem.append(prevList);
+            prevItem.appendTo(toc);
+        } else {
+            prevList.append(li);
+        }
+    });
+}
+
+if (
+    document.readyState === "complete" ||
+    (document.readyState !== "loading" && !document.documentElement.doScroll)
+) {
+  callback();
+} else {
+  document.addEventListener("DOMContentLoaded", callback);
+}
+
+</script>
+</div>
+</div>
+
+</div>
+
 </section>
 
 </div>
