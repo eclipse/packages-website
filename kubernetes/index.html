@@ -11,14 +11,15 @@
     <title>Pre-Requisites | Eclipse IoT Packages™</title>
 
    <style>body{padding-top:56px}.toc-anchor{display:block;position:relative;top:-70px;visibility:hidden}footer{background:#f0f0f0;padding:3rem;margin-top:3rem;font-size:small}.border-callout-left{border-left:solid 5px;padding-left:.5rem;border-radius:5px}pre{padding:1rem;background:#fafafa}@media(min-width:992px){pre{padding:1.5rem}}.toc-list{padding-left:0}.toc-list ul{padding-left:1rem}.toc-item{list-style:none;margin-left:0}</style>
+    <script>function generateToc(target,elements){var callback=function(){var toc=$(target);toc.empty();var currentLevel=0;var current=toc;$(elements).each(function(){var id="toc-"+$(this).attr('id');$(this).before("<a class='toc-anchor' name='"+id+"'></a>");var li=$("<li class='toc-item'><a class='text-muted' href='#"+id+"'>"+$(this).text()+"</a></li>");var level=parseInt(this.tagName.substr(1));if(level==currentLevel){}else if(level>currentLevel){var next=$("<ul></ul>");current.append(next);current=next;}else{current=current.parent;}
+current.append(li);currentLevel=level;});}
+if(document.readyState==="complete"||(document.readyState!=="loading"&&!document.documentElement.doScroll)){callback();}else{document.addEventListener("DOMContentLoaded",callback);}}</script>
 
     
 
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Pre-Requisites"/>
-<meta name="twitter:description" content="Kubernetes For the cloud side environment, you will need an installation of Kubernetes. Kubernetes comes in different forms, and we try to document a few of them for you. There are more, and you are welcome to try all of them. All packages should be able to run on any Kubernetes you provide.
-Minikube Minikube is Kubernetes in a bottle.
-Instead of provisioning a full blown cluster, it will create a virtual machine on your local system, and provision a small, single-node cluster in it."/>
+<meta name="twitter:description" content="Kubernetes Client First of all, you will need a command tool named kubectl. This application allows you to interact with your Kubernetes cluster from the command line. While Kubernetes also comes with a Web UI, it is much simpler to document the installation procedures using command line tool. Also does the Web UI change over time, and with different Kubernetes variants. However the kubectl tool works with all variations of Kubernetes, as it uses the standardized API in the background."/>
 
 
   </head>
@@ -86,18 +87,29 @@ Instead of provisioning a full blown cluster, it will create a virtual machine o
 <section>
 <div class="row">
 <div class="col-12 col-md-8 col-lg-9 ">
-<h2 id="kubernetes">Kubernetes</h2>
+<h2 id="kubernetes-client">Kubernetes Client</h2>
+
+<p>First of all, you will need a command tool named <code>kubectl</code>. This application allows you to interact with
+your Kubernetes cluster from the command line. While Kubernetes also comes with a Web UI, it is much simpler
+to document the installation procedures using command line tool. Also does the Web UI change over time, and
+with different Kubernetes variants. However the <code>kubectl</code> tool works with all variations of Kubernetes, as it
+uses the standardized API in the background.</p>
+
+<p>You can find more information in the Kubernetes documentation: <a href="https://kubernetes.io/docs/tasks/tools/install-kubectl/">Install and Set Up kubectl</a>.</p>
+
+<h2 id="kubernetes-cluster">Kubernetes Cluster</h2>
 
 <p>For the cloud side environment, you will need an installation of Kubernetes. Kubernetes comes in
-different forms, and we try to document a few of them for you. There are more, and you are welcome
-to try all of them. All packages should be able to run on any Kubernetes you provide.</p>
+different forms, and we try to document a few of them for you. There are other variants as well,
+and you are welcome to try all of them. All packages should be able to run on any Kubernetes
+you provide.</p>
 
 <h3 id="minikube">Minikube</h3>
 
 <p><a href="https://kubernetes.io/docs/setup/learning-environment/minikube/">Minikube</a> is Kubernetes in a bottle.</p>
 
 <p>Instead of provisioning a full blown cluster, it will create a virtual machine on your local system, and
-provision a small, single-node cluster in it. As it puts the operating system in a VM, Minikube itself
+provision a small, single-node cluster inside of it. As it puts the operating system in a VM, Minikube itself
 can run on all major operating systems, including Windows and Mac OS.</p>
 
 <p>Instead of duplicating the effort, documenting how to get Minikube up an running, we leave this to the
@@ -149,6 +161,8 @@ into arguments to the <code>start</code> command:</p>
 <pre><code>minishift start --cpus &lt;cpus&gt; --disk-size &lt;size&gt; --memory &lt;memory&gt;
 </code></pre>
 
+<p>Using the following arguments:</p>
+
 <dl class="row">
 
 <dt class="col-sm-2">cpus</dt>
@@ -169,7 +183,7 @@ The amount of RAM allocated to the virtual machine. This is the amount in MiB (e
 
 </div>
 
-<div class="col-12 col-md-4 col-lg-3 ">
+<div class="col-12 col-md-4 col-lg-3 d-none d-md-block">
 <div class="position-sticky" style="top: 4rem;">
 <aside>
 <div class="card">
@@ -182,44 +196,7 @@ The amount of RAM allocated to the virtual machine. This is the amount in MiB (e
 </div>
 </aside>
 
-<script>
-var callback = function() {
-
-    var toc = $("#toc");
-    toc.empty();
-
-    var prevItem = null;
-    var prevList = null;
-    var index = 0;
-
-    $("h2, h3").each(function() {
-
-        var id="toc-" + $(this).attr('id');
-        jQuery(this).before("<a class='toc-anchor' name='" + id + "'></a>");   
-
-        var li = "<li class='toc-item'><a class='text-muted' href='#" + id + "'>" + $(this).text() + "</a></li>";
-
-        if( $(this).is("h2") ){
-            prevList = $("<ul></ul>");
-            prevItem = $(li);
-            prevItem.append(prevList);
-            prevItem.appendTo(toc);
-        } else {
-            prevList.append(li);
-        }
-    });
-}
-
-if (
-    document.readyState === "complete" ||
-    (document.readyState !== "loading" && !document.documentElement.doScroll)
-) {
-  callback();
-} else {
-  document.addEventListener("DOMContentLoaded", callback);
-}
-
-</script>
+<script>generateToc("#toc", "h2, h3, h4");</script>
 </div>
 </div>
 

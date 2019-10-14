@@ -93,9 +93,7 @@ Improving an existing package There is always room for improvement. Found a bug,
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://eclipse.org/packages/kubernetes/</guid>
-      <description>Kubernetes For the cloud side environment, you will need an installation of Kubernetes. Kubernetes comes in different forms, and we try to document a few of them for you. There are more, and you are welcome to try all of them. All packages should be able to run on any Kubernetes you provide.
-Minikube Minikube is Kubernetes in a bottle.
-Instead of provisioning a full blown cluster, it will create a virtual machine on your local system, and provision a small, single-node cluster in it.</description>
+      <description>Kubernetes Client First of all, you will need a command tool named kubectl. This application allows you to interact with your Kubernetes cluster from the command line. While Kubernetes also comes with a Web UI, it is much simpler to document the installation procedures using command line tool. Also does the Web UI change over time, and with different Kubernetes variants. However the kubectl tool works with all variations of Kubernetes, as it uses the standardized API in the background.</description>
     </item>
     
     <item>
