@@ -86,7 +86,7 @@ kubectl version   This should print out the version of the client, but must also
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://eclipse.org/packages/packages/package-zero/learn/</guid>
-      <description> Also see  About Eclipse Hono  Getting started Documentation  About Eclipse Ditto  Overview  About Eclipse Hawkbit  Getting started     </description>
+      <description>This packages allows you to create  Also see  About Eclipse Hono  Getting started Documentation  About Eclipse Ditto  Overview  About Eclipse Hawkbit  Getting started     </description>
     </item>
     
     <item>
