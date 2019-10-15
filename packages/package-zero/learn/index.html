@@ -10,7 +10,7 @@
 
     <title>Learn more | Eclipse IoT Packages™</title>
 
-   <style>body{padding-top:56px}*[id]:before{display:block;content:"";margin-top:-75px;height:75px;visibility:hidden}.toc-anchor{display:block;position:relative;top:-70px;visibility:hidden}footer{background:#f0f0f0;padding:3rem;margin-top:3rem;font-size:small}.border-callout-left{border-left:solid 5px;padding-left:.5rem;border-radius:5px}pre{padding:1rem;background:#fafafa}@media(min-width:992px){pre{padding:1.5rem}}.toc>ul{padding-left:0!important}.toc ul{padding-left:1rem}.toc-item{list-style:none}.req-card h4,.req-card h5{margin-bottom:0}.req-card dl{margin-bottom:0}.req-card dd{margin-bottom:0}.clipboard{position:relative}.btn-clipboard{position:absolute;top:10px;right:10px;font-size:80%}.btn-clipboard:hover{color:#fff;background-color:#007bff}.btn-clipboard:focus{box-shadow:none}</style>
+   <style>body{padding-top:56px}h1[id]:before,h2[id]:before,h3[id]:before,h4[id]:before,h5[id]:before,h6[id]:before{display:block;content:"";margin-top:-75px;height:75px;visibility:hidden}h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]{pointer-events:none}.toc-anchor{display:block;position:relative;top:-70px;visibility:hidden}footer{background:#f0f0f0;padding:3rem;margin-top:3rem;font-size:small}.border-callout-left{border-left:solid 5px;padding-left:.5rem;border-radius:5px}pre{padding:1rem;background:#fafafa}@media(min-width:992px){pre{padding:1.5rem}}.toc>ul{padding-left:0!important}.toc ul{padding-left:1rem}.toc-item{list-style:none}.req-card h4,.req-card h5{margin-bottom:0}.req-card dl{margin-bottom:0}.req-card dd{margin-bottom:0}.clipboard{position:relative}.btn-clipboard{position:absolute;top:10px;right:10px;font-size:80%}.btn-clipboard:hover{color:#fff;background-color:#007bff}.btn-clipboard:focus{box-shadow:none}</style>
     <script>function generateToc(target,elements){var callback=function(){var toc=$(target);toc.empty();var toclist=$("<ul class='toc-list'></ul>");toc.append(toclist);var currentLevel=-1;var current=toclist;$(elements).each(function(){var id=$(this).attr('id');$(this).before("<a class='toc-anchor' name='"+id+"'></a>");var level=parseInt(this.tagName.substr(1));if(currentLevel<=0){currentLevel=level;}
 while(currentLevel<level){var next=$("<ul></ul>");var t=current.children().last();if(t.length==0){var li2=$("<li class='toc-item'></li>");current.append(li2);t=li2;}
 t.append(next);current=next;currentLevel++;}
@@ -22,7 +22,8 @@ if(document.readyState==="complete"||(document.readyState!=="loading"&&!document
 
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Learn more"/>
-<meta name="twitter:description" content="This packages allows you to create  Also see  About Eclipse Hono  Getting started Documentation  About Eclipse Ditto  Overview  About Eclipse Hawkbit  Getting started     "/>
+<meta name="twitter:description" content="Functionality This package gives you a scalable, cloud based IoT messaging platform. This allows you the equip your sensor like devices to report telemetry data to a central location and receive back commands from the cloud backend.
+The IoT messaging layer takes care of normalizing the various IoT protocol on AMQP 1.0, so that the backend applications can focus on processing the messages, rather than implementing various protocols. The messaging layer also provides the authentication and authorization layer."/>
 
 
   </head>
@@ -105,7 +106,28 @@ if(document.readyState==="complete"||(document.readyState!=="loading"&&!document
 
 
 <div class="col-12 col-md-8 col-lg-9">
-This packages allows you to create
+<h2 id="functionality">Functionality</h2>
+
+<p>This package gives you a scalable, cloud based IoT messaging platform. This allows you the equip
+your sensor like devices to report telemetry data to a central location and receive back commands
+from the cloud backend.</p>
+
+<p>The IoT messaging layer takes care of normalizing the various IoT protocol on AMQP 1.0, so that
+the backend applications can focus on processing the messages, rather than implementing various
+protocols. The messaging layer also provides the authentication and authorization layer. Ensuring
+that the backend applications only receive information from properly authenticated and authorized
+devices.</p>
+
+<p>For making the implementation of backend applications easier, the digital twin platform will
+pre-process the incoming message stream, and translate it into a last-known state of the various
+devices. This makes it easier to implement backend applications, as the state is being managed
+by the digital twin platform.</p>
+
+<p>In addition to the actual processing of data, the package also provides a feature to update the
+firmware of the devices, lanning and orchestrating rollouts of new versions.</p>
+
+<h2 id="example-use-case">Example use-case</h2>
+
 </div>
 
 <div class="col-12 col-md-4 col-lg-3 

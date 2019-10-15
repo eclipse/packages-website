@@ -86,7 +86,8 @@ kubectl version   This should print out the version of the client, but must also
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://eclipse.org/packages/packages/package-zero/learn/</guid>
-      <description>This packages allows you to create  Also see  About Eclipse Hono  Getting started Documentation  About Eclipse Ditto  Overview  About Eclipse Hawkbit  Getting started     </description>
+      <description>Functionality This package gives you a scalable, cloud based IoT messaging platform. This allows you the equip your sensor like devices to report telemetry data to a central location and receive back commands from the cloud backend.
+The IoT messaging layer takes care of normalizing the various IoT protocol on AMQP 1.0, so that the backend applications can focus on processing the messages, rather than implementing various protocols. The messaging layer also provides the authentication and authorization layer.</description>
     </item>
     
     <item>
