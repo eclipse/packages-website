@@ -76,7 +76,7 @@ Improving an existing package There is always room for improvement. Found a bug,
       
       <guid>https://eclipse.org/packages/packages/package-zero/installation/</guid>
       <description>You will need a Kubernetes instance in order to deploy this package. If you haven&amp;rsquo;t done so already, take a look at our Kubernetes installation page. Any Kubernetes compatible cluster will do, as long as it meets the requirements.
-Check access Be sure that you are logged in into your Kubernetes cluster. For example, the following command should list all namespaces that you have access to:
+Check access Be sure that you are logged in into your Kubernetes cluster:
 kubectl version   This should print out the version of the client, but must also print out the version of the server.</description>
     </item>
     

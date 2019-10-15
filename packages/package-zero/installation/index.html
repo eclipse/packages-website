@@ -23,7 +23,7 @@ if(document.readyState==="complete"||(document.readyState!=="loading"&&!document
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Installation"/>
 <meta name="twitter:description" content="You will need a Kubernetes instance in order to deploy this package. If you haven&rsquo;t done so already, take a look at our Kubernetes installation page. Any Kubernetes compatible cluster will do, as long as it meets the requirements.
-Check access Be sure that you are logged in into your Kubernetes cluster. For example, the following command should list all namespaces that you have access to:
+Check access Be sure that you are logged in into your Kubernetes cluster:
 kubectl version   This should print out the version of the client, but must also print out the version of the server."/>
 
 
@@ -112,8 +112,7 @@ it meets the requirements.</p>
 
 <h2 id="check-access">Check access</h2>
 
-<p>Be sure that you are logged in into your Kubernetes cluster. For example, the following command
-should list all namespaces that you have access to:</p>
+<p>Be sure that you are logged in into your Kubernetes cluster:</p>
 
 <div class="clipboard">
 <pre><code>kubectl version
@@ -163,6 +162,15 @@ cd packages
   <div class="card-header text-center"><h5>Requirements</h5></div>
   <ul class="list-group list-group-flush">
 
+
+    <li class="list-group-item">
+
+<dl class="row">
+<dt class="col-sm-6">Kubernetes</dt>
+<dd class="col-sm-6 text-right">1.15.x</dd>
+</dl>
+
+</li>
 
     <li class="list-group-item">
 
