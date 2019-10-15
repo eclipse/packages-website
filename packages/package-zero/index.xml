@@ -17,7 +17,9 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://eclipse.org/packages/packages/package-zero/installation/</guid>
-      <description>If you haven&amp;rsquo;t done so already, take a look at our Kubernetes installation page.</description>
+      <description>You will need a Kubernetes instance in order to deploy this package. If you haven&amp;rsquo;t done so already, take a look at our Kubernetes installation page. Any Kubernetes compatible cluster will do, as long as it meets the requirements.
+Check access Be sure that you are logged in into your Kubernetes cluster. For example, the following command should list all namespaces that you have access to:
+kubectl version   This should print out the version of the client, but must also print out the version of the server.</description>
     </item>
     
     <item>
@@ -26,7 +28,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://eclipse.org/packages/packages/package-zero/learn/</guid>
-      <description></description>
+      <description> Also see  About Eclipse Hono  Getting started Documentation  About Eclipse Ditto  Overview  About Eclipse Hawkbit  Getting started     </description>
     </item>
     
     <item>
@@ -35,7 +37,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://eclipse.org/packages/packages/package-zero/tour/</guid>
-      <description></description>
+      <description>DEVICE_REGISTRY=https://foo-bar MQTT_ADAPTER_IP=mqtt-adapter  Working with devices Create a new tenant Create a new device  Register device Set device credentials  Working with data Publish telemetry data via MQTT Publish a telemetry message using the MQTT endpoint:
+mosquitto_pub -h $MQTT_ADAPTER_IP \ -u $MY_DEVICE@$MY_TENANT -P $MY_PWD \ -t telemetry -m &#39;{&amp;quot;temp&amp;quot;: 5}&#39;   Updating the firmware   Table of contents     generateToc(&#34;#toc&#34;, &#34;h2[id], h3[id], h4[id]&#34;);    </description>
     </item>
     
   </channel>

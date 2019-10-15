@@ -10,16 +10,20 @@
 
     <title>Take a tour | Eclipse IoT Packages™</title>
 
-   <style>body{padding-top:56px}.toc-anchor{display:block;position:relative;top:-70px;visibility:hidden}footer{background:#f0f0f0;padding:3rem;margin-top:3rem;font-size:small}.border-callout-left{border-left:solid 5px;padding-left:.5rem;border-radius:5px}pre{padding:1rem;background:#fafafa}@media(min-width:992px){pre{padding:1.5rem}}.toc-list{padding-left:0}.toc-list ul{padding-left:1rem}.toc-item{list-style:none;margin-left:0}</style>
-    <script>function generateToc(target,elements){var callback=function(){var toc=$(target);toc.empty();var currentLevel=0;var current=toc;$(elements).each(function(){var id="toc-"+$(this).attr('id');$(this).before("<a class='toc-anchor' name='"+id+"'></a>");var li=$("<li class='toc-item'><a class='text-muted' href='#"+id+"'>"+$(this).text()+"</a></li>");var level=parseInt(this.tagName.substr(1));if(level==currentLevel){}else if(level>currentLevel){var next=$("<ul></ul>");current.append(next);current=next;}else{current=current.parent;}
-current.append(li);currentLevel=level;});}
+   <style>body{padding-top:56px}.toc-anchor{display:block;position:relative;top:-70px;visibility:hidden}footer{background:#f0f0f0;padding:3rem;margin-top:3rem;font-size:small}.border-callout-left{border-left:solid 5px;padding-left:.5rem;border-radius:5px}pre{padding:1rem;background:#fafafa}@media(min-width:992px){pre{padding:1.5rem}}.toc>ul{padding-left:0!important}.toc ul{padding-left:1rem}.toc-item{list-style:none}.req-card h4,.req-card h5{margin-bottom:0}.req-card dl{margin-bottom:0}.req-card dd{margin-bottom:0}.clipboard{position:relative}.btn-clipboard{position:absolute;top:10px;right:10px;font-size:80%}.btn-clipboard:hover{color:#fff;background-color:#007bff}.btn-clipboard:focus{box-shadow:none}</style>
+    <script>function generateToc(target,elements){var callback=function(){var toc=$(target);toc.empty();var toclist=$("<ul class='toc-list'></ul>");toc.append(toclist);var currentLevel=-1;var current=toclist;$(elements).each(function(){var id="toc-"+$(this).attr('id');$(this).before("<a class='toc-anchor' name='"+id+"'></a>");var level=parseInt(this.tagName.substr(1));if(currentLevel<=0){currentLevel=level;}
+while(currentLevel<level){var next=$("<ul></ul>");var t=current.children().last();if(t.length==0){var li2=$("<li class='toc-item'></li>");current.append(li2);t=li2;}
+t.append(next);current=next;currentLevel++;}
+while(currentLevel>level){current=current.parent().parent();currentLevel--;}
+var li=$("<li class='toc-item'><a class='text-muted' href='#"+id+"'>"+$(this).text()+"</a></li>");current.append(li);});}
 if(document.readyState==="complete"||(document.readyState!=="loading"&&!document.documentElement.doScroll)){callback();}else{document.addEventListener("DOMContentLoaded",callback);}}</script>
 
     
 
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Take a tour"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:description" content="DEVICE_REGISTRY=https://foo-bar MQTT_ADAPTER_IP=mqtt-adapter  Working with devices Create a new tenant Create a new device  Register device Set device credentials  Working with data Publish telemetry data via MQTT Publish a telemetry message using the MQTT endpoint:
+mosquitto_pub -h $MQTT_ADAPTER_IP \ -u $MY_DEVICE@$MY_TENANT -P $MY_PWD \ -t telemetry -m &#39;{&quot;temp&quot;: 5}&#39;   Updating the firmware   Table of contents     generateToc(&#34;#toc&#34;, &#34;h2[id], h3[id], h4[id]&#34;);    "/>
 
 
   </head>
@@ -69,7 +73,7 @@ if(document.readyState==="complete"||(document.readyState!=="loading"&&!document
             
 
             <a class="nav-link"
-               href="/packages/kubernetes/">Prerequisites</a>
+               href="/packages/prereqs/">Prerequisites</a>
         </li>
         
 
@@ -98,7 +102,74 @@ if(document.readyState==="complete"||(document.readyState!=="loading"&&!document
   
 </nav>
 
-<section></section>
+<section><div class="row">
+
+
+
+
+
+
+<div class="col-12 col-md-8 col-lg-9 ">
+<pre><code>DEVICE_REGISTRY=https://foo-bar
+MQTT_ADAPTER_IP=mqtt-adapter
+</code></pre>
+
+<h2 id="working-with-devices">Working with devices</h2>
+
+<h3 id="create-a-new-tenant">Create a new tenant</h3>
+
+<h3 id="create-a-new-device">Create a new device</h3>
+
+<ul>
+<li>Register device</li>
+<li>Set device credentials</li>
+</ul>
+
+<h2 id="working-with-data">Working with data</h2>
+
+<h3 id="publish-telemetry-data-via-mqtt">Publish telemetry data via MQTT</h3>
+
+<p>Publish a telemetry message using the MQTT endpoint:</p>
+
+<div class="clipboard">
+<pre><code>mosquitto_pub -h $MQTT_ADAPTER_IP \
+  -u $MY_DEVICE@$MY_TENANT -P $MY_PWD \
+  -t telemetry -m '{&quot;temp&quot;: 5}'
+</code></pre>
+</div>
+
+<h2 id="updating-the-firmware">Updating the firmware</h2>
+
+</div>
+
+
+
+
+
+
+<div class="col-12 col-md-4 col-lg-3 d-none d-md-block">
+<div class="position-sticky" style="top: 4rem;">
+
+
+<aside>
+<div class="card">
+<div class="card-body">
+<h5 class="card-title">Table of contents</h5>
+<div id="toc" class="toc"></div>
+</div>
+</div>
+</aside>
+
+<script>generateToc("#toc", "h2[id], h3[id], h4[id]");</script>
+
+
+</div>
+</div>
+
+
+
+</div>
+</section>
 
 </div>
 
@@ -222,6 +293,9 @@ if(document.readyState==="complete"||(document.readyState!=="loading"&&!document
 <script src="/packages/popper.min.js"></script>
     <script src="/packages/jquery.min.js"></script>
     <script src="/packages/bootstrap/bootstrap.min.js"></script>
+
+    <script src="/packages/clipboard.min.js"></script>
+    <script src="/packages/clipboard.js"></script>
 
 </body>
 

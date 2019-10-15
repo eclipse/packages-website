@@ -10,9 +10,12 @@
 
     <title>Questions and answers | Eclipse IoT Packages™</title>
 
-   <style>body{padding-top:56px}.toc-anchor{display:block;position:relative;top:-70px;visibility:hidden}footer{background:#f0f0f0;padding:3rem;margin-top:3rem;font-size:small}.border-callout-left{border-left:solid 5px;padding-left:.5rem;border-radius:5px}pre{padding:1rem;background:#fafafa}@media(min-width:992px){pre{padding:1.5rem}}.toc-list{padding-left:0}.toc-list ul{padding-left:1rem}.toc-item{list-style:none;margin-left:0}</style>
-    <script>function generateToc(target,elements){var callback=function(){var toc=$(target);toc.empty();var currentLevel=0;var current=toc;$(elements).each(function(){var id="toc-"+$(this).attr('id');$(this).before("<a class='toc-anchor' name='"+id+"'></a>");var li=$("<li class='toc-item'><a class='text-muted' href='#"+id+"'>"+$(this).text()+"</a></li>");var level=parseInt(this.tagName.substr(1));if(level==currentLevel){}else if(level>currentLevel){var next=$("<ul></ul>");current.append(next);current=next;}else{current=current.parent;}
-current.append(li);currentLevel=level;});}
+   <style>body{padding-top:56px}.toc-anchor{display:block;position:relative;top:-70px;visibility:hidden}footer{background:#f0f0f0;padding:3rem;margin-top:3rem;font-size:small}.border-callout-left{border-left:solid 5px;padding-left:.5rem;border-radius:5px}pre{padding:1rem;background:#fafafa}@media(min-width:992px){pre{padding:1.5rem}}.toc>ul{padding-left:0!important}.toc ul{padding-left:1rem}.toc-item{list-style:none}.req-card h4,.req-card h5{margin-bottom:0}.req-card dl{margin-bottom:0}.req-card dd{margin-bottom:0}.clipboard{position:relative}.btn-clipboard{position:absolute;top:10px;right:10px;font-size:80%}.btn-clipboard:hover{color:#fff;background-color:#007bff}.btn-clipboard:focus{box-shadow:none}</style>
+    <script>function generateToc(target,elements){var callback=function(){var toc=$(target);toc.empty();var toclist=$("<ul class='toc-list'></ul>");toc.append(toclist);var currentLevel=-1;var current=toclist;$(elements).each(function(){var id="toc-"+$(this).attr('id');$(this).before("<a class='toc-anchor' name='"+id+"'></a>");var level=parseInt(this.tagName.substr(1));if(currentLevel<=0){currentLevel=level;}
+while(currentLevel<level){var next=$("<ul></ul>");var t=current.children().last();if(t.length==0){var li2=$("<li class='toc-item'></li>");current.append(li2);t=li2;}
+t.append(next);current=next;currentLevel++;}
+while(currentLevel>level){current=current.parent().parent();currentLevel--;}
+var li=$("<li class='toc-item'><a class='text-muted' href='#"+id+"'>"+$(this).text()+"</a></li>");current.append(li);});}
 if(document.readyState==="complete"||(document.readyState!=="loading"&&!document.documentElement.doScroll)){callback();}else{document.addEventListener("DOMContentLoaded",callback);}}</script>
 
     
@@ -71,7 +74,7 @@ if(document.readyState==="complete"||(document.readyState!=="loading"&&!document
             
 
             <a class="nav-link"
-               href="/packages/kubernetes/">Prerequisites</a>
+               href="/packages/prereqs/">Prerequisites</a>
         </li>
         
 
@@ -254,6 +257,9 @@ run them on any other Kubernetes based solution, in the real cloud.</p>
 <script src="/packages/popper.min.js"></script>
     <script src="/packages/jquery.min.js"></script>
     <script src="/packages/bootstrap/bootstrap.min.js"></script>
+
+    <script src="/packages/clipboard.min.js"></script>
+    <script src="/packages/clipboard.js"></script>
 
 </body>
 

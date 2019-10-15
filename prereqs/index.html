@@ -10,9 +10,12 @@
 
     <title>Pre-Requisites | Eclipse IoT Packages™</title>
 
-   <style>body{padding-top:56px}.toc-anchor{display:block;position:relative;top:-70px;visibility:hidden}footer{background:#f0f0f0;padding:3rem;margin-top:3rem;font-size:small}.border-callout-left{border-left:solid 5px;padding-left:.5rem;border-radius:5px}pre{padding:1rem;background:#fafafa}@media(min-width:992px){pre{padding:1.5rem}}.toc-list{padding-left:0}.toc-list ul{padding-left:1rem}.toc-item{list-style:none;margin-left:0}</style>
-    <script>function generateToc(target,elements){var callback=function(){var toc=$(target);toc.empty();var currentLevel=0;var current=toc;$(elements).each(function(){var id="toc-"+$(this).attr('id');$(this).before("<a class='toc-anchor' name='"+id+"'></a>");var li=$("<li class='toc-item'><a class='text-muted' href='#"+id+"'>"+$(this).text()+"</a></li>");var level=parseInt(this.tagName.substr(1));if(level==currentLevel){}else if(level>currentLevel){var next=$("<ul></ul>");current.append(next);current=next;}else{current=current.parent;}
-current.append(li);currentLevel=level;});}
+   <style>body{padding-top:56px}.toc-anchor{display:block;position:relative;top:-70px;visibility:hidden}footer{background:#f0f0f0;padding:3rem;margin-top:3rem;font-size:small}.border-callout-left{border-left:solid 5px;padding-left:.5rem;border-radius:5px}pre{padding:1rem;background:#fafafa}@media(min-width:992px){pre{padding:1.5rem}}.toc>ul{padding-left:0!important}.toc ul{padding-left:1rem}.toc-item{list-style:none}.req-card h4,.req-card h5{margin-bottom:0}.req-card dl{margin-bottom:0}.req-card dd{margin-bottom:0}.clipboard{position:relative}.btn-clipboard{position:absolute;top:10px;right:10px;font-size:80%}.btn-clipboard:hover{color:#fff;background-color:#007bff}.btn-clipboard:focus{box-shadow:none}</style>
+    <script>function generateToc(target,elements){var callback=function(){var toc=$(target);toc.empty();var toclist=$("<ul class='toc-list'></ul>");toc.append(toclist);var currentLevel=-1;var current=toclist;$(elements).each(function(){var id="toc-"+$(this).attr('id');$(this).before("<a class='toc-anchor' name='"+id+"'></a>");var level=parseInt(this.tagName.substr(1));if(currentLevel<=0){currentLevel=level;}
+while(currentLevel<level){var next=$("<ul></ul>");var t=current.children().last();if(t.length==0){var li2=$("<li class='toc-item'></li>");current.append(li2);t=li2;}
+t.append(next);current=next;currentLevel++;}
+while(currentLevel>level){current=current.parent().parent();currentLevel--;}
+var li=$("<li class='toc-item'><a class='text-muted' href='#"+id+"'>"+$(this).text()+"</a></li>");current.append(li);});}
 if(document.readyState==="complete"||(document.readyState!=="loading"&&!document.documentElement.doScroll)){callback();}else{document.addEventListener("DOMContentLoaded",callback);}}</script>
 
     
@@ -69,7 +72,7 @@ if(document.readyState==="complete"||(document.readyState!=="loading"&&!document
             
 
             <a class="nav-link active"
-               href="/packages/kubernetes/">Prerequisites</a>
+               href="/packages/prereqs/">Prerequisites</a>
         </li>
         
 
@@ -85,7 +88,14 @@ if(document.readyState==="complete"||(document.readyState!=="loading"&&!document
 <p class="lead">Getting you started with a common set of tools, used by all packages.</p>
 
 <section>
+
 <div class="row">
+
+
+
+
+
+
 <div class="col-12 col-md-8 col-lg-9 ">
 <h2 id="kubernetes-client">Kubernetes Client</h2>
 
@@ -103,6 +113,59 @@ uses the standardized API in the background.</p>
 different forms, and we try to document a few of them for you. There are other variants as well,
 and you are welcome to try all of them. All packages should be able to run on any Kubernetes
 you provide.</p>
+
+<p>Packages are encouraged to give you an estimate of what resources they require. The following is
+an example of what this may look like. You will need to translate this into the specific
+Kubernetes environment you have.</p>
+
+<div class="row">
+
+
+
+
+
+
+<div class="col-12 col-sm-6 col-md-5 col-lg-4 mx-md-auto mb-3">
+<div class="card req-card">
+  <div class="card-header text-center"><h5>Requirements</h5></div>
+  <ul class="list-group list-group-flush">
+
+
+    <li class="list-group-item">
+
+<dl class="row">
+<dt class="col-sm-6">CPUs</dt>
+<dd class="col-sm-6 text-right">&#43;2</dd>
+</dl>
+
+</li>
+
+    <li class="list-group-item">
+
+<dl class="row">
+<dt class="col-sm-6">Memory</dt>
+<dd class="col-sm-6 text-right">1024 MiB</dd>
+</dl>
+
+</li>
+
+    <li class="list-group-item">
+
+<dl class="row">
+<dt class="col-sm-6">Disk</dt>
+<dd class="col-sm-6 text-right">40 GiB</dd>
+</dl>
+
+</li>
+
+
+  </ul></div>
+</div>
+
+<p></div></p>
+
+<p>For each documentation Kubernetes environment in this page, you will
+find a section that explains how to do this.</p>
 
 <h3 id="minikube">Minikube</h3>
 
@@ -154,9 +217,7 @@ minishift start
 
 <h4 id="resources">Resources</h4>
 
-<p>Packages might need more resources than the default settings of Minikube allow. Packages are
-encouraged to give you an estimate of what resources they require, you can translate this
-into arguments to the <code>start</code> command:</p>
+<p>You can translate the package resources requirements into arguments for the <code>start</code> command like this:</p>
 
 <pre><code>minishift start --cpus &lt;cpus&gt; --disk-size &lt;size&gt; --memory &lt;memory&gt;
 </code></pre>
@@ -183,25 +244,48 @@ The amount of RAM allocated to the virtual machine. This is the amount in MiB (e
 
 </div>
 
+
+
+
+
+
 <div class="col-12 col-md-4 col-lg-3 d-none d-md-block">
 <div class="position-sticky" style="top: 4rem;">
+
+
 <aside>
 <div class="card">
 <div class="card-body">
 <h5 class="card-title">Table of contents</h5>
-
-<ul id="toc" class="toc-list"></ul>
-
+<div id="toc" class="toc"></div>
 </div>
 </div>
 </aside>
 
-<script>generateToc("#toc", "h2, h3, h4");</script>
+<script>generateToc("#toc", "h2[id], h3[id], h4[id]");</script>
+
+
 </div>
 </div>
 
+
+
 </div>
 
+<h2 id="command-line-tools">Command line tools</h2>
+
+<p>Some tutorials might require some common command line tool. The installation depends on the
+operating system you are using.</p>
+
+<p>It is recommended to have the following tools installed:</p>
+
+<h3 id="curl">curl</h3>
+
+<p>For downloading files and execution API call the tool <code>curl</code> will be used.</p>
+
+<h3 id="mosquitto-cli">Mosquitto CLI</h3>
+
+<p>Mosquitto command line tools: e.g. <code>moquitto_pub</code></p>
 </section>
 
 </div>
@@ -326,6 +410,9 @@ The amount of RAM allocated to the virtual machine. This is the amount in MiB (e
 <script src="/packages/popper.min.js"></script>
     <script src="/packages/jquery.min.js"></script>
     <script src="/packages/bootstrap/bootstrap.min.js"></script>
+
+    <script src="/packages/clipboard.min.js"></script>
+    <script src="/packages/clipboard.js"></script>
 
 </body>
 
