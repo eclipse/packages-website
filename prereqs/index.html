@@ -182,20 +182,26 @@ excellent <a href="https://kubernetes.io/docs/tasks/tools/install-minikube/">doc
 
 <p>Once you have everything installed, you should be able to start a new cluster by executing:</p>
 
+<div class="clipboard">
 <pre><code>minikube start
 </code></pre>
+</div>
 
 <p>And you can switch <code>kubectl</code> to the context <code>minikube</code>, and interact with your cluster:</p>
 
+<div class="clipboard">
 <pre><code>kubectl config use-context minikube
 </code></pre>
+</div>
 
 <p>For example, get the current version of the client and server:</p>
 
+<div class="clipboard">
 <pre><code>kubectl version
 </code></pre>
+</div>
 
-<p>Which should print out something like:</p>
+<p>Which should show a proper version for the client <strong>and</strong> the server:</p>
 
 <pre><code>Client Version: version.Info{Major:&quot;1&quot;, Minor:&quot;11+&quot;, GitVersion:&quot;v1.11.0+d4cacc0&quot;, GitCommit:&quot;d4cacc0&quot;, GitTreeState:&quot;clean&quot;, BuildDate:&quot;2018-10-10T16:38:01Z&quot;, GoVersion:&quot;go1.10.3&quot;, Compiler:&quot;gc&quot;, Platform:&quot;linux/amd64&quot;}
 Server Version: version.Info{Major:&quot;1&quot;, Minor:&quot;13+&quot;, GitVersion:&quot;v1.13.4+c2a5caf&quot;, GitCommit:&quot;c2a5caf&quot;, GitTreeState:&quot;clean&quot;, BuildDate:&quot;2019-09-21T02:12:52Z&quot;, GoVersion:&quot;go1.11.13&quot;, Compiler:&quot;gc&quot;, Platform:&quot;linux/amd64&quot;}
@@ -205,15 +211,25 @@ Server Version: version.Info{Major:&quot;1&quot;, Minor:&quot;13+&quot;, GitVers
 
 <p>When you no longer need your cluster, you can stop it using:</p>
 
+<div class="clipboard">
 <pre><code>minishift stop
-# and later on
-minishift start
 </code></pre>
+</div>
+
+<p>This will suspend the VM so that you can, later on, resume it by
+executing:</p>
+
+<div class="clipboard">
+<pre><code>minishift start
+</code></pre>
+</div>
 
 <p>Or delete it using:</p>
 
+<div class="clipboard">
 <pre><code>minishift delete
 </code></pre>
+</div>
 
 <h4 id="resources">Resources</h4>
 
