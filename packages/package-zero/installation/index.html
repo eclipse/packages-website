@@ -22,7 +22,7 @@ if(document.readyState==="complete"||(document.readyState!=="loading"&&!document
 
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Installation"/>
-<meta name="twitter:description" content="You will need a Kubernetes instance in order to deploy this package. If you haven&rsquo;t done so already, take a look at our Kubernetes installation page. Any Kubernetes compatible cluster will do, as long as it meets the requirements.
+<meta name="twitter:description" content="You will need a Kubernetes instance in order to deploy this package. If you haven&#39;t done so already, take a look at our Kubernetes installation page. Any Kubernetes compatible cluster will do, as long as it meets the requirements.
 Check access Be sure that you are logged in into your Kubernetes cluster:
 kubectl version   This should print out the version of the client, but must also print out the version of the server."/>
 
@@ -107,7 +107,7 @@ kubectl version   This should print out the version of the client, but must also
 
 
 <div class="col-12 col-md-8 col-lg-9">
-<p>You will need a Kubernetes instance in order to deploy this package. If you haven&rsquo;t done so already, take a look at our <a href="/packages/prereqs/#kubernetes-cluster">Kubernetes installation</a> page. Any Kubernetes compatible cluster will do, as long as
+<p>You will need a Kubernetes instance in order to deploy this package. If you haven't done so already, take a look at our <a href="/packages/prereqs/#kubernetes-cluster">Kubernetes installation</a> page. Any Kubernetes compatible cluster will do, as long as
 it meets the requirements.</p>
 
 <h2 id="check-access">Check access</h2>
@@ -124,8 +124,8 @@ it meets the requirements.</p>
 <p><details>
 <summary>Example output</summary>
 <pre>
-Client Version: version.Info{Major:&ldquo;1&rdquo;, Minor:&ldquo;16&rdquo;, GitVersion:&ldquo;v1.16.1&rdquo;, GitCommit:&ldquo;d647ddbd755faf07169599a625faf302ffc34458&rdquo;, GitTreeState:&ldquo;clean&rdquo;, BuildDate:&ldquo;2019-10-02T17:01:15Z&rdquo;, GoVersion:&ldquo;go1.12.10&rdquo;, Compiler:&ldquo;gc&rdquo;, Platform:&ldquo;linux/amd64&rdquo;}
-Server Version: version.Info{Major:&ldquo;1&rdquo;, Minor:&ldquo;13+&rdquo;, GitVersion:&ldquo;v1.13.4+c2a5caf&rdquo;, GitCommit:&ldquo;c2a5caf&rdquo;, GitTreeState:&ldquo;clean&rdquo;, BuildDate:&ldquo;2019-09-21T02:12:52Z&rdquo;, GoVersion:&ldquo;go1.11.13&rdquo;, Compiler:&ldquo;gc&rdquo;, Platform:&ldquo;linux/amd64&rdquo;}
+Client Version: version.Info{Major:&quot;1&quot;, Minor:&quot;16&quot;, GitVersion:&quot;v1.16.1&quot;, GitCommit:&quot;d647ddbd755faf07169599a625faf302ffc34458&quot;, GitTreeState:&quot;clean&quot;, BuildDate:&quot;2019-10-02T17:01:15Z&quot;, GoVersion:&quot;go1.12.10&quot;, Compiler:&quot;gc&quot;, Platform:&quot;linux/amd64&quot;}
+Server Version: version.Info{Major:&quot;1&quot;, Minor:&quot;13+&quot;, GitVersion:&quot;v1.13.4+c2a5caf&quot;, GitCommit:&quot;c2a5caf&quot;, GitTreeState:&quot;clean&quot;, BuildDate:&quot;2019-09-21T02:12:52Z&quot;, GoVersion:&quot;go1.11.13&quot;, Compiler:&quot;gc&quot;, Platform:&quot;linux/amd64&quot;}
 </pre></p>
 
 <p></details></p>
@@ -150,6 +150,58 @@ cd packages
 <p>All further commands assume that you are operating from this directory.</p>
 
 <h2 id="run-the-deployment">Run the deployment</h2>
+
+<p>First create a new namespace for the deployment:</p>
+
+<div class="clipboard">
+<pre><code>kubectl create namespace package-zero
+</code></pre>
+</div>
+
+<p>Next, render the Helm charts:</p>
+
+<div class="clipboard">
+<pre><code>mkdir output
+helm template . --name package-zero --namespace package-zero --output-dir output
+</code></pre>
+</div>
+
+<p>The output is in the directory <code>output</code>. It is not yet deployed, but you
+can inspect it and then apply it by running:</p>
+
+<div class="clipboard">
+<pre><code>kubectl apply -Rf output/
+</code></pre>
+</div>
+
+<h2 id="monitor-deployment">Monitor deployment</h2>
+
+<p>When you execute the following command:</p>
+
+<div class="clipboard">
+<pre><code>kubectl get pods
+</code></pre>
+</div>
+
+<p>You should see the pods being started and becoming ready.</p>
+
+<p><details>
+<summary>Example of started pods</summary>
+<pre><code>NAME                                               READY   STATUS    RESTARTS   AGE
+package-zero-adapter-amqp-vertx-57dc849d4c-tw25z   1/1     Running   0          148m
+package-zero-adapter-http-vertx-6bdffc59-t54h5     1/1     Running   0          148m
+package-zero-adapter-mqtt-vertx-74cdb9644b-6pgs6   1/1     Running   0          148m
+package-zero-artemis-54ffcff88f-7w85x              1/1     Running   0          148m
+package-zero-dispatch-router-54d968954b-vrp7z      1/1     Running   0          148m
+package-zero-service-auth-6c9bcf8899-qmztm         1/1     Running   0          148m
+package-zero-service-device-registry-0             1/1     Running   0          148m
+</code></pre>
+</details></p>
+
+<h2 id="ready-to-run">Ready to run</h2>
+
+<p>Once the pods are all ready, you are ready to use the deployment. For an initial walk-through of the functionality
+see the section <a href="/packages/packages/package-zero/tour/">Take a tour</a>.</p>
 
 </div>
 

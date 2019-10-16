@@ -36,7 +36,17 @@ It should be possible to simply start up a local cluster in Minikube and deploy 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://eclipse.org/packages/faq/04_who/</guid>
-      <description>Take a look at the Who&amp;rsquo;s Involved page of the project.</description>
+      <description>Take a look at the Who&#39;s Involved page of the project.</description>
+    </item>
+    
+    <item>
+      <title>Why aren&#39;t you using Tiller?</title>
+      <link>https://eclipse.org/packages/faq/05_tiller/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://eclipse.org/packages/faq/05_tiller/</guid>
+      <description>Tiller is a server side component for Helm. It allows the Helm client, which is on your local machine, to talk to the cluster, and let it perform the deployment.
+There are several aspects to that, which make the use of Tiller complicated. The main concern is security (also see Exploring the Security of Helm). The default deployment of Tiller is rather insecure. That may work on a local instance of Kubernetes, but not when using an actual, hosted version.</description>
     </item>
     
     <item>
