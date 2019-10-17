@@ -156,7 +156,8 @@ MQTT_ADAPTER_PORT=30883
 <div class="tab-pane " id="variants-kubernetes" role="tabpanel" aria-labelledby="variants-kubernetes-tab">
 <div class="clipboard">
 <pre><code>DEVICE_REGISTRY_URL=https://$(kubectl get service package-zero-service-device-registry-ext --output='jsonpath={.status.loadBalancer.ingress[0].ip}' -n package-zero):28080
-MQTT_ADAPTER_URL=https://$(kubectl get service package-zero-adapter-mqtt-vertx --output='jsonpath={.status.loadBalancer.ingress[0].ip}' -n package-zero):8883
+MQTT_ADAPTER_HOST=$(kubectl get service package-zero-adapter-mqtt-vertx --output='jsonpath={.status.loadBalancer.ingress[0].ip}' -n package-zero)
+MQTT_ADAPTER_PORT=8883
 </code></pre>
 </div>
 </div>
@@ -164,7 +165,8 @@ MQTT_ADAPTER_URL=https://$(kubectl get service package-zero-adapter-mqtt-vertx -
 <div class="tab-pane " id="variants-openshift" role="tabpanel" aria-labelledby="variants-openshift-tab">
 <div class="clipboard">
 <pre><code>DEVICE_REGISTRY_URL=https://$(oc get -n package-zero route package-zero-service-device-registry-https --template='{{.spec.host}}')
-MQTT_ADAPTER_URL=https://$(oc -n package-zero get route package-zero-adapter-http-vertx-sec --template='{{.spec.host}}')
+MQTT_ADAPTER_URL=$(oc -n package-zero get route package-zero-adapter-http-vertx-sec --template='{{.spec.host}}')
+MQTT_ADAPTER_PORT=443
 </code></pre>
 </div>
 </div>
