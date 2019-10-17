@@ -50,6 +50,16 @@ There are several aspects to that, which make the use of Tiller complicated. The
     </item>
     
     <item>
+      <title>Why are you using insecure settings?</title>
+      <link>https://eclipse.org/packages/faq/06_insecure/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://eclipse.org/packages/faq/06_insecure/</guid>
+      <description>Every now and then, you might spot a --insecure (or equivalent settings) in the commands.
+It is unfortunate, but sometimes it is necessary. With the availability of Let&#39;s Encrypt, it would actually be rather simple to add proper TLS certificates. But when you are running a local minikube instance, you can&#39;t properly use certificates. Also does the process of getting a proper Let&#39;s Encrypt certificate still need a significant effort and understanding, on the user side, especially when requesting a wildcard certificate.</description>
+    </item>
+    
+    <item>
       <title>My question isn&#39;t answered here!</title>
       <link>https://eclipse.org/packages/faq/xx_404/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

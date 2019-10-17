@@ -10,13 +10,14 @@
 
     <title> | Eclipse IoT Packages™</title>
 
-   <style>body{padding-top:56px}h1[id]:before,h2[id]:before,h3[id]:before,h4[id]:before,h5[id]:before,h6[id]:before{display:block;content:"";margin-top:-75px;height:75px;visibility:hidden}h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]{pointer-events:none}.toc-anchor{display:block;position:relative;top:-70px;visibility:hidden}footer{background:#f0f0f0;padding:3rem;margin-top:3rem;font-size:small}.border-callout-left{border-left:solid 5px;padding-left:.5rem;border-radius:5px}pre{padding:1rem;background:#fafafa}@media(min-width:992px){pre{padding:1.5rem}}.toc>ul{padding-left:0!important}.toc ul{padding-left:1rem}.toc-item{list-style:none}.req-card h4,.req-card h5{margin-bottom:0}.req-card dl{margin-bottom:0}.req-card dd{margin-bottom:0}.clipboard{position:relative}.btn-clipboard{position:absolute;top:10px;right:10px;font-size:80%}.btn-clipboard:hover{color:#fff;background-color:#007bff}.btn-clipboard:focus{box-shadow:none}</style>
-    <script>function generateToc(target,elements){var callback=function(){var toc=$(target);toc.empty();var toclist=$("<ul class='toc-list'></ul>");toc.append(toclist);var currentLevel=-1;var current=toclist;$(elements).each(function(){var id=$(this).attr('id');$(this).before("<a class='toc-anchor' name='"+id+"'></a>");var level=parseInt(this.tagName.substr(1));if(currentLevel<=0){currentLevel=level;}
+   <style>body{padding-top:56px}h1[id]:before,h2[id]:before,h3[id]:before,h4[id]:before,h5[id]:before,h6[id]:before{display:block;content:"";margin-top:-75px;height:75px;visibility:hidden}h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]{pointer-events:none}.toc-anchor{display:block;position:relative;top:-70px;visibility:hidden}footer{background:#f0f0f0;padding:3rem;margin-top:3rem;font-size:small}.border-callout-left{border-left:solid 5px;padding-left:.5rem;border-radius:5px}pre{padding:1rem;background:#fafafa}@media(min-width:992px){pre{padding:1.5rem}}.toc>ul{padding-left:0!important}.toc ul{padding-left:1rem}.toc-item{list-style:none}.req-card h4,.req-card h5{margin-bottom:0}.req-card dl{margin-bottom:0}.req-card dd{margin-bottom:0}.clipboard{position:relative}.btn-clipboard{position:absolute;top:.4rem;right:.4rem;font-size:100%;padding:.25rem .5rem;color:#818a91;font-size:85%}.btn-clipboard:hover{color:#fff;background-color:#007bff}.btn-clipboard:focus{box-shadow:none}</style>
+    <script>function onReady(fn){if(document.readyState==="complete"||(document.readyState!=="loading"&&!document.documentElement.doScroll)){fn();}else{document.addEventListener("DOMContentLoaded",fn);}}
+function generateToc(target,elements){onReady(function(){var toc=$(target);toc.empty();var toclist=$("<ul class='toc-list'></ul>");toc.append(toclist);var currentLevel=-1;var current=toclist;$(elements).each(function(){var id=$(this).attr('id');$(this).before("<a class='toc-anchor' name='"+id+"'></a>");var level=parseInt(this.tagName.substr(1));if(currentLevel<=0){currentLevel=level;}
 while(currentLevel<level){var next=$("<ul></ul>");var t=current.children().last();if(t.length==0){var li2=$("<li class='toc-item'></li>");current.append(li2);t=li2;}
 t.append(next);current=next;currentLevel++;}
 while(currentLevel>level){current=current.parent().parent();currentLevel--;}
-var li=$("<li class='toc-item'><a class='text-muted' href='#"+id+"'>"+$(this).text()+"</a></li>");current.append(li);});}
-if(document.readyState==="complete"||(document.readyState!=="loading"&&!document.documentElement.doScroll)){callback();}else{document.addEventListener("DOMContentLoaded",callback);}}</script>
+var li=$("<li class='toc-item'><a class='text-muted' href='#"+id+"'>"+$(this).text()+"</a></li>");current.append(li);});});}
+onReady(function(){$('[data-toggle="tooltip"]').tooltip({});});</script>
 
     
     <link href="/packages/projects/iot.hawkbit/index.xml" rel="alternate" type="application/rss+xml" title="Eclipse IoT Packages™" />
@@ -92,6 +93,7 @@ if(document.readyState==="complete"||(document.readyState!=="loading"&&!document
 <section></section>
 
 
+<section>
 <ul>
     
 </ul>
@@ -100,7 +102,7 @@ if(document.readyState==="complete"||(document.readyState!=="loading"&&!document
 
 
 
-</div>
+</section>
 
 </div>
 
