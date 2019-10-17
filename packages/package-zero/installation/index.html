@@ -19,8 +19,6 @@ while(currentLevel>level){current=current.parent().parent();currentLevel--;}
 var li=$("<li class='toc-item'><a class='text-muted' href='#"+id+"'>"+$(this).text()+"</a></li>");current.append(li);});});}
 onReady(function(){$('[data-toggle="tooltip"]').tooltip({});});</script>
 
-    
-
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Installation"/>
 <meta name="twitter:description" content="You will need a Kubernetes instance in order to deploy this package. If you haven&#39;t done so already, take a look at our Kubernetes installation page. Any Kubernetes compatible cluster will do, as long as it meets the requirements.

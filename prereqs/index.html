@@ -19,8 +19,6 @@ while(currentLevel>level){current=current.parent().parent();currentLevel--;}
 var li=$("<li class='toc-item'><a class='text-muted' href='#"+id+"'>"+$(this).text()+"</a></li>");current.append(li);});});}
 onReady(function(){$('[data-toggle="tooltip"]').tooltip({});});</script>
 
-    
-
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Pre-Requisites"/>
 <meta name="twitter:description" content="Kubernetes Client First of all, you will need a command tool named kubectl. This application allows you to interact with your Kubernetes cluster from the command line. While Kubernetes also comes with a Web UI, it is much simpler to document the installation procedures using command line tool. Also does the Web UI change over time, and with different Kubernetes variants. However the kubectl tool works with all variations of Kubernetes, as it uses the standardized API in the background."/>

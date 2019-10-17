@@ -19,8 +19,6 @@ while(currentLevel>level){current=current.parent().parent();currentLevel--;}
 var li=$("<li class='toc-item'><a class='text-muted' href='#"+id+"'>"+$(this).text()+"</a></li>");current.append(li);});});}
 onReady(function(){$('[data-toggle="tooltip"]').tooltip({});});</script>
 
-    
-
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Why aren&#39;t you using Tiller?"/>
 <meta name="twitter:description" content="Tiller is a server side component for Helm. It allows the Helm client, which is on your local machine, to talk to the cluster, and let it perform the deployment.
