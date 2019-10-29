@@ -1,318 +1,226 @@
 <!doctype html>
 <html lang="en">
 
+<head>
 
-  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="/packages/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="/https://staging.eclipse.org/packages/assets/bootstrap/bootstrap.min.css">
 
-    <title>Take a tour | Eclipse IoT Packages™</title>
+    <title>Take a tour</title>
 
-   <style>body{padding-top:56px}h1[id]:before,h2[id]:before,h3[id]:before,h4[id]:before,h5[id]:before,h6[id]:before{display:block;content:"";margin-top:-75px;height:75px;visibility:hidden}h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]{pointer-events:none}.toc-anchor{display:block;position:relative;top:-70px;visibility:hidden}footer{background:#f0f0f0;padding:3rem;margin-top:3rem;font-size:small}.border-callout-left{border-left:solid 5px;padding-left:.5rem;border-radius:5px}pre{padding:1rem;background:#fafafa}@media(min-width:992px){pre{padding:1.5rem}}.toc>ul{padding-left:0!important}.toc ul{padding-left:1rem}.toc-item{list-style:none}.req-card h4,.req-card h5{margin-bottom:0}.req-card dl{margin-bottom:0}.req-card dd{margin-bottom:0}.clipboard{position:relative}.btn-clipboard{position:absolute;top:.4rem;right:.4rem;font-size:100%;padding:.25rem .5rem;color:#818a91;font-size:85%}.btn-clipboard:hover{color:#fff;background-color:#007bff}.btn-clipboard:focus{box-shadow:none}</style>
-    <script>function onReady(fn){if(document.readyState==="complete"||(document.readyState!=="loading"&&!document.documentElement.doScroll)){fn();}else{document.addEventListener("DOMContentLoaded",fn);}}
-function generateToc(target,elements){onReady(function(){var toc=$(target);toc.empty();var toclist=$("<ul class='toc-list'></ul>");toc.append(toclist);var currentLevel=-1;var current=toclist;$(elements).each(function(){var id=$(this).attr('id');$(this).before("<a class='toc-anchor' name='"+id+"'></a>");var level=parseInt(this.tagName.substr(1));if(currentLevel<=0){currentLevel=level;}
-while(currentLevel<level){var next=$("<ul></ul>");var t=current.children().last();if(t.length==0){var li2=$("<li class='toc-item'></li>");current.append(li2);t=li2;}
-t.append(next);current=next;currentLevel++;}
-while(currentLevel>level){current=current.parent().parent();currentLevel--;}
-var li=$("<li class='toc-item'><a class='text-muted' href='#"+id+"'>"+$(this).text()+"</a></li>");current.append(li);});});}
-onReady(function(){$('[data-toggle="tooltip"]').tooltip({});});</script>
-
-    <meta name="twitter:card" content="summary"/>
+    <link rel="stylesheet" href="/https://staging.eclipse.org/packages/assets/css/style.css">
+    <script src="/https://staging.eclipse.org/packages/assets/js/code.js"></script>
+    
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Take a tour"/>
-<meta name="twitter:description" content="Under construction This tutorial is still under construction, and not finished yet. Of course, your are still welcome to it. Take a look and give some feedback.
-Just be aware, that some content might still be missing, change over time, or that you might experience some issues when testing.  The following examples will use information which depends on your environment. All of this information is listed in this section, and will be set as environment variables, so that all command using it, can make use of those variables:"/>
 
+</head>
 
-  </head>
+<body>
 
-
-<body class="">
-<header>
+    <header>
   <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
     <a class="navbar-brand" href="#"> Eclipse IoT Packages™</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav mr-auto">
-
-        
-        <li class="nav-item">
-
-            
-
-            <a class="nav-link"
-               href="/packages/">Home</a>
+      <ul class="navbar-nav mr-auto"><li class="nav-item">
+          <a
+              class="nav-link"
+              href="/https://staging.eclipse.org/packages/">Home</a>
         </li>
         <li class="nav-item">
-
-            
-
-            <a class="nav-link"
-               href="/packages/about/">About</a>
+          <a
+              class="nav-link"
+              href="/https://staging.eclipse.org/packages/about/">About</a>
         </li>
         <li class="nav-item">
-
-            
-
-            <a class="nav-link"
-               href="/packages/faq/">FAQ</a>
+          <a
+              class="nav-link"
+              href="/https://staging.eclipse.org/packages/faq/">FAQ</a>
         </li>
         <li class="nav-item">
-
-            
-
-            <a class="nav-link"
-               href="/packages/contribute/">Contribute</a>
+          <a
+              class="nav-link"
+              href="/https://staging.eclipse.org/packages/contribute/">Contribute</a>
         </li>
         <li class="nav-item">
-
-            
-
-            <a class="nav-link"
-               href="/packages/prereqs/">Prerequisites</a>
+          <a
+              class="nav-link"
+              href="/https://staging.eclipse.org/packages/prereqs/">Prerequisites</a>
         </li>
-        
-
-      </ul>
+        </ul>
     </div>
   </nav>
-
 </header>
-<main id="main" role="main" >
 
-<div class="container mt-5">
+    <main id="main" role="main" >
+      <div class="container mt-5">
 <h1>Package Zero</h1>
 <p class="lead">A package connecting and managing sensor style devices. Connecting sensors to the cloud, processing data with a digital twin platform, and managing device firmware.</p>
+</div><div class="container mt-5">
 
+<nav class="nav nav-pills nav-fill mt-5 mb-5"><a class="nav-item nav-link " href="/https://staging.eclipse.org/packages/packages/package-zero/">Overview</a><a class="nav-item nav-link " href="/https://staging.eclipse.org/packages/packages/package-zero/installation/">Installation</a><a class="nav-item nav-link " href="/https://staging.eclipse.org/packages/packages/package-zero/learn/">Learn more</a><a class="nav-item nav-link  active" href="/https://staging.eclipse.org/packages/packages/package-zero/tour/">Take a tour</a></nav>
+<div class="row">
 
+<div class="col-12 col-md-8 col-lg-9">
 
-<nav class="nav nav-pills nav-fill mt-5 mb-5">
-  <a class="nav-item nav-link " href="/packages/packages/package-zero/">Overview</a>
+    <div role="alert" class="alert alert-warning"><h4 class="alert-heading">Under construction </h4>
 
-  
-  <a class="nav-item nav-link " href="/packages/packages/package-zero/installation/">Installation</a>
-  
-  <a class="nav-item nav-link " href="/packages/packages/package-zero/learn/">Learn more</a>
-  
-  <a class="nav-item nav-link  active" href="/packages/packages/package-zero/tour/">Take a tour</a>
-  
-</nav>
+This tutorial is still under construction, and not finished yet.
+Of course, your are still welcome to try it. Take a look and give some feedback.
 
-<section><div class="row">
-
-
-
-
-
-
-<div class="col-12 col-md-8 col-lg-9 ">
-<div class="alert alert-warning" role="alert">
-
-<h4 class="alert-heading">Under construction</h4>
-
-<p>This tutorial is still under construction, and not finished yet.
-Of course, your are still welcome to it. Take a look and give some feedback.</p>
-
-<hr />
-
-<p class="mb-0">
+<hr /><p class="mb-0">
 Just be aware, that some content might still be missing, change over time,
 or that you might experience some issues when testing.
 </p>
 
 </div>
 
-<p>The following examples will use information which depends on your
+    <p>The following examples will use information which depends on your
 environment. All of this information is listed in this section, and will be
 set as environment variables, so that all command using it, can make use
 of those variables:</p>
 
-<nav>
-  <div class="nav nav-tabs" role="tablist">
-    
-    <a class="nav-item nav-link  active" data-toggle="tab" id="variants-minikube-navtab" href="#variants-minikube" aria-controls="variants-minikube">Minikube</a>
-    
-    <a class="nav-item nav-link " data-toggle="tab" id="variants-kubernetes-navtab" href="#variants-kubernetes" aria-controls="variants-kubernetes">Kubernetes</a>
-    
-    <a class="nav-item nav-link " data-toggle="tab" id="variants-openshift-navtab" href="#variants-openshift" aria-controls="variants-openshift">OpenShift</a>
-     
-  </div>
-</nav>
-
-<div class="tab-content">
-
-<div class="tab-pane  active show" id="variants-minikube" role="tabpanel" aria-labelledby="variants-minikube-tab">
-<div class="clipboard">
-<pre><code>DEVICE_REGISTRY_URL=$(minikube service -n package-zero package-zero-service-device-registry-ext --url --https | grep 31443)
+    <nav><div class="nav nav-tabs" role="tablist"><a class="nav-item nav-link active" data-toggle="tab" id="variants-1-0-tab" href="#variants-1-0" aria-controls="variants-1-0">Minikube</a><a class="nav-item nav-link" data-toggle="tab" id="variants-1-1-tab" href="#variants-1-1" aria-controls="variants-1-1">Kubernetes</a><a class="nav-item nav-link" data-toggle="tab" id="variants-1-2-tab" href="#variants-1-2" aria-controls="variants-1-2">OpenShift</a></div></nav>
+    <div class="tab-content">
+<div class="tab-pane active show" id="variants-1-0" role="tabpanel" aria-labelledby="variants-1-0-tab">
+        <div class="clipboard"><pre><code>DEVICE_REGISTRY_URL=$(minikube service -n package-zero package-zero-service-device-registry-ext --url --https | grep 31443)
 MQTT_ADAPTER_HOST=$(minikube service -n package-zero package-zero-adapter-mqtt-vertx --url | grep 30883 | sed -e 's/^http:\/\///' -e 's/:.*$//')
-MQTT_ADAPTER_PORT=30883
-</code></pre>
-</div>
-</div>
+MQTT_ADAPTER_PORT=30883</code></pre></div>
+      </div>
 
-<div class="tab-pane " id="variants-kubernetes" role="tabpanel" aria-labelledby="variants-kubernetes-tab">
-<div class="clipboard">
-<pre><code>DEVICE_REGISTRY_URL=https://$(kubectl get service package-zero-service-device-registry-ext --output='jsonpath={.status.loadBalancer.ingress[0].ip}' -n package-zero):28080
+<div class="tab-pane" id="variants-1-1" role="tabpanel" aria-labelledby="variants-1-1-tab">
+        <div class="clipboard"><pre><code>DEVICE_REGISTRY_URL=https://$(kubectl get service package-zero-service-device-registry-ext --output='jsonpath={.status.loadBalancer.ingress[0].ip}' -n package-zero):28080
 MQTT_ADAPTER_HOST=$(kubectl get service package-zero-adapter-mqtt-vertx --output='jsonpath={.status.loadBalancer.ingress[0].ip}' -n package-zero)
-MQTT_ADAPTER_PORT=8883
-</code></pre>
-</div>
-</div>
+MQTT_ADAPTER_PORT=8883</code></pre></div>
+      </div>
 
-<div class="tab-pane " id="variants-openshift" role="tabpanel" aria-labelledby="variants-openshift-tab">
-<div class="clipboard">
-<pre><code>DEVICE_REGISTRY_URL=https://$(oc get -n package-zero route package-zero-service-device-registry-https --template='{{.spec.host}}')
+<div class="tab-pane" id="variants-1-2" role="tabpanel" aria-labelledby="variants-1-2-tab">
+        <div class="clipboard"><pre><code>DEVICE_REGISTRY_URL=https://$(oc get -n package-zero route package-zero-service-device-registry-https --template='{{.spec.host}}')
 MQTT_ADAPTER_URL=$(oc -n package-zero get route package-zero-adapter-http-vertx-sec --template='{{.spec.host}}')
-MQTT_ADAPTER_PORT=443
-</code></pre>
-</div>
-</div>
+MQTT_ADAPTER_PORT=443</code></pre></div>
+      </div>
 
-<p></div></p>
-
-<h2 id="working-with-devices">Working with devices</h2>
-
-<p>The next sections will create a new tenant and register a device for it.</p>
-
-<h3 id="create-a-new-tenant">Create a new tenant</h3>
-
-<p>Create a new tenant named <code>my-tenant</code>:</p>
-
-<div class="clipboard">
-<pre><code>curl -i --insecure -XPOST ${DEVICE_REGISTRY_URL}/v1/tenants/my-tenant
-</code></pre>
 </div>
 
-<p>This should return a result of <code>201 Created</code>.</p>
+    <h2 id="working-with-devices">Working with devices</h2>
 
-<p><details>
-<summary>Example of a successful result</summary></p>
+    <p>The next sections will create a new tenant and register a device for it.</p>
 
-<pre><code>HTTP/1.1 201 Created
+    <h3 id="create-a-new-tenant">Create a new tenant</h3>
+
+    <p>Create a new tenant named <code class="highlighter-rouge">my-tenant</code>:</p>
+
+    <div class="clipboard"><pre><code>curl -i --insecure -XPOST ${DEVICE_REGISTRY_URL}/v1/tenants/my-tenant</code></pre></div>
+
+    <p>This should return a result of <code class="highlighter-rouge">201 Created</code>.</p>
+
+    <p><details><summary>Example of a successful result</summary><div>
+          <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HTTP/1.1 201 Created
 etag: be547a07-4a03-4c43-a274-d02f63f8d467
 location: /v1/tenants/my-tenant
 content-type: application/json; charset=utf-8
 content-length: 12
 
-{&quot;id&quot;:&quot;my-tenant&quot;}
-</code></pre>
+{"id":"my-tenant"}
+</code></pre></div>          </div>
+        </div></details></p>
 
-<p></details></p>
+    <h3 id="register-a-new-device">Register a new device</h3>
 
-<h3 id="register-a-new-device">Register a new device</h3>
+    <p>Next we can register a new device, named <code class="highlighter-rouge">my-device-1</code> for the tenant we just created:</p>
 
-<p>Next we can register a new device, named <code>my-device-1</code> for the tenant we just created:</p>
+    <div class="clipboard"><pre><code>curl -i --insecure -XPOST ${DEVICE_REGISTRY_URL}/v1/devices/my-tenant/my-device-1</code></pre></div>
 
-<div class="clipboard">
-<pre><code>curl -i --insecure -XPOST ${DEVICE_REGISTRY_URL}/v1/devices/my-tenant/my-device-1
-</code></pre>
-</div>
+    <p>This should return a result of <code class="highlighter-rouge">201 Created</code>.</p>
 
-<p>This should return a result of <code>201 Created</code>.</p>
-
-<p><details>
-<summary>Example of a successful result</summary></p>
-
-<pre><code>HTTP/1.1 201 Created
+    <p><details><summary>Example of a successful result</summary><div>
+          <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HTTP/1.1 201 Created
 etag: d48f4e13-b398-4c73-bbc3-5ac97a81b3e8
 location: /v1/devices/iot/my-device-1
 content-type: application/json; charset=utf-8
 content-length: 17
 
-{&quot;id&quot;:&quot;my-device-1&quot;}
-</code></pre>
+{"id":"my-device-1"}
+</code></pre></div>          </div>
+        </div></details></p>
 
-<p></details></p>
+    <h3 id="set-device-credentials">Set device credentials</h3>
 
-<h3 id="set-device-credentials">Set device credentials</h3>
-
-<p>The device created has no credentials assigned. So it will not be possible for this
+    <p>The device created has no credentials assigned. So it will not be possible for this
 device to directly connect to the platform. This is ok for devices attached via
 a <em>gateway device</em>, but we want this device to be able to connect, so the next step is
 to assign a username/password combination:</p>
 
-<div class="clipboard">
-<pre><code>curl -i --insecure -XPUT ${DEVICE_REGISTRY_URL}/v1/credentials/my-tenant/my-device-1 \
-  -H &quot;Content-Type: application/json&quot; --data-binary @- &lt;&lt;__EOF__
-[{
-  &quot;type&quot;: &quot;hashed-password&quot;,
-  &quot;auth-id&quot;: &quot;my-auth-id-1&quot;,
-  &quot;secrets&quot;: [{
-    &quot;salt&quot;: &quot;Mq7wFw==&quot;,
-    &quot;pwd-hash&quot;: &quot;AQIDBAUGBwg=&quot;,
-    &quot;hash-function&quot;: &quot;sha-512&quot;
-  }]
-}]
-__EOF__
-</code></pre>
-</div>
+    <div class="clipboard"><pre><code>curl -i --insecure -XPUT ${DEVICE_REGISTRY_URL}/v1/credentials/my-tenant/my-device-1 \
+      -H "Content-Type: application/json" --data-binary @- &lt;&lt;__EOF__
+    [{
+      "type": "hashed-password",
+      "auth-id": "my-auth-id-1",
+      "secrets": [{
+        "salt": "Mq7wFw==",
+        "pwd-hash": "AQIDBAUGBwg=",
+        "hash-function": "sha-512"
+      }]
+    }]
+    __EOF__</code></pre></div>
 
-<p><details>
-<summary>Example of a successful result</summary></p>
-
-<pre><code>HTTP/1.1 204 No Content
+    <p><details><summary>Example of a successful result</summary><div>
+          <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HTTP/1.1 204 No Content
 etag: a7edc4b8-701a-4fe1-85c4-1717c0d24562
-</code></pre>
+</code></pre></div>          </div>
+        </div></details></p>
 
-<p></details></p>
+    <h3 id="understanding-identities">Understanding identities</h3>
 
-<h3 id="understanding-identities">Understanding identities</h3>
+    <p>The previous step assigned the credentials of <code class="highlighter-rouge">my-auth-id-1</code> and <code class="highlighter-rouge">password</code> to the device <code class="highlighter-rouge">my-device-1</code>.</p>
 
-<p>The previous step assigned the credentials of <code>my-auth-id-1</code> and <code>password</code> to the device <code>my-device-1</code>.</p>
+    <p>Please note that there is a difference between the <em>username</em> of the device (<code class="highlighter-rouge">my-auth-id-1</code>) and
+the name of the device (<code class="highlighter-rouge">my-device-1</code>). When connecting to e.g. the MQTT protocol adapter,
+you will need to use the full qualified username of <code class="highlighter-rouge">my-auth-id-1@my-tenant</code>
+(<em>authentication id</em> and <em>tenant name</em>), rather than the “device id” (<code class="highlighter-rouge">my-device-1</code>).</p>
 
-<p>Please note that there is a difference between the <em>username</em> of the device (<code>my-auth-id-1</code>) and
-the name of the device (<code>my-device-1</code>). When connecting to e.g. the MQTT protocol adapter,
-you will need to use the full qualified username of <code>my-auth-id-1@my-tenant</code>
-(<em>authentication id</em> and <em>tenant name</em>), rather than the &quot;device id&quot; (<code>my-device-1</code>).</p>
+    <p>The <em>authentication id</em> is only used for the authentication process. Later on, the messages will be marked
+with the <em>device id</em>, and the backend system isn’t aware of the <em>authentication id</em> anymore.</p>
 
-<p>The <em>authentication id</em> is only used for the authentication process. Later on, the messages will be marked
-with the <em>device id</em>, and the backend system isn't aware of the <em>authentication id</em> anymore.</p>
-
-<p>Of course you may use the same value for the <em>authentication id</em> and the <em>device id</em>. In this tutorial however,
+    <p>Of course you may use the same value for the <em>authentication id</em> and the <em>device id</em>. In this tutorial however,
 we use distinct values to show the difference.</p>
 
-<h2 id="working-with-data">Working with data</h2>
+    <h2 id="working-with-data">Working with data</h2>
 
-<p>Now that the device is registered, and has credentials set up, we can start publishing data.</p>
+    <p>Now that the device is registered, and has credentials set up, we can start publishing data.</p>
 
-<h3 id="start-consumer">Start consumer</h3>
+    <h3 id="start-consumer">Start consumer</h3>
 
-<h3 id="publish-telemetry-data-via-mqtt">Publish telemetry data via MQTT</h3>
+    <h3 id="publish-telemetry-data-via-mqtt">Publish telemetry data via MQTT</h3>
 
-<p>Publish a telemetry message using the MQTT endpoint:</p>
+    <p>Publish a telemetry message using the MQTT endpoint:</p>
 
-<div class="clipboard">
-<pre><code>mosquitto_pub --insecure -h ${MQTT_ADAPTER_HOST} -p ${MQTT_ADAPTER_PORT} \
-  -u my-auth-id-1@my-tenant -P my-password \
-  --cafile charts/eclipse-hono/hono-demo-certs-jar/root-cert.pem \
-  -t telemetry -m '{&quot;temperature&quot;: 5}'
-</code></pre>
-</div>
+    <div class="clipboard"><pre><code>mosquitto_pub --insecure -h ${MQTT_ADAPTER_HOST} -p ${MQTT_ADAPTER_PORT} \
+      -u my-auth-id-1@my-tenant -P my-password \
+      --cafile charts/eclipse-hono/hono-demo-certs-jar/root-cert.pem \
+      -t telemetry -m '{"temperature": 5}'</code></pre></div>
 
-<div class="alert alert-info" role="alert">
-
-
-
+    <div role="alert" class="alert alert-info">
 Although a certificate is provided, <strong>insecure</strong> is still required because
 the hostname would not match the certificate.
 </div>
 
-<h2 id="fetch-from-digital-twin">Fetch from Digital twin</h2>
+    <h2 id="fetch-from-digital-twin">Fetch from Digital twin</h2>
 
-<h2 id="updating-the-firmware">Updating the firmware</h2>
+    <h2 id="updating-the-firmware">Updating the firmware</h2>
 
-</div>
+  </div>
 
+<div class="col-12 col-md-4 col-lg-3 
 
+">
 
-
-
-
-<div class="col-12 col-md-4 col-lg-3 d-none d-md-block">
-<div class="position-sticky" style="top: 4rem;">
+    <div class="position-sticky" style="top: 4rem;">
 
 
 <aside>
@@ -328,18 +236,16 @@ the hostname would not match the certificate.
 
 
 </div>
-</div>
 
-
-
-</div>
-</section>
+  </div>
 
 </div>
 
+</div>
 
     </main>
-<footer class="">
+
+    <footer>
 
     <div class="container">
 
@@ -348,22 +254,23 @@ the hostname would not match the certificate.
     
 
         
-        
+
             <div class="col-6 col-md">
+            
             
                 <h5>Eclipse IoT Packages</h5>
                 <ul class="list-unstyled">
                     
                         <li>
-                            <a class="text-muted" href="/packages/">Home</a>
+                            <a class="text-muted" href="/https://staging.eclipse.org/packages/">Home</a>
                         </li>
                     
                         <li>
-                            <a class="text-muted" href="/packages/about">About</a>
+                            <a class="text-muted" href="/https://staging.eclipse.org/packages/about">About</a>
                         </li>
                     
                         <li>
-                            <a class="text-muted" href="/packages/contribute">Contribute</a>
+                            <a class="text-muted" href="/https://staging.eclipse.org/packages/contribute">Contribute</a>
                         </li>
                     
                         <li>
@@ -374,7 +281,9 @@ the hostname would not match the certificate.
             
             </div>
         
+
             <div class="col-6 col-md">
+            
             
                 <h5>Eclipse IoT</h5>
                 <ul class="list-unstyled">
@@ -391,10 +300,20 @@ the hostname would not match the certificate.
             
             </div>
         
+
             <div class="col-6 col-md">
+            
             
                 <h5>Legal</h5>
                 <ul class="list-unstyled">
+                    
+                        <li>
+                            <a class="text-muted" href="http://www.eclipse.org/legal/privacy.php">Privacy Policy</a>
+                        </li>
+                    
+                        <li>
+                            <a class="text-muted" href="http://www.eclipse.org/legal/termsofuse.php">Terms of Use</a>
+                        </li>
                     
                         <li>
                             <a class="text-muted" href="https://www.eclipse.org/legal/copyright.php">Copyright Agent</a>
@@ -408,19 +327,13 @@ the hostname would not match the certificate.
                             <a class="text-muted" href="http://www.eclipse.org/legal">Legal Resources</a>
                         </li>
                     
-                        <li>
-                            <a class="text-muted" href="http://www.eclipse.org/legal/privacy.php">Privacy Policy</a>
-                        </li>
-                    
-                        <li>
-                            <a class="text-muted" href="http://www.eclipse.org/legal/termsofuse.php">Terms of Use</a>
-                        </li>
-                    
                 </ul>
             
             </div>
         
+
             <div class="col-6 col-md">
+            
             
                 <h5>Eclipse Foundation</h5>
                 <ul class="list-unstyled">
@@ -430,11 +343,11 @@ the hostname would not match the certificate.
                         </li>
                     
                         <li>
-                            <a class="text-muted" href="https://www.eclipse.org/org/foundation/directors.php">Board of Directors</a>
+                            <a class="text-muted" href="https://www.eclipse.org/org/foundation/contact.php">Contact us</a>
                         </li>
                     
                         <li>
-                            <a class="text-muted" href="https://www.eclipse.org/org/foundation/contact.php">Contact us</a>
+                            <a class="text-muted" href="https://www.eclipse.org/org/foundation/directors.php">Board of Directors</a>
                         </li>
                     
                 </ul>
@@ -450,16 +363,18 @@ the hostname would not match the certificate.
         <div class="col-12 col-md text-muted">Copyright © Eclipse Foundation, Inc. All Rights Reserved.</div>
     </div>
     
-    
+
     </div>
 
 </footer>
-<script src="/packages/popper.min.js"></script>
-    <script src="/packages/jquery.min.js"></script>
-    <script src="/packages/bootstrap/bootstrap.min.js"></script>
 
-    <script src="/packages/clipboard.min.js"></script>
-    <script src="/packages/clipboard.js"></script>
+
+    <script src="/https://staging.eclipse.org/packages/assets/popper.min.js"></script>
+    <script src="/https://staging.eclipse.org/packages/assets/jquery.min.js"></script>
+    <script src="/https://staging.eclipse.org/packages/assets/bootstrap/bootstrap.min.js"></script>
+
+    <script src="/https://staging.eclipse.org/packages/assets/clipboard.min.js"></script>
+    <script src="/https://staging.eclipse.org/packages/assets/clipboard.js"></script>
 
 </body>
 
