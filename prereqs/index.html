@@ -1,124 +1,99 @@
 <!doctype html>
 <html lang="en">
 
+<head>
 
-  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="/packages/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="/packages/assets/bootstrap/bootstrap.min.css">
 
-    <title>Pre-Requisites | Eclipse IoT Packages™</title>
+    <title>Pre-Requisites</title>
 
-   <style>body{padding-top:56px}h1[id]:before,h2[id]:before,h3[id]:before,h4[id]:before,h5[id]:before,h6[id]:before{display:block;content:"";margin-top:-75px;height:75px;visibility:hidden}h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]{pointer-events:none}.toc-anchor{display:block;position:relative;top:-70px;visibility:hidden}footer{background:#f0f0f0;padding:3rem;margin-top:3rem;font-size:small}.border-callout-left{border-left:solid 5px;padding-left:.5rem;border-radius:5px}pre{padding:1rem;background:#fafafa}@media(min-width:992px){pre{padding:1.5rem}}.toc>ul{padding-left:0!important}.toc ul{padding-left:1rem}.toc-item{list-style:none}.req-card h4,.req-card h5{margin-bottom:0}.req-card dl{margin-bottom:0}.req-card dd{margin-bottom:0}.clipboard{position:relative}.btn-clipboard{position:absolute;top:.4rem;right:.4rem;font-size:100%;padding:.25rem .5rem;color:#818a91;font-size:85%}.btn-clipboard:hover{color:#fff;background-color:#007bff}.btn-clipboard:focus{box-shadow:none}</style>
-    <script>function onReady(fn){if(document.readyState==="complete"||(document.readyState!=="loading"&&!document.documentElement.doScroll)){fn();}else{document.addEventListener("DOMContentLoaded",fn);}}
-function generateToc(target,elements){onReady(function(){var toc=$(target);toc.empty();var toclist=$("<ul class='toc-list'></ul>");toc.append(toclist);var currentLevel=-1;var current=toclist;$(elements).each(function(){var id=$(this).attr('id');$(this).before("<a class='toc-anchor' name='"+id+"'></a>");var level=parseInt(this.tagName.substr(1));if(currentLevel<=0){currentLevel=level;}
-while(currentLevel<level){var next=$("<ul></ul>");var t=current.children().last();if(t.length==0){var li2=$("<li class='toc-item'></li>");current.append(li2);t=li2;}
-t.append(next);current=next;currentLevel++;}
-while(currentLevel>level){current=current.parent().parent();currentLevel--;}
-var li=$("<li class='toc-item'><a class='text-muted' href='#"+id+"'>"+$(this).text()+"</a></li>");current.append(li);});});}
-onReady(function(){$('[data-toggle="tooltip"]').tooltip({});});</script>
-
-    <meta name="twitter:card" content="summary"/>
+    <link rel="stylesheet" href="/packages/assets/css/style.css">
+    <script src="/packages/assets/js/code.js"></script>
+    
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Pre-Requisites"/>
-<meta name="twitter:description" content="Kubernetes Client First of all, you will need a command tool named kubectl. This application allows you to interact with your Kubernetes cluster from the command line. While Kubernetes also comes with a Web UI, it is much simpler to document the installation procedures using command line tool. Also does the Web UI change over time, and with different Kubernetes variants. However the kubectl tool works with all variations of Kubernetes, as it uses the standardized API in the background."/>
+<meta name="twitter:description" content=""/>
 
+</head>
 
-  </head>
+<body>
 
-
-<body class="">
-<header>
+    <header>
   <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
     <a class="navbar-brand" href="#"> Eclipse IoT Packages™</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav mr-auto">
-
-        
-        <li class="nav-item">
-
-            
-
-            <a class="nav-link"
-               href="/packages/">Home</a>
+      <ul class="navbar-nav mr-auto"><li class="nav-item">
+          <a
+              class="nav-link"
+              href="/packages/">Home</a>
         </li>
         <li class="nav-item">
-
-            
-
-            <a class="nav-link"
-               href="/packages/about/">About</a>
+          <a
+              class="nav-link"
+              href="/packages/about/">About</a>
         </li>
         <li class="nav-item">
-
-            
-
-            <a class="nav-link"
-               href="/packages/faq/">FAQ</a>
+          <a
+              class="nav-link"
+              href="/packages/faq/">FAQ</a>
         </li>
         <li class="nav-item">
-
-            
-
-            <a class="nav-link"
-               href="/packages/contribute/">Contribute</a>
+          <a
+              class="nav-link"
+              href="/packages/contribute/">Contribute</a>
         </li>
         <li class="nav-item">
-
-            
-
-            <a class="nav-link active"
-               href="/packages/prereqs/">Prerequisites</a>
+          <a
+              class="nav-link active"
+              href="/packages/prereqs/">Prerequisites</a>
         </li>
-        
-
-      </ul>
+        </ul>
     </div>
   </nav>
-
 </header>
-<main id="main" role="main" >
 
-<div class="container mt-5">
+    <main id="main" role="main" >
+      <div class="container mt-5">
 <h1>Pre-Requisites</h1>
 <p class="lead">Getting you started with a common set of tools, used by all packages.</p>
+</div>
 
-<section><div class="row">
+<div class="container mt-5">
 
+<div class="row">
 
 <div class="col-12 col-md-8 col-lg-9">
-<h2 id="kubernetes-client">Kubernetes Client</h2>
 
-<p>First of all, you will need a command tool named <code>kubectl</code>. This application allows you to interact with
+    <h2 id="kubernetes-client">Kubernetes Client</h2>
+
+    <p>First of all, you will need a command tool named <code class="highlighter-rouge">kubectl</code>. This application allows you to interact with
 your Kubernetes cluster from the command line. While Kubernetes also comes with a Web UI, it is much simpler
 to document the installation procedures using command line tool. Also does the Web UI change over time, and
-with different Kubernetes variants. However the <code>kubectl</code> tool works with all variations of Kubernetes, as it
+with different Kubernetes variants. However the <code class="highlighter-rouge">kubectl</code> tool works with all variations of Kubernetes, as it
 uses the standardized API in the background.</p>
 
-<p>You can find more information in the Kubernetes documentation: <a href="https://kubernetes.io/docs/tasks/tools/install-kubectl/">Install and Set Up kubectl</a>.</p>
+    <p>You can find more information in the Kubernetes documentation: <a href="https://kubernetes.io/docs/tasks/tools/install-kubectl/">Install and Set Up kubectl</a>.</p>
 
-<h2 id="kubernetes-cluster">Kubernetes Cluster</h2>
+    <h2 id="kubernetes-cluster">Kubernetes Cluster</h2>
 
-<p>For the cloud side environment, you will need an installation of Kubernetes. Kubernetes comes in
+    <p>For the cloud side environment, you will need an installation of Kubernetes. Kubernetes comes in
 different forms, and we try to document a few of them for you. There are other variants as well,
 and you are welcome to try all of them. All packages should be able to run on any Kubernetes
 you provide.</p>
 
-<p>Packages are encouraged to give you an estimate of what resources they require. The following is
+    <p>Packages are encouraged to give you an estimate of what resources they require. The following is
 an example of what this may look like. You will need to translate this into the specific
 Kubernetes environment you have. Also may the package declare on which Kubernetes platform
-it was tested. This doesn't mean that other Kubernetes versions don't work, but sets some
+it was tested. This doesn’t mean that other Kubernetes versions don’t work, but sets some
 expectations of what was tested at some point.</p>
 
-<div class="row">
-
-
-
-
-
+    <div class="row">
 
 <div class="col-12 col-sm-6 col-md-5 col-lg-4 mx-md-auto mb-3">
 <div class="card req-card">
@@ -126,7 +101,11 @@ expectations of what was tested at some point.</p>
   <ul class="list-group list-group-flush">
 
 
-    <li class="list-group-item">
+
+
+
+
+<li class="list-group-item">
 
 <dl class="row">
 <dt class="col-sm-6">Kubernetes</dt>
@@ -135,16 +114,22 @@ expectations of what was tested at some point.</p>
 
 </li>
 
-    <li class="list-group-item">
+
+
+
+<li class="list-group-item">
 
 <dl class="row">
 <dt class="col-sm-6">CPUs</dt>
-<dd class="col-sm-6 text-right">&#43;2</dd>
+<dd class="col-sm-6 text-right">2</dd>
 </dl>
 
 </li>
 
-    <li class="list-group-item">
+
+
+
+<li class="list-group-item">
 
 <dl class="row">
 <dt class="col-sm-6">Memory</dt>
@@ -153,7 +138,10 @@ expectations of what was tested at some point.</p>
 
 </li>
 
-    <li class="list-group-item">
+
+
+
+<li class="list-group-item">
 
 <dl class="row">
 <dt class="col-sm-6">Disk</dt>
@@ -163,88 +151,75 @@ expectations of what was tested at some point.</p>
 </li>
 
 
-  </ul></div>
+  </ul>
+  
+  <div class="card-body">Additional requirements.</div>
+  
 </div>
 
-<p></div></p>
+</div>
 
-<p>For each documentation Kubernetes environment on this page, you will
+</div>
+
+    <p>For each documentation Kubernetes environment on this page, you will
 find a section that explains how to do this.</p>
 
-<h3 id="minikube">Minikube</h3>
+    <h3 id="minikube">Minikube</h3>
 
-<p><a href="https://kubernetes.io/docs/setup/learning-environment/minikube/">Minikube</a> is Kubernetes in a bottle.</p>
+    <p><a href="https://kubernetes.io/docs/setup/learning-environment/minikube/">Minikube</a> is Kubernetes in a bottle.</p>
 
-<p>Instead of provisioning a full blown cluster, it will create a virtual machine on your local system, and
+    <p>Instead of provisioning a full blown cluster, it will create a virtual machine on your local system, and
 provision a small, single-node cluster inside of it. As it puts the operating system in a VM, Minikube itself
 can run on all major operating systems, including Windows and Mac OS.</p>
 
-<p>Instead of duplicating the effort, documenting how to get Minikube up an running, we leave this to the
+    <p>Instead of duplicating the effort, documenting how to get Minikube up an running, we leave this to the
 excellent <a href="https://kubernetes.io/docs/tasks/tools/install-minikube/">documentation of Minikube</a> itself.</p>
 
-<h4 id="getting-started">Getting started</h4>
+    <h4 id="getting-started">Getting started</h4>
 
-<p>Once you have everything installed, you should be able to start a new cluster by executing:</p>
+    <p>Once you have everything installed, you should be able to start a new cluster by executing:</p>
 
-<div class="clipboard">
-<pre><code>minikube start
-</code></pre>
-</div>
+    <div class="clipboard"><pre><code>minikube start</code></pre></div>
 
-<p>And you can switch <code>kubectl</code> to the context <code>minikube</code>, and interact with your cluster:</p>
+    <p>And you can switch <code class="highlighter-rouge">kubectl</code> to the context <code class="highlighter-rouge">minikube</code>, and interact with your cluster:</p>
 
-<div class="clipboard">
-<pre><code>kubectl config use-context minikube
-</code></pre>
-</div>
+    <div class="clipboard"><pre><code>kubectl config use-context minikube</code></pre></div>
 
-<p>For example, get the current version of the client and server:</p>
+    <p>For example, get the current version of the client and server:</p>
 
-<div class="clipboard">
-<pre><code>kubectl version
-</code></pre>
-</div>
+    <div class="clipboard"><pre><code>kubectl version</code></pre></div>
 
-<p>Which should show a proper version for the client <strong>and</strong> the server:</p>
+    <p>Which should show a proper version for the client <strong>and</strong> the server:</p>
 
-<pre><code>Client Version: version.Info{Major:&quot;1&quot;, Minor:&quot;11+&quot;, GitVersion:&quot;v1.11.0+d4cacc0&quot;, GitCommit:&quot;d4cacc0&quot;, GitTreeState:&quot;clean&quot;, BuildDate:&quot;2018-10-10T16:38:01Z&quot;, GoVersion:&quot;go1.10.3&quot;, Compiler:&quot;gc&quot;, Platform:&quot;linux/amd64&quot;}
-Server Version: version.Info{Major:&quot;1&quot;, Minor:&quot;13+&quot;, GitVersion:&quot;v1.13.4+c2a5caf&quot;, GitCommit:&quot;c2a5caf&quot;, GitTreeState:&quot;clean&quot;, BuildDate:&quot;2019-09-21T02:12:52Z&quot;, GoVersion:&quot;go1.11.13&quot;, Compiler:&quot;gc&quot;, Platform:&quot;linux/amd64&quot;}
-</code></pre>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Client Version: version.Info{Major:"1", Minor:"11+", GitVersion:"v1.11.0+d4cacc0", GitCommit:"d4cacc0", GitTreeState:"clean", BuildDate:"2018-10-10T16:38:01Z", GoVersion:"go1.10.3", Compiler:"gc", Platform:"linux/amd64"}
+Server Version: version.Info{Major:"1", Minor:"13+", GitVersion:"v1.13.4+c2a5caf", GitCommit:"c2a5caf", GitTreeState:"clean", BuildDate:"2019-09-21T02:12:52Z", GoVersion:"go1.11.13", Compiler:"gc", Platform:"linux/amd64"}
+</code></pre></div>    </div>
 
-<h4 id="starting-and-stopping">Starting and stopping</h4>
+    <h4 id="starting-and-stopping">Starting and stopping</h4>
 
-<p>When you no longer need your cluster, you can stop it using:</p>
+    <p>When you no longer need your cluster, you can stop it using:</p>
 
-<div class="clipboard">
-<pre><code>minishift stop
-</code></pre>
-</div>
+    <div class="clipboard"><pre><code>minishift stop</code></pre></div>
 
-<p>This will suspend the VM so that you can, later on, resume it by
+    <p>This will suspend the VM so that you can, later on, resume it by
 executing:</p>
 
-<div class="clipboard">
-<pre><code>minishift start
-</code></pre>
-</div>
+    <div class="clipboard"><pre><code>minishift start</code></pre></div>
 
-<p>Or delete it using:</p>
+    <p>Or delete it using:</p>
 
-<div class="clipboard">
-<pre><code>minishift delete
-</code></pre>
-</div>
+    <div class="clipboard"><pre><code>minishift delete</code></pre></div>
 
-<h4 id="resources">Resources</h4>
+    <h4 id="resources">Resources</h4>
 
-<p>You can translate the package resources requirements into arguments for the <code>start</code> command like this:</p>
+    <p>You can translate the package resources requirements into arguments for the <code class="highlighter-rouge">start</code> command like this:</p>
 
-<pre><code>minishift start --cpus &lt;cpus&gt; --disk-size &lt;size&gt; --memory &lt;memory&gt; --kubernetes-version &lt;version&gt;
-</code></pre>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>minishift start --cpus &lt;cpus&gt; --disk-size &lt;size&gt; --memory &lt;memory&gt; --kubernetes-version &lt;version&gt;
+</code></pre></div>    </div>
 
-<p>Using the following arguments:</p>
+    <p>Using the following arguments:</p>
 
-<dl class="row">
+    <dl class="row">
 
 <dt class="col-sm-2">cpus</dt>
 <dd class="col-sm-10">The number of CPUs you allocate for Minikube (e.g. <code>--cpus 2</code>).</dd>
@@ -267,42 +242,41 @@ The Kubernetes version deployed into the virtual machine (e.g. <code>--kubernete
 
 </dl>
 
-<h2 id="helm">Helm</h2>
+    <h2 id="helm">Helm</h2>
 
-<p>You will need an installation of Helm on the machine which is used to deploy the packages. You can find
+    <p>You will need an installation of Helm on the machine which is used to deploy the packages. You can find
 installation instructions for Helm in the Helm documentation under <a href="https://helm.sh/docs/using_helm/#installing-helm">Installing Helm</a>.</p>
 
-<p>You will not need to install Tiller on the cluster. Of course, if you prefer to use Tiller, you may still
-do so. Also see: <a href="/packages/faq/#why-aren-t-you-using-tiller">FAQ: Why aren't you using Tiller</a>.</p>
+    <p>You will not need to install Tiller on the cluster. Of course, if you prefer to use Tiller, you may still
+do so. Also see: <a href="/packages/faq/#why-aren-t-you-using-tiller">FAQ: Why aren’t you using Tiller</a>.</p>
 
-<h2 id="command-line-tools">Command line tools</h2>
+    <h2 id="command-line-tools">Command line tools</h2>
 
-<p>Some tutorials might require some common command line tool. The installation depends on the
+    <p>Some tutorials might require some common command line tool. The installation depends on the
 operating system you are using.</p>
 
-<p>It is required to have the following tools installed:</p>
+    <p>It is required to have the following tools installed:</p>
 
-<h3 id="bash">Bash</h3>
+    <h3 id="bash">Bash</h3>
 
-<p>Bash is available on Windows, Linux and Mac OS X. True platform independence. So all commands which
+    <p>Bash is available on Windows, Linux and Mac OS X. True platform independence. So all commands which
 you are supposed to execute can be executed in Bash, version 3 or newer.</p>
 
-<h3 id="curl">curl</h3>
+    <h3 id="curl">curl</h3>
 
-<p>For downloading files and execution API call the tool <code>curl</code> will be used.</p>
+    <p>For downloading files and execution API call the tool <code class="highlighter-rouge">curl</code> will be used.</p>
 
-<h3 id="mosquitto-cli">Mosquitto CLI</h3>
+    <h3 id="mosquitto-cli">Mosquitto CLI</h3>
 
-<p>Mosquitto command line tools: e.g. <code>moquitto_pub</code></p>
+    <p>Mosquitto command line tools: e.g. <code class="highlighter-rouge">moquitto_pub</code></p>
 
-</div>
+  </div>
 
 <div class="col-12 col-md-4 col-lg-3 
 
-
-
 ">
-<div class="position-sticky" style="top: 4rem;">
+
+    <div class="position-sticky" style="top: 4rem;">
 
 
 <aside>
@@ -318,17 +292,17 @@ you are supposed to execute can be executed in Bash, version 3 or newer.</p>
 
 
 </div>
-</div>
 
-
-</div>
-</section>
+  </div>
 
 </div>
 
+
+</div>
 
     </main>
-<footer class="">
+
+    <footer>
 
     <div class="container">
 
@@ -337,8 +311,9 @@ you are supposed to execute can be executed in Bash, version 3 or newer.</p>
     
 
         
-        
+
             <div class="col-6 col-md">
+            
             
                 <h5>Eclipse IoT Packages</h5>
                 <ul class="list-unstyled">
@@ -363,7 +338,9 @@ you are supposed to execute can be executed in Bash, version 3 or newer.</p>
             
             </div>
         
+
             <div class="col-6 col-md">
+            
             
                 <h5>Eclipse IoT</h5>
                 <ul class="list-unstyled">
@@ -380,10 +357,20 @@ you are supposed to execute can be executed in Bash, version 3 or newer.</p>
             
             </div>
         
+
             <div class="col-6 col-md">
+            
             
                 <h5>Legal</h5>
                 <ul class="list-unstyled">
+                    
+                        <li>
+                            <a class="text-muted" href="http://www.eclipse.org/legal/privacy.php">Privacy Policy</a>
+                        </li>
+                    
+                        <li>
+                            <a class="text-muted" href="http://www.eclipse.org/legal/termsofuse.php">Terms of Use</a>
+                        </li>
                     
                         <li>
                             <a class="text-muted" href="https://www.eclipse.org/legal/copyright.php">Copyright Agent</a>
@@ -397,19 +384,13 @@ you are supposed to execute can be executed in Bash, version 3 or newer.</p>
                             <a class="text-muted" href="http://www.eclipse.org/legal">Legal Resources</a>
                         </li>
                     
-                        <li>
-                            <a class="text-muted" href="http://www.eclipse.org/legal/privacy.php">Privacy Policy</a>
-                        </li>
-                    
-                        <li>
-                            <a class="text-muted" href="http://www.eclipse.org/legal/termsofuse.php">Terms of Use</a>
-                        </li>
-                    
                 </ul>
             
             </div>
         
+
             <div class="col-6 col-md">
+            
             
                 <h5>Eclipse Foundation</h5>
                 <ul class="list-unstyled">
@@ -419,11 +400,11 @@ you are supposed to execute can be executed in Bash, version 3 or newer.</p>
                         </li>
                     
                         <li>
-                            <a class="text-muted" href="https://www.eclipse.org/org/foundation/directors.php">Board of Directors</a>
+                            <a class="text-muted" href="https://www.eclipse.org/org/foundation/contact.php">Contact us</a>
                         </li>
                     
                         <li>
-                            <a class="text-muted" href="https://www.eclipse.org/org/foundation/contact.php">Contact us</a>
+                            <a class="text-muted" href="https://www.eclipse.org/org/foundation/directors.php">Board of Directors</a>
                         </li>
                     
                 </ul>
@@ -439,16 +420,18 @@ you are supposed to execute can be executed in Bash, version 3 or newer.</p>
         <div class="col-12 col-md text-muted">Copyright © Eclipse Foundation, Inc. All Rights Reserved.</div>
     </div>
     
-    
+
     </div>
 
 </footer>
-<script src="/packages/popper.min.js"></script>
-    <script src="/packages/jquery.min.js"></script>
-    <script src="/packages/bootstrap/bootstrap.min.js"></script>
 
-    <script src="/packages/clipboard.min.js"></script>
-    <script src="/packages/clipboard.js"></script>
+
+    <script src="/packages/assets/popper.min.js"></script>
+    <script src="/packages/assets/jquery.min.js"></script>
+    <script src="/packages/assets/bootstrap/bootstrap.min.js"></script>
+
+    <script src="/packages/assets/clipboard.min.js"></script>
+    <script src="/packages/assets/clipboard.js"></script>
 
 </body>
 

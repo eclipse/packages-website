@@ -1,0 +1,94 @@
+/* compensate for the fixed navbar */
+body {
+    padding-top: 56px;
+}
+
+/* compensate for the fixed navbar */
+h1[id]:before, h2[id]:before, h3[id]:before, h4[id]:before, h5[id]:before, h6[id]:before {
+    display: block;
+    content: "";
+    margin-top: -75px;
+    height: 75px;
+    visibility: hidden;
+}
+
+/* fix issue with overlapping "before" block */
+h1[id], h2[id], h3[id], h4[id], h5[id], h6[id] {
+    pointer-events: none;
+}
+
+.toc-anchor {
+    display: block;
+    position: relative;
+    top: -70px;
+    visibility: hidden;
+}
+
+footer {
+    background: #F0F0F0;
+    padding: 3rem;
+    margin-top: 3rem;
+    font-size: small;
+}
+
+.border-callout-left {
+    border-left: solid 5px;
+    padding-left: .5rem;
+    border-radius: 5px;
+}
+
+pre {
+    padding: 1rem;
+    background: #fafafa;
+}
+
+@media (min-width: 992px) {
+    pre {
+        padding: 1.5rem;
+    }
+}
+
+.toc > ul {
+    padding-left: 0 !important;
+}
+
+.toc ul {
+    padding-left: 1rem;
+}
+
+.toc-item {
+    list-style: none;
+}
+
+.req-card h4, .req-card h5 {
+    margin-bottom: 0;
+}
+.req-card dl {
+    margin-bottom: 0;
+}
+.req-card dd {
+    margin-bottom: 0;
+}
+
+/* clipboard */
+
+.clipboard {
+    position: relative;
+}
+
+.btn-clipboard {
+    position: absolute;
+    top: .4rem;
+    right: .4rem;
+    font-size: 100%;
+    padding: .25rem .5rem;
+    color: #818a91;
+    font-size: 85%;
+}
+.btn-clipboard:hover {
+    color: #fff;
+    background-color: #007bff;
+}
+.btn-clipboard:focus {
+    box-shadow: none;
+}

@@ -1,192 +1,130 @@
 <!doctype html>
 <html lang="en">
 
+<head>
 
-  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="/packages/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="/packages/assets/bootstrap/bootstrap.min.css">
 
-    <title>Installation | Eclipse IoT Packages™</title>
+    <title>Installation</title>
 
-   <style>body{padding-top:56px}h1[id]:before,h2[id]:before,h3[id]:before,h4[id]:before,h5[id]:before,h6[id]:before{display:block;content:"";margin-top:-75px;height:75px;visibility:hidden}h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]{pointer-events:none}.toc-anchor{display:block;position:relative;top:-70px;visibility:hidden}footer{background:#f0f0f0;padding:3rem;margin-top:3rem;font-size:small}.border-callout-left{border-left:solid 5px;padding-left:.5rem;border-radius:5px}pre{padding:1rem;background:#fafafa}@media(min-width:992px){pre{padding:1.5rem}}.toc>ul{padding-left:0!important}.toc ul{padding-left:1rem}.toc-item{list-style:none}.req-card h4,.req-card h5{margin-bottom:0}.req-card dl{margin-bottom:0}.req-card dd{margin-bottom:0}.clipboard{position:relative}.btn-clipboard{position:absolute;top:.4rem;right:.4rem;font-size:100%;padding:.25rem .5rem;color:#818a91;font-size:85%}.btn-clipboard:hover{color:#fff;background-color:#007bff}.btn-clipboard:focus{box-shadow:none}</style>
-    <script>function onReady(fn){if(document.readyState==="complete"||(document.readyState!=="loading"&&!document.documentElement.doScroll)){fn();}else{document.addEventListener("DOMContentLoaded",fn);}}
-function generateToc(target,elements){onReady(function(){var toc=$(target);toc.empty();var toclist=$("<ul class='toc-list'></ul>");toc.append(toclist);var currentLevel=-1;var current=toclist;$(elements).each(function(){var id=$(this).attr('id');$(this).before("<a class='toc-anchor' name='"+id+"'></a>");var level=parseInt(this.tagName.substr(1));if(currentLevel<=0){currentLevel=level;}
-while(currentLevel<level){var next=$("<ul></ul>");var t=current.children().last();if(t.length==0){var li2=$("<li class='toc-item'></li>");current.append(li2);t=li2;}
-t.append(next);current=next;currentLevel++;}
-while(currentLevel>level){current=current.parent().parent();currentLevel--;}
-var li=$("<li class='toc-item'><a class='text-muted' href='#"+id+"'>"+$(this).text()+"</a></li>");current.append(li);});});}
-onReady(function(){$('[data-toggle="tooltip"]').tooltip({});});</script>
-
-    <meta name="twitter:card" content="summary"/>
+    <link rel="stylesheet" href="/packages/assets/css/style.css">
+    <script src="/packages/assets/js/code.js"></script>
+    
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Installation"/>
-<meta name="twitter:description" content="You will need a Kubernetes instance in order to deploy this package. If you haven&#39;t done so already, take a look at our Kubernetes installation page. Any Kubernetes compatible cluster will do, as long as it meets the requirements.
-Check access Be sure that you are logged in into your Kubernetes cluster:
-kubectl version   This should print out the version of the client, but must also print out the version of the server."/>
+<meta name="twitter:description" content=""/>
 
+</head>
 
-  </head>
+<body>
 
-
-<body class="">
-<header>
+    <header>
   <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
     <a class="navbar-brand" href="#"> Eclipse IoT Packages™</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav mr-auto">
-
-        
-        <li class="nav-item">
-
-            
-
-            <a class="nav-link"
-               href="/packages/">Home</a>
+      <ul class="navbar-nav mr-auto"><li class="nav-item">
+          <a
+              class="nav-link"
+              href="/packages/">Home</a>
         </li>
         <li class="nav-item">
-
-            
-
-            <a class="nav-link"
-               href="/packages/about/">About</a>
+          <a
+              class="nav-link"
+              href="/packages/about/">About</a>
         </li>
         <li class="nav-item">
-
-            
-
-            <a class="nav-link"
-               href="/packages/faq/">FAQ</a>
+          <a
+              class="nav-link"
+              href="/packages/faq/">FAQ</a>
         </li>
         <li class="nav-item">
-
-            
-
-            <a class="nav-link"
-               href="/packages/contribute/">Contribute</a>
+          <a
+              class="nav-link"
+              href="/packages/contribute/">Contribute</a>
         </li>
         <li class="nav-item">
-
-            
-
-            <a class="nav-link"
-               href="/packages/prereqs/">Prerequisites</a>
+          <a
+              class="nav-link"
+              href="/packages/prereqs/">Prerequisites</a>
         </li>
-        
-
-      </ul>
+        </ul>
     </div>
   </nav>
-
 </header>
-<main id="main" role="main" >
 
-<div class="container mt-5">
+    <main id="main" role="main" >
+      <div class="container mt-5">
 <h1>Package Zero</h1>
 <p class="lead">A package connecting and managing sensor style devices. Connecting sensors to the cloud, processing data with a digital twin platform, and managing device firmware.</p>
+</div><div class="container mt-5">
 
-
-
-<nav class="nav nav-pills nav-fill mt-5 mb-5">
-  <a class="nav-item nav-link " href="/packages/packages/package-zero/">Overview</a>
-
-  
-  <a class="nav-item nav-link  active" href="/packages/packages/package-zero/installation/">Installation</a>
-  
-  <a class="nav-item nav-link " href="/packages/packages/package-zero/learn/">Learn more</a>
-  
-  <a class="nav-item nav-link " href="/packages/packages/package-zero/tour/">Take a tour</a>
-  
-</nav>
-
-<section><div class="row">
-
+<nav class="nav nav-pills nav-fill mt-5 mb-5"><a class="nav-item nav-link " href="/packages/packages/package-zero/">Overview</a><a class="nav-item nav-link  active" href="/packages/packages/package-zero/installation/">Installation</a><a class="nav-item nav-link " href="/packages/packages/package-zero/learn/">Learn more</a><a class="nav-item nav-link " href="/packages/packages/package-zero/tour/">Take a tour</a></nav>
+<div class="row">
 
 <div class="col-12 col-md-8 col-lg-9">
-<p>You will need a Kubernetes instance in order to deploy this package. If you haven't done so already, take a look at our <a href="/packages/prereqs/#kubernetes-cluster">Kubernetes installation</a> page. Any Kubernetes compatible cluster will do, as long as
+
+    <p>You will need a Kubernetes instance in order to deploy this package. If you haven’t done so already, take a look at our <a href="/packages/prereqs">Kubernetes installation</a> page. Any Kubernetes compatible cluster will do, as long as
 it meets the requirements.</p>
 
-<h2 id="check-access">Check access</h2>
+    <h2 id="check-access">Check access</h2>
 
-<p>Be sure that you are logged in into your Kubernetes cluster:</p>
+    <p>Be sure that you are logged in into your Kubernetes cluster:</p>
 
-<div class="clipboard">
-<pre><code>kubectl version
-</code></pre>
-</div>
+    <div class="clipboard"><pre><code>kubectl version</code></pre></div>
 
-<p>This should print out the version of the client, but must also print out the version of the server.</p>
+    <p>This should print out the version of the client, but must also print out the version of the server.</p>
 
-<p><details>
-<summary>Example output</summary>
-<pre>
-Client Version: version.Info{Major:&quot;1&quot;, Minor:&quot;16&quot;, GitVersion:&quot;v1.16.1&quot;, GitCommit:&quot;d647ddbd755faf07169599a625faf302ffc34458&quot;, GitTreeState:&quot;clean&quot;, BuildDate:&quot;2019-10-02T17:01:15Z&quot;, GoVersion:&quot;go1.12.10&quot;, Compiler:&quot;gc&quot;, Platform:&quot;linux/amd64&quot;}
-Server Version: version.Info{Major:&quot;1&quot;, Minor:&quot;13+&quot;, GitVersion:&quot;v1.13.4+c2a5caf&quot;, GitCommit:&quot;c2a5caf&quot;, GitTreeState:&quot;clean&quot;, BuildDate:&quot;2019-09-21T02:12:52Z&quot;, GoVersion:&quot;go1.11.13&quot;, Compiler:&quot;gc&quot;, Platform:&quot;linux/amd64&quot;}
-</pre></p>
+    <p><details><summary>Example output</summary><div>
+          <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Client Version: version.Info{Major:"1", Minor:"16", GitVersion:"v1.16.1", GitCommit:"d647ddbd755faf07169599a625faf302ffc34458", GitTreeState:"clean", BuildDate:"2019-10-02T17:01:15Z", GoVersion:"go1.12.10", Compiler:"gc", Platform:"linux/amd64"}
+Server Version: version.Info{Major:"1", Minor:"13+", GitVersion:"v1.13.4+c2a5caf", GitCommit:"c2a5caf", GitTreeState:"clean", BuildDate:"2019-09-21T02:12:52Z", GoVersion:"go1.11.13", Compiler:"gc", Platform:"linux/amd64"}
+</code></pre></div>          </div>
+        </div></details></p>
 
-<p></details></p>
+    <h2 id="clone-repository">Clone repository</h2>
 
-<h2 id="clone-repository">Clone repository</h2>
+    <p>Clone the repository with the deployment scripts:</p>
 
-<p>Clone the repository with the deployment scripts:</p>
+    <div class="clipboard"><pre><code>git clone https://github.com/eclipse/packages.git
+cd packages</code></pre></div>
 
-<div class="clipboard">
-<pre><code>git clone https://github.com/eclipse/packages.git
-cd packages
-</code></pre>
-</div>
+    <p>Change into the directory of this package:</p>
 
-<p>Change into the directory of this package:</p>
+    <div class="clipboard"><pre><code>cd packages/package-zero</code></pre></div>
 
-<div class="clipboard">
-<pre><code>cd packages/package-zero
-</code></pre>
-</div>
+    <p>All further commands assume that you are operating from this directory.</p>
 
-<p>All further commands assume that you are operating from this directory.</p>
+    <h2 id="run-the-deployment">Run the deployment</h2>
 
-<h2 id="run-the-deployment">Run the deployment</h2>
+    <p>First create a new namespace for the deployment:</p>
 
-<p>First create a new namespace for the deployment:</p>
+    <div class="clipboard"><pre><code>kubectl create namespace package-zero</code></pre></div>
 
-<div class="clipboard">
-<pre><code>kubectl create namespace package-zero
-</code></pre>
-</div>
+    <p>Next, render the Helm charts:</p>
 
-<p>Next, render the Helm charts:</p>
+    <div class="clipboard"><pre><code>mkdir output
+helm template . --name package-zero --namespace package-zero --output-dir output</code></pre></div>
 
-<div class="clipboard">
-<pre><code>mkdir output
-helm template . --name package-zero --namespace package-zero --output-dir output
-</code></pre>
-</div>
-
-<p>The output is in the directory <code>output</code>. It is not yet deployed, but you
+    <p>The output is in the directory <code class="highlighter-rouge">output</code>. It is not yet deployed, but you
 can inspect it and then apply it by running:</p>
 
-<div class="clipboard">
-<pre><code>kubectl apply -Rf output/
-</code></pre>
-</div>
+    <div class="clipboard"><pre><code>kubectl apply -Rf output/</code></pre></div>
 
-<h2 id="monitor-deployment">Monitor deployment</h2>
+    <h2 id="monitor-deployment">Monitor deployment</h2>
 
-<p>When you execute the following command:</p>
+    <p>When you execute the following command:</p>
 
-<div class="clipboard">
-<pre><code>kubectl get pods
-</code></pre>
-</div>
+    <div class="clipboard"><pre><code>kubectl get pods</code></pre></div>
 
-<p>You should see the pods being started and becoming ready.</p>
+    <p>You should see the pods being started and becoming ready.</p>
 
-<p><details>
-<summary>Example of started pods</summary>
-<pre><code>NAME                                               READY   STATUS    RESTARTS   AGE
+    <p><details><summary>Example of started pods</summary><div>
+          <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>NAME                                               READY   STATUS    RESTARTS   AGE
 package-zero-adapter-amqp-vertx-57dc849d4c-tw25z   1/1     Running   0          148m
 package-zero-adapter-http-vertx-6bdffc59-t54h5     1/1     Running   0          148m
 package-zero-adapter-mqtt-vertx-74cdb9644b-6pgs6   1/1     Running   0          148m
@@ -194,27 +132,30 @@ package-zero-artemis-54ffcff88f-7w85x              1/1     Running   0          
 package-zero-dispatch-router-54d968954b-vrp7z      1/1     Running   0          148m
 package-zero-service-auth-6c9bcf8899-qmztm         1/1     Running   0          148m
 package-zero-service-device-registry-0             1/1     Running   0          148m
-</code></pre>
-</details></p>
+</code></pre></div>          </div>
+        </div></details></p>
 
-<h2 id="ready-to-run">Ready to run</h2>
+    <h2 id="ready-to-run">Ready to run</h2>
 
-<p>Once the pods are all ready, you are ready to use the deployment. For an initial walk-through of the functionality
-see the section <a href="/packages/packages/package-zero/tour/">Take a tour</a>.</p>
+    <p>Once the pods are all ready, you are ready to use the deployment. For an initial walk-through of the functionality
+see the section <a href="../tour">Take a tour</a>.</p>
 
-</div>
+  </div>
 
 <div class="col-12 col-md-4 col-lg-3 
 
- mt-3 mt-md-0 mx-auto
-
 ">
-<div class="card req-card">
+
+    <div class="card req-card">
   <div class="card-header text-center"><h5>Requirements</h5></div>
   <ul class="list-group list-group-flush">
 
 
-    <li class="list-group-item">
+
+
+
+
+<li class="list-group-item">
 
 <dl class="row">
 <dt class="col-sm-6">Kubernetes</dt>
@@ -223,7 +164,10 @@ see the section <a href="/packages/packages/package-zero/tour/">Take a tour</a>.
 
 </li>
 
-    <li class="list-group-item">
+
+
+
+<li class="list-group-item">
 
 <dl class="row">
 <dt class="col-sm-6">CPUs</dt>
@@ -232,7 +176,10 @@ see the section <a href="/packages/packages/package-zero/tour/">Take a tour</a>.
 
 </li>
 
-    <li class="list-group-item">
+
+
+
+<li class="list-group-item">
 
 <dl class="row">
 <dt class="col-sm-6">Memory</dt>
@@ -241,7 +188,10 @@ see the section <a href="/packages/packages/package-zero/tour/">Take a tour</a>.
 
 </li>
 
-    <li class="list-group-item">
+
+
+
+<li class="list-group-item">
 
 <dl class="row">
 <dt class="col-sm-6">Disk</dt>
@@ -251,18 +201,21 @@ see the section <a href="/packages/packages/package-zero/tour/">Take a tour</a>.
 </li>
 
 
-  </ul><div class="card-body">Will require cluster admin privileges.</div></div>
+  </ul>
+  
+  <div class="card-body">Will require cluster admin privileges.</div>
+  
 </div>
 
+  </div>
 
 </div>
-</section>
 
 </div>
-
 
     </main>
-<footer class="">
+
+    <footer>
 
     <div class="container">
 
@@ -271,8 +224,9 @@ see the section <a href="/packages/packages/package-zero/tour/">Take a tour</a>.
     
 
         
-        
+
             <div class="col-6 col-md">
+            
             
                 <h5>Eclipse IoT Packages</h5>
                 <ul class="list-unstyled">
@@ -297,7 +251,9 @@ see the section <a href="/packages/packages/package-zero/tour/">Take a tour</a>.
             
             </div>
         
+
             <div class="col-6 col-md">
+            
             
                 <h5>Eclipse IoT</h5>
                 <ul class="list-unstyled">
@@ -314,10 +270,20 @@ see the section <a href="/packages/packages/package-zero/tour/">Take a tour</a>.
             
             </div>
         
+
             <div class="col-6 col-md">
+            
             
                 <h5>Legal</h5>
                 <ul class="list-unstyled">
+                    
+                        <li>
+                            <a class="text-muted" href="http://www.eclipse.org/legal/privacy.php">Privacy Policy</a>
+                        </li>
+                    
+                        <li>
+                            <a class="text-muted" href="http://www.eclipse.org/legal/termsofuse.php">Terms of Use</a>
+                        </li>
                     
                         <li>
                             <a class="text-muted" href="https://www.eclipse.org/legal/copyright.php">Copyright Agent</a>
@@ -331,19 +297,13 @@ see the section <a href="/packages/packages/package-zero/tour/">Take a tour</a>.
                             <a class="text-muted" href="http://www.eclipse.org/legal">Legal Resources</a>
                         </li>
                     
-                        <li>
-                            <a class="text-muted" href="http://www.eclipse.org/legal/privacy.php">Privacy Policy</a>
-                        </li>
-                    
-                        <li>
-                            <a class="text-muted" href="http://www.eclipse.org/legal/termsofuse.php">Terms of Use</a>
-                        </li>
-                    
                 </ul>
             
             </div>
         
+
             <div class="col-6 col-md">
+            
             
                 <h5>Eclipse Foundation</h5>
                 <ul class="list-unstyled">
@@ -353,11 +313,11 @@ see the section <a href="/packages/packages/package-zero/tour/">Take a tour</a>.
                         </li>
                     
                         <li>
-                            <a class="text-muted" href="https://www.eclipse.org/org/foundation/directors.php">Board of Directors</a>
+                            <a class="text-muted" href="https://www.eclipse.org/org/foundation/contact.php">Contact us</a>
                         </li>
                     
                         <li>
-                            <a class="text-muted" href="https://www.eclipse.org/org/foundation/contact.php">Contact us</a>
+                            <a class="text-muted" href="https://www.eclipse.org/org/foundation/directors.php">Board of Directors</a>
                         </li>
                     
                 </ul>
@@ -373,16 +333,18 @@ see the section <a href="/packages/packages/package-zero/tour/">Take a tour</a>.
         <div class="col-12 col-md text-muted">Copyright © Eclipse Foundation, Inc. All Rights Reserved.</div>
     </div>
     
-    
+
     </div>
 
 </footer>
-<script src="/packages/popper.min.js"></script>
-    <script src="/packages/jquery.min.js"></script>
-    <script src="/packages/bootstrap/bootstrap.min.js"></script>
 
-    <script src="/packages/clipboard.min.js"></script>
-    <script src="/packages/clipboard.js"></script>
+
+    <script src="/packages/assets/popper.min.js"></script>
+    <script src="/packages/assets/jquery.min.js"></script>
+    <script src="/packages/assets/bootstrap/bootstrap.min.js"></script>
+
+    <script src="/packages/assets/clipboard.min.js"></script>
+    <script src="/packages/assets/clipboard.js"></script>
 
 </body>
 
