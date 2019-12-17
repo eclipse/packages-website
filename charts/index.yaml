@@ -3,7 +3,7 @@ entries:
   ditto:
   - apiVersion: v1
     appVersion: 1.0.0-M3
-    created: "2019-12-17T13:57:07.164832672Z"
+    created: "2019-12-17T14:04:49.956418573Z"
     description: A Helm chart for Eclipse Ditto
     digest: 6e438bad1deeb47de09216be59fbdbb0f176af1abc6f3a25e075435ad9fdd095
     home: https://www.eclipse.org/ditto
@@ -20,4 +20,4 @@ entries:
     urls:
     - https://eclipse.org/packages/charts/ditto-1.0.0-snapshot.tgz
     version: 1.0.0-snapshot
-generated: "2019-12-17T13:57:07.16310053Z"
+generated: "2019-12-17T14:04:49.954561852Z"
