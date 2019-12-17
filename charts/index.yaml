@@ -1,3 +1,23 @@
 apiVersion: v1
-entries: {}
-generated: "2019-12-17T16:49:12.292858776+01:00"
+entries:
+  ditto:
+  - apiVersion: v1
+    appVersion: 1.0.0
+    created: "2019-12-17T16:23:40.361870097Z"
+    description: A Helm chart for Eclipse Ditto
+    digest: cb2d7311b74df7632f950b2b1d03bd69afdedd543cd52e00a833a54103ff0bf4
+    home: https://www.eclipse.org/ditto
+    icon: https://www.eclipse.org/ditto/images/ditto.svg
+    maintainers:
+    - email: axel.koehler@kiwigrid.com
+      name: axdotl
+    - email: thomas.jaeckle@bosch-si.com
+      name: thjaeckle
+    name: ditto
+    sources:
+    - https://github.com/eclipse/ditto
+    - https://github.com/eclipse/packages
+    urls:
+    - https://eclipse.org/packages/charts/ditto-1.0.0-snapshot.tgz
+    version: 1.0.0-snapshot
+generated: "2019-12-17T16:23:40.338134586Z"
