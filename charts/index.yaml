@@ -3,7 +3,26 @@ entries:
   ditto:
   - apiVersion: v1
     appVersion: 1.0.0
-    created: "2019-12-18T15:01:38.355113716Z"
+    created: "2019-12-18T18:30:41.036280672Z"
+    description: A Helm chart for Eclipse Ditto
+    digest: 99d653e8a94ef829fb14f23b379a545831c2e455f4c139f74493a905fb678928
+    home: https://www.eclipse.org/ditto
+    icon: https://www.eclipse.org/ditto/images/ditto.svg
+    maintainers:
+    - email: axel.koehler@kiwigrid.com
+      name: axdotl
+    - email: thomas.jaeckle@bosch-si.com
+      name: thjaeckle
+    name: ditto
+    sources:
+    - https://github.com/eclipse/ditto
+    - https://github.com/eclipse/packages
+    urls:
+    - https://eclipse.org/packages/charts/ditto-1.0.0-snapshot.3.tgz
+    version: 1.0.0-snapshot.3
+  - apiVersion: v1
+    appVersion: 1.0.0
+    created: "2019-12-18T18:30:40.940514281Z"
     description: A Helm chart for Eclipse Ditto
     digest: cbeba42ca38ab8b44e2d34f02953405613b372fdb8e99f23ca98b2e938c2cf73
     home: https://www.eclipse.org/ditto
@@ -22,7 +41,7 @@ entries:
     version: 1.0.0-snapshot.2
   - apiVersion: v1
     appVersion: 1.0.0
-    created: "2019-12-18T15:01:38.350814947Z"
+    created: "2019-12-18T18:30:40.93582645Z"
     description: A Helm chart for Eclipse Ditto
     digest: 9c795a5a2cec315b31564870e3ada8e6f71b907f9f7fdf8cf9a8bf8e7b221e6a
     home: https://www.eclipse.org/ditto
@@ -41,7 +60,7 @@ entries:
     version: 1.0.0-snapshot.1
   - apiVersion: v1
     appVersion: 1.0.0
-    created: "2019-12-18T15:01:38.359543938Z"
+    created: "2019-12-18T18:30:41.133455342Z"
     description: A Helm chart for Eclipse Ditto
     digest: cb2d7311b74df7632f950b2b1d03bd69afdedd543cd52e00a833a54103ff0bf4
     home: https://www.eclipse.org/ditto
@@ -58,4 +77,4 @@ entries:
     urls:
     - https://eclipse.org/packages/charts/ditto-1.0.0-snapshot.tgz
     version: 1.0.0-snapshot
-generated: "2019-12-18T15:01:38.255648357Z"
+generated: "2019-12-18T18:30:40.739764746Z"
