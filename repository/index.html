@@ -8,13 +8,13 @@
 
     <link rel="stylesheet" href="/packages/assets/bootstrap/bootstrap.min.css">
 
-    <title>Contributions welcome</title>
+    <title>Helm chart repository</title>
 
     <link rel="stylesheet" href="/packages/assets/css/style.css">
     <script src="/packages/assets/js/code.js"></script>
     
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Contributions welcome"/>
+<meta name="twitter:title" content="Helm chart repository"/>
 <meta name="twitter:description" content=""/>
 
 </head>
@@ -48,7 +48,7 @@
         </li>
         <li class="nav-item">
           <a
-              class="nav-link active"
+              class="nav-link"
               href="/packages/contribute/">Contribute</a>
         </li>
         <li class="nav-item">
@@ -58,7 +58,7 @@
         </li>
         <li class="nav-item">
           <a
-              class="nav-link"
+              class="nav-link active"
               href="/packages/repository/">Repository</a>
         </li>
         </ul>
@@ -68,76 +68,40 @@
 
     <main id="main" role="main" >
       <div class="container mt-5">
-<h1>Contributions welcome</h1>
-<p class="lead">Contributions to this project are very welcome. And contributions can come in many different forms, one of the is code.</p>
+<h1>Helm chart repository</h1>
+<p class="lead">All the charts, in a single location.</p>
 </div>
 
 
 
 <div class="container">
-<h2 id="providing-feedback">Providing feedback</h2>
+<p>The Eclipse IoT packages project decided to host a Helm chart repository in order to share the
+effort of validating and publishing charts. Eclipse IoT projects are welcome to re-use that
+infrastructure to publish their charts, whether they are part of an IoT package or not. Of course
+projects can still host their own repositories and charts.</p>
 
-<p>Feedback is always welcome. The more constructive it is, the more impact it will have.</p>
+<p>This repository is intended to work with Helm version 2 and 3. Features which work only with Helm 3
+are labeled explicitly.</p>
 
-<p>The easiest way to provide feedback is through
-<a href="https://github.com/eclipse/packages/issues">GitHub issues</a> of the project.</p>
+<h2 id="adding-the-repository">Adding the repository</h2>
 
-<h2 id="join-the-community-call">Join the community call</h2>
+<p>You can add the repository with a simple command:</p>
 
-<p>Starting <time datetime="2019-12-02">2019-12-02</time>, we have a quick (30min), bi-weekly
-community call at <time datetime="16:00">16:00</time> CET. This is an open call,
-everyone is welcome to join.</p>
+<div class="clipboard"><pre><code>helm repo add eclipse-iot https://eclipse.org/packages/charts</code></pre></div>
 
-<p>The URL to the call is: <a href="https://eclipse.zoom.us/j/317801130">https://eclipse.zoom.us/j/317801130</a>.</p>
+<p>This will add the repository, using the name <code class="highlighter-rouge">eclipse-iot</code>. Of course you may choose
+a different name here. Just take extra care when working through tutorials, as they will
+expect the name to be <code class="highlighter-rouge">eclipse-iot</code>.</p>
 
-<p>You may also directly subscribe to the <a href="https://calendar.google.com/calendar/ical/lu98p1vc1ed4itl7n9qno3oogc%40group.calendar.google.com/public/basic.ics">community calendar</a>.</p>
+<h2 id="see-the-content-helm-v3">See the content <small><span class="badge badge-secondary">Helm v3</span></small></h2>
 
-<h2 id="contact-us-on-gitter">Contact us on Gitter</h2>
+<p>You can browse through the content using:</p>
 
-<p>We also do have a channel on Gitter: <a href="https://gitter.im/eclipse/packages" title="Gitter Channel">https://gitter.im/eclipse/packages</a>.</p>
+<div class="clipboard"><pre><code>helm search repo --devel</code></pre></div>
 
-<h2 id="improving-an-existing-package">Improving an existing package</h2>
+<p>If you want to see “under development” charts:</p>
 
-<p>There is always room for improvement. Found a bug, have an idea how to make things better.
-Make a change and create a pull request.</p>
-
-<h2 id="enhancing-an-existing-package">Enhancing an existing package</h2>
-
-<p>Got a cool idea on adding something new to an existing package. It makes sense to create an issue on GitHub,
-and discuss your proposal. The existing maintainers of a package might want to understand how this fits
-into their package, what the benefit is, and what is required. Get in contact, get on the same page, and start coding.</p>
-
-<h2 id="creating-a-new-package">Creating a new package</h2>
-
-<p>Next, open a new PR against this repository, adding your package. Please ensure that:</p>
-
-<ul>
-  <li>The new package brings together at least two Eclipse IoT projects
-    <ul>
-      <li>There is a real benefit in the combination of the projects</li>
-      <li>You only use stable, released versions of the projects (no milestones or snapshots)</li>
-    </ul>
-  </li>
-  <li>The package contains only open source components, license compatible with the EPLv2</li>
-  <li>You describe your motivation in the PR</li>
-  <li>The package contains at least:
-    <ul>
-      <li>A basic introduction and idea behind this package</li>
-      <li>The Helm charts to deploy</li>
-      <li>A tutorial what do to once the deployment is done</li>
-    </ul>
-  </li>
-  <li>You take ownership of the package</li>
-</ul>
-
-<h2 id="the-legal-side-of-things">The legal side of things</h2>
-
-<p>If you plan on contributing code, you will need to
-<a href="https://accounts.eclipse.org/user/register">create an Eclipse Foundation account</a>,
-and <a href="https://accounts.eclipse.org/user/eca">sign the Eclipse Contributor Agreement</a>.</p>
-
-<p>Is this required? Yes! Is there a way around it? No! Why is this necessary? Because legal
-issues are as though as software engineering issues, and this is the way to solve them.</p>
+<div class="clipboard"><pre><code>helm search repo --devel</code></pre></div>
 
 </div>
 
