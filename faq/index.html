@@ -56,6 +56,11 @@
               class="nav-link"
               href="/packages/prereqs/">Prerequisites</a>
         </li>
+        <li class="nav-item">
+          <a
+              class="nav-link"
+              href="/packages/repository/">Repository</a>
+        </li>
         </ul>
     </div>
   </div>
@@ -123,7 +128,11 @@ run them on any other Kubernetes based solution, in the real cloud.</p>
 </section>
 
 <section>
-    <h3 id="why-aren-t-you-using-tiller">Why aren&#39;t you using Tiller?</h3><p>Tiller is a server side component for Helm. It allows the Helm client, which is on your local machine,
+    <h3 id="why-aren-t-you-using-tiller">Why aren&#39;t you using Tiller?</h3><div role="alert" class="alert alert-info">
+This only applies to Helm 2. Tiller is no longer present in Helm 3.
+</div>
+
+<p>Tiller is a server side component for Helm 2. It allows the Helm client, which is on your local machine,
 to talk to the cluster, and let it perform the deployment.</p>
 
 <p>There are several aspects to that, which make the use of Tiller complicated. The main concern is security
@@ -137,8 +146,6 @@ require permissions you don’t have on that cluster. And require additional ste
 <p>On the other hand, this project is about getting you started with IoT, not about administrating Tiller.
 And since Helm allows to locally generate the YAML files, required for deployment, it seems much easier 
 to only use Helm as a template tool, and use standard Kubernetes tooling to perform the deployment.</p>
-
-<p>Also, looking forward to Helm v3, it looks like <a href="https://github.com/helm/community/blob/master/helm-v3/000-helm-v3.md#summary">Tiller will be gone</a> completely.</p>
 
 </section>
 
