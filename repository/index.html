@@ -107,6 +107,13 @@ expect the name to be <code class="highlighter-rouge">eclipse-iot</code>.</p>
 
 <div class="clipboard"><pre><code>helm search repo --devel</code></pre></div>
 
+<h2 id="how-chart-publishing-works">How chart publishing works</h2>
+
+<p>All chart changes will be verified by a <a href="https://github.com/eclipse/packages/actions">Github action</a>, this is done on every pull request.</p>
+
+<p>Once a pull request is merged, the updated chart will be deployed by a <a href="https://ci.eclipse.org/packages/job/Website/job/master/">Jenkins job</a>.
+This job takes care of publishing the resources and generating an updated <code class="highlighter-rouge">index.yaml</code>.</p>
+
 </div>
 
     </main>
