@@ -26,6 +26,31 @@ entries:
   ditto:
   - apiVersion: v1
     appVersion: 1.0.0
+    created: "2020-02-13T13:21:25.913644565Z"
+    description: |
+      Eclipse Ditto™ is a technology in the IoT implementing a software pattern called “digital twins”.
+      A digital twin is a virtual, cloud based, representation of his real world counterpart
+      (real world “Things”, e.g. devices like sensors, smart heating, connected cars, smart grids,
+      EV charging stations etc).
+    digest: 4a112e987423a2578103a6fd2109e8370bb7b7b9ee6af4d7b2ccf97e126482d8
+    home: https://www.eclipse.org/ditto
+    icon: https://www.eclipse.org/ditto/images/ditto.svg
+    keywords:
+    - iot-chart
+    maintainers:
+    - email: axel.koehler@kiwigrid.com
+      name: axdotl
+    - email: thomas.jaeckle@bosch-si.com
+      name: thjaeckle
+    name: ditto
+    sources:
+    - https://github.com/eclipse/ditto
+    - https://github.com/eclipse/packages
+    urls:
+    - https://staging.eclipse.org/packages/charts/ditto-1.1.1.tgz
+    version: 1.1.1
+  - apiVersion: v1
+    appVersion: 1.0.0
     created: "2020-02-13T09:37:32.493615046Z"
     description: A Helm chart for Eclipse Ditto
     digest: 6a9c1a2737566ff0077c465c9ebcc03df9eea1c4f493de2e84d6800d5ef7ce5d
@@ -84,6 +109,30 @@ entries:
   hawkbit:
   - apiVersion: v1
     appVersion: 0.3.0M6-mysql
+    created: "2020-02-13T13:21:25.916440788Z"
+    description: |
+      Eclipse hawkBit™ is a domain independent back-end framework for rolling out software updates
+      to constrained edge devices as well as more powerful controllers and gateways connected to
+      IP based networking infrastructure.
+    digest: 7dbfad6558f956e120a1c6722a6992c225155c173ec3eb26f3b238b57584f8f2
+    home: https://www.eclipse.org/hawkbit/
+    icon: https://www.eclipse.org/hawkbit/images/hawkbit_icon.png
+    keywords:
+    - iot-chart
+    maintainers:
+    - email: andre.bauer@kiwigrid.com
+      name: monotek
+    - email: axel.koehler@kiwigrid.com
+      name: axdotl
+    name: hawkbit
+    sources:
+    - https://github.com/eclipse/hawkbit
+    - https://github.com/eclipse/packages
+    urls:
+    - https://staging.eclipse.org/packages/charts/hawkbit-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v1
+    appVersion: 0.3.0M6-mysql
     created: "2020-02-13T09:37:32.584383873Z"
     description: A Helm chart for hawkBit update server
     digest: a7027d8e207a2284c5db704db078a59fc6fac928802d7a557a8191ea7b9ebac7
@@ -128,4 +177,4 @@ entries:
     urls:
     - https://staging.eclipse.org/packages/charts/hono-1.1.3.tgz
     version: 1.1.3
-generated: "2020-02-13T09:37:32.392203604Z"
+generated: "2020-02-13T13:21:25.91054639Z"
