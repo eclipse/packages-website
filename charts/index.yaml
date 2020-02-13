@@ -3,7 +3,7 @@ entries:
   cloud2edge:
   - apiVersion: v1
     appVersion: 0.0.1
-    created: "2020-02-13T10:07:16.788945735Z"
+    created: "2020-02-13T10:12:01.2908196Z"
     description: |
       Eclipse IoT Cloud2Edge (C2E) is an integrated suite of services developers can use to build IoT applications
       that are deployed from the cloud to the edge. The suite currently consists of Eclipse Hono and Eclipse Ditto.
@@ -26,7 +26,32 @@ entries:
   ditto:
   - apiVersion: v1
     appVersion: 1.0.0
-    created: "2020-02-13T10:07:16.898293996Z"
+    created: "2020-02-13T10:12:01.391134159Z"
+    description: |
+      Eclipse Ditto™ is a technology in the IoT implementing a software pattern called “digital twins”.
+      A digital twin is a virtual, cloud based, representation of his real world counterpart
+      (real world “Things”, e.g. devices like sensors, smart heating, connected cars, smart grids,
+      EV charging stations etc).
+    digest: 8e969b7ff8f608a06f6b7e9ae68f14dc962dc1ce3dbee63141e90fa4b92ed0f6
+    home: https://www.eclipse.org/ditto
+    icon: https://www.eclipse.org/ditto/images/ditto.svg
+    keywords:
+    - iot-chart
+    maintainers:
+    - email: axel.koehler@kiwigrid.com
+      name: axdotl
+    - email: thomas.jaeckle@bosch-si.com
+      name: thjaeckle
+    name: ditto
+    sources:
+    - https://github.com/eclipse/ditto
+    - https://github.com/eclipse/packages
+    urls:
+    - https://eclipse.org/packages/charts/ditto-1.1.1.tgz
+    version: 1.1.1
+  - apiVersion: v1
+    appVersion: 1.0.0
+    created: "2020-02-13T10:12:01.389215179Z"
     description: A Helm chart for Eclipse Ditto
     digest: 2c4bf294f84cfd2b1234dcbd54574d679c634b72886b5e7f56ef83f20650b451
     home: https://www.eclipse.org/ditto
@@ -45,7 +70,7 @@ entries:
     version: 1.1.0
   - apiVersion: v1
     appVersion: 1.0.0
-    created: "2020-02-13T10:07:16.896451271Z"
+    created: "2020-02-13T10:12:01.387280355Z"
     description: A Helm chart for Eclipse Ditto
     digest: 5130ec471c020614bc125c61fd84234df9264d99ca1dd22755c9245bdc1bf52c
     home: https://www.eclipse.org/ditto
@@ -64,7 +89,7 @@ entries:
     version: 1.0.1
   - apiVersion: v1
     appVersion: 1.0.0
-    created: "2020-02-13T10:07:16.894602805Z"
+    created: "2020-02-13T10:12:01.385247181Z"
     description: A Helm chart for Eclipse Ditto
     digest: 5b9b6a92d87883918829c24bb92d02e85bedebc4355988bc1e3ff3f8ea8e4c32
     home: https://www.eclipse.org/ditto
@@ -83,7 +108,7 @@ entries:
     version: 1.0.0
   - apiVersion: v1
     appVersion: 1.0.0
-    created: "2020-02-13T10:07:16.888321792Z"
+    created: "2020-02-13T10:12:01.296332713Z"
     description: A Helm chart for Eclipse Ditto
     digest: 99d653e8a94ef829fb14f23b379a545831c2e455f4c139f74493a905fb678928
     home: https://www.eclipse.org/ditto
@@ -102,7 +127,7 @@ entries:
     version: 1.0.0-snapshot.3
   - apiVersion: v1
     appVersion: 1.0.0
-    created: "2020-02-13T10:07:16.886627122Z"
+    created: "2020-02-13T10:12:01.293984417Z"
     description: A Helm chart for Eclipse Ditto
     digest: cbeba42ca38ab8b44e2d34f02953405613b372fdb8e99f23ca98b2e938c2cf73
     home: https://www.eclipse.org/ditto
@@ -121,7 +146,7 @@ entries:
     version: 1.0.0-snapshot.2
   - apiVersion: v1
     appVersion: 1.0.0
-    created: "2020-02-13T10:07:16.884473483Z"
+    created: "2020-02-13T10:12:01.292431752Z"
     description: A Helm chart for Eclipse Ditto
     digest: 9c795a5a2cec315b31564870e3ada8e6f71b907f9f7fdf8cf9a8bf8e7b221e6a
     home: https://www.eclipse.org/ditto
@@ -140,7 +165,7 @@ entries:
     version: 1.0.0-snapshot.1
   - apiVersion: v1
     appVersion: 1.0.0
-    created: "2020-02-13T10:07:16.89203473Z"
+    created: "2020-02-13T10:12:01.298107344Z"
     description: A Helm chart for Eclipse Ditto
     digest: cb2d7311b74df7632f950b2b1d03bd69afdedd543cd52e00a833a54103ff0bf4
     home: https://www.eclipse.org/ditto
@@ -160,7 +185,31 @@ entries:
   hawkbit:
   - apiVersion: v1
     appVersion: 0.3.0M6-mysql
-    created: "2020-02-13T10:07:16.985537045Z"
+    created: "2020-02-13T10:12:01.485224056Z"
+    description: |
+      Eclipse hawkBit™ is a domain independent back-end framework for rolling out software updates
+      to constrained edge devices as well as more powerful controllers and gateways connected to
+      IP based networking infrastructure.
+    digest: 1f67f9df27d94313d384795c1a3638c5067c93e8db8ba6b2c2059ae61d92ebf3
+    home: https://www.eclipse.org/hawkbit/
+    icon: https://www.eclipse.org/hawkbit/images/hawkbit_icon.png
+    keywords:
+    - iot-chart
+    maintainers:
+    - email: andre.bauer@kiwigrid.com
+      name: monotek
+    - email: axel.koehler@kiwigrid.com
+      name: axdotl
+    name: hawkbit
+    sources:
+    - https://github.com/eclipse/hawkbit
+    - https://github.com/eclipse/packages
+    urls:
+    - https://eclipse.org/packages/charts/hawkbit-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v1
+    appVersion: 0.3.0M6-mysql
+    created: "2020-02-13T10:12:01.392910571Z"
     description: A Helm chart for hawkBit update server
     digest: b12573d17303c1fb920722661cad71b46f90eb3ad5fb878829484279fd9b635f
     home: https://www.eclipse.org/hawkbit/
@@ -180,7 +229,7 @@ entries:
   hono:
   - apiVersion: v1
     appVersion: 1.1.0
-    created: "2020-02-13T10:07:17.288213639Z"
+    created: "2020-02-13T10:12:01.785338071Z"
     description: |
       Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and
       interacting with them in a uniform way regardless of the device communication protocol.
@@ -206,7 +255,7 @@ entries:
     version: 1.1.3
   - apiVersion: v1
     appVersion: 1.1.0
-    created: "2020-02-13T10:07:17.196058381Z"
+    created: "2020-02-13T10:12:01.694460267Z"
     description: |
       Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and
       interacting with them in a uniform way regardless of the device communication protocol.
@@ -231,7 +280,7 @@ entries:
     version: 1.1.2
   - apiVersion: v1
     appVersion: 1.1.0
-    created: "2020-02-13T10:07:17.191843503Z"
+    created: "2020-02-13T10:12:01.689790711Z"
     description: |
       Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and
       interacting with them in a uniform way regardless of the device communication protocol.
@@ -256,7 +305,7 @@ entries:
     version: 1.1.1
   - apiVersion: v1
     appVersion: 1.1.0
-    created: "2020-02-13T10:07:17.18546179Z"
+    created: "2020-02-13T10:12:01.685775099Z"
     description: |
       Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and
       interacting with them in a uniform way regardless of the device communication protocol.
@@ -281,7 +330,7 @@ entries:
     version: 1.1.0
   - apiVersion: v1
     appVersion: 1.0.3
-    created: "2020-02-13T10:07:17.089677701Z"
+    created: "2020-02-13T10:12:01.58774204Z"
     description: |
       Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and
       interacting with them in a uniform way regardless of the device communication protocol.
@@ -306,7 +355,7 @@ entries:
     version: 1.0.2
   - apiVersion: v1
     appVersion: 1.0.3
-    created: "2020-02-13T10:07:17.085535589Z"
+    created: "2020-02-13T10:12:01.49366467Z"
     description: |
       Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and
       interacting with them in a uniform way regardless of the device communication protocol.
@@ -331,7 +380,7 @@ entries:
     version: 1.0.1
   - apiVersion: v1
     appVersion: 1.0.3
-    created: "2020-02-13T10:07:16.991168138Z"
+    created: "2020-02-13T10:12:01.489163866Z"
     description: |
       Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and
       interacting with them in a uniform way regardless of the device communication protocol.
@@ -354,4 +403,4 @@ entries:
     urls:
     - https://eclipse.org/packages/charts/hono-1.0.0.tgz
     version: 1.0.0
-generated: "2020-02-13T10:07:16.694720676Z"
+generated: "2020-02-13T10:12:01.193389778Z"
