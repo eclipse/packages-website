@@ -8,14 +8,20 @@
 
     <link rel="stylesheet" href="/packages/assets/bootstrap/bootstrap.min.css">
 
-    <title>Learn more</title>
+    <title>Overview</title>
 
     <link rel="stylesheet" href="/packages/assets/css/style.css">
     <script src="/packages/assets/js/code.js"></script>
     
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Learn more"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://staging.eclipse.org/packages/images/package-zero.jpg"/>
+<meta name="twitter:title" content="Cloud2Edge"/>
+<meta name="twitter:description" content="A package connecting and managing sensor style devices. Connecting sensors to the cloud, processing data with a digital twin platform, and managing device firmware."/>
+
+
+    <link rel="icon" type="image/svg+xml" href="/packages/images/icon/icon.svg" sizes="any">
+    <link rel="icon" href="/packages/images/icon/icon.png" sizes="192x192">
+    <link rel="apple-touch-icon-precomposed" href="/packages/images/icon/icon_apple.png" sizes="180x180">
 
 </head>
 
@@ -68,62 +74,45 @@
 
     <main id="main" role="main" >
       <div class="container mt-5">
-<h1>Package Zero</h1>
+<h1>Cloud2Edge</h1>
 <p class="lead">A package connecting and managing sensor style devices. Connecting sensors to the cloud, processing data with a digital twin platform, and managing device firmware.</p>
 </div><div class="container mt-5">
 
-<nav class="nav nav-pills nav-fill mt-5 mb-5"><a class="nav-item nav-link " href="/packages/packages/package-zero/">Overview</a><a class="nav-item nav-link " href="/packages/packages/package-zero/installation/">Installation</a><a class="nav-item nav-link  active" href="/packages/packages/package-zero/learn/">Learn more</a><a class="nav-item nav-link " href="/packages/packages/package-zero/tour/">Take a tour</a></nav><div class="row">
+<nav class="nav nav-pills nav-fill mt-5 mb-5"><a class="nav-item nav-link  active" href="/packages/packages/cloud2edge/">Overview</a><a class="nav-item nav-link " href="/packages/packages/cloud2edge/installation/">Installation</a><a class="nav-item nav-link " href="/packages/packages/cloud2edge/learn/">Learn more</a><a class="nav-item nav-link " href="/packages/packages/cloud2edge/tour/">Take a tour</a></nav><p>
+In order to have a better understanding, the following diagram will give you a brief overview of the package.
+</p>
 
-<div class="col-12 col-md-8 col-lg-9">
-    <h2 id="functionality">Functionality</h2>
+<div class="row">
 
-    <p>This package gives you a scalable, cloud based IoT messaging platform. This allows you the equip
-your sensor like devices to report telemetry data to a central location and receive back commands
-from the cloud backend.</p>
+<div class="col-sm-6">
+<img class="img-fluid" src="images/overview.png" title="Overview diagram">
+</div>
 
-    <p>The IoT messaging layer takes care of normalizing the various IoT protocol on AMQP 1.0, so that
-the backend applications can focus on processing the messages, rather than implementing various
-protocols. The messaging layer also provides the authentication and authorization layer. Ensuring
-that the backend applications only receive information from properly authenticated and authorized
-devices.</p>
+<div class="col-sm-6">
 
-    <p>For making the implementation of backend applications easier, the digital twin platform will
-pre-process the incoming message stream, and translate it into a last-known state of the various
-devices. This makes it easier to implement backend applications, as the state is being managed
-by the digital twin platform.</p>
+<p class="border-callout-left" style="border-color: #ff972f;">
+<strong>Eclipse Hono</strong> provides the IoT messaging layer. It allows the devices to connect into the cluster
+using various IoT specific protocols (e.g. MQTT). Connections will be authenticated based on data from
+the <em>device registry</em>. Messages will be passed through the <em>router</em>, for volatile messages, and through
+the <em>broker</em> for persistent messages.
+</p>
 
-    <p>In addition to the actual processing of data, the package also provides a feature to update the
-firmware of the devices, planning and orchestrating rollouts of new versions.</p>
+<p class="border-callout-left" style="border-color: #81aca6;">
+<strong>Eclipse Ditto</strong> will tap into the stream of messages, coming from Hono and the devices. It will
+pre-process it, so that applications can work with more structured data.
+</p>
 
-    <h2 id="example-use-case">Example use-case</h2>
+<p class="border-callout-left" style="border-color: #8e86ae;">
+<strong>Eclipse Hawkbit</strong> will take care of rolling out new messages. For this it will also use the messaging
+layer provided by Hono.
+</p>
 
-    <p>…</p>
-  </div>
+<p class="border-callout-left" style="border-color: #ff6d6d;">
+This enables your <strong>Custom Application</strong> to easily communicate with the devices, using a
+structured data model, a scalable messaging layer.
+</p>
 
-<div class="col-12 col-md-4 col-lg-3 
-
-">
-    <h2 id="also-see">Also see</h2>
-
-    <ul>
-      <li>About Eclipse Hono
-        <ul>
-          <li><a href="https://www.eclipse.org/hono/getting-started/">Getting started</a></li>
-          <li><a href="https://www.eclipse.org/hono/docs/">Documentation</a></li>
-        </ul>
-      </li>
-      <li>About Eclipse Ditto
-        <ul>
-          <li><a href="https://www.eclipse.org/ditto/intro-overview.html">Overview</a></li>
-        </ul>
-      </li>
-      <li>About Eclipse Hawkbit
-        <ul>
-          <li><a href="https://www.eclipse.org/hawkbit/gettingstarted/">Getting started</a></li>
-        </ul>
-      </li>
-    </ul>
-  </div>
+</div>
 
 </div>
 </div>

@@ -17,6 +17,10 @@
 <meta name="twitter:title" content="Helm chart repository"/>
 <meta name="twitter:description" content=""/>
 
+    <link rel="icon" type="image/svg+xml" href="/packages/images/icon/icon.svg" sizes="any">
+    <link rel="icon" href="/packages/images/icon/icon.png" sizes="192x192">
+    <link rel="apple-touch-icon-precomposed" href="/packages/images/icon/icon_apple.png" sizes="180x180">
+
 </head>
 
 <body>
@@ -97,11 +101,18 @@ expect the name to be <code class="highlighter-rouge">eclipse-iot</code>.</p>
 
 <p>You can browse through the content using:</p>
 
+<div class="clipboard"><pre><code>helm search repo</code></pre></div>
+
+<p>If you also want the search to include charts that are still under development, e.g. <em>alpha</em>, <em>beta</em> and <em>pre-release</em> versions:</p>
+
 <div class="clipboard"><pre><code>helm search repo --devel</code></pre></div>
 
-<p>If you want to see “under development” charts:</p>
+<h2 id="how-chart-publishing-works">How chart publishing works</h2>
 
-<div class="clipboard"><pre><code>helm search repo --devel</code></pre></div>
+<p>All chart changes will be verified by a <a href="https://github.com/eclipse/packages/actions">Github action</a>, this is done on every pull request.</p>
+
+<p>Once a pull request is merged, the updated chart will be deployed by a <a href="https://ci.eclipse.org/packages/job/Website/job/master/">Jenkins job</a>.
+This job takes care of publishing the resources and generating an updated <code class="highlighter-rouge">index.yaml</code>.</p>
 
 </div>
 

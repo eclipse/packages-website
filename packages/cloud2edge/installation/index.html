@@ -17,6 +17,10 @@
 <meta name="twitter:title" content="Installation"/>
 <meta name="twitter:description" content=""/>
 
+    <link rel="icon" type="image/svg+xml" href="/packages/images/icon/icon.svg" sizes="any">
+    <link rel="icon" href="/packages/images/icon/icon.png" sizes="192x192">
+    <link rel="apple-touch-icon-precomposed" href="/packages/images/icon/icon_apple.png" sizes="180x180">
+
 </head>
 
 <body>
@@ -68,21 +72,20 @@
 
     <main id="main" role="main" >
       <div class="container mt-5">
-<h1>Package Zero</h1>
+<h1>Cloud2Edge</h1>
 <p class="lead">A package connecting and managing sensor style devices. Connecting sensors to the cloud, processing data with a digital twin platform, and managing device firmware.</p>
 </div><div class="container mt-5">
 
-<nav class="nav nav-pills nav-fill mt-5 mb-5"><a class="nav-item nav-link " href="/packages/packages/package-zero/">Overview</a><a class="nav-item nav-link  active" href="/packages/packages/package-zero/installation/">Installation</a><a class="nav-item nav-link " href="/packages/packages/package-zero/learn/">Learn more</a><a class="nav-item nav-link " href="/packages/packages/package-zero/tour/">Take a tour</a></nav>
+<nav class="nav nav-pills nav-fill mt-5 mb-5"><a class="nav-item nav-link " href="/packages/packages/cloud2edge/">Overview</a><a class="nav-item nav-link  active" href="/packages/packages/cloud2edge/installation/">Installation</a><a class="nav-item nav-link " href="/packages/packages/cloud2edge/learn/">Learn more</a><a class="nav-item nav-link " href="/packages/packages/cloud2edge/tour/">Take a tour</a></nav>
 <div class="row">
 
 <div class="col-12 col-md-8 col-lg-9">
 
-    <p>You will need a Kubernetes instance in order to deploy this package. If you haven’t done so already, take a look at our <a href="/packages/prereqs">Kubernetes installation</a> page. Any Kubernetes compatible cluster will do, as long as
-it meets the requirements.</p>
+    <p>You will need a Kubernetes instance in order to deploy this package. If you haven’t done so already, take a look at our <a href="/packages/prereqs">Kubernetes installation</a> page. Any Kubernetes compatible cluster will do, as long as it meets the requirements.</p>
 
     <h2 id="check-access">Check access</h2>
 
-    <p>Be sure that you are logged in into your Kubernetes cluster:</p>
+    <p>Be sure that you are logged in to your Kubernetes cluster:</p>
 
     <div class="clipboard"><pre><code>kubectl version</code></pre></div>
 
@@ -94,58 +97,40 @@ Server Version: version.Info{Major:"1", Minor:"13+", GitVersion:"v1.13.4+c2a5caf
 </code></pre></div>          </div>
         </div></details></p>
 
-    <h2 id="clone-repository">Clone repository</h2>
+    <h2 id="run-the-installation">Run the installation</h2>
 
-    <p>Clone the repository with the deployment scripts:</p>
+    <p>First create a new namespace for the package:</p>
 
-    <div class="clipboard"><pre><code>git clone https://github.com/eclipse/packages.git
-cd packages</code></pre></div>
+    <div class="clipboard"><pre><code>kubectl create namespace cloud2edge</code></pre></div>
 
-    <p>Change into the directory of this package:</p>
+    <p>Next, install the package using Helm:</p>
 
-    <div class="clipboard"><pre><code>cd packages/package-zero</code></pre></div>
+    <div class="clipboard"><pre><code>helm install --dependency-update -n cloud2edge c2e eclipse-iot/cloud2edge</code></pre></div>
 
-    <p>All further commands assume that you are operating from this directory.</p>
+    <h2 id="monitor-installation">Monitor installation</h2>
 
-    <h2 id="run-the-deployment">Run the deployment</h2>
+    <p>Installation and start-up of the package’s services might take some minutes.
+You can track the start-up by means of the following command:</p>
 
-    <p>First create a new namespace for the deployment:</p>
-
-    <div class="clipboard"><pre><code>kubectl create namespace package-zero</code></pre></div>
-
-    <p>Next, render the Helm charts:</p>
-
-    <div class="clipboard"><pre><code>mkdir output
-helm template . --name package-zero --namespace package-zero --output-dir output</code></pre></div>
-
-    <p>The output is in the directory <code class="highlighter-rouge">output</code>. It is not yet deployed, but you
-can inspect it and then apply it by running:</p>
-
-    <div class="clipboard"><pre><code>kubectl apply -Rf output/</code></pre></div>
-
-    <h2 id="monitor-deployment">Monitor deployment</h2>
-
-    <p>When you execute the following command:</p>
-
-    <div class="clipboard"><pre><code>kubectl get pods</code></pre></div>
+    <div class="clipboard"><pre><code>kubectl get pods -n cloud2edge</code></pre></div>
 
     <p>You should see the pods being started and becoming ready.</p>
 
     <p><details><summary>Example of started pods</summary><div>
           <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>NAME                                               READY   STATUS    RESTARTS   AGE
-package-zero-adapter-amqp-vertx-57dc849d4c-tw25z   1/1     Running   0          148m
-package-zero-adapter-http-vertx-6bdffc59-t54h5     1/1     Running   0          148m
-package-zero-adapter-mqtt-vertx-74cdb9644b-6pgs6   1/1     Running   0          148m
-package-zero-artemis-54ffcff88f-7w85x              1/1     Running   0          148m
-package-zero-dispatch-router-54d968954b-vrp7z      1/1     Running   0          148m
-package-zero-service-auth-6c9bcf8899-qmztm         1/1     Running   0          148m
-package-zero-service-device-registry-0             1/1     Running   0          148m
+c2e-adapter-amqp-vertx-57dc849d4c-tw25z            1/1     Running   0          148m
+c2e-adapter-http-vertx-6bdffc59-t54h5              1/1     Running   0          148m
+c2e-adapter-mqtt-vertx-74cdb9644b-6pgs6            1/1     Running   0          148m
+c2e-artemis-54ffcff88f-7w85x                       1/1     Running   0          148m
+c2e-dispatch-router-54d968954b-vrp7z               1/1     Running   0          148m
+c2e-service-auth-6c9bcf8899-qmztm                  1/1     Running   0          148m
+c2e-service-device-registry-0                      1/1     Running   0          148m
 </code></pre></div>          </div>
         </div></details></p>
 
     <h2 id="ready-to-run">Ready to run</h2>
 
-    <p>Once the pods are all ready, you are ready to use the deployment. For an initial walk-through of the functionality
+    <p>Once the pods are all ready, you can start using the package’s services. For an initial walk-through of the functionality
 see the section <a href="../tour">Take a tour</a>.</p>
 
   </div>
