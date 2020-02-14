@@ -3,6 +3,28 @@ entries:
   cloud2edge:
   - apiVersion: v1
     appVersion: 0.0.1
+    created: "2020-02-14T12:49:33.788085853Z"
+    description: |
+      Eclipse IoT Cloud2Edge (C2E) is an integrated suite of services developers can use to build IoT applications
+      that are deployed from the cloud to the edge. The suite currently consists of Eclipse Hono and Eclipse Ditto.
+    digest: bb805ed547ea88fc2b3d2b2ffb8b07a74124a38d4a7e17db08b034724186b6f4
+    home: https://eclipse.org/packages/packages/cloud2edge/
+    keywords:
+    - iot-package
+    - IoT
+    - messaging
+    - digital twin
+    maintainers:
+    - email: kai.hudalla@bosch.io
+      name: sophokles73
+    name: cloud2edge
+    sources:
+    - https://github.com/eclipse/packages/packages/cloud2edge/
+    urls:
+    - https://eclipse.org/packages/charts/cloud2edge-0.0.1.tgz
+    version: 0.0.1
+  - apiVersion: v1
+    appVersion: 0.0.1
     created: "2020-02-13T10:12:01.2908196Z"
     description: |
       Eclipse IoT Cloud2Edge (C2E) is an integrated suite of services developers can use to build IoT applications
@@ -24,6 +46,31 @@ entries:
     - https://eclipse.org/packages/charts/cloud2edge-0.0.1-alpha2.tgz
     version: 0.0.1-alpha2
   ditto:
+  - apiVersion: v1
+    appVersion: 1.0.0
+    created: "2020-02-14T12:49:33.791019694Z"
+    description: |
+      Eclipse Ditto™ is a technology in the IoT implementing a software pattern called “digital twins”.
+      A digital twin is a virtual, cloud based, representation of his real world counterpart
+      (real world “Things”, e.g. devices like sensors, smart heating, connected cars, smart grids,
+      EV charging stations etc).
+    digest: 1d6a9dccd249b486c83f25eea3a1e8164c0510e34ba9ae3858912caa05c0469a
+    home: https://www.eclipse.org/ditto
+    icon: https://www.eclipse.org/ditto/images/ditto.svg
+    keywords:
+    - iot-chart
+    maintainers:
+    - email: axel.koehler@kiwigrid.com
+      name: axdotl
+    - email: thomas.jaeckle@bosch-si.com
+      name: thjaeckle
+    name: ditto
+    sources:
+    - https://github.com/eclipse/ditto
+    - https://github.com/eclipse/packages
+    urls:
+    - https://eclipse.org/packages/charts/ditto-1.1.2.tgz
+    version: 1.1.2
   - apiVersion: v1
     appVersion: 1.0.0
     created: "2020-02-13T10:12:01.391134159Z"
@@ -403,4 +450,4 @@ entries:
     urls:
     - https://eclipse.org/packages/charts/hono-1.0.0.tgz
     version: 1.0.0
-generated: "2020-02-13T10:12:01.193389778Z"
+generated: "2020-02-14T12:49:33.687318339Z"
