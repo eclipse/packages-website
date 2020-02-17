@@ -214,22 +214,22 @@ Server Version: version.Info{Major:"1", Minor:"13+", GitVersion:"v1.13.4+c2a5caf
 
     <p>When you no longer need your cluster, you can stop it using:</p>
 
-    <div class="clipboard"><pre><code>minishift stop</code></pre></div>
+    <div class="clipboard"><pre><code>minikube stop</code></pre></div>
 
     <p>This will suspend the VM so that you can, later on, resume it by
 executing:</p>
 
-    <div class="clipboard"><pre><code>minishift start</code></pre></div>
+    <div class="clipboard"><pre><code>minikube start</code></pre></div>
 
     <p>Or delete it using:</p>
 
-    <div class="clipboard"><pre><code>minishift delete</code></pre></div>
+    <div class="clipboard"><pre><code>minikube delete</code></pre></div>
 
     <h4 id="resources">Resources</h4>
 
     <p>You can translate the package resources requirements into arguments for the <code class="highlighter-rouge">start</code> command like this:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>minishift start --cpus &lt;cpus&gt; --disk-size &lt;size&gt; --memory &lt;memory&gt; --kubernetes-version &lt;version&gt;
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>minikube start --cpus &lt;cpus&gt; --disk-size &lt;size&gt; --memory &lt;memory&gt; --kubernetes-version &lt;version&gt;
 </code></pre></div>    </div>
 
     <p>Using the following arguments:</p>
