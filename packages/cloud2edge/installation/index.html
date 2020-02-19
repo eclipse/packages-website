@@ -121,7 +121,7 @@ kubectl create namespace $NS</code></pre></div>
 out of the box. Instead, services are exposed via <em>NodePorts</em>.</p>
 
         <div class="clipboard"><pre><code>RELEASE=c2e
-helm install -n $NS $RELEASE eclipse-iot/cloud2edge</code></pre></div>
+helm install -n $NS --wait --timeout 10m $RELEASE eclipse-iot/cloud2edge</code></pre></div>
       </div>
 
 <div class="tab-pane" id="variants-1-1" role="tabpanel" aria-labelledby="variants-1-1-tab">
@@ -129,7 +129,7 @@ helm install -n $NS $RELEASE eclipse-iot/cloud2edge</code></pre></div>
 IP addresses. To install the Cloud2Edge package using load balancers, run the following command:</p>
 
         <div class="clipboard"><pre><code>RELEASE=c2e
-helm install -n $NS --set hono.useLoadBalancer=true --set ditto.nginx.service.type=LoadBalancer $RELEASE eclipse-iot/cloud2edge</code></pre></div>
+helm install -n $NS --wait --timeout 10m --set hono.useLoadBalancer=true --set ditto.nginx.service.type=LoadBalancer $RELEASE eclipse-iot/cloud2edge</code></pre></div>
       </div>
 
 </div>
