@@ -135,27 +135,112 @@ where the device’s twin representation will be updated with the data published
     <p>The demo device’s digital twin supports a temperature property which will be set to 45
 by means of the following command:</p>
 
-    <div class="clipboard"><pre><code>curl -i -u demo-device@org.eclipse.packages.c2e:demo-secret -H "application/json" --data-binary '{
+    <div class="clipboard"><pre><code>curl -i -u demo-device@org.eclipse.packages.c2e:demo-secret -H 'application/json' --data-binary '{
   "topic": "org.eclipse.packages.c2e/demo-device/things/twin/commands/modify",
   "headers": {},
   "path": "/features/temperature/properties/value",
-  "value": "45"
+  "value": 45
 }' http://${HTTP_ADAPTER_IP}:${HTTP_ADAPTER_PORT_HTTP}/telemetry</code></pre></div>
 
     <h2 id="retrieving-the-digital-twins-current-state">Retrieving the digital twin’s current state</h2>
 
     <p>The updated state of the digital twin can then be retrieved using:</p>
 
-    <div class="clipboard"><pre><code>curl -u ditto:ditto http://$DITTO_API_IP:$DITTO_API_PORT_HTTP/api/2/things/org.eclipse.packages.c2e:demo-device</code></pre></div>
+    <div class="clipboard"><pre><code>curl -u ditto:ditto -w '\n' http://$DITTO_API_IP:$DITTO_API_PORT_HTTP/api/2/things/org.eclipse.packages.c2e:demo-device</code></pre></div>
 
     <p>Alternatively you can also use the following command to subscribe to Ditto’s
 stream of thing update events:</p>
 
-    <div class="clipboard"><pre><code>curl --http2 -u ditto:ditto -H "Accept:text/event-stream" -N http://$DITTO_API_IP:$DITTO_API_PORT_HTTP/api/2/things</code></pre></div>
+    <div class="clipboard"><pre><code>curl --http2 -u ditto:ditto -H 'Accept:text/event-stream' -N http://$DITTO_API_IP:$DITTO_API_PORT_HTTP/api/2/things</code></pre></div>
+
+    <h2 id="sending-a-command-to-the-device-via-its-digital-twin">Sending a command to the device via its digital twin</h2>
+
+    <p>Ditto digital twin may also be used to send a command down to the device connected at Hono using.</p>
+
+    <div class="clipboard"><pre><code>curl -i -X POST -u ditto:ditto -H 'Content-Type: application/json' -w '\n' --data '{
+  "water-amount": "3liters"
+}' http://$DITTO_API_IP:$DITTO_API_PORT_HTTP/api/2/things/org.eclipse.packages.c2e:demo-device/inbox/messages/start-watering?timeout=0</code></pre></div>
+
+    <p>Specifying the <code class="highlighter-rouge">timeout=0</code> parameter indicates that the HTTP request will directly be accepted and Ditto does not wait
+for a response.</p>
+
+    <p>If Ditto shall wait for a response, responding with the response from the device at the HTTP level, simply increase the
+timeout to the amount of seconds to wait:</p>
+
+    <div class="clipboard"><pre><code>curl -i -X POST -u ditto:ditto -H 'Content-Type: application/json' -w '\n' --data '{
+  "water-amount": "3liters"
+}' http://$DITTO_API_IP:$DITTO_API_PORT_HTTP/api/2/things/org.eclipse.packages.c2e:demo-device/inbox/messages/start-watering?timeout=60</code></pre></div>
+
+    <h3 id="receiving-a-command-at-the-device">Receiving a command at the device</h3>
+
+    <p>The device may receive a command by specifying a <code class="highlighter-rouge">ttd</code> when e.g. sending telemetry via HTTP to Hono:</p>
+
+    <div class="clipboard"><pre><code>curl -i -u demo-device@org.eclipse.packages.c2e:demo-secret -H 'hono-ttd: 50' -H 'application/json' -w '\n' --data '{
+  "topic": "org.eclipse.packages.c2e/demo-device/things/twin/commands/modify",
+  "headers": {},
+  "path": "/features/temperature/properties/value",
+  "value": 45
+}' http://${HTTP_ADAPTER_IP}:${HTTP_ADAPTER_PORT_HTTP}/telemetry</code></pre></div>
+
+    <p>An example response for the device containing the command sent via the Ditto twin (see previous step for sending the 
+command) is:</p>
+
+    <p><details><summary>Example of a received command at the device</summary><div>
+          <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HTTP/1.1 200 OK
+hono-command: start-watering
+hono-cmd-req-id: 024d84b1ceb-797b-45f5-bc87-78e9b5396645replies
+content-type: application/json
+content-length: 516
+
+{"topic":"org.eclipse.packages.c2e/demo-device/things/live/messages/start-watering","headers":{"correlation-id":"d84b1ceb-797b-45f5-bc87-78e9b5396645","x-forwarded-for":"10.244.0.1","version":2,"timeout":"0","x-forwared-user":"ditto","accept":"*/*","x-real-ip":"10.244.0.1","x-ditto-dummy-auth":"nginx:ditto","host":"172.17.0.2:30385","content-type":"application/json","timestamp":"2020-02-28T08:04:43.518+01:00","user-agent":"curl/7.58.0"},"path":"/inbox/messages/start-watering","value":{"water-amount":"3liters"}}
+</code></pre></div>          </div>
+        </div></details></p>
+
+    <h3 id="responding-to-a-command-at-the-device">Responding to a command at the device</h3>
+
+    <p>In order to answer to a command, the device can send its answer in Ditto Protocol back to Hono via HTTP.</p>
+
+    <p>The response has to be correlated twice:</p>
+    <ul>
+      <li>once for Hono in the URL: please replace the placeholder <code class="highlighter-rouge">insert-hono-cmd-req-id-here</code> with the <code class="highlighter-rouge">hono-cmd-req-id</code> 
+HTTP header value from the received command.</li>
+      <li>once for Ditto in the Ditto Protocol payload: please replace the placeholder <code class="highlighter-rouge">insert-ditto-correlation-id-header-here</code>
+with the <code class="highlighter-rouge">"correlation-id"</code> value from the received Ditto Protocol message’s <code class="highlighter-rouge">"headers"</code> object.</li>
+    </ul>
+
+    <div class="clipboard"><pre><code>curl -i -X PUT -u demo-device@org.eclipse.packages.c2e:demo-secret -H "content-type: application/json" --data-binary '{
+  "topic": "org.eclipse.packages.c2e/demo-device/things/live/messages/start-watering",
+  "headers": {
+    "content-type": "application/json",
+    "correlation-id": "insert-ditto-correlation-id-header-here"
+  },
+  "path": "/inbox/messages/start-watering",
+  "value": {
+    "starting-watering": true
+  },
+  "status": 200
+}' http://${HTTP_ADAPTER_IP}:${HTTP_ADAPTER_PORT_HTTP}/command/res/org.eclipse.packages.c2e/org.eclipse.packages.c2e:demo-device/insert-hono-cmd-req-id-here?hono-cmd-status=200</code></pre></div>
+
+    <p>An example message response (omitting some additional HTTP headers) at the Ditto twin which waited for the command
+ e.g. with a <code class="highlighter-rouge">timeout=60</code> is:</p>
+
+    <p><details><summary>Example of a twin message response</summary><div>
+          <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: 26
+correlation-id: 715cb667-7750-4451-969e-6f8c735129ef
+
+{"starting-watering":true}
+</code></pre></div>          </div>
+        </div></details></p>
 
     <h2 id="working-with-devices">Working with devices</h2>
 
-    <p>The next sections will create a new tenant and register a device for it.</p>
+    <p>The next sections will create a new tenant in Hono, register a device for it and create a digital twin for it in Ditto.</p>
+
+    <p>In order to <em>link</em> Hono devices to Ditto digital twins (a.k.a. things), it is assumed that Hono device and Ditto thing 
+always have the same id, starting with a namespace (e.g. in reverse domain notation), followed by a colon and a name, 
+e.g.: <code class="highlighter-rouge">org.acme:my-device</code>.</p>
 
     <h3 id="create-a-new-tenant">Create a new tenant</h3>
 
@@ -178,24 +263,24 @@ content-length: 12
 
     <h3 id="register-a-new-device">Register a new device</h3>
 
-    <p>Next we can register a new device, named <code class="highlighter-rouge">my-device-1</code> for the tenant we just created:</p>
+    <p>Next we can register a new device, named <code class="highlighter-rouge">org.acme:my-device-1</code> for the tenant we just created:</p>
 
-    <div class="clipboard"><pre><code>curl -i http://${REGISTRY_IP}:${REGISTRY_PORT_HTTP}/v1/devices/my-tenant/my-device-1</code></pre></div>
+    <div class="clipboard"><pre><code>curl -i http://${REGISTRY_IP}:${REGISTRY_PORT_HTTP}/v1/devices/my-tenant/org.acme:my-device-1</code></pre></div>
 
     <p>This should return a result of <code class="highlighter-rouge">201 Created</code>.</p>
 
     <p><details><summary>Example of a successful result</summary><div>
           <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HTTP/1.1 201 Created
 etag: d48f4e13-b398-4c73-bbc3-5ac97a81b3e8
-location: /v1/devices/iot/my-device-1
+location: /v1/devices/iot/org.acme:my-device-1
 content-type: application/json; charset=utf-8
 content-length: 17
 
-{"id":"my-device-1"}
+{"id":"org.acme:my-device-1"}
 </code></pre></div>          </div>
         </div></details></p>
 
-    <h3 id="set-device-credentials">Set device credentials</h3>
+    <h4 id="set-device-credentials">Set device credentials</h4>
 
     <p>The device created has no credentials assigned. So it will not be possible for this
 device to directly connect to the platform. This is ok for devices attached via
@@ -209,7 +294,7 @@ to assign a username/password combination:</p>
   "secrets": [{
     "pwd-plain": "my-password"
   }]
-}]' http://${REGISTRY_IP}:${REGISTRY_PORT_HTTP}/v1/credentials/my-tenant/my-device-1</code></pre></div>
+}]' http://${REGISTRY_IP}:${REGISTRY_PORT_HTTP}/v1/credentials/my-tenant/org.acme:my-device-1</code></pre></div>
 
     <p><details><summary>Example of a successful result</summary><div>
           <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HTTP/1.1 204 No Content
@@ -217,20 +302,109 @@ etag: a7edc4b8-701a-4fe1-85c4-1717c0d24562
 </code></pre></div>          </div>
         </div></details></p>
 
-    <h3 id="understanding-identities">Understanding identities</h3>
+    <h4 id="understanding-identities">Understanding identities</h4>
 
-    <p>The previous step assigned the credentials of <code class="highlighter-rouge">my-auth-id-1</code> and <code class="highlighter-rouge">my-password</code> to the device <code class="highlighter-rouge">my-device-1</code>.</p>
+    <p>The previous step assigned the credentials of <code class="highlighter-rouge">my-auth-id-1</code> and <code class="highlighter-rouge">my-password</code> to the device <code class="highlighter-rouge">org.acme:my-device-1</code>.</p>
 
     <p>Please note that there is a difference between the <em>username</em> of the device (<code class="highlighter-rouge">my-auth-id-1</code>) and
-the name of the device (<code class="highlighter-rouge">my-device-1</code>). When connecting to e.g. the MQTT protocol adapter,
+the name of the device (<code class="highlighter-rouge">org.acme:my-device-1</code>). When connecting to e.g. the MQTT protocol adapter,
 you will need to use the fully qualified username of <code class="highlighter-rouge">my-auth-id-1@my-tenant</code>
-(<em>authentication id</em> and <em>tenant name</em>), rather than just the <em>device id</em> (<code class="highlighter-rouge">my-device-1</code>).</p>
+(<em>authentication id</em> and <em>tenant name</em>), rather than just the <em>device id</em> (<code class="highlighter-rouge">org.acme:my-device-1</code>).</p>
 
     <p>The <em>authentication id</em> is only used for the authentication process. Later on, the messages will be marked
 with the <em>device id</em> and the back end system isn’t aware of the <em>authentication id</em> anymore.</p>
 
     <p>Of course you may use the same value for the <em>authentication id</em> and the <em>device id</em>. In this tutorial however,
 we use distinct values to show the difference.</p>
+
+    <h3 id="create-the-digital-twin">Create the digital twin</h3>
+
+    <p>In the previous steps a device was registered in Hono, now we want to create a digital twin for this device in Ditto.</p>
+
+    <h4 id="setup-a-common-policy">Setup a common policy</h4>
+
+    <p>In order to define common authorization information for all digital twins about to be created in Ditto, we first create 
+a policy with the id <code class="highlighter-rouge">org.acme:my-policy</code>:</p>
+
+    <div class="clipboard"><pre><code>curl -i -X PUT -u ditto:ditto -H 'Content-Type: application/json' --data '{
+  "entries": {
+    "DEFAULT": {
+      "subjects": {
+        "{{ request:subjectId }}": {
+           "type": "Ditto user authenticated via nginx"
+        }
+      },
+      "resources": {
+        "thing:/": {
+          "grant": ["READ", "WRITE"],
+          "revoke": []
+        },
+        "policy:/": {
+          "grant": ["READ", "WRITE"],
+          "revoke": []
+        },
+        "message:/": {
+          "grant": ["READ", "WRITE"],
+          "revoke": []
+        }
+      }
+    },
+    "HONO": {
+      "subjects": {
+        "pre-authenticated:hono-connection": {
+          "type": "Connection to Eclipse Hono"
+        }
+      },
+      "resources": {
+        "thing:/": {
+          "grant": ["READ", "WRITE"],
+          "revoke": []
+        },
+        "message:/": {
+          "grant": ["READ", "WRITE"],
+          "revoke": []
+        }
+      }
+    }
+  }
+}' http://${DITTO_API_IP}:${$DITTO_API_PORT_HTTP/api/2/policies/org.acme:my-policy</code></pre></div>
+
+    <p>This should return a result of <code class="highlighter-rouge">201 Created</code> containing as response body of the created policy JSON.</p>
+
+    <p>The created policy may be used for just one digital twin or for many of them. Modifying it will adjust the authorization
+configuration of all twins referencing this <em>policy id</em>.</p>
+
+    <h4 id="create-the-twin">Create the twin</h4>
+
+    <p>In order to create a digital twin in Ditto, we use the same <em>device id</em> already used for creating the device at Hono as 
+<em>thing id</em>: <code class="highlighter-rouge">org.acme:my-device-1</code>.<br />
+Furthermore, we add a reference to the in the previous step created <em>policy id</em> in order to define the authorization 
+information of the twin:</p>
+
+    <div class="clipboard"><pre><code>curl -X PUT -u ditto:ditto -H 'Content-Type: application/json' --data '{
+  "policyId": "org.acme:my-policy",
+  "attributes": {
+    "location": "Germany"
+  },
+  "features": {
+    "temperature": {
+      "properties": {
+        "value": null
+      }
+    },
+    "humidity": {
+      "properties": {
+        "value": null
+      }
+    }
+  }
+}' http://${DITTO_API_IP}:${$DITTO_API_PORT_HTTP/api/2/things/org.acme:my-device-1</code></pre></div>
+
+    <p>This should return a result of <code class="highlighter-rouge">201 Created</code> containing as response body of the created thing JSON.</p>
+
+    <p>In order to add more twins, we simply create additional devices via <a href="#register-a-new-device">“Register a new device”</a>
+and add twins for them with the above snippet by simply adjusting the <em>device id</em> and <em>thing id</em> in the URL of both
+HTTP requests.</p>
 
     <h2 id="next-steps">Next Steps</h2>
 
