@@ -2,6 +2,30 @@ apiVersion: v1
 entries:
   cloud2edge:
   - apiVersion: v1
+    appVersion: 0.0.5
+    created: "2020-03-19T12:14:08.939149344Z"
+    description: |
+      Eclipse IoT Cloud2Edge (C2E) is an integrated suite of services developers can use to build IoT applications
+      that are deployed from the cloud to the edge. The suite currently consists of Eclipse Hono and Eclipse Ditto.
+    digest: 5352dd1a86b35df4eb477cee0c826bee3ff38938c3af224c967bd4692c7a7cdc
+    home: https://eclipse.org/packages/packages/cloud2edge/
+    keywords:
+    - iot-package
+    - IoT
+    - messaging
+    - digital twin
+    maintainers:
+    - email: kai.hudalla@bosch.io
+      name: sophokles73
+    - email: thomas.jaeckle@bosch.io
+      name: thjaeckle
+    name: cloud2edge
+    sources:
+    - https://github.com/eclipse/packages/packages/cloud2edge/
+    urls:
+    - https://staging.eclipse.org/packages/charts/cloud2edge-0.0.5.tgz
+    version: 0.0.5
+  - apiVersion: v1
     appVersion: 0.0.1
     created: "2020-02-13T09:37:32.488608346Z"
     description: |
@@ -24,6 +48,31 @@ entries:
     - https://staging.eclipse.org/packages/charts/cloud2edge-0.0.1-alpha2.tgz
     version: 0.0.1-alpha2
   ditto:
+  - apiVersion: v1
+    appVersion: 1.0.0
+    created: "2020-03-19T12:14:09.03487012Z"
+    description: |
+      Eclipse Ditto™ is a technology in the IoT implementing a software pattern called “digital twins”.
+      A digital twin is a virtual, cloud based, representation of his real world counterpart
+      (real world “Things”, e.g. devices like sensors, smart heating, connected cars, smart grids,
+      EV charging stations etc).
+    digest: 34eb252adea217f9184cab7fd20a793e3ff9178415e06163ec086f0165a5736d
+    home: https://www.eclipse.org/ditto
+    icon: https://www.eclipse.org/ditto/images/ditto.svg
+    keywords:
+    - iot-chart
+    maintainers:
+    - email: axel.koehler@kiwigrid.com
+      name: axdotl
+    - email: thomas.jaeckle@bosch-si.com
+      name: thjaeckle
+    name: ditto
+    sources:
+    - https://github.com/eclipse/ditto
+    - https://github.com/eclipse/packages
+    urls:
+    - https://staging.eclipse.org/packages/charts/ditto-1.1.4.tgz
+    version: 1.1.4
   - apiVersion: v1
     appVersion: 1.0.0
     created: "2020-02-13T13:21:25.913644565Z"
@@ -109,6 +158,32 @@ entries:
   hawkbit:
   - apiVersion: v1
     appVersion: 0.3.0M6-mysql
+    created: "2020-03-19T12:14:09.039773068Z"
+    description: |
+      Eclipse hawkBit™ is a domain independent back-end framework for rolling out software updates
+      to constrained edge devices as well as more powerful controllers and gateways connected to
+      IP based networking infrastructure.
+    digest: c3793043e412d82ddd695325d99114e0d46c13e61abcc7a54eacbda9a8830064
+    home: https://www.eclipse.org/hawkbit/
+    icon: https://www.eclipse.org/hawkbit/images/hawkbit_icon.png
+    keywords:
+    - iot-chart
+    maintainers:
+    - email: andre.bauer@kiwigrid.com
+      name: monotek
+    - email: axel.koehler@kiwigrid.com
+      name: axdotl
+    - email: ctron@dentrassi.de
+      name: ctron
+    name: hawkbit
+    sources:
+    - https://github.com/eclipse/hawkbit
+    - https://github.com/eclipse/packages
+    urls:
+    - https://staging.eclipse.org/packages/charts/hawkbit-1.1.0.tgz
+    version: 1.1.0
+  - apiVersion: v1
+    appVersion: 0.3.0M6-mysql
     created: "2020-02-13T13:21:25.916440788Z"
     description: |
       Eclipse hawkBit™ is a domain independent back-end framework for rolling out software updates
@@ -152,6 +227,32 @@ entries:
     version: 1.0.0
   hono:
   - apiVersion: v1
+    appVersion: 1.1.1
+    created: "2020-03-19T12:14:09.335209846Z"
+    description: |
+      Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and
+      interacting with them in a uniform way regardless of the device communication protocol.
+    digest: 699a1c71b870d718a133d88bbc10517c345cb391860695b1e9346fa291f7bbb4
+    home: https://www.eclipse.org/hono/
+    icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
+    keywords:
+    - iot-chart
+    - IoT
+    - messaging
+    maintainers:
+    - email: dbosanac@redhat.com
+      name: dejanb
+    - email: jreimann@redhat.com
+      name: ctron
+    - email: kai.hudalla@bosch.io
+      name: sophokles73
+    name: hono
+    sources:
+    - https://github.com/eclipse/hono
+    urls:
+    - https://staging.eclipse.org/packages/charts/hono-1.2.1.tgz
+    version: 1.2.1
+  - apiVersion: v1
     appVersion: 1.1.0
     created: "2020-02-13T09:37:32.589121686Z"
     description: |
@@ -177,4 +278,4 @@ entries:
     urls:
     - https://staging.eclipse.org/packages/charts/hono-1.1.3.tgz
     version: 1.1.3
-generated: "2020-02-13T13:21:25.91054639Z"
+generated: "2020-03-19T12:14:08.834481633Z"

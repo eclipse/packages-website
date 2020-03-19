@@ -14,6 +14,7 @@
     <script src="/packages/assets/js/code.js"></script>
     
 <meta name="twitter:card" content="summary"/>
+<meta name="twitter:image" content="https://staging.eclipse.org/packages/images/icon/twitter_icon.png"/>
 <meta name="twitter:title" content="Helm chart repository"/>
 <meta name="twitter:description" content=""/>
 
@@ -97,6 +98,10 @@ are labeled explicitly.</p>
 a different name here. Just take extra care when working through tutorials, as they will
 expect the name to be <code class="highlighter-rouge">eclipse-iot</code>.</p>
 
+<p>After you have added the repository you should tell helm to download the index for its contents:</p>
+
+<div class="clipboard"><pre><code>helm repo update</code></pre></div>
+
 <h2 id="see-the-content-helm-v3">See the content <small><span class="badge badge-secondary">Helm v3</span></small></h2>
 
 <p>You can browse through the content using:</p>
@@ -106,6 +111,14 @@ expect the name to be <code class="highlighter-rouge">eclipse-iot</code>.</p>
 <p>If you also want the search to include charts that are still under development, e.g. <em>alpha</em>, <em>beta</em> and <em>pre-release</em> versions:</p>
 
 <div class="clipboard"><pre><code>helm search repo --devel</code></pre></div>
+
+<p>If you want to search for <em>charts</em> only, then you can use</p>
+
+<div class="clipboard"><pre><code>helm search repo iot-chart</code></pre></div>
+
+<p>and if you want to search for <em>packages</em> only</p>
+
+<div class="clipboard"><pre><code>helm search repo iot-package</code></pre></div>
 
 <h2 id="how-chart-publishing-works">How chart publishing works</h2>
 

@@ -14,6 +14,7 @@
     <script src="/packages/assets/js/code.js"></script>
     
 <meta name="twitter:card" content="summary"/>
+<meta name="twitter:image" content="https://staging.eclipse.org/packages/images/icon/twitter_icon.png"/>
 <meta name="twitter:title" content="Contributions welcome"/>
 <meta name="twitter:description" content=""/>
 
@@ -130,11 +131,12 @@ are some qualitative requirements that all packages and the charts they contain 
 integrated with each other in this way.</li>
   <li>only contain artifacts that are distributed under a license that is compatible with the EPLv2.</li>
   <li>only contain stable, released versions of project artifacts (no milestones or snapshots).</li>
-  <li>must contain
+  <li>must
     <ul>
-      <li>a README covering a basic introduction and the idea behind the package,</li>
-      <li>the Helm charts constituting the components of the package,</li>
-      <li>some guidance regarding what users might want to do with the package after installation.</li>
+      <li>contain a README covering a basic introduction and the idea behind the package,</li>
+      <li>include the Helm charts constituting the components of the package,</li>
+      <li>provide some guidance regarding what users might want to do with the package after installation.</li>
+      <li>include the <code class="highlighter-rouge">iot-package</code> key word in their <em>Chart.yaml</em></li>
     </ul>
   </li>
 </ul>
@@ -213,6 +215,7 @@ and <a href="https://github.com/helm/helm/blob/master/docs/chart_best_practices/
   </li>
   <li>must contain a <code class="highlighter-rouge">values.yaml</code> file which contains a reasonable default configuration and explains
 how the properties can be used to customize the chart</li>
+  <li>must include the <code class="highlighter-rouge">iot-chart</code> key word in their <em>Chart.yaml</em></li>
 </ul>
 
 <h2 id="merge-approval-and-release-process">Merge approval and release process</h2>

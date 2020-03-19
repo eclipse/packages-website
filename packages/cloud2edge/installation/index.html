@@ -14,8 +14,10 @@
     <script src="/packages/assets/js/code.js"></script>
     
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Installation"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:image" content="https://staging.eclipse.org/packages/images/icon/twitter_icon.png"/>
+<meta name="twitter:title" content="Cloud2Edge | Installation"/>
+<meta name="twitter:description" content="Installations instructions for the Cloud2Edge package."/>
+
 
     <link rel="icon" type="image/svg+xml" href="/packages/images/icon/icon.svg" sizes="any">
     <link rel="icon" href="/packages/images/icon/icon.png" sizes="192x192">
@@ -81,7 +83,9 @@
 
 <div class="col-12 col-md-8 col-lg-9">
 
-    <p>You will need a Kubernetes instance in order to deploy this package. If you haven’t done so already, take a look at our <a href="/packages/prereqs">Kubernetes installation</a> page. Any Kubernetes compatible cluster will do, as long as it meets the requirements.</p>
+    <p>You will need a Kubernetes instance, the <code class="highlighter-rouge">kubectl</code> and the <code class="highlighter-rouge">helm</code> tool in order to deploy this package.
+Please refer to our <a href="/packages/prereqs">pre-requisites</a> page for details.
+Any Kubernetes compatible cluster will do, as long as it meets the requirements.</p>
 
     <h2 id="check-access">Check access</h2>
 
@@ -97,41 +101,43 @@ Server Version: version.Info{Major:"1", Minor:"13+", GitVersion:"v1.13.4+c2a5caf
 </code></pre></div>          </div>
         </div></details></p>
 
-    <h2 id="run-the-installation">Run the installation</h2>
+    <h2 id="install-the-package">Install the package</h2>
 
-    <p>First create a new namespace for the package:</p>
+    <p>The Cloud2Edge package consists of multiple components. In order to keep them together and separate
+from other components running in your Kubernetes cluster, it is feasible to install them into
+their own name space. The following command creates the <code class="highlighter-rouge">cloud2edge</code> name space but you can select any
+other name as well.</p>
 
-    <div class="clipboard"><pre><code>kubectl create namespace cloud2edge</code></pre></div>
+    <div class="clipboard"><pre><code>NS=cloud2edge
+kubectl create namespace $NS</code></pre></div>
 
-    <p>Next, install the package using Helm:</p>
+    <p>Next, install the package to the name space using Helm.</p>
 
-    <div class="clipboard"><pre><code>helm install --dependency-update -n cloud2edge c2e eclipse-iot/cloud2edge</code></pre></div>
+    <nav><div class="nav nav-tabs" role="tablist"><a class="nav-item nav-link active" data-toggle="tab" id="variants-1-0-tab" href="#variants-1-0" aria-controls="variants-1-0">NodePort</a><a class="nav-item nav-link" data-toggle="tab" id="variants-1-1-tab" href="#variants-1-1" aria-controls="variants-1-1">LoadBalancer</a></div></nav>
+    <div class="tab-content">
 
-    <h2 id="monitor-installation">Monitor installation</h2>
+<div class="tab-pane active show" id="variants-1-0" role="tabpanel" aria-labelledby="variants-1-0-tab">
+        <p>Kubernetes variants like <em>kind</em> or <em>Minikube</em> do not support exposing service endpoints via load balancers
+out of the box. Instead, services are exposed via <em>NodePorts</em>.</p>
 
-    <p>Installation and start-up of the package’s services might take some minutes.
-You can track the start-up by means of the following command:</p>
+        <div class="clipboard"><pre><code>RELEASE=c2e
+helm install -n $NS --wait --timeout 10m $RELEASE eclipse-iot/cloud2edge</code></pre></div>
+      </div>
 
-    <div class="clipboard"><pre><code>kubectl get pods -n cloud2edge</code></pre></div>
+<div class="tab-pane" id="variants-1-1" role="tabpanel" aria-labelledby="variants-1-1-tab">
+        <p>Managed Kubernetes variants usually support exposing service endpoints via load balancers on public
+IP addresses. To install the Cloud2Edge package using load balancers, run the following command:</p>
 
-    <p>You should see the pods being started and becoming ready.</p>
+        <div class="clipboard"><pre><code>RELEASE=c2e
+helm install -n $NS --wait --timeout 10m --set hono.useLoadBalancer=true --set ditto.nginx.service.type=LoadBalancer $RELEASE eclipse-iot/cloud2edge</code></pre></div>
+      </div>
 
-    <p><details><summary>Example of started pods</summary><div>
-          <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>NAME                                               READY   STATUS    RESTARTS   AGE
-c2e-adapter-amqp-vertx-57dc849d4c-tw25z            1/1     Running   0          148m
-c2e-adapter-http-vertx-6bdffc59-t54h5              1/1     Running   0          148m
-c2e-adapter-mqtt-vertx-74cdb9644b-6pgs6            1/1     Running   0          148m
-c2e-artemis-54ffcff88f-7w85x                       1/1     Running   0          148m
-c2e-dispatch-router-54d968954b-vrp7z               1/1     Running   0          148m
-c2e-service-auth-6c9bcf8899-qmztm                  1/1     Running   0          148m
-c2e-service-device-registry-0                      1/1     Running   0          148m
-</code></pre></div>          </div>
-        </div></details></p>
+</div>
 
     <h2 id="ready-to-run">Ready to run</h2>
 
-    <p>Once the pods are all ready, you can start using the package’s services. For an initial walk-through of the functionality
-see the section <a href="../tour">Take a tour</a>.</p>
+    <p>Once the package’s pods are all up and running, you can start using its services.
+The easiest way of getting to know the Cloud2Edge package is by <a href="../tour">taking a little tour</a>.</p>
 
   </div>
 
