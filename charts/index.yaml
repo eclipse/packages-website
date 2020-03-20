@@ -372,6 +372,32 @@ entries:
   hawkbit:
   - apiVersion: v1
     appVersion: 0.3.0M6-mysql
+    created: "2020-03-20T12:59:38.297439824Z"
+    description: |
+      Eclipse hawkBit™ is a domain independent back-end framework for rolling out software updates
+      to constrained edge devices as well as more powerful controllers and gateways connected to
+      IP based networking infrastructure.
+    digest: 99c37b092a97bb36cee7361382e1f0554b388759a3307e339aae7f4dfd8c60fd
+    home: https://www.eclipse.org/hawkbit/
+    icon: https://www.eclipse.org/hawkbit/images/hawkbit_icon.png
+    keywords:
+    - iot-chart
+    maintainers:
+    - email: andre.bauer@kiwigrid.com
+      name: monotek
+    - email: axel.koehler@kiwigrid.com
+      name: axdotl
+    - email: ctron@dentrassi.de
+      name: ctron
+    name: hawkbit
+    sources:
+    - https://github.com/eclipse/hawkbit
+    - https://github.com/eclipse/packages
+    urls:
+    - https://eclipse.org/packages/charts/hawkbit-1.2.0.tgz
+    version: 1.2.0
+  - apiVersion: v1
+    appVersion: 0.3.0M6-mysql
     created: "2020-03-18T10:47:38.235164319Z"
     description: |
       Eclipse hawkBit™ is a domain independent back-end framework for rolling out software updates
@@ -772,4 +798,4 @@ entries:
     urls:
     - https://eclipse.org/packages/charts/hono-1.0.0.tgz
     version: 1.0.0
-generated: "2020-03-20T10:33:36.809576361Z"
+generated: "2020-03-20T12:59:38.295273541Z"
