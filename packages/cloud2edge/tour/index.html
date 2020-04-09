@@ -265,7 +265,7 @@ content-length: 12
 
     <p>Next we can register a new device, named <code class="highlighter-rouge">org.acme:my-device-1</code> for the tenant we just created:</p>
 
-    <div class="clipboard"><pre><code>curl -i http://${REGISTRY_IP}:${REGISTRY_PORT_HTTP}/v1/devices/my-tenant/org.acme:my-device-1</code></pre></div>
+    <div class="clipboard"><pre><code>curl -i -X POST http://${REGISTRY_IP}:${REGISTRY_PORT_HTTP}/v1/devices/my-tenant/org.acme:my-device-1</code></pre></div>
 
     <p>This should return a result of <code class="highlighter-rouge">201 Created</code>.</p>
 
