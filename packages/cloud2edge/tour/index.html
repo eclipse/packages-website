@@ -317,6 +317,109 @@ with the <em>device id</em> and the back end system isn’t aware of the <em>aut
     <p>Of course you may use the same value for the <em>authentication id</em> and the <em>device id</em>. In this tutorial however,
 we use distinct values to show the difference.</p>
 
+    <h3 id="create-a-new-connection-from-ditto-to-hono">Create a new connection from Ditto to Hono</h3>
+
+    <p>In order to create digital twins in Ditto for a newly added Hono tenant, a new connection has to be created.</p>
+
+    <p>The <code class="highlighter-rouge">NS</code> and <code class="highlighter-rouge">RELEASE</code> variables must still be set to the value you chose during the <a href="../installation/#install-the-package">installation</a>.
+The documented defaults are:</p>
+    <div class="clipboard"><pre><code>NS=cloud2edge
+RELEASE=c2e</code></pre></div>
+
+    <p>Please also configure your chosen Hono tenant name <a href="#create-a-new-tenant">when your created a new tenant</a> and extract
+the Ditto devops password via <code class="highlighter-rouge">kubectl</code>:</p>
+
+    <div class="clipboard"><pre><code>HONO_TENANT=my-tenant
+DITTO_DEVOPS_PWD=$(kubectl --namespace ${NS} get secret ${RELEASE}-ditto-gateway-secret -o jsonpath="{.data.devops-password}" | base64 --decode)</code></pre></div>
+
+    <p>Now, create the connection:</p>
+
+    <div class="clipboard"><pre><code>curl -i -X POST -u devops:${DITTO_DEVOPS_PWD} -H 'Content-Type: application/json' --data '{
+  "targetActorSelection": "/system/sharding/connection",
+  "headers": {
+    "aggregate": false
+  },
+  "piggybackCommand": {
+    "type": "connectivity.commands:createConnection",
+    "connection": {
+      "id": "hono-connection-for-'"${HONO_TENANT}"'",
+      "connectionType": "amqp-10",
+      "connectionStatus": "open",
+      "uri": "amqp://consumer%40HONO:verysecret@'"${RELEASE}"'-dispatch-router-ext:15672",
+      "failoverEnabled": true,
+      "sources": [
+        {
+          "addresses": [
+            "telemetry/'"${HONO_TENANT}"'",
+            "event/'"${HONO_TENANT}"'"
+          ],
+          "authorizationContext": [
+            "pre-authenticated:hono-connection"
+          ],
+          "enforcement": {
+            "input": "{{ header:device_id }}",
+            "filters": [
+              "{{ thing:id }}"
+            ]
+          },
+          "headerMapping": {
+            "hono-device-id": "{{ header:device_id }}",
+            "content-type": "{{ header:content-type }}"
+          }
+        },
+        {
+          "addresses": [
+            "command_response/'"${HONO_TENANT}"'/replies"
+          ],
+          "authorizationContext": [
+            "pre-authenticated:hono-connection"
+          ],
+          "headerMapping": {
+            "content-type": "{{ header:content-type }}",
+            "correlation-id": "{{ header:correlation-id }}",
+            "status": "{{ header:status }}"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "address": "command/'"${HONO_TENANT}"'",
+          "authorizationContext": [
+            "pre-authenticated:hono-connection"
+          ],
+          "topics": [
+            "_/_/things/live/commands",
+            "_/_/things/live/messages"
+          ],
+          "headerMapping": {
+            "to": "command/'"${HONO_TENANT}"'/{{ thing:id }}",
+            "subject": "{{ header:subject | fn:default(topic:action-subject) }}",
+            "content-type": "{{ header:content-type | fn:default('"'"'application/vnd.eclipse.ditto+json'"'"') }}",
+            "correlation-id": "{{ header:correlation-id }}",
+            "reply-to": "command_response/'"${HONO_TENANT}"'/replies"
+          }
+        },
+        {
+          "address": "command/'"${HONO_TENANT}"'",
+          "authorizationContext": [
+            "pre-authenticated:hono-connection"
+          ],
+          "topics": [
+            "_/_/things/twin/events",
+            "_/_/things/live/events"
+          ],
+          "headerMapping": {
+            "to": "command/'"${HONO_TENANT}"'/{{ thing:id }}",
+            "subject": "{{ header:subject | fn:default(topic:action-subject) }}",
+            "content-type": "{{ header:content-type | fn:default('"'"'application/vnd.eclipse.ditto+json'"'"') }}",
+            "correlation-id": "{{ header:correlation-id }}"
+          }
+        }
+      ]
+    }
+  }
+}' http://${DITTO_API_IP}:${DITTO_API_PORT_HTTP}/devops/piggyback/connectivity</code></pre></div>
+
     <h3 id="create-the-digital-twin">Create the digital twin</h3>
 
     <p>In the previous steps a device was registered in Hono, now we want to create a digital twin for this device in Ditto.</p>
@@ -367,7 +470,7 @@ a policy with the id <code class="highlighter-rouge">org.acme:my-policy</code>:<
       }
     }
   }
-}' http://${DITTO_API_IP}:${$DITTO_API_PORT_HTTP/api/2/policies/org.acme:my-policy</code></pre></div>
+}' http://${DITTO_API_IP}:${DITTO_API_PORT_HTTP}/api/2/policies/org.acme:my-policy</code></pre></div>
 
     <p>This should return a result of <code class="highlighter-rouge">201 Created</code> containing as response body of the created policy JSON.</p>
 
@@ -398,7 +501,7 @@ information of the twin:</p>
       }
     }
   }
-}' http://${DITTO_API_IP}:${$DITTO_API_PORT_HTTP/api/2/things/org.acme:my-device-1</code></pre></div>
+}' http://${DITTO_API_IP}:${DITTO_API_PORT_HTTP}/api/2/things/org.acme:my-device-1</code></pre></div>
 
     <p>This should return a result of <code class="highlighter-rouge">201 Created</code> containing as response body of the created thing JSON.</p>
 
