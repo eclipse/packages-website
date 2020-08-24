@@ -155,17 +155,17 @@ to only use Helm as a template tool, and use standard Kubernetes tooling to perf
 </section>
 
 <section>
-    <h3 id="why-are-you-using-insecure-settings">Why are you using insecure settings?</h3><p>Every now and then, you might spot a <code class="highlighter-rouge">--insecure</code> (or equivalent settings)
+    <h3 id="why-are-you-using-insecure-settings">Why are you using insecure settings?</h3><p>Every now and then, you might spot a <code class="language-plaintext highlighter-rouge">--insecure</code> (or equivalent settings)
 in the commands.</p>
 
 <p>It is unfortunate, but sometimes it is necessary. With the availability of
 <a href="https://letsencryt.org">Let’s Encrypt</a>, it would actually be rather simple
-to add proper TLS certificates. But when you are running a local <code class="highlighter-rouge">minikube</code>
+to add proper TLS certificates. But when you are running a local <code class="language-plaintext highlighter-rouge">minikube</code>
 instance, you can’t properly use certificates. Also does the process of getting
 a proper Let’s Encrypt certificate still need a significant effort and understanding,
 on the user side, especially when requesting a wildcard certificate.</p>
 
-<p>You are encouraged to try with a proper certificate though, and drop the <code class="highlighter-rouge">--insecure</code>
+<p>You are encouraged to try with a proper certificate though, and drop the <code class="language-plaintext highlighter-rouge">--insecure</code>
 for commands.</p>
 
 </section>

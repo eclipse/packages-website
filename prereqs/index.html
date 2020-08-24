@@ -87,10 +87,10 @@
 
     <h2 id="kubernetes-client">Kubernetes Client</h2>
 
-    <p>First of all, you will need a command tool named <code class="highlighter-rouge">kubectl</code>. This application allows you to interact with
+    <p>First of all, you will need a command tool named <code class="language-plaintext highlighter-rouge">kubectl</code>. This application allows you to interact with
 your Kubernetes cluster from the command line. While Kubernetes also comes with a Web UI, it is much simpler
 to document the installation procedures using command line tool. Also does the Web UI change over time, and
-with different Kubernetes variants. However the <code class="highlighter-rouge">kubectl</code> tool works with all variations of Kubernetes, as it
+with different Kubernetes variants. However the <code class="language-plaintext highlighter-rouge">kubectl</code> tool works with all variations of Kubernetes, as it
 uses the standardized API in the background.</p>
 
     <p>You can find more information in the Kubernetes documentation: <a href="https://kubernetes.io/docs/tasks/tools/install-kubectl/">Install and Set Up kubectl</a>.</p>
@@ -196,7 +196,7 @@ excellent <a href="https://kubernetes.io/docs/tasks/tools/install-minikube/">doc
 
     <div class="clipboard"><pre><code>minikube start</code></pre></div>
 
-    <p>And you can switch <code class="highlighter-rouge">kubectl</code> to the context <code class="highlighter-rouge">minikube</code>, and interact with your cluster:</p>
+    <p>And you can switch <code class="language-plaintext highlighter-rouge">kubectl</code> to the context <code class="language-plaintext highlighter-rouge">minikube</code>, and interact with your cluster:</p>
 
     <div class="clipboard"><pre><code>kubectl config use-context minikube</code></pre></div>
 
@@ -206,7 +206,7 @@ excellent <a href="https://kubernetes.io/docs/tasks/tools/install-minikube/">doc
 
     <p>Which should show a proper version for the client <strong>and</strong> the server:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Client Version: version.Info{Major:"1", Minor:"11+", GitVersion:"v1.11.0+d4cacc0", GitCommit:"d4cacc0", GitTreeState:"clean", BuildDate:"2018-10-10T16:38:01Z", GoVersion:"go1.10.3", Compiler:"gc", Platform:"linux/amd64"}
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Client Version: version.Info{Major:"1", Minor:"11+", GitVersion:"v1.11.0+d4cacc0", GitCommit:"d4cacc0", GitTreeState:"clean", BuildDate:"2018-10-10T16:38:01Z", GoVersion:"go1.10.3", Compiler:"gc", Platform:"linux/amd64"}
 Server Version: version.Info{Major:"1", Minor:"13+", GitVersion:"v1.13.4+c2a5caf", GitCommit:"c2a5caf", GitTreeState:"clean", BuildDate:"2019-09-21T02:12:52Z", GoVersion:"go1.11.13", Compiler:"gc", Platform:"linux/amd64"}
 </code></pre></div>    </div>
 
@@ -227,9 +227,9 @@ executing:</p>
 
     <h4 id="resources">Resources</h4>
 
-    <p>You can translate the package resources requirements into arguments for the <code class="highlighter-rouge">start</code> command like this:</p>
+    <p>You can translate the package resources requirements into arguments for the <code class="language-plaintext highlighter-rouge">start</code> command like this:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>minikube start --cpus &lt;cpus&gt; --disk-size &lt;size&gt; --memory &lt;memory&gt; --kubernetes-version &lt;version&gt;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>minikube start --cpus &lt;cpus&gt; --disk-size &lt;size&gt; --memory &lt;memory&gt; --kubernetes-version &lt;version&gt;
 </code></pre></div>    </div>
 
     <p>Using the following arguments:</p>
@@ -297,11 +297,11 @@ you are supposed to execute can be executed in Bash, version 3 or newer.</p>
 
     <h3 id="curl">curl</h3>
 
-    <p>For downloading files and execution API call the tool <code class="highlighter-rouge">curl</code> will be used.</p>
+    <p>For downloading files and execution API call the tool <code class="language-plaintext highlighter-rouge">curl</code> will be used.</p>
 
     <h3 id="mosquitto-cli">Mosquitto CLI</h3>
 
-    <p>Mosquitto command line tools: e.g. <code class="highlighter-rouge">moquitto_pub</code></p>
+    <p>Mosquitto command line tools: e.g. <code class="language-plaintext highlighter-rouge">moquitto_pub</code></p>
 
   </div>
 

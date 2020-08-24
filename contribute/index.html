@@ -136,7 +136,7 @@ integrated with each other in this way.</li>
       <li>contain a README covering a basic introduction and the idea behind the package,</li>
       <li>include the Helm charts constituting the components of the package,</li>
       <li>provide some guidance regarding what users might want to do with the package after installation.</li>
-      <li>include the <code class="highlighter-rouge">iot-package</code> key word in their <em>Chart.yaml</em></li>
+      <li>include the <code class="language-plaintext highlighter-rouge">iot-package</code> key word in their <em>Chart.yaml</em></li>
     </ul>
   </li>
 </ul>
@@ -150,9 +150,9 @@ This allows for a modular approach where projects can easily be (re)used in mult
 as well as packages that are comprised of multiple projects:</p>
 
 <ul>
-  <li>The <code class="highlighter-rouge">charts</code> folder contains Helm charts for Eclipse IoT projects. Each sub-folder contains a chart for
+  <li>The <code class="language-plaintext highlighter-rouge">charts</code> folder contains Helm charts for Eclipse IoT projects. Each sub-folder contains a chart for
 one project.</li>
-  <li>The <code class="highlighter-rouge">packages</code> folder contains the IoT packages. Each sub-folder represents one package.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">packages</code> folder contains the IoT packages. Each sub-folder represents one package.</li>
 </ul>
 
 <h2 id="requirements-for-charts">Requirements for charts</h2>
@@ -165,8 +165,8 @@ one project.</li>
 
 <ul>
   <li>must not contain other charts that they depend on</li>
-  <li>must pass the Helm linter (<code class="highlighter-rouge">helm lint</code>)</li>
-  <li>must successfully launch with default values (<code class="highlighter-rouge">helm install .</code>)
+  <li>must pass the Helm linter (<code class="language-plaintext highlighter-rouge">helm lint</code>)</li>
+  <li>must successfully launch with default values (<code class="language-plaintext highlighter-rouge">helm install .</code>)
     <ul>
       <li>all pods go to the running state (or NOTES.txt provides further instructions if a required value is missing e.g. <a href="https://github.com/helm/charts/blob/master/stable/minecraft/templates/NOTES.txt#L3">minecraft</a>)</li>
       <li>all services have at least one endpoint</li>
@@ -201,21 +201,21 @@ and <a href="https://github.com/helm/helm/blob/master/docs/chart_best_practices/
 <p>Helm charts</p>
 
 <ul>
-  <li>must include a <code class="highlighter-rouge">README.md</code>, containing:
+  <li>must include a <code class="language-plaintext highlighter-rouge">README.md</code>, containing:
     <ul>
       <li>a short description of the chart</li>
       <li>any prerequisites or requirements</li>
     </ul>
   </li>
-  <li>must include a short <code class="highlighter-rouge">NOTES.txt</code>, containing:
+  <li>must include a short <code class="language-plaintext highlighter-rouge">NOTES.txt</code>, containing:
     <ul>
       <li>any relevant post-installation information for the chart</li>
       <li>instructions on how to access the application or service provided by the chart</li>
     </ul>
   </li>
-  <li>must contain a <code class="highlighter-rouge">values.yaml</code> file which contains a reasonable default configuration and explains
+  <li>must contain a <code class="language-plaintext highlighter-rouge">values.yaml</code> file which contains a reasonable default configuration and explains
 how the properties can be used to customize the chart</li>
-  <li>must include the <code class="highlighter-rouge">iot-chart</code> key word in their <em>Chart.yaml</em></li>
+  <li>must include the <code class="language-plaintext highlighter-rouge">iot-chart</code> key word in their <em>Chart.yaml</em></li>
 </ul>
 
 <h2 id="merge-approval-and-release-process">Merge approval and release process</h2>
@@ -241,7 +241,7 @@ version of the chart.</p>
   </thead>
   <tbody>
     <tr>
-      <td>Update the <code class="highlighter-rouge">README.md</code> file</td>
+      <td>Update the <code class="language-plaintext highlighter-rouge">README.md</code> file</td>
       <td>patch version</td>
     </tr>
     <tr>

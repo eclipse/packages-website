@@ -83,7 +83,7 @@
 
 <div class="col-12 col-md-8 col-lg-9">
 
-    <p>You will need a Kubernetes instance, the <code class="highlighter-rouge">kubectl</code> and the <code class="highlighter-rouge">helm</code> tool in order to deploy this package.
+    <p>You will need a Kubernetes instance, the <code class="language-plaintext highlighter-rouge">kubectl</code> and the <code class="language-plaintext highlighter-rouge">helm</code> tool in order to deploy this package.
 Please refer to our <a href="/packages/prereqs">pre-requisites</a> page for details.
 Any Kubernetes compatible cluster will do, as long as it meets the requirements.</p>
 
@@ -96,7 +96,7 @@ Any Kubernetes compatible cluster will do, as long as it meets the requirements.
     <p>This should print out the version of the client, but must also print out the version of the server.</p>
 
     <p><details><summary>Example output</summary><div>
-          <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Client Version: version.Info{Major:"1", Minor:"16", GitVersion:"v1.16.1", GitCommit:"d647ddbd755faf07169599a625faf302ffc34458", GitTreeState:"clean", BuildDate:"2019-10-02T17:01:15Z", GoVersion:"go1.12.10", Compiler:"gc", Platform:"linux/amd64"}
+          <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Client Version: version.Info{Major:"1", Minor:"16", GitVersion:"v1.16.1", GitCommit:"d647ddbd755faf07169599a625faf302ffc34458", GitTreeState:"clean", BuildDate:"2019-10-02T17:01:15Z", GoVersion:"go1.12.10", Compiler:"gc", Platform:"linux/amd64"}
 Server Version: version.Info{Major:"1", Minor:"13+", GitVersion:"v1.13.4+c2a5caf", GitCommit:"c2a5caf", GitTreeState:"clean", BuildDate:"2019-09-21T02:12:52Z", GoVersion:"go1.11.13", Compiler:"gc", Platform:"linux/amd64"}
 </code></pre></div>          </div>
         </div></details></p>
@@ -105,7 +105,7 @@ Server Version: version.Info{Major:"1", Minor:"13+", GitVersion:"v1.13.4+c2a5caf
 
     <p>The Cloud2Edge package consists of multiple components. In order to keep them together and separate
 from other components running in your Kubernetes cluster, it is feasible to install them into
-their own name space. The following command creates the <code class="highlighter-rouge">cloud2edge</code> name space but you can select any
+their own name space. The following command creates the <code class="language-plaintext highlighter-rouge">cloud2edge</code> name space but you can select any
 other name as well.</p>
 
     <div class="clipboard"><pre><code>NS=cloud2edge
