@@ -359,12 +359,30 @@ DITTO_DEVOPS_PWD=$(kubectl --namespace ${NS} get secret ${RELEASE}-ditto-gateway
           "enforcement": {
             "input": "{{ header:device_id }}",
             "filters": [
-              "{{ thing:id }}"
+              "{{ entity:id }}"
             ]
           },
           "headerMapping": {
             "hono-device-id": "{{ header:device_id }}",
             "content-type": "{{ header:content-type }}"
+          },
+          "replyTarget": {
+            "enabled": true,
+            "address": "{{ header:reply-to }}",
+            "headerMapping": {
+              "to": "command/'"${HONO_TENANT}"'/{{ header:hono-device-id }}",
+              "subject": "{{ header:subject | fn:default(topic:action-subject) | fn:default(topic:criterion) }}-response",
+              "correlation-id": "{{ header:correlation-id }}",
+              "content-type": "{{ header:content-type | fn:default('"'"'application/vnd.eclipse.ditto+json'"'"') }}"
+            },
+            "expectedResponseTypes": [
+              "response",
+              "error"
+            ]
+          },
+          "acknowledgementRequests": {
+            "includes": [],
+            "filter": "fn:filter(header:qos,'"'"'ne'"'"','"'"'0'"'"')"
           }
         },
         {
@@ -378,6 +396,13 @@ DITTO_DEVOPS_PWD=$(kubectl --namespace ${NS} get secret ${RELEASE}-ditto-gateway
             "content-type": "{{ header:content-type }}",
             "correlation-id": "{{ header:correlation-id }}",
             "status": "{{ header:status }}"
+          },
+          "replyTarget": {
+            "enabled": false,
+            "expectedResponseTypes": [
+              "response",
+              "error"
+            ]
           }
         }
       ],
@@ -396,7 +421,7 @@ DITTO_DEVOPS_PWD=$(kubectl --namespace ${NS} get secret ${RELEASE}-ditto-gateway
             "subject": "{{ header:subject | fn:default(topic:action-subject) }}",
             "content-type": "{{ header:content-type | fn:default('"'"'application/vnd.eclipse.ditto+json'"'"') }}",
             "correlation-id": "{{ header:correlation-id }}",
-            "reply-to": "command_response/'"${HONO_TENANT}"'/replies"
+            "reply-to": "{{ fn:default('"'"'command_response/'"${HONO_TENANT}"'/replies'"'"') | fn:filter(header:response-required,'"'"'ne'"'"','"'"'false'"'"') }}"
           }
         },
         {
