@@ -337,6 +337,32 @@ entries:
     version: 0.0.1-alpha2
   ditto:
   - apiVersion: v1
+    appVersion: 1.5.0
+    created: "2020-12-10T16:43:02.900705939Z"
+    description: |
+      Eclipse Ditto™ is a technology in the IoT implementing a software pattern called “digital twins”.
+      A digital twin is a virtual, cloud based, representation of his real world counterpart
+      (real world “Things”, e.g. devices like sensors, smart heating, connected cars, smart grids,
+      EV charging stations etc).
+    digest: 956bb7aec8a5b3e0c950e5288270c09f002829611bb3a845b827bc857fd952b9
+    home: https://www.eclipse.org/ditto
+    icon: https://www.eclipse.org/ditto/images/ditto.svg
+    keywords:
+    - iot-chart
+    - IoT
+    maintainers:
+    - email: axel.koehler@kiwigrid.com
+      name: axdotl
+    - email: thomas.jaeckle@bosch-si.com
+      name: thjaeckle
+    name: ditto
+    sources:
+    - https://github.com/eclipse/ditto
+    - https://github.com/eclipse/packages
+    urls:
+    - https://eclipse.org/packages/charts/ditto-1.5.0.tgz
+    version: 1.5.0
+  - apiVersion: v1
     appVersion: 1.4.0
     created: "2020-11-03T10:13:10.08699552Z"
     description: |
@@ -2008,4 +2034,4 @@ entries:
     urls:
     - https://eclipse.org/packages/charts/hono-1.0.0.tgz
     version: 1.0.0
-generated: "2020-12-01T15:48:47.290692219Z"
+generated: "2020-12-10T16:43:02.898698101Z"
