@@ -363,6 +363,32 @@ entries:
   ditto:
   - apiVersion: v1
     appVersion: 1.5.1
+    created: "2021-02-03T16:05:27.003146427Z"
+    description: |
+      Eclipse Ditto™ is a technology in the IoT implementing a software pattern called “digital twins”.
+      A digital twin is a virtual, cloud based, representation of his real world counterpart
+      (real world “Things”, e.g. devices like sensors, smart heating, connected cars, smart grids,
+      EV charging stations etc).
+    digest: d1f81ca5f1c3b49c0d20fa2e272463288e5786bcdb4dfc2cf8dd4b326f8badf6
+    home: https://www.eclipse.org/ditto
+    icon: https://www.eclipse.org/ditto/images/ditto.svg
+    keywords:
+    - iot-chart
+    - IoT
+    maintainers:
+    - email: axel.koehler@kiwigrid.com
+      name: axdotl
+    - email: thomas.jaeckle@bosch-si.com
+      name: thjaeckle
+    name: ditto
+    sources:
+    - https://github.com/eclipse/ditto
+    - https://github.com/eclipse/packages
+    urls:
+    - https://eclipse.org/packages/charts/ditto-1.5.3.tgz
+    version: 1.5.3
+  - apiVersion: v1
+    appVersion: 1.5.1
     created: "2021-01-20T15:43:24.084121176Z"
     description: |
       Eclipse Ditto™ is a technology in the IoT implementing a software pattern called “digital twins”.
@@ -1077,6 +1103,32 @@ entries:
     - https://eclipse.org/packages/charts/hawkbit-1.0.0.tgz
     version: 1.0.0
   hono:
+  - apiVersion: v1
+    appVersion: 1.5.1
+    created: "2021-02-03T16:05:27.191021217Z"
+    description: |
+      Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and
+      interacting with them in a uniform way regardless of the device communication protocol.
+    digest: 3b1bbdadfd48ec3629a3076d15e9dfc03ffcb179f39dbe18b6523d51f4755267
+    home: https://www.eclipse.org/hono/
+    icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
+    keywords:
+    - iot-chart
+    - IoT
+    - messaging
+    maintainers:
+    - email: dbosanac@redhat.com
+      name: dejanb
+    - email: jreimann@redhat.com
+      name: ctron
+    - email: kai.hudalla@bosch.io
+      name: sophokles73
+    name: hono
+    sources:
+    - https://github.com/eclipse/hono
+    urls:
+    - https://eclipse.org/packages/charts/hono-1.5.0.tgz
+    version: 1.5.0
   - apiVersion: v1
     appVersion: 1.5.1
     created: "2021-01-21T16:23:09.398860085Z"
@@ -2397,4 +2449,4 @@ entries:
     urls:
     - https://eclipse.org/packages/charts/hono-1.0.0.tgz
     version: 1.0.0
-generated: "2021-01-21T16:23:09.308599596Z"
+generated: "2021-02-03T16:05:26.999685915Z"
