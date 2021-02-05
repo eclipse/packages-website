@@ -102,6 +102,12 @@ different forms, and we try to document a few of them for you. There are other v
 and you are welcome to try all of them. All packages should be able to run on any Kubernetes
 you provide.</p>
 
+    <p>Generally, you can either use a cloud provider, such as Azure (AKS) or AWS (EKS) to provide a Kubernetes cluster for you, or you can set up one by yourself.
+<a href="https://landscape.cncf.io/category=platform&amp;format=card-mode&amp;grouping=category">Here</a> you can find a list of Kubernetes options.
+As the Kubernetes API is standardized both ways will work.
+However, setting up Kubernetes yourself is not trivial and requires some more effort.
+As part of this tutorial, we present two different K8s distributions (and how to deploy Eclipse IoT Packages with them), namely <a href="microk8s">MicroK8s</a> and <a href="minikube">Minikube</a>.</p>
+
     <p>Packages are encouraged to give you an estimate of what resources they require. The following is
 an example of what this may look like. You will need to translate this into the specific
 Kubernetes environment you have. Also may the package declare on which Kubernetes platform
@@ -178,6 +184,158 @@ expectations of what was tested at some point.</p>
 
     <p>For each documentation Kubernetes environment on this page, you will
 find a section that explains how to do this.</p>
+
+    <h3 id="microk8s">MicroK8s</h3>
+    <p><a href="https://microk8s.io/">MicroK8s</a> is a Kubernetes distribution, maintained by Canonical and enables developers to run a fully-fledged Kubernetes cluster on their own infrastructure.
+In contrast to minikube it is not only intended for testing purposes but also for production scenarios, e.g. in cases where a cloud setup is not possible or desirable.</p>
+
+    <p>All you need is a virtual or physical machine with root access and the <a href="https://snapcraft.io/docs/installing-snapd">snap package manager</a>.</p>
+
+    <p>Install MicroK8s, executing <code class="language-plaintext highlighter-rouge">sudo snap install microk8s --classic</code></p>
+
+    <p>Check the cluster status, by running <code class="language-plaintext highlighter-rouge">microk8s status --wait-ready</code></p>
+
+    <p>Once the cluster is up and running you will need to enable a few modules that are required for installing an Eclipse IoT Packages package, such as Cloud2Edge.</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>LOCAL_ADDRESS=$(ip addr show eth0 | grep "inet\b" | awk '{print $2}' | cut -d/ -f1)
+microk8s enable metrics-server
+microk8s enable storage
+microk8s enable dns
+microk8s enable metallb:$LOCAL_ADDRESS-$LOCAL_ADDRESS
+</code></pre></div>    </div>
+    <p>These commands enable</p>
+    <ul>
+      <li>the metrics server, which is helpful for further investigating your cluster usage</li>
+      <li>the storage module, which enables persistent volumes</li>
+      <li>the cluster dns server</li>
+      <li>and the load balancing module, which enables external access to your cluster</li>
+    </ul>
+
+    <p>In order to control the cluster using the Kubernetes CLI (<code class="language-plaintext highlighter-rouge">kubectl</code>) you can either use integrated option which ships with MicroK8s. Alternatively, e.g. if you want to control your cluster from another machine you can extract the cluster config file and use it with a native install of <code class="language-plaintext highlighter-rouge">kubectl</code>.</p>
+    <h4 id="integrated-option">Integrated option</h4>
+    <p>Use <code class="language-plaintext highlighter-rouge">microk8s kubectl &lt;command&gt;</code></p>
+    <h4 id="native-option">Native option</h4>
+    <p>Execute <code class="language-plaintext highlighter-rouge">microk8s kubectl config view --raw &gt; $HOME/.kube/config</code></p>
+
+    <p>Now, use <code class="language-plaintext highlighter-rouge">kubectl &lt;command&gt;</code></p>
+
+    <p>In case you are not running the cluster on a your local machine you can also enable remote access by following these steps:</p>
+    <ul>
+      <li>stop your cluster by running <code class="language-plaintext highlighter-rouge">microk8s stop</code></li>
+      <li>edit the file <code class="language-plaintext highlighter-rouge">/var/snap/microk8s/current/certs/csr.conf.template</code> and add your domain/ip address:
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DNS.6 = &lt;domain_of_microk8s_host&gt;
+IP.7 = &lt;public_ip_of_microk8s_host&gt;
+</code></pre></div>        </div>
+        <p>Restart your cluster by running <code class="language-plaintext highlighter-rouge">microk8s start</code> and extract the new Kubernetes configuration by executing <code class="language-plaintext highlighter-rouge">microk8s kubectl config view --raw</code>.
+Now copy the configuration description to your local machine under <code class="language-plaintext highlighter-rouge">~/.kube/config</code>.</p>
+      </li>
+    </ul>
+
+    <h4 id="loadbalancing-and-ingress">Loadbalancing and Ingress</h4>
+    <p>Once you have a Kubernetes cluster available and installed the Kubernetes and Helm CLI (see below), you are now ready to setup an Eclipse IoT Packages deployment such as Cloud2Edge.
+By default the containers can communicate within the cluster.
+But to access a container and its respective services from outside the cluster (e.g. from another machine) you need to perform some extra steps.
+Depending on your setup, you have 3 options available how to make your services externally available.</p>
+
+    <h5 id="nodeport">NodePort</h5>
+    <p>The simplest way to expose your services is by using a Kubernetes Service with type <a href="https://kubernetes.io/docs/concepts/services-networking/service/#nodeport">NodePort</a>. The Cloud2Edge Helm chart uses this option by default.
+Using this in production mode has some drawbacks and is not recommended as it is very static, enables just one Service per port and only allows you to use ports in the range 30000–32767.</p>
+
+    <h5 id="loadbalancer">LoadBalancer</h5>
+    <p>Another option is the <a href="https://kubernetes.io/docs/concepts/services-networking/service/#loadbalancer">LoadBalancer</a> Service type, which requires your Kubernetes provider to supply an external load balancing module. The provider is also responsible for provisioning external IP addresses.
+The Cloud2Edge enables this option by setting the flags <code class="language-plaintext highlighter-rouge">hono.useLoadBalancer</code> to <code class="language-plaintext highlighter-rouge">true</code> and <code class="language-plaintext highlighter-rouge">ditto.nginx.service.type</code> to <code class="language-plaintext highlighter-rouge">LoadBalancer</code>.
+The downside of this approach is that each of your Services requires its own publicly available IP address, which might either not be desirable (due to higher costs) or possible at all e.g. in case you are running your deployment on a custom Kubernetes setup (such as MicroK8s).</p>
+
+    <h5 id="ingress-loadbalancing">Ingress Loadbalancing</h5>
+    <p>Ingress controllers employ a single LoadBalancer service, which then routes all incoming traffic to the actual controller in charge of distributing it to the right endpoints.
+This allows not only differentiating by port, but also routing by path (HTTP) or subdomain.
+We are using the <a href="https://www.getambassador.io/">Ambassador</a> controller, as it is capable of routing not only HTTP ingress but also on the TCP level.</p>
+
+    <ol>
+      <li>Deploy the Cloud2Edge Helm chart setting the aforementioned flags to <strong>not</strong> use the LoadBalancer type</li>
+      <li>Create a namespace for Ambassador: <code class="language-plaintext highlighter-rouge">kubectl create namespace ambassador</code></li>
+      <li>Add the Helm repository: <code class="language-plaintext highlighter-rouge">helm repo add datawire https://www.getambassador.io</code></li>
+      <li>Create a file named <code class="language-plaintext highlighter-rouge">override.yaml</code>, that contains all necessary Ambassador configurations:
+```yaml
+enableAES: false
+image:
+  repository: docker.io/datawire/ambassador
+replicaCount: 1
+service:
+  ports:
+        <ul>
+          <li>name: mqtt-adapter
+port: 1883
+targetPort: 1883</li>
+          <li>name: http-adapter
+port: 18080
+targetPort: 18080</li>
+          <li>name: device-registry
+port: 28080
+targetPort: 28080</li>
+          <li>name: dispatch-router
+port: 5671
+targetPort: 15671</li>
+          <li>name: ditto
+port: 38080
+targetPort: 38080
+```</li>
+        </ul>
+      </li>
+      <li>Start Ambassador by running <code class="language-plaintext highlighter-rouge">helm install ambassador -n ambassador -f override.yaml datawire/ambassador</code></li>
+      <li>Then we create the necessary mappings, such that the controller knows where to route incoming traffic. These mappings are specifically adjusted to the Cloud2Edge deployment, so you will have to create your own mappings for other packages. Create a new file named <code class="language-plaintext highlighter-rouge">ambassador-mappings.yaml</code> and replace the release name and the namespace of your deployment:
+        <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">getambassador.io/v2</span>
+<span class="na">kind</span><span class="pi">:</span>  <span class="s">TCPMapping</span>
+<span class="na">metadata</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">ambassador-http-adapter</span>
+  <span class="na">namespace</span><span class="pi">:</span> <span class="s">ambassador</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">port</span><span class="pi">:</span> <span class="m">18080</span>
+  <span class="na">service</span><span class="pi">:</span> <span class="pi">{</span><span class="nv">name-of-helm-release</span><span class="pi">}</span><span class="s">-adapter-http-vertx.{kubernetes-namespace}:8080</span>
+<span class="nn">---</span>
+<span class="na">apiVersion</span><span class="pi">:</span> <span class="s">getambassador.io/v2</span>
+<span class="na">kind</span><span class="pi">:</span>  <span class="s">TCPMapping</span>
+<span class="na">metadata</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">ambassador-mqtt-adapter</span>
+  <span class="na">namespace</span><span class="pi">:</span> <span class="s">ambassador</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">port</span><span class="pi">:</span> <span class="m">1883</span>
+  <span class="na">service</span><span class="pi">:</span> <span class="pi">{</span><span class="nv">name-of-helm-release</span><span class="pi">}</span><span class="s">-adapter-mqtt-vertx.{kubernetes-namespace}:1883</span>
+<span class="nn">---</span>
+<span class="na">apiVersion</span><span class="pi">:</span> <span class="s">getambassador.io/v2</span>
+<span class="na">kind</span><span class="pi">:</span>  <span class="s">TCPMapping</span>
+<span class="na">metadata</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">ambassador-device-registry</span>
+  <span class="na">namespace</span><span class="pi">:</span> <span class="s">ambassador</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">port</span><span class="pi">:</span> <span class="m">28080</span>
+  <span class="na">service</span><span class="pi">:</span> <span class="pi">{</span><span class="nv">name-of-helm-release</span><span class="pi">}</span><span class="s">-service-device-registry-ext.{kubernetes-namespace}:28080</span>
+<span class="nn">---</span>
+<span class="na">apiVersion</span><span class="pi">:</span> <span class="s">getambassador.io/v2</span>
+<span class="na">kind</span><span class="pi">:</span>  <span class="s">TCPMapping</span>
+<span class="na">metadata</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">ambassador-dispatch-router</span>
+  <span class="na">namespace</span><span class="pi">:</span> <span class="s">ambassador</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">port</span><span class="pi">:</span> <span class="m">15671</span>
+  <span class="na">service</span><span class="pi">:</span> <span class="pi">{</span><span class="nv">name-of-helm-release</span><span class="pi">}</span><span class="s">-service-device-registry-ext.{kubernetes-namespace}:15671</span>
+<span class="nn">---</span>
+<span class="na">apiVersion</span><span class="pi">:</span> <span class="s">getambassador.io/v2</span>
+<span class="na">kind</span><span class="pi">:</span>  <span class="s">TCPMapping</span>
+<span class="na">metadata</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">ambassador-ditto</span>
+  <span class="na">namespace</span><span class="pi">:</span> <span class="s">ambassador</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">port</span><span class="pi">:</span> <span class="m">38080</span>
+  <span class="na">service</span><span class="pi">:</span> <span class="pi">{</span><span class="nv">name-of-helm-release</span><span class="pi">}</span><span class="s">-ditto-nginx.{kubernetes-namespace}:8080</span>
+</code></pre></div>        </div>
+      </li>
+      <li>Now add the mappings to your cluster: <code class="language-plaintext highlighter-rouge">kubectl apply -f ambassador-mappings.yaml</code></li>
+    </ol>
+
+    <p>You are now able to access the deployed Cloud2Edge services externally. Check what IP address you are using by running <code class="language-plaintext highlighter-rouge">kubectl get service -n ambassador</code>.</p>
+
+    <p>Navigate to http://<your_ip>:38080 and check whether Ditto is running.</your_ip></p>
 
     <h3 id="minikube">Minikube</h3>
 
