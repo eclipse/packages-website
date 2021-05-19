@@ -98,10 +98,6 @@
     </li>
 
     <li>
-        <a href="#why-aren-t-you-using-tiller">Why aren&#39;t you using Tiller?</a>
-    </li>
-
-    <li>
         <a href="#why-are-you-using-insecure-settings">Why are you using insecure settings?</a>
     </li>
 
@@ -129,28 +125,6 @@ run them on any other Kubernetes based solution, in the real cloud.</p>
 
 <section>
     <h3 id="who-is-involved-in-this-project">Who is involved in this project?</h3><p>Take a look at the <a href="https://projects.eclipse.org/projects/iot.packages/who">Who’s Involved</a> page of the project.</p>
-
-</section>
-
-<section>
-    <h3 id="why-aren-t-you-using-tiller">Why aren&#39;t you using Tiller?</h3><div role="alert" class="alert alert-info">
-This only applies to Helm 2. Tiller is no longer present in Helm 3.
-</div>
-
-<p>Tiller is a server side component for Helm 2. It allows the Helm client, which is on your local machine,
-to talk to the cluster, and let it perform the deployment.</p>
-
-<p>There are several aspects to that, which make the use of Tiller complicated. The main concern is security
-(also see <a href="https://engineering.bitnami.com/articles/helm-security.html">Exploring the Security of Helm</a>).
-The default deployment of Tiller is rather insecure. That may work on a local instance of Kubernetes,
-but not when using an actual, hosted version.</p>
-
-<p>And while you can configure Tiller to be less insecure, and also work on a multi-tenant cluster, this might
-require permissions you don’t have on that cluster. And require additional steps to set up Tiller first.</p>
-
-<p>On the other hand, this project is about getting you started with IoT, not about administrating Tiller.
-And since Helm allows to locally generate the YAML files, required for deployment, it seems much easier 
-to only use Helm as a template tool, and use standard Kubernetes tooling to perform the deployment.</p>
 
 </section>
 

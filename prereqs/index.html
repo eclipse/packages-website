@@ -420,6 +420,8 @@ The Kubernetes version deployed into the virtual machine (e.g. <code>--kubernete
     <p>You will need an installation of Helm on the machine which is used to deploy the packages. You can find
 installation instructions for Helm in the Helm documentation under <a href="https://helm.sh/docs/using_helm/#installing-helm">Installing Helm</a>.</p>
 
+    <p>The required Helm version is 3.1 or later.</p>
+
     <h3 id="repository">Repository</h3>
 
     <p>The Eclipse IoT Packages projects publishes a Helm chart repository for Eclipse IoT projects.</p>
@@ -429,17 +431,6 @@ installation instructions for Helm in the Helm documentation under <a href="http
     <div class="clipboard"><pre><code>helm repo add eclipse-iot https://eclipse.org/packages/charts</code></pre></div>
 
     <p>Read more: <a href="/packages/repository" title="title">Helm chart repository</a>.</p>
-
-    <h3 id="version-2-and-3">Version 2 and 3</h3>
-
-    <p>As of now, we support both Helm 2 and 3. As version 3 can also process version 2 charts, this isn’t a problem.</p>
-
-    <p>We will consider switching to Helm 3 only at a later time.</p>
-
-    <h3 id="tiller">Tiller</h3>
-
-    <p>You will not need to install Tiller on the cluster. Of course, if you prefer to use Tiller, you may still
-do so. Also see: <a href="/packages/faq/#why-aren-t-you-using-tiller">FAQ: Why aren’t you using Tiller</a>.</p>
 
     <h2 id="command-line-tools">Command line tools</h2>
 
