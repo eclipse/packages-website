@@ -1208,6 +1208,32 @@ entries:
   hono:
   - apiVersion: v1
     appVersion: 1.7.3
+    created: "2021-05-21T12:04:05.025333828Z"
+    description: |
+      Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and
+      interacting with them in a uniform way regardless of the device communication protocol.
+    digest: 5a603d56d620afe87f12a5584311d4bd513849374646ff0a40097d36defa5033
+    home: https://www.eclipse.org/hono/
+    icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
+    keywords:
+    - iot-chart
+    - IoT
+    - messaging
+    maintainers:
+    - email: dbosanac@redhat.com
+      name: dejanb
+    - email: jreimann@redhat.com
+      name: ctron
+    - email: kai.hudalla@bosch.io
+      name: sophokles73
+    name: hono
+    sources:
+    - https://github.com/eclipse/hono
+    urls:
+    - https://eclipse.org/packages/charts/hono-1.7.9.tgz
+    version: 1.7.9
+  - apiVersion: v1
+    appVersion: 1.7.3
     created: "2021-05-20T11:27:58.525577184Z"
     description: |
       Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and
@@ -3046,4 +3072,4 @@ entries:
     urls:
     - https://eclipse.org/packages/charts/hono-1.0.0.tgz
     version: 1.0.0
-generated: "2021-05-21T11:43:11.400938635Z"
+generated: "2021-05-21T12:04:04.938112253Z"
