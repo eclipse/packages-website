@@ -438,6 +438,38 @@ entries:
   ditto:
   - apiVersion: v1
     appVersion: 2.0.1
+    created: "2021-09-08T07:31:34.047736902Z"
+    dependencies:
+    - condition: mongodb.enabled
+      name: mongodb
+      repository: https://charts.bitnami.com/bitnami
+      version: ~7.14.7
+    description: |
+      Eclipse Ditto™ is a technology in the IoT implementing a software pattern called “digital twins”.
+      A digital twin is a virtual, cloud based, representation of his real world counterpart
+      (real world “Things”, e.g. devices like sensors, smart heating, connected cars, smart grids, EV charging stations etc).
+    digest: 57bf8f579950880c0895e58158b538a258317bebb67ffa1ef3c03342944054b9
+    home: https://www.eclipse.org/ditto
+    icon: https://www.eclipse.org/ditto/images/ditto.svg
+    keywords:
+    - iot-chart
+    - IoT
+    maintainers:
+    - email: axel.koehler@kiwigrid.com
+      name: axdotl
+    - email: thomas.jaeckle@bosch.io
+      name: thjaeckle
+    - email: stefan.maute@bosch.io
+      name: stmaute
+    name: ditto
+    sources:
+    - https://github.com/eclipse/ditto
+    - https://github.com/eclipse/packages
+    urls:
+    - https://eclipse.org/packages/charts/ditto-2.0.4.tgz
+    version: 2.0.4
+  - apiVersion: v1
+    appVersion: 2.0.1
     created: "2021-08-06T14:51:24.34083367Z"
     dependencies:
     - condition: mongodb.enabled
@@ -4066,4 +4098,4 @@ entries:
     urls:
     - https://eclipse.org/packages/charts/hono-1.0.0.tgz
     version: 1.0.0
-generated: "2021-09-06T12:51:35.040377089Z"
+generated: "2021-09-08T07:31:34.043166379Z"
