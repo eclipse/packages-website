@@ -415,6 +415,15 @@ The Kubernetes version deployed into the virtual machine (e.g. <code>--kubernete
 
 </dl>
 
+    <h4 id="addons">Addons</h4>
+
+    <p>Some packages may require additional addons, like the ingress addon for providing a default ingress controllers.</p>
+
+    <p>Such addons can be enabled when starting the Minikube instance, using the following flag:</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>minikube start ... --addons ingress
+</code></pre></div>    </div>
+
     <h2 id="helm">Helm</h2>
 
     <p>You will need an installation of Helm on the machine which is used to deploy the packages. You can find
