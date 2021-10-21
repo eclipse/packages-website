@@ -4190,6 +4190,48 @@ entries:
   telemetry-e2e:
   - apiVersion: v2
     appVersion: 0.1.0
+    created: "2021-10-21T07:52:35.646403754Z"
+    dependencies:
+    - alias: strimzi
+      name: strimzi-kafka-operator
+      repository: https://strimzi.io/charts/
+      version: 0.25.0
+    - name: drogue-cloud-common
+      repository: https://drogue-iot.github.io/drogue-cloud-helm-charts/
+      version: ^0.3.0
+    - alias: drogueCloud
+      name: drogue-cloud-core
+      repository: https://drogue-iot.github.io/drogue-cloud-helm-charts/
+      version: ^0.3.14
+    - name: ditto
+      repository: https://eclipse.org/packages/charts/
+      version: ~2.1.2
+    - name: streamsheets
+      repository: https://ctron.github.io/helm-charts
+      version: ^0.2.3
+    description: 'The Eclipse IoT Telemetry end-to-end package is an example on how to acquire telemetry data and process it in the cloud. Covering the three tiers of IoT (Sensor, Gateway, Cloud) with Eclipse IoT and other Open Source technologies. '
+    digest: 5b13213977c2d4564c90103456d9521f0024b0314f72fea44c75ac46f42cff83
+    home: https://eclipse.org/packages/packages/telemetry-e2e/
+    icon: https://eclipse.org/packages/packages/telemetry-e2e/images/telemetry-e2e-icon.svg
+    keywords:
+    - IoT
+    - telemetry
+    - end-to-end
+    - digital-twin
+    - kafka
+    kubeVersion: '>= 1.19.0'
+    maintainers:
+    - email: jreimann@redhat.com
+      name: ctron
+    name: telemetry-e2e
+    sources:
+    - https://github.com/eclipse/packages/packages/telemetry-e2e/
+    type: application
+    urls:
+    - https://eclipse.org/packages/charts/telemetry-e2e-0.1.0.tgz
+    version: 0.1.0
+  - apiVersion: v2
+    appVersion: 0.1.0
     created: "2021-10-18T13:32:35.94253463Z"
     dependencies:
     - alias: strimzi
@@ -4272,4 +4314,4 @@ entries:
     urls:
     - https://eclipse.org/packages/charts/telemetry-e2e-0.0.1-alpha1.tgz
     version: 0.0.1-alpha1
-generated: "2021-10-18T13:32:35.752304751Z"
+generated: "2021-10-21T07:52:35.542624175Z"
