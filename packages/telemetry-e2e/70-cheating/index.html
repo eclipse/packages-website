@@ -8,15 +8,15 @@
 
     <link rel="stylesheet" href="/packages/assets/bootstrap/bootstrap.min.css">
 
-    <title>Learn more</title>
+    <title>Cheating</title>
 
     <link rel="stylesheet" href="/packages/assets/css/style.css">
     <script src="/packages/assets/js/code.js"></script>
     
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:image" content="https://eclipse.org/packages/images/icon/twitter_icon.png"/>
-<meta name="twitter:title" content="Cloud2Edge | Learn more"/>
-<meta name="twitter:description" content="Learn more about the Cloud2Edge package."/>
+<meta name="twitter:title" content="Telemetry end-to-end | Cheating"/>
+<meta name="twitter:description" content="How to cheat."/>
 
 
     <link rel="icon" type="image/svg+xml" href="/packages/images/icon/icon.svg" sizes="any">
@@ -78,11 +78,11 @@
 <div><div class="container mt-5">
   <div class="row">
   <div class="col-12 col-sm-9 col-xl-8">
-  <h1>Cloud2Edge</h1>
-<p class="lead">A package connecting and managing sensor style devices. Connecting sensors to the cloud and processing data with a digital twin platform.</p></div>
+  <h1>Telemetry end-to-end</h1>
+<p class="lead">A package showing telemetry data acquisition end-to-end: Microcontroller firmware to cloud side data processing, using Drogue IoT and Apache Kafka in the process.</p></div>
   
   <div class="col-12 col-sm-3 col-xl-4 d-flex flex-sm-row-reverse">
-      <img alt="Page logo"  src="/packages/packages/cloud2edge/images/c2e-logo.svg" class="img-fluid m-lg-3 d-block align-self-center " style="max-height: 10rem;"/>
+      <img alt="Page logo"  src="/packages/packages/telemetry-e2e/images/telemetry-e2e-logo.svg" class="img-fluid m-lg-3 d-block align-self-center " style="max-height: 10rem;"/>
   </div>
   </div>
 </div>
@@ -90,60 +90,84 @@
 
 <div class="container">
 
-<nav class="nav nav-pills nav-fill mt-2 mb-5"><a class="nav-item nav-link " href="/packages/packages/cloud2edge/">Overview</a><a class="nav-item nav-link " href="/packages/packages/cloud2edge/installation/">Installation</a><a class="nav-item nav-link  active" href="/packages/packages/cloud2edge/learn/">Learn more</a><a class="nav-item nav-link " href="/packages/packages/cloud2edge/tour/">Take a tour</a></nav><div class="row">
+<nav class="nav nav-pills nav-fill mt-2 mb-5"><a class="nav-item nav-link " href="/packages/packages/telemetry-e2e/">Overview</a><a class="nav-item nav-link " href="/packages/packages/telemetry-e2e/10-installation-cloud/">Cloud</a><a class="nav-item nav-link " href="/packages/packages/telemetry-e2e/20-installation-gateway/">Gateway</a><a class="nav-item nav-link " href="/packages/packages/telemetry-e2e/30-installation-device/">Device</a><a class="nav-item nav-link " href="/packages/packages/telemetry-e2e/40-using/">Using it</a><a class="nav-item nav-link " href="/packages/packages/telemetry-e2e/50-understand/">Understanding it</a><a class="nav-item nav-link " href="/packages/packages/telemetry-e2e/60-alternatives/">Alternatives</a><a class="nav-item nav-link  active" href="/packages/packages/telemetry-e2e/70-cheating/">Cheating</a><a class="nav-item nav-link " href="/packages/packages/telemetry-e2e/90-learn/">Learn more</a></nav>
+<div class="row">
 
 <div class="col-12 col-md-8 col-lg-9">
-    <h2 id="functionality">Functionality</h2>
 
-    <p>This package gives you a scalable, cloud based IoT messaging platform. This allows you to connect
-sensors and devices to a cloud back end and let them report telemetry data and events to be consumed
-by applications via the cloud back end.</p>
+    <p>The tutorial involves a lot of components, and a lot can go wrong, especially when it comes to bluetooth or network
+connectivity.</p>
 
-    <p>The IoT messaging layer takes care of normalizing the various IoT protocols to AMQP 1.0, so that
-the back end applications can focus on processing the messages, rather than implementing various
-protocols. The messaging layer also provides the authentication and authorization layer. Ensuring
-that the back end applications only receive information from properly authenticated and authorized
-devices.</p>
+    <p>If you run into any blockers, we would kindly ask you to <a href="https://github.com/eclipse/packages/issues/new">reach out to us</a>
+and report your findings.</p>
 
-    <p>For making the implementation of back end applications easier, the digital twin platform will
-pre-process the incoming message stream, and translate it into a last-known state of the various
-devices. This makes it easier to implement back end applications, as the state is being managed
-by the digital twin platform.</p>
+    <p>But, there is also a way to simulate the actual hardware and work around some requirements.</p>
 
-    <p>In addition to the actual processing of data, the package also provides a feature to plan, orchestrate
-and and monitor the roll out of software updates to connected devices.</p>
+    <h2 id="simulating-a-message">Simulating a message</h2>
 
-    <h2 id="example-use-case">Example use-case</h2>
+    <p>You can manually simulate a message, that the IoT gateway would normally send after it acquired the information
+from the sensor.</p>
 
-    <p>…</p>
+    <nav><div class="nav nav-tabs" role="tablist"><a class="nav-item nav-link active" data-toggle="tab" id="variants-1-0-tab" href="#variants-1-0" aria-controls="variants-1-0">URL</a><a class="nav-item nav-link" data-toggle="tab" id="variants-1-1-tab" href="#variants-1-1" aria-controls="variants-1-1">drg</a></div></nav>
+    <div class="tab-content">
+
+<div class="tab-pane active show" id="variants-1-0" role="tabpanel" aria-labelledby="variants-1-0-tab">
+
+        <p>Ensure that the <code class="language-plaintext highlighter-rouge">DOMAIN</code> variable is still set to the value you used for the installation. Then execute the following
+command:</p>
+
+        <div class="clipboard"><pre><code>http --auth device-1@eclipse:foobar POST http://http-endpoint$DOMAIN/v1/foo temp:=23</code></pre></div>
+      </div>
+
+<div class="tab-pane" id="variants-1-1" role="tabpanel" aria-labelledby="variants-1-1-tab">
+        <p>If you are logged in with `drg`:</p>
+        <div class="clipboard"><pre><code>http --auth device-1@eclipse:foobar POST $(drg whoami -e http)/v1/foo temp:=23</code></pre></div>
+      </div>
+
+</div>
+
+    <div role="alert" class="alert alert-info"><h4 class="alert-heading">Different protocol </h4>
+You might have notices, we used HTTP for this. However, Kura would send the message using MQTT. As one part of
+Drogue IoT is normalizing the IoT protocol, the backend system didn't even notice.
+</div>
+
+    <h2 id="reading-directly-from-the-digital-twin">Reading directly from the digital twin</h2>
+
+    <p>When data gets sent to Ditto, it gets forwarded to Streamsheets for visualization. Should the data not show up in
+streamsheets, or should you run into issues with Streamsheets, you can also directly query the data in Ditto.</p>
+
+    <p>Ensure that the <code class="language-plaintext highlighter-rouge">DOMAIN</code> variable is still set to the value you used for the installation. Then execute the following
+command:</p>
+
+    <div class="clipboard"><pre><code>curl -sL -X GET "http://ditto-default$DOMAIN/api/2/things/eclipse:device-1" -H  "accept: application/json" -H  "Authorization: Basic ZGl0dG86ZGl0dG8=" | jq</code></pre></div>
+
   </div>
 
 <div class="col-12 col-md-4 col-lg-3 
 
 ">
-    <h2 id="also-see">Also see</h2>
 
-    <ul>
-      <li>About Eclipse Hono
-        <ul>
-          <li><a href="https://www.eclipse.org/hono/getting-started/">Getting started</a></li>
-          <li><a href="https://www.eclipse.org/hono/docs/">Documentation</a></li>
-        </ul>
-      </li>
-      <li>About Eclipse Ditto
-        <ul>
-          <li><a href="https://www.eclipse.org/ditto/intro-overview.html">Overview</a></li>
-        </ul>
-      </li>
-      <li>About Eclipse Hawkbit
-        <ul>
-          <li><a href="https://www.eclipse.org/hawkbit/gettingstarted/">Getting started</a></li>
-        </ul>
-      </li>
-    </ul>
+    <div class="position-sticky" style="top: 4rem;">
+
+
+<aside>
+<div class="card">
+<div class="card-body">
+<h5 class="card-title">Table of contents</h5>
+<div id="toc" class="toc"></div>
+</div>
+</div>
+</aside>
+
+<script>generateToc("#toc", "h2[id], h3[id], h4[id]");</script>
+
+
+</div>
+
   </div>
 
 </div>
+
 </div>
 
     </main>

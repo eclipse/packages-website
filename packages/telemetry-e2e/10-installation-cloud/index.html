@@ -8,15 +8,15 @@
 
     <link rel="stylesheet" href="/packages/assets/bootstrap/bootstrap.min.css">
 
-    <title>Installation</title>
+    <title>Cloud</title>
 
     <link rel="stylesheet" href="/packages/assets/css/style.css">
     <script src="/packages/assets/js/code.js"></script>
     
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:image" content="https://eclipse.org/packages/images/icon/twitter_icon.png"/>
-<meta name="twitter:title" content="Cloud2Edge | Installation"/>
-<meta name="twitter:description" content="Installations instructions for the Cloud2Edge package."/>
+<meta name="twitter:title" content="Telemetry end-to-end | Cloud"/>
+<meta name="twitter:description" content="Installations instructions for the Telemetry end-to-end package."/>
 
 
     <link rel="icon" type="image/svg+xml" href="/packages/images/icon/icon.svg" sizes="any">
@@ -78,11 +78,11 @@
 <div><div class="container mt-5">
   <div class="row">
   <div class="col-12 col-sm-9 col-xl-8">
-  <h1>Cloud2Edge</h1>
-<p class="lead">A package connecting and managing sensor style devices. Connecting sensors to the cloud and processing data with a digital twin platform.</p></div>
+  <h1>Telemetry end-to-end</h1>
+<p class="lead">A package showing telemetry data acquisition end-to-end: Microcontroller firmware to cloud side data processing, using Drogue IoT and Apache Kafka in the process.</p></div>
   
   <div class="col-12 col-sm-3 col-xl-4 d-flex flex-sm-row-reverse">
-      <img alt="Page logo"  src="/packages/packages/cloud2edge/images/c2e-logo.svg" class="img-fluid m-lg-3 d-block align-self-center " style="max-height: 10rem;"/>
+      <img alt="Page logo"  src="/packages/packages/telemetry-e2e/images/telemetry-e2e-logo.svg" class="img-fluid m-lg-3 d-block align-self-center " style="max-height: 10rem;"/>
   </div>
   </div>
 </div>
@@ -90,14 +90,30 @@
 
 <div class="container">
 
-<nav class="nav nav-pills nav-fill mt-2 mb-5"><a class="nav-item nav-link " href="/packages/packages/cloud2edge/">Overview</a><a class="nav-item nav-link  active" href="/packages/packages/cloud2edge/installation/">Installation</a><a class="nav-item nav-link " href="/packages/packages/cloud2edge/learn/">Learn more</a><a class="nav-item nav-link " href="/packages/packages/cloud2edge/tour/">Take a tour</a></nav>
+<nav class="nav nav-pills nav-fill mt-2 mb-5"><a class="nav-item nav-link " href="/packages/packages/telemetry-e2e/">Overview</a><a class="nav-item nav-link  active" href="/packages/packages/telemetry-e2e/10-installation-cloud/">Cloud</a><a class="nav-item nav-link " href="/packages/packages/telemetry-e2e/20-installation-gateway/">Gateway</a><a class="nav-item nav-link " href="/packages/packages/telemetry-e2e/30-installation-device/">Device</a><a class="nav-item nav-link " href="/packages/packages/telemetry-e2e/40-using/">Using it</a><a class="nav-item nav-link " href="/packages/packages/telemetry-e2e/50-understand/">Understanding it</a><a class="nav-item nav-link " href="/packages/packages/telemetry-e2e/60-alternatives/">Alternatives</a><a class="nav-item nav-link " href="/packages/packages/telemetry-e2e/70-cheating/">Cheating</a><a class="nav-item nav-link " href="/packages/packages/telemetry-e2e/90-learn/">Learn more</a></nav>
 <div class="row">
 
 <div class="col-12 col-md-8 col-lg-9">
 
     <p>You will need a Kubernetes instance, the <code class="language-plaintext highlighter-rouge">kubectl</code> and the <code class="language-plaintext highlighter-rouge">helm</code> tool in order to deploy this package.
-Please refer to our <a href="/packages/prereqs">pre-requisites</a> page for details.
-Any Kubernetes compatible cluster will do, as long as it meets the requirements.</p>
+Please refer to our <a href="/packages/prereqs">pre-requisites</a> page for details.</p>
+
+    <p>You might also want to <a href="https://github.com/drogue-iot/drg#installation">install the Drogue IoT command line tool</a> named <code class="language-plaintext highlighter-rouge">drg</code>.</p>
+
+    <p>While technically any Kubernetes cluster will do, this tutorial focuses on Minikube to keep things as simple
+as possible. When using Kind or any other Kubernetes cluster, some commands might need to be tweaked a bit.</p>
+
+    <h2 id="minikube">Minikube</h2>
+
+    <p>The following command starts up a Minikube cluster suitable for this package:</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>minikube start --cpus 4 --memory 8192 --disk-size 20gb --addons ingress
+</code></pre></div>    </div>
+
+    <p>Be sure the run the load balancer tunnel, once the instance is started:</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>minikube tunnel # do not abort this command or close the terminal it is running in
+</code></pre></div>    </div>
 
     <h2 id="check-access">Check access</h2>
 
@@ -108,48 +124,60 @@ Any Kubernetes compatible cluster will do, as long as it meets the requirements.
     <p>This should print out the version of the client, but must also print out the version of the server.</p>
 
     <p><details><summary>Example output</summary><div>
-          <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Client Version: version.Info{Major:"1", Minor:"16", GitVersion:"v1.16.1", GitCommit:"d647ddbd755faf07169599a625faf302ffc34458", GitTreeState:"clean", BuildDate:"2019-10-02T17:01:15Z", GoVersion:"go1.12.10", Compiler:"gc", Platform:"linux/amd64"}
-Server Version: version.Info{Major:"1", Minor:"13+", GitVersion:"v1.13.4+c2a5caf", GitCommit:"c2a5caf", GitTreeState:"clean", BuildDate:"2019-09-21T02:12:52Z", GoVersion:"go1.11.13", Compiler:"gc", Platform:"linux/amd64"}
+          <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Client Version: version.Info{Major:"1", Minor:"22", GitVersion:"v1.22.2", GitCommit:"8b5a19147530eaac9476b0ab82980b4088bbc1b2", GitTreeState:"clean", BuildDate:"2021-09-15T21:38:50Z", GoVersion:"go1.16.8", Compiler:"gc", Platform:"linux/amd64"}
+Server Version: version.Info{Major:"1", Minor:"22", GitVersion:"v1.22.2", GitCommit:"8b5a19147530eaac9476b0ab82980b4088bbc1b2", GitTreeState:"clean", BuildDate:"2021-09-15T21:32:41Z", GoVersion:"go1.16.8", Compiler:"gc", Platform:"linux/amd64"}
 </code></pre></div>          </div>
         </div></details></p>
 
     <h2 id="install-the-package">Install the package</h2>
 
-    <p>The Cloud2Edge package consists of multiple components. In order to keep them together and separate
-from other components running in your Kubernetes cluster, it is feasible to install them into
-their own name space. The following command creates the <code class="language-plaintext highlighter-rouge">cloud2edge</code> name space but you can select any
-other name as well.</p>
+    <p>This package consists of multiple components. Some of them are installed in the Kubernetes cluster, while the
+IoT gateway and the device firmware are naturally installed in dedicated devices.</p>
 
-    <div class="clipboard"><pre><code>NS=cloud2edge
-kubectl create namespace $NS</code></pre></div>
+    <p>This page describes the installation of the cluster components, which is orchestrated using an overarching Helm
+chart.</p>
 
-    <p>Next, install the package to the name space using Helm.</p>
+    <p>Assuming you are using Minikube, or have full cluster access, you can simply install this be running the following
+Helm command:</p>
 
-    <nav><div class="nav nav-tabs" role="tablist"><a class="nav-item nav-link active" data-toggle="tab" id="variants-1-0-tab" href="#variants-1-0" aria-controls="variants-1-0">NodePort</a><a class="nav-item nav-link" data-toggle="tab" id="variants-1-1-tab" href="#variants-1-1" aria-controls="variants-1-1">LoadBalancer</a></div></nav>
-    <div class="tab-content">
+    <div class="clipboard"><pre><code>DOMAIN=.$(minikube ip).nip.io
+helm upgrade --install eclipse-iot-telemetry eclipse-iot/telemetry-e2e \
+  --timeout 30m \
+  --set global.domain=$DOMAIN</code></pre></div>
 
-<div class="tab-pane active show" id="variants-1-0" role="tabpanel" aria-labelledby="variants-1-0-tab">
-        <p>Kubernetes variants like <em>kind</em> or <em>Minikube</em> do not support exposing service endpoints via load balancers
-out of the box. Instead, services are exposed via <em>NodePorts</em>.</p>
+    <div role="alert" class="alert alert-warning"><h4 class="alert-heading">Ingress validation error </h4>
 
-        <div class="clipboard"><pre><code>RELEASE=c2e
-helm install -n $NS --wait --timeout 15m $RELEASE eclipse-iot/cloud2edge</code></pre></div>
-      </div>
+It may be that the deployment fails due to some "ingress" validation error. This is a know issue in the
+NGINX ingress controllers (see <a class="alert-link" href="https://github.com/kubernetes/ingress-nginx/issues/6245" target="_blank">#6245</a>). Unfortunately,
+there is currently no proper fix for this.
 
-<div class="tab-pane" id="variants-1-1" role="tabpanel" aria-labelledby="variants-1-1-tab">
-        <p>Managed Kubernetes variants usually support exposing service endpoints via load balancers on public
-IP addresses. To install the Cloud2Edge package using load balancers, run the following command:</p>
+<hr />
 
-        <div class="clipboard"><pre><code>RELEASE=c2e
-helm install -n $NS --wait --timeout 15m --set hono.useLoadBalancer=true --set ditto.nginx.service.type=LoadBalancer $RELEASE eclipse-iot/cloud2edge</code></pre></div>
-      </div>
+<p>However, a workaround exists. You can delete the validation webhook causing the issue:</p>
+<div class="clipboard"><pre><code>kubectl delete validatingwebhookconfigurations ingress-nginx-admission</code></pre></div>
+
+<p class="mb-0">After that, re-run the <code>helm upgrade</code> command above.</p>
 
 </div>
 
-    <h2 id="ready-to-run">Ready to run</h2>
+    <h2 id="be-patient">Be patient</h2>
 
-    <p>Once the package’s pods are all up and running, you can start using its services.
-The easiest way of getting to know the Cloud2Edge package is by <a href="../tour">taking a little tour</a>.</p>
+    <p>Depending on your internet speed and overall I/O and CPU performance, this installation may take a bit. Normally it
+will finish in around 15 minutes.</p>
+
+    <p>Assuming you have the <code class="language-plaintext highlighter-rouge">watch</code> command, you can watch the progress using the following command:</p>
+
+    <div class="clipboard"><pre><code>watch kubectl get pods</code></pre></div>
+
+    <h2 id="once-it-is-ready">Once it is ready</h2>
+
+    <p>Once the installation is ready, the Helm command will print out some details on the installation.</p>
+
+    <p>This will also give you the URL to the web console and the command as well as the access credentials.</p>
+
+    <h2 id="what-is-next">What is next?</h2>
+
+    <p>Go to the next page and set up the IoT gateway.</p>
 
   </div>
 
@@ -206,7 +234,7 @@ The easiest way of getting to know the Cloud2Edge package is by <a href="../tour
 
 <dl class="row">
 <dt class="col-sm-6">Disk</dt>
-<dd class="col-sm-6 text-right">40 GiB</dd>
+<dd class="col-sm-6 text-right">20 GiB</dd>
 </dl>
 
 </li>
@@ -214,9 +242,33 @@ The easiest way of getting to know the Cloud2Edge package is by <a href="../tour
 
   </ul>
   
-  <div class="card-body">Will require cluster admin privileges.</div>
+  <div class="card-body"><p>Will require cluster admin privileges and an active Ingress controller.</p> <p>You will also need a micro:bit&nbsp;v2 and a Raspberry&nbsp;Pi&nbsp;3+ to get the most out of this package.</p></div>
   
 </div>
+
+    <p>
+
+
+<div class="position-sticky" style="top: 4rem;">
+
+
+<aside>
+<div class="card">
+<div class="card-body">
+<h5 class="card-title">Table of contents</h5>
+<div id="toc" class="toc"></div>
+</div>
+</div>
+</aside>
+
+<script>generateToc("#toc", "h2[id], h3[id], h4[id]");</script>
+
+
+</div>
+
+
+
+</p>
 
   </div>
 

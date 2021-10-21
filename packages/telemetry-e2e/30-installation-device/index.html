@@ -8,15 +8,15 @@
 
     <link rel="stylesheet" href="/packages/assets/bootstrap/bootstrap.min.css">
 
-    <title>Learn more</title>
+    <title>Device</title>
 
     <link rel="stylesheet" href="/packages/assets/css/style.css">
     <script src="/packages/assets/js/code.js"></script>
     
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:image" content="https://eclipse.org/packages/images/icon/twitter_icon.png"/>
-<meta name="twitter:title" content="Cloud2Edge | Learn more"/>
-<meta name="twitter:description" content="Learn more about the Cloud2Edge package."/>
+<meta name="twitter:title" content="Telemetry end-to-end | Installation"/>
+<meta name="twitter:description" content="Installations instructions for the Telemetry end-to-end package."/>
 
 
     <link rel="icon" type="image/svg+xml" href="/packages/images/icon/icon.svg" sizes="any">
@@ -78,11 +78,11 @@
 <div><div class="container mt-5">
   <div class="row">
   <div class="col-12 col-sm-9 col-xl-8">
-  <h1>Cloud2Edge</h1>
-<p class="lead">A package connecting and managing sensor style devices. Connecting sensors to the cloud and processing data with a digital twin platform.</p></div>
+  <h1>Telemetry end-to-end</h1>
+<p class="lead">A package showing telemetry data acquisition end-to-end: Microcontroller firmware to cloud side data processing, using Drogue IoT and Apache Kafka in the process.</p></div>
   
   <div class="col-12 col-sm-3 col-xl-4 d-flex flex-sm-row-reverse">
-      <img alt="Page logo"  src="/packages/packages/cloud2edge/images/c2e-logo.svg" class="img-fluid m-lg-3 d-block align-self-center " style="max-height: 10rem;"/>
+      <img alt="Page logo"  src="/packages/packages/telemetry-e2e/images/telemetry-e2e-logo.svg" class="img-fluid m-lg-3 d-block align-self-center " style="max-height: 10rem;"/>
   </div>
   </div>
 </div>
@@ -90,60 +90,73 @@
 
 <div class="container">
 
-<nav class="nav nav-pills nav-fill mt-2 mb-5"><a class="nav-item nav-link " href="/packages/packages/cloud2edge/">Overview</a><a class="nav-item nav-link " href="/packages/packages/cloud2edge/installation/">Installation</a><a class="nav-item nav-link  active" href="/packages/packages/cloud2edge/learn/">Learn more</a><a class="nav-item nav-link " href="/packages/packages/cloud2edge/tour/">Take a tour</a></nav><div class="row">
+<nav class="nav nav-pills nav-fill mt-2 mb-5"><a class="nav-item nav-link " href="/packages/packages/telemetry-e2e/">Overview</a><a class="nav-item nav-link " href="/packages/packages/telemetry-e2e/10-installation-cloud/">Cloud</a><a class="nav-item nav-link " href="/packages/packages/telemetry-e2e/20-installation-gateway/">Gateway</a><a class="nav-item nav-link  active" href="/packages/packages/telemetry-e2e/30-installation-device/">Device</a><a class="nav-item nav-link " href="/packages/packages/telemetry-e2e/40-using/">Using it</a><a class="nav-item nav-link " href="/packages/packages/telemetry-e2e/50-understand/">Understanding it</a><a class="nav-item nav-link " href="/packages/packages/telemetry-e2e/60-alternatives/">Alternatives</a><a class="nav-item nav-link " href="/packages/packages/telemetry-e2e/70-cheating/">Cheating</a><a class="nav-item nav-link " href="/packages/packages/telemetry-e2e/90-learn/">Learn more</a></nav>
+<div class="row">
 
 <div class="col-12 col-md-8 col-lg-9">
-    <h2 id="functionality">Functionality</h2>
 
-    <p>This package gives you a scalable, cloud based IoT messaging platform. This allows you to connect
-sensors and devices to a cloud back end and let them report telemetry data and events to be consumed
-by applications via the cloud back end.</p>
+    <p>For running the sensor firmware, you will need a <a href="https://microbit.org/">micro:bit</a> v2. Unfortunately, the example
+does not work with earlier versions of the micro:bit. It also does not work with other boards, like e.g. the
+Raspberry Pi Pico (which doesn’t have Bluetooth), or the ESP32 (which has different CPU architecture: Xtensa or RISC-V).
+As also the Bluetooth driver is part of the firmware, you cannot simply flash it to a different ARM based device.</p>
 
-    <p>The IoT messaging layer takes care of normalizing the various IoT protocols to AMQP 1.0, so that
-the back end applications can focus on processing the messages, rather than implementing various
-protocols. The messaging layer also provides the authentication and authorization layer. Ensuring
-that the back end applications only receive information from properly authenticated and authorized
-devices.</p>
+    <p>However, as the overall example is only relying on Bluetooth, GATT, and the <a href="https://lancaster-university.github.io/microbit-docs/resources/bluetooth/bluetooth_profile.html">micro:bit temperature profile</a>. You can of
+course drop in your down device, as long it is implementing the same profile.</p>
 
-    <p>For making the implementation of back end applications easier, the digital twin platform will
-pre-process the incoming message stream, and translate it into a last-known state of the various
-devices. This makes it easier to implement back end applications, as the state is being managed
-by the digital twin platform.</p>
+    <p>One alternative to achieve the same, is to use “Make Code” with <a href="https://makecode.microbit.org/_CcAYtycF5Tvy">this example project</a>.</p>
 
-    <p>In addition to the actual processing of data, the package also provides a feature to plan, orchestrate
-and and monitor the roll out of software updates to connected devices.</p>
+    <h2 id="install-rust">Install Rust</h2>
 
-    <h2 id="example-use-case">Example use-case</h2>
+    <p>In order to install Rust, <a href="https://www.rust-lang.org/tools/install">installing <code class="language-plaintext highlighter-rouge">rustup</code></a> is sufficient on most cases:</p>
 
-    <p>…</p>
+    <div class="clipboard"><pre><code>curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh</code></pre></div>
+
+    <h2 id="clone-the-firmware-repository">Clone the firmware repository</h2>
+
+    <div class="clipboard"><pre><code>git clone https://github.com/drogue-iot/drogue-device.git</code></pre></div>
+
+    <h2 id="flash-the-device">Flash the device</h2>
+
+    <p>Attach the device to your USB port and execute the following command to build and flash the firmware:</p>
+
+    <div class="clipboard"><pre><code>cd examples/nrf/microbit/ble-temperature
+cargo run --release</code></pre></div>
+
+    <p>Once the device is flashed, it will start to announce its services using Bluetooth.</p>
+
+    <h2 id="what-is-next">What is next?</h2>
+
+    <div role="alert" class="alert alert-success"><h4 class="alert-heading">Congratulations! </h4>
+You set up the complete package! Now it is time to look at the data, take a look at the next page!
+</div>
+
   </div>
 
 <div class="col-12 col-md-4 col-lg-3 
 
 ">
-    <h2 id="also-see">Also see</h2>
 
-    <ul>
-      <li>About Eclipse Hono
-        <ul>
-          <li><a href="https://www.eclipse.org/hono/getting-started/">Getting started</a></li>
-          <li><a href="https://www.eclipse.org/hono/docs/">Documentation</a></li>
-        </ul>
-      </li>
-      <li>About Eclipse Ditto
-        <ul>
-          <li><a href="https://www.eclipse.org/ditto/intro-overview.html">Overview</a></li>
-        </ul>
-      </li>
-      <li>About Eclipse Hawkbit
-        <ul>
-          <li><a href="https://www.eclipse.org/hawkbit/gettingstarted/">Getting started</a></li>
-        </ul>
-      </li>
-    </ul>
+    <div class="position-sticky" style="top: 4rem;">
+
+
+<aside>
+<div class="card">
+<div class="card-body">
+<h5 class="card-title">Table of contents</h5>
+<div id="toc" class="toc"></div>
+</div>
+</div>
+</aside>
+
+<script>generateToc("#toc", "h2[id], h3[id], h4[id]");</script>
+
+
+</div>
+
   </div>
 
 </div>
+
 </div>
 
     </main>

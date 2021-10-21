@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="/packages/assets/bootstrap/bootstrap.min.css">
+
+    <title>Gateway</title>
+
+    <link rel="stylesheet" href="/packages/assets/css/style.css">
+    <script src="/packages/assets/js/code.js"></script>
+    
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:image" content="https://eclipse.org/packages/images/icon/twitter_icon.png"/>
+<meta name="twitter:title" content="Telemetry end-to-end | Installation"/>
+<meta name="twitter:description" content="Installations instructions for the Telemetry end-to-end package."/>
+
+
+    <link rel="icon" type="image/svg+xml" href="/packages/images/icon/icon.svg" sizes="any">
+    <link rel="icon" href="/packages/images/icon/icon.png" sizes="192x192">
+    <link rel="apple-touch-icon-precomposed" href="/packages/images/icon/icon_apple.png" sizes="180x180">
+
+</head>
+
+<body>
+
+    <header>
+<nav class="navbar navbar-expand-md fixed-top navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="/packages/">
+      <img src="/packages/images/icon_brand_navbar.svg" width="30" height="30" alt="Eclipse IoT Packages™">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto"><li class="nav-item">
+          <a
+              class="nav-link"
+              href="/packages/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a
+              class="nav-link"
+              href="/packages/about/">About</a>
+        </li>
+        <li class="nav-item">
+          <a
+              class="nav-link"
+              href="/packages/faq/">FAQ</a>
+        </li>
+        <li class="nav-item">
+          <a
+              class="nav-link"
+              href="/packages/contribute/">Contribute</a>
+        </li>
+        <li class="nav-item">
+          <a
+              class="nav-link"
+              href="/packages/prereqs/">Prerequisites</a>
+        </li>
+        <li class="nav-item">
+          <a
+              class="nav-link"
+              href="/packages/repository/">Repository</a>
+        </li>
+        </ul>
+    </div>
+  </div>
+</nav></header>
+
+    <main id="main" role="main" >
+      
+
+<div><div class="container mt-5">
+  <div class="row">
+  <div class="col-12 col-sm-9 col-xl-8">
+  <h1>Telemetry end-to-end</h1>
+<p class="lead">A package showing telemetry data acquisition end-to-end: Microcontroller firmware to cloud side data processing, using Drogue IoT and Apache Kafka in the process.</p></div>
+  
+  <div class="col-12 col-sm-3 col-xl-4 d-flex flex-sm-row-reverse">
+      <img alt="Page logo"  src="/packages/packages/telemetry-e2e/images/telemetry-e2e-logo.svg" class="img-fluid m-lg-3 d-block align-self-center " style="max-height: 10rem;"/>
+  </div>
+  </div>
+</div>
+</div>
+
+<div class="container">
+
+<nav class="nav nav-pills nav-fill mt-2 mb-5"><a class="nav-item nav-link " href="/packages/packages/telemetry-e2e/">Overview</a><a class="nav-item nav-link " href="/packages/packages/telemetry-e2e/10-installation-cloud/">Cloud</a><a class="nav-item nav-link  active" href="/packages/packages/telemetry-e2e/20-installation-gateway/">Gateway</a><a class="nav-item nav-link " href="/packages/packages/telemetry-e2e/30-installation-device/">Device</a><a class="nav-item nav-link " href="/packages/packages/telemetry-e2e/40-using/">Using it</a><a class="nav-item nav-link " href="/packages/packages/telemetry-e2e/50-understand/">Understanding it</a><a class="nav-item nav-link " href="/packages/packages/telemetry-e2e/60-alternatives/">Alternatives</a><a class="nav-item nav-link " href="/packages/packages/telemetry-e2e/70-cheating/">Cheating</a><a class="nav-item nav-link " href="/packages/packages/telemetry-e2e/90-learn/">Learn more</a></nav>
+<div class="row">
+
+<div class="col-12 col-md-8 col-lg-9">
+
+    <p>The installation of Eclipse Kura™ will require a <a href="https://www.raspberrypi.org/products/raspberry-pi-4-model-b/">Raspberry Pi 3+</a>.
+Kura itself will run on other hardware too, and it should not be a problem to run this tutorial on an AMD64 device or
+another 32bit or 64bit ARM device. However, the following instructions are tested with a Raspberry Pi 3+ and commands
+maybe be different when you choose a different target.</p>
+
+    <p>What you do require however is a device with a Linux supported Bluetooth device attached, and support for running
+containers.</p>
+
+    <h2 id="network--ip-addresses">Network &amp; IP addresses</h2>
+
+    <p>Eclipse Kura, running on the Raspberry Pi, will need to connect to the MQTT endpoint running on your Minikube
+cluster. As this cluster is running on your local machine, inside a virtual machine, Kura cannot directly access
+the MQTT endpoint.</p>
+
+    <p>In order to establish a connection between Kura on the Raspberry Pi and the MQTT endpoint inside the Minikube
+cluster VM, you will need to:</p>
+
+    <ul>
+      <li>Connect the Raspberry Pi to a network that can reach the machine your Minikube cluster runs on</li>
+      <li>Open a port forward from your machines network interface, to the MQTT endpoint service</li>
+      <li>Open this port on your machine’s firewall</li>
+    </ul>
+
+    <p>The port forward can easily be created using <code class="language-plaintext highlighter-rouge">kubectl</code> on the host machine running the Minikube VM:</p>
+
+    <div class="clipboard"><pre><code>kubectl port-forward deployment/mqtt-endpoint --address 0.0.0.0 1883</code></pre></div>
+
+    <div role="alert" class="alert alert-info"><h4 class="alert-heading">Firewall </h4>
+
+Assuming you have a firewall, you also need to open access to port <code>1883</code> from your local network.
+
+<hr /><p class="mb-0">
+<p>
+On Linux, you can temporarily open a port using the following command:
+</p>
+
+<div class="clipboard"><pre><code>sudo firewall-cmd --add-port=1883/tcp</code></pre></div>
+
+</p>
+
+</div>
+
+    <h2 id="set-up-the-device">Set up the device</h2>
+
+    <div role="alert" class="alert alert-info"><h4 class="alert-heading">Alternate installation methods </h4>
+The following instructions are the bare minimal instructions required to set up a new Raspberry Pi when using
+a Linux machine. If you are unsure how this works, or don't use a Linux like environment, check out the standard <a href="https://www.raspberrypi.org/software/" target="_blank" class="alert-link">installation instructions for Raspberry Pi OS</a>.
+</div>
+
+    <p>Download a Debian “buster” based Raspberry OS image:</p>
+
+    <div class="clipboard"><pre><code>wget https://downloads.raspberrypi.org/raspios_lite_armhf/images/raspios_lite_armhf-2021-05-28/2021-05-07-raspios-buster-armhf-lite.zip</code></pre></div>
+
+    <p>And write it so an SD card:</p>
+
+    <div role="alert" class="alert alert-warning"><h4 class="alert-heading">Possible data loss </h4>
+The next command will erase the target disk or SD card. Be sure that you are specifying the correct target device you
+want to flash the image to. Once the process of flashing has started, there is no way to undo these changes.
+</div>
+
+    <div class="clipboard"><pre><code># replace XXX with your SD card drive that you want to erase (e.g. sdb)
+xzcat 2021-05-07-raspios-buster-armhf-lite.img.xz | sudo dd of=/dev/XXX bs=1M status=progress oflag=sync</code></pre></div>
+
+    <p>Before you boot for the first time, ensure that you enable SSH:</p>
+
+    <div class="clipboard"><pre><code>touch boot/ssh</code></pre></div>
+
+    <p>Also, it is recommended to enable WiFi:</p>
+
+    <ul>
+      <li>
+        <p>Create a new file</p>
+
+        <div class="clipboard"><pre><code>vi boot/wpa_supplicant.conf</code></pre></div>
+      </li>
+      <li>
+        <p>Edit configuration</p>
+
+        <div class="clipboard"><pre><code>country=&lt;XX&gt; # use your ISO 3166 country code, e.g. DE for Germany
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+network={
+&nbsp;&nbsp;ssid="&lt;your ssid&gt;"
+&nbsp;&nbsp;psk="&lt;our password&gt;"
+}</code></pre></div>
+      </li>
+    </ul>
+
+    <h2 id="boot-and-check-access">Boot and check access</h2>
+
+    <p>Once you flashed the SD card, put it into your Raspberry Pi and ensure that you can log into the device remotely using
+<code class="language-plaintext highlighter-rouge">ssh</code>.</p>
+
+    <p>Also, ensure that Docker is installed. If you are missing docker, you can easily install this be executing the
+following command:</p>
+
+    <div class="clipboard"><pre><code>sudo apt-get install docker.io</code></pre></div>
+
+    <div role="alert" class="alert alert-info"><h4 class="alert-heading">Accessing as non-root user  </h4>
+<p>
+By default, most installations of docker require a "root" user to manage containers.
+<a href="https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user" target="_blank" class="alert-link">Read here</a>
+to learn how to grant non-root users direct access to docker.
+</p>
+<p>Alternatively, you can issue the following docker commands as "root", or use <code>sudo</code> to achieve the same.</p>
+</div>
+
+    <h2 id="install-kura">Install Kura</h2>
+
+    <p>Kura is not installed directly on the gateway, but run inside a container. We do this, as we plan to amend the
+tutorial in the future, using an edge orchestration solution to deploy the IoT workload. For now, we manually start
+the container.</p>
+
+    <h3 id="create-the-kura-container">Create the Kura container</h3>
+
+    <p>Create and start the Kura container using:</p>
+
+    <div class="clipboard"><pre><code>docker run -dti -v /var/run/dbus/system_bus_socket:/var/run/dbus/system_bus_socket --name kura -p 443:443 ghcr.io/ctron/kura-test:0.1.1 -console -consoleLog</code></pre></div>
+
+    <p>It will start in the background. Should the container should get stopped, you can restart it with the following command:</p>
+
+    <div class="clipboard"><pre><code>docker start kura</code></pre></div>
+
+    <h3 id="login-to-the-web-console">Login to the web console</h3>
+
+    <p>Once it is fully started, you can also connect to using your web browser:</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://&lt;host-ip&gt;
+</code></pre></div>    </div>
+
+    <div role="alert" class="alert alert-secondary"><h4 class="alert-heading">Self-signed certificates </h4>
+Your browser will warn you about a self-signed certificate. That is ok in this case, as the Kura instance doesn't
+know its hostname, it uses a self-signed certificate to offer TLS. You can replace the certificate if you prefer. 
+</div>
+
+    <p>The default access credentials are:</p>
+
+    <ul>
+      <li>Username: <code class="language-plaintext highlighter-rouge">admin</code></li>
+      <li>Password: <code class="language-plaintext highlighter-rouge">admin</code></li>
+    </ul>
+
+    <div role="alert" class="alert alert-secondary"><h4 class="alert-heading">Default passwords </h4>
+Using the Web UI, you can of course change the username and password.
+</div>
+
+    <h3 id="attaching-to-the-container-console">Attaching to the container console</h3>
+
+    <p>You can also attach to the console of Kura using:</p>
+
+    <div class="clipboard"><pre><code>docker attach --sig-proxy=false kura</code></pre></div>
+
+    <h2 id="setup-connection">Setup connection</h2>
+
+    <p>Kura needs to be connected to the Drogue IoT cloud instance. The configuration must be done using the Web UI. The
+following steps will walk you through the process.</p>
+
+    <h3 id="connecting-the-gateway">Connecting the gateway</h3>
+
+    <ul>
+      <li>
+        <p>Navigate to [System &gt; Cloud Connections] and then select the tab labeled “MqttDataTransport”.</p>
+      </li>
+      <li>
+        <p>Set the following fields:</p>
+
+        <dl class="row">
+  <dt class="col-sm-3">Broker-url</dt>
+  <dd class="col-sm-9">
+    <p><code>mqtt://&lt;your-host-ip&gt;:1883</code></p>
+    The IP address is the IP the machine you are running
+    <code>kubectl port-forward</code> on.
+  </dd>
+  <dt class="col-sm-3">Username</dt>
+  <dd class="col-sm-9"><code>device-1@eclipse</code></dd>
+  <dt class="col-sm-3">Password</dt>
+  <dd class="col-sm-9"><code>device12</code></dd>
+</dl>
+      </li>
+      <li>
+        <p>Afterwards click on <kbd>Apply</kbd> and confirm to store the settings.</p>
+      </li>
+      <li>
+        <p>Next, test the settings by manually connecting. Click on the button <kbd>Connect/Disconnect</kbd> once, and wait.</p>
+      </li>
+      <li>
+        <p>When the column status changes to “Connected” you can move on to the next step. Otherwise, check the connection settings.</p>
+      </li>
+    </ul>
+
+    <h3 id="creating-a-cloud-publisher">Creating a cloud publisher</h3>
+
+    <ul>
+      <li>
+        <p>Navigate to [System &gt; Cloud Connections] and click on the button <kbd>New Pub/Sub</kbd>.</p>
+      </li>
+      <li>
+        <p>In the dialog, select <code class="language-plaintext highlighter-rouge">org.eclipse.kura.cloud.publisher.CloudPublisher</code> as a factory, and enter the new ID <code class="language-plaintext highlighter-rouge">microbit</code>.</p>
+      </li>
+      <li>
+        <p>Confirm using the <kbd>Apply</kbd> button.</p>
+      </li>
+    </ul>
+
+    <h3 id="configuring-the-microbit-demo">Configuring the micro:bit demo</h3>
+
+    <ul>
+      <li>
+        <p>Navigate to [Services &gt; micro:bit] and update the following settings:</p>
+
+        <dl class="row">
+  <dt class="col-sm-3">CloudPublisher Target Filter</dt>
+  <dd class="col-sm-9">Select the target <code>(kura.service.pid=microbot)</code></dd>
+    
+  <dt class="col-sm-3">Enabled</dt>
+  <dd class="col-sm-9"><code>true</code></dd>
+</dl>
+      </li>
+      <li>
+        <p>Afterwards click on <kbd>Apply</kbd> and confirm to store the settings.</p>
+      </li>
+    </ul>
+
+    <h2 id="what-is-next">What is next?</h2>
+
+    <p>Go to the next page and set up the micro:bit.</p>
+
+    <h2 id="when-things-go-wrong">When things go wrong</h2>
+
+    <h3 id="unable-to-connect-gateway-to-the-cluster">Unable to connect gateway to the cluster</h3>
+
+    <p>If the gateway cannot connect to the cluster here are a few things to check.</p>
+
+    <h4 id="check-if-the-connection-reaches-the-port-forward">Check if the connection reaches the port forward</h4>
+
+    <p>If the connection reaches the port forward, you should see a corresponding message on the console:</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>kubectl port-forward deployment/mqtt-endpoint <span class="nt">--address</span> 0.0.0.0 1883
+Forwarding from 0.0.0.0:1883 -&gt; 1883
+Handling connection <span class="k">for </span>1883
+</code></pre></div>    </div>
+
+    <p>If you don’t see <code class="language-plaintext highlighter-rouge">Handling connection for 1883</code>, this means that the gateway cannot reach port <code class="language-plaintext highlighter-rouge">1883</code> on your local
+machine. Possible causes for this can be a firewall blocking access to the port or a wrong IP address or port number
+in the Kura configuration.</p>
+
+    <p>If you see the message, but see errors directly after it, this means that Kura was connecting to the correct address
+and port, but something fails with the port forward. The error message should provide additional information.</p>
+
+  </div>
+
+<div class="col-12 col-md-4 col-lg-3 
+
+">
+
+    <div class="position-sticky" style="top: 4rem;">
+
+
+<aside>
+<div class="card">
+<div class="card-body">
+<h5 class="card-title">Table of contents</h5>
+<div id="toc" class="toc"></div>
+</div>
+</div>
+</aside>
+
+<script>generateToc("#toc", "h2[id], h3[id], h4[id]");</script>
+
+
+</div>
+
+  </div>
+
+</div>
+
+</div>
+
+    </main>
+
+    <footer class="page-footer">
+
+    <div class="container">
+
+    <div class="row">
+
+    
+
+        
+
+            <div class="col-6 col-md">
+            
+            
+                <h5>Eclipse IoT Packages</h5>
+                <ul class="list-unstyled">
+                    
+                        <li>
+                            <a class="text-muted" href="/packages/">Home</a>
+                        </li>
+                    
+                        <li>
+                            <a class="text-muted" href="/packages/about">About</a>
+                        </li>
+                    
+                        <li>
+                            <a class="text-muted" href="/packages/contribute">Contribute</a>
+                        </li>
+                    
+                        <li>
+                            <a class="text-muted" href="https://eclipse.org/security">Security</a>
+                        </li>
+                    
+                </ul>
+            
+            </div>
+        
+
+            <div class="col-6 col-md">
+            
+            
+                <h5>Eclipse IoT</h5>
+                <ul class="list-unstyled">
+                    
+                        <li>
+                            <a class="text-muted" href="https://iot.eclipse.org">Top Level Project</a>
+                        </li>
+                    
+                        <li>
+                            <a class="text-muted" href="https://www.eclipse.org/org/workinggroups/iotwg_charter.php">Working group</a>
+                        </li>
+                    
+                </ul>
+            
+            </div>
+        
+
+            <div class="col-6 col-md">
+            
+            
+                <h5>Legal</h5>
+                <ul class="list-unstyled">
+                    
+                        <li>
+                            <a class="text-muted" href="https://www.eclipse.org/legal/privacy.php">Privacy Policy</a>
+                        </li>
+                    
+                        <li>
+                            <a class="text-muted" href="https://www.eclipse.org/legal/termsofuse.php">Terms of Use</a>
+                        </li>
+                    
+                        <li>
+                            <a class="text-muted" href="https://www.eclipse.org/legal/copyright.php">Copyright Agent</a>
+                        </li>
+                    
+                        <li>
+                            <a class="text-muted" href="https://www.eclipse.org/legal/epl-2.0/">Eclipse Public License</a>
+                        </li>
+                    
+                        <li>
+                            <a class="text-muted" href="https://www.eclipse.org/legal">Legal Resources</a>
+                        </li>
+                    
+                </ul>
+            
+            </div>
+        
+
+            <div class="col-6 col-md">
+            
+            
+                <h5>Eclipse Foundation</h5>
+                <ul class="list-unstyled">
+                    
+                        <li>
+                            <a class="text-muted" href="https://eclipse.org/org">About us</a>
+                        </li>
+                    
+                        <li>
+                            <a class="text-muted" href="https://www.eclipse.org/org/foundation/contact.php">Contact us</a>
+                        </li>
+                    
+                        <li>
+                            <a class="text-muted" href="https://www.eclipse.org/org/foundation/directors.php">Board of Directors</a>
+                        </li>
+                    
+                </ul>
+            
+            </div>
+        
+
+    
+    </div>
+
+    
+    <div class="row">
+        <div class="col-12 col-md text-muted">Copyright © Eclipse Foundation, Inc. All Rights Reserved.</div>
+    </div>
+    
+
+    </div>
+
+</footer>
+
+
+    <script src="/packages/assets/popper.min.js"></script>
+    <script src="/packages/assets/jquery.min.js"></script>
+    <script src="/packages/assets/bootstrap/bootstrap.min.js"></script>
+
+    <script src="/packages/assets/clipboard.min.js"></script>
+    <script src="/packages/assets/clipboard.js"></script>
+
+</body>
+
+</html>

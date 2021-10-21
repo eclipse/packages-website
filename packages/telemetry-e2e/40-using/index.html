@@ -8,15 +8,15 @@
 
     <link rel="stylesheet" href="/packages/assets/bootstrap/bootstrap.min.css">
 
-    <title>Learn more</title>
+    <title>Using it</title>
 
     <link rel="stylesheet" href="/packages/assets/css/style.css">
     <script src="/packages/assets/js/code.js"></script>
     
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:image" content="https://eclipse.org/packages/images/icon/twitter_icon.png"/>
-<meta name="twitter:title" content="Cloud2Edge | Learn more"/>
-<meta name="twitter:description" content="Learn more about the Cloud2Edge package."/>
+<meta name="twitter:title" content="Telemetry end-to-end | Understanding it"/>
+<meta name="twitter:description" content="Go ahead and play with the package."/>
 
 
     <link rel="icon" type="image/svg+xml" href="/packages/images/icon/icon.svg" sizes="any">
@@ -78,11 +78,11 @@
 <div><div class="container mt-5">
   <div class="row">
   <div class="col-12 col-sm-9 col-xl-8">
-  <h1>Cloud2Edge</h1>
-<p class="lead">A package connecting and managing sensor style devices. Connecting sensors to the cloud and processing data with a digital twin platform.</p></div>
+  <h1>Telemetry end-to-end</h1>
+<p class="lead">A package showing telemetry data acquisition end-to-end: Microcontroller firmware to cloud side data processing, using Drogue IoT and Apache Kafka in the process.</p></div>
   
   <div class="col-12 col-sm-3 col-xl-4 d-flex flex-sm-row-reverse">
-      <img alt="Page logo"  src="/packages/packages/cloud2edge/images/c2e-logo.svg" class="img-fluid m-lg-3 d-block align-self-center " style="max-height: 10rem;"/>
+      <img alt="Page logo"  src="/packages/packages/telemetry-e2e/images/telemetry-e2e-logo.svg" class="img-fluid m-lg-3 d-block align-self-center " style="max-height: 10rem;"/>
   </div>
   </div>
 </div>
@@ -90,60 +90,105 @@
 
 <div class="container">
 
-<nav class="nav nav-pills nav-fill mt-2 mb-5"><a class="nav-item nav-link " href="/packages/packages/cloud2edge/">Overview</a><a class="nav-item nav-link " href="/packages/packages/cloud2edge/installation/">Installation</a><a class="nav-item nav-link  active" href="/packages/packages/cloud2edge/learn/">Learn more</a><a class="nav-item nav-link " href="/packages/packages/cloud2edge/tour/">Take a tour</a></nav><div class="row">
+<nav class="nav nav-pills nav-fill mt-2 mb-5"><a class="nav-item nav-link " href="/packages/packages/telemetry-e2e/">Overview</a><a class="nav-item nav-link " href="/packages/packages/telemetry-e2e/10-installation-cloud/">Cloud</a><a class="nav-item nav-link " href="/packages/packages/telemetry-e2e/20-installation-gateway/">Gateway</a><a class="nav-item nav-link " href="/packages/packages/telemetry-e2e/30-installation-device/">Device</a><a class="nav-item nav-link  active" href="/packages/packages/telemetry-e2e/40-using/">Using it</a><a class="nav-item nav-link " href="/packages/packages/telemetry-e2e/50-understand/">Understanding it</a><a class="nav-item nav-link " href="/packages/packages/telemetry-e2e/60-alternatives/">Alternatives</a><a class="nav-item nav-link " href="/packages/packages/telemetry-e2e/70-cheating/">Cheating</a><a class="nav-item nav-link " href="/packages/packages/telemetry-e2e/90-learn/">Learn more</a></nav>
+<div class="row">
 
 <div class="col-12 col-md-8 col-lg-9">
-    <h2 id="functionality">Functionality</h2>
 
-    <p>This package gives you a scalable, cloud based IoT messaging platform. This allows you to connect
-sensors and devices to a cloud back end and let them report telemetry data and events to be consumed
-by applications via the cloud back end.</p>
+    <h2 id="log-in-to-the-drogue-iot-console">Log in to the Drogue IoT console</h2>
 
-    <p>The IoT messaging layer takes care of normalizing the various IoT protocols to AMQP 1.0, so that
-the back end applications can focus on processing the messages, rather than implementing various
-protocols. The messaging layer also provides the authentication and authorization layer. Ensuring
-that the back end applications only receive information from properly authenticated and authorized
-devices.</p>
+    <p>The Helm installation command will print out the URL to the Drogue IoT console.</p>
 
-    <p>For making the implementation of back end applications easier, the digital twin platform will
-pre-process the incoming message stream, and translate it into a last-known state of the various
-devices. This makes it easier to implement back end applications, as the state is being managed
-by the digital twin platform.</p>
+    <p>Go ahead and open it with your browser. The access credentials are printed put in the console too. If you didn’t
+change the defaults, they are:</p>
 
-    <p>In addition to the actual processing of data, the package also provides a feature to plan, orchestrate
-and and monitor the roll out of software updates to connected devices.</p>
+    <dl class="row">
+    <dt class="col-sm-3">Username</dt>
+    <dd class="col-sm-9"><code>admin</code></dd>
+    <dt class="col-sm-3">Password</dt>
+    <dd class="col-sm-9"><code>admin123456</code></dd>
+</dl>
 
-    <h2 id="example-use-case">Example use-case</h2>
+    <p>Take a look around and explore the console a bit.</p>
 
-    <p>…</p>
+    <h2 id="see-it-visualized">See it visualized</h2>
+
+    <p>The micro:bit will acquire the ambient temperature. Streamsheets will visualize this information.</p>
+
+    <p>You can see the information when you open the Streamsheet for this package. Navigate to the Streamsheets console, it
+is linked in the “Overview” section of the Drogue IoT console under the “Demos” column.</p>
+
+    <p>The default access credentials are:</p>
+
+    <dl class="row">
+    <dt class="col-sm-3">Username</dt>
+    <dd class="col-sm-9"><code>admin</code></dd>
+    <dt class="col-sm-3">Password</dt>
+    <dd class="col-sm-9"><code>1234</code></dd>
+</dl>
+
+    <p>In the Streamsheets console, open the “Eclipse IoT” sheet. This will open a dynamic spreadsheet, showing the most
+recent received temperature information.</p>
+
+    <p>On the left-hand side, you will find an “inbox” tab, which shows the complete message. And in the spreadsheets
+section, the formatted data.</p>
+
+    <h2 id="change-the-temperature">Change the temperature</h2>
+
+    <p>In order to change the current temperature, you need to get a bit creative.</p>
+
+    <blockquote class="blockquote">
+<p class="mb-0">Do not blow on the edge connector or touch with your fingers.</p>
+<footer class="blockquote-footer">Most ignored warning on <cite title="Source Title">console cartridges</cite></footer>
+</blockquote>
+
+    <p>The temperature sensor on the micro:bit isn’t very accurate, as it is highly influenced by the board temperature
+itself. And that will get warmer when you power it.</p>
+
+    <p>Still, you have a bunch of options (licking it is not one of them!):</p>
+
+    <ul>
+      <li>Hold it in front of your desktop machine’s or notebook’s fan.</li>
+      <li>Take it into another room (mind the Bluetooth connection to the Raspberry Pi)</li>
+      <li>Put it on your heater (in case winter is coming!)</li>
+    </ul>
+
+    <p>Whatever you do, the temperature should slowly change and that change should be visible in the streamsheets spreadsheet.</p>
+
+    <h2 id="what-is-next">What is next?</h2>
+
+    <p>You not only installed, but also took a brief look on what you installed.</p>
+
+    <p>Take a look at the next pages, to understand a bit more on how any why things are done as they are. At the end, you
+should have all the pointer to take the next step.</p>
+
   </div>
 
 <div class="col-12 col-md-4 col-lg-3 
 
 ">
-    <h2 id="also-see">Also see</h2>
 
-    <ul>
-      <li>About Eclipse Hono
-        <ul>
-          <li><a href="https://www.eclipse.org/hono/getting-started/">Getting started</a></li>
-          <li><a href="https://www.eclipse.org/hono/docs/">Documentation</a></li>
-        </ul>
-      </li>
-      <li>About Eclipse Ditto
-        <ul>
-          <li><a href="https://www.eclipse.org/ditto/intro-overview.html">Overview</a></li>
-        </ul>
-      </li>
-      <li>About Eclipse Hawkbit
-        <ul>
-          <li><a href="https://www.eclipse.org/hawkbit/gettingstarted/">Getting started</a></li>
-        </ul>
-      </li>
-    </ul>
+    <div class="position-sticky" style="top: 4rem;">
+
+
+<aside>
+<div class="card">
+<div class="card-body">
+<h5 class="card-title">Table of contents</h5>
+<div id="toc" class="toc"></div>
+</div>
+</div>
+</aside>
+
+<script>generateToc("#toc", "h2[id], h3[id], h4[id]");</script>
+
+
+</div>
+
   </div>
 
 </div>
+
 </div>
 
     </main>
