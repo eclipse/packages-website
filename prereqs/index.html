@@ -92,10 +92,10 @@
 
     <h2 id="kubernetes-client">Kubernetes Client</h2>
 
-    <p>First of all, you will need a command tool named <code class="language-plaintext highlighter-rouge">kubectl</code>. This application allows you to interact with
+    <p>First, you will need a command tool named <code class="language-plaintext highlighter-rouge">kubectl</code>. This application allows you to interact with
 your Kubernetes cluster from the command line. While Kubernetes also comes with a Web UI, it is much simpler
 to document the installation procedures using command line tool. Also does the Web UI change over time, and
-with different Kubernetes variants. However the <code class="language-plaintext highlighter-rouge">kubectl</code> tool works with all variations of Kubernetes, as it
+with different Kubernetes variants. However, the <code class="language-plaintext highlighter-rouge">kubectl</code> tool works with all variations of Kubernetes, as it
 uses the standardized API in the background.</p>
 
     <p>You can find more information in the Kubernetes documentation: <a href="https://kubernetes.io/docs/tasks/tools/install-kubectl/">Install and Set Up kubectl</a>.</p>
@@ -208,6 +208,7 @@ microk8s enable storage
 microk8s enable dns
 microk8s enable metallb:$LOCAL_ADDRESS-$LOCAL_ADDRESS
 </code></pre></div>    </div>
+
     <p>These commands enable</p>
     <ul>
       <li>the metrics server, which is helpful for further investigating your cluster usage</li>
@@ -217,8 +218,10 @@ microk8s enable metallb:$LOCAL_ADDRESS-$LOCAL_ADDRESS
     </ul>
 
     <p>In order to control the cluster using the Kubernetes CLI (<code class="language-plaintext highlighter-rouge">kubectl</code>) you can either use integrated option which ships with MicroK8s. Alternatively, e.g. if you want to control your cluster from another machine you can extract the cluster config file and use it with a native install of <code class="language-plaintext highlighter-rouge">kubectl</code>.</p>
+
     <h4 id="integrated-option">Integrated option</h4>
     <p>Use <code class="language-plaintext highlighter-rouge">microk8s kubectl &lt;command&gt;</code></p>
+
     <h4 id="native-option">Native option</h4>
     <p>Execute <code class="language-plaintext highlighter-rouge">microk8s kubectl config view --raw &gt; $HOME/.kube/config</code></p>
 
@@ -261,31 +264,28 @@ We are using the <a href="https://www.getambassador.io/">Ambassador</a> controll
       <li>Create a namespace for Ambassador: <code class="language-plaintext highlighter-rouge">kubectl create namespace ambassador</code></li>
       <li>Add the Helm repository: <code class="language-plaintext highlighter-rouge">helm repo add datawire https://www.getambassador.io</code></li>
       <li>Create a file named <code class="language-plaintext highlighter-rouge">override.yaml</code>, that contains all necessary Ambassador configurations:
-```yaml
-enableAES: false
-image:
-  repository: docker.io/datawire/ambassador
-replicaCount: 1
-service:
-  ports:
-        <ul>
-          <li>name: mqtt-adapter
-port: 1883
-targetPort: 1883</li>
-          <li>name: http-adapter
-port: 18080
-targetPort: 18080</li>
-          <li>name: device-registry
-port: 28080
-targetPort: 28080</li>
-          <li>name: dispatch-router
-port: 5671
-targetPort: 15671</li>
-          <li>name: ditto
-port: 38080
-targetPort: 38080
-```</li>
-        </ul>
+        <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">enableAES</span><span class="pi">:</span> <span class="no">false</span>
+<span class="na">image</span><span class="pi">:</span>
+  <span class="na">repository</span><span class="pi">:</span> <span class="s">docker.io/datawire/ambassador</span>
+<span class="na">replicaCount</span><span class="pi">:</span> <span class="m">1</span>
+<span class="na">service</span><span class="pi">:</span>
+  <span class="na">ports</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">mqtt-adapter</span>
+      <span class="na">port</span><span class="pi">:</span> <span class="m">1883</span>
+      <span class="na">targetPort</span><span class="pi">:</span> <span class="m">1883</span>
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">http-adapter</span>
+      <span class="na">port</span><span class="pi">:</span> <span class="m">18080</span>
+      <span class="na">targetPort</span><span class="pi">:</span> <span class="m">18080</span>
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">device-registry</span>
+      <span class="na">port</span><span class="pi">:</span> <span class="m">28080</span>
+      <span class="na">targetPort</span><span class="pi">:</span> <span class="m">28080</span>
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">dispatch-router</span>
+      <span class="na">port</span><span class="pi">:</span> <span class="m">5671</span>
+      <span class="na">targetPort</span><span class="pi">:</span> <span class="m">15671</span>
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">ditto</span>
+      <span class="na">port</span><span class="pi">:</span> <span class="m">38080</span>
+      <span class="na">targetPort</span><span class="pi">:</span> <span class="m">38080</span>
+</code></pre></div>        </div>
       </li>
       <li>Start Ambassador by running <code class="language-plaintext highlighter-rouge">helm install ambassador -n ambassador -f override.yaml datawire/ambassador</code></li>
       <li>Then we create the necessary mappings, such that the controller knows where to route incoming traffic. These mappings are specifically adjusted to the Cloud2Edge deployment, so you will have to create your own mappings for other packages. Create a new file named <code class="language-plaintext highlighter-rouge">ambassador-mappings.yaml</code> and replace the release name and the namespace of your deployment:
@@ -346,11 +346,11 @@ targetPort: 38080
 
     <p><a href="https://kubernetes.io/docs/setup/learning-environment/minikube/">Minikube</a> is Kubernetes in a bottle.</p>
 
-    <p>Instead of provisioning a full blown cluster, it will create a virtual machine on your local system, and
-provision a small, single-node cluster inside of it. As it puts the operating system in a VM, Minikube itself
-can run on all major operating systems, including Windows and Mac OS.</p>
+    <p>Instead of provisioning a full-blown cluster, it will create a virtual machine on your local system, and
+provision a small, single-node cluster inside it. As it puts the operating system in a VM, Minikube itself
+can run on all major operating systems, including Windows and macOS.</p>
 
-    <p>Instead of duplicating the effort, documenting how to get Minikube up an running, we leave this to the
+    <p>Instead of duplicating the effort, documenting how to get Minikube up and running, we leave this to the
 excellent <a href="https://kubernetes.io/docs/tasks/tools/install-minikube/">documentation of Minikube</a> itself.</p>
 
     <h4 id="getting-started">Getting started</h4>
@@ -434,7 +434,7 @@ The Kubernetes version deployed into the virtual machine (e.g. <code>--kubernete
     <p>You will need an installation of Helm on the machine which is used to deploy the packages. You can find
 installation instructions for Helm in the Helm documentation under <a href="https://helm.sh/docs/using_helm/#installing-helm">Installing Helm</a>.</p>
 
-    <p>The required Helm version is 3.1 or later.</p>
+    <p>The required Helm version is 3.4 or later.</p>
 
     <h3 id="repository">Repository</h3>
 
@@ -460,11 +460,11 @@ you are supposed to execute can be executed in Bash, version 3 or newer.</p>
 
     <h3 id="curl">curl</h3>
 
-    <p>For downloading files and execution API call the tool <code class="language-plaintext highlighter-rouge">curl</code> will be used.</p>
+    <p>For downloading files and execution API calls the tool <code class="language-plaintext highlighter-rouge">curl</code> will be used.</p>
 
     <h3 id="mosquitto-cli">Mosquitto CLI</h3>
 
-    <p>Mosquitto command line tools: e.g. <code class="language-plaintext highlighter-rouge">moquitto_pub</code></p>
+    <p>Mosquitto command line tools: e.g. <code class="language-plaintext highlighter-rouge">mosquitto_pub</code></p>
 
   </div>
 
