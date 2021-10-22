@@ -164,6 +164,20 @@ in the newer version.</p>
 
     <h3 id="time-series-database">Time series database</h3>
 
+    <p>In order to build up a history of all measured and reported temperature values and make this history accessible in an
+optimized way for asking advanced queries (e.g. using filtering, aggregation, grouping and downsampling), a time series
+database is the obvious choice to store data in an optimized way.</p>
+
+    <p>You can create another connection in Ditto, additionally to the MQTT connection which sends data to Streamsheets.
+But this time, using an HTTP outbound connection. As Ditto supports formatting the outbound data with a JavaScript
+snippet too, it is easy to generate a <a href="https://cloudevents.io/">CloudEvent</a> from the Ditto change event.</p>
+
+    <p>Directing the CloudEvent towards a <a href="https://knative.dev">Knative</a> service, changes can be pushed directly into a
+<a href="https://www.timescale.com/">TimescaleDB</a> instance, using the <a href="https://github.com/drogue-iot/drogue-postgresql-pusher">serverless function for pushing to PostgreSQL</a> (of course you can also push to other time series database with that approach,
+or even to other serverless functions or services, which accept CloudEvents).</p>
+
+    <p>Finishing up by creating a nice dashboard with <a href="https://grafana.com/">Grafana</a>, based on this data.</p>
+
   </div>
 
 <div class="col-12 col-md-4 col-lg-3 
