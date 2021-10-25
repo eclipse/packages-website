@@ -100,22 +100,40 @@ does not work with earlier versions of the micro:bit. It also does not work with
 Raspberry Pi Pico (which doesn’t have Bluetooth), or the ESP32 (which has different CPU architecture: Xtensa or RISC-V).
 As also the Bluetooth driver is part of the firmware, you cannot simply flash it to a different ARM based device.</p>
 
-    <p>However, as the overall example is only relying on Bluetooth, GATT, and the <a href="https://lancaster-university.github.io/microbit-docs/resources/bluetooth/bluetooth_profile.html">micro:bit temperature profile</a>. You can of
-course drop in your down device, as long it is implementing the same profile.</p>
+    <p>However, as the overall example is only relying on Bluetooth, GATT, and the <a href="https://lancaster-university.github.io/microbit-docs/resources/bluetooth/bluetooth_profile.html">micro:bit temperature profile</a>. You can of course drop in your down device, as long it is implementing the same profile.</p>
 
     <p>One alternative to achieve the same, is to use “Make Code” with <a href="https://makecode.microbit.org/_CcAYtycF5Tvy">this example project</a>.</p>
 
-    <h2 id="install-rust">Install Rust</h2>
+    <p>To install the firmware on the micro:bit, you can either use pre-compiled HEX file, or build the firmware using the Rust toolchain.</p>
+
+    <h2 id="option-1-installing-pre-compiled-firmware">Option 1: Installing pre-compiled firmware</h2>
+
+    <p>The easiest way to get started is to download the pre-compiled firmware <a href="https://github.com/drogue-iot/drogue-device/releases/download/0.4.0/ble-microbit.hex">here</a>. When powering on your micro:bit, it should attach itself as a USB storage device. Copy the downloaded file to the MICROBIT folder. Once the file ‘disappears’ from the folder, the firmware is installed. For more details, have a look at the <a href="instructions">https://microbit.org/get-started/first-steps/set-up/</a>.</p>
+
+    <p>Once installed, the text ‘Hello, Drogue’ should slide across the LED matrix display of the micro:bit.</p>
+
+    <h2 id="option-2-building-firmware-from-scratch">Option 2: Building firmware from scratch</h2>
+
+    <p>Before continuing, make sure your micro:bit is loaded with the default firmware (If you get the noisy greeting when starting the device, you probably have the default firmware).</p>
+
+    <h3 id="reset-microbit-to-factory-defaults">Reset micro:bit to factory defaults</h3>
+
+    <p>To reset the micro:bit to factory defaults, use <a href="https://cdn.sanity.io/files/ajwvhvgo/production/9f233ee584643d0385d497ff27af54ff9553c5a2.hex?dl=OutOfBoxExperience.hex">this link</a> for downloading the “Out of the box” firmware.</p>
+
+    <p>When powering on your micro:bit, it should attach itself as a USB storage device. Copy the downloaded file to the MICROBIT folder. Once the file ‘disappears’ from the folder, the firmware is installed, and the micro:bit should be making some noise. For more details, have a look at the <a href="instructions">https://microbit.org/get-started/first-steps/set-up/</a>.</p>
+
+    <h3 id="install-rust">Install Rust</h3>
 
     <p>In order to install Rust, <a href="https://www.rust-lang.org/tools/install">installing <code class="language-plaintext highlighter-rouge">rustup</code></a> is sufficient on most cases:</p>
 
     <div class="clipboard"><pre><code>curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh</code></pre></div>
 
-    <h2 id="clone-the-firmware-repository">Clone the firmware repository</h2>
+    <h3 id="clone-the-firmware-repository">Clone the firmware repository</h3>
 
-    <div class="clipboard"><pre><code>git clone https://github.com/drogue-iot/drogue-device.git</code></pre></div>
+    <div class="clipboard"><pre><code>git clone https://github.com/drogue-iot/drogue-device.git
+git checkout 0.4.0</code></pre></div>
 
-    <h2 id="flash-the-device">Flash the device</h2>
+    <h3 id="flash-the-device">Flash the device</h3>
 
     <p>Attach the device to your USB port and execute the following command to build and flash the firmware:</p>
 
