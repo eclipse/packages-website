@@ -521,7 +521,7 @@ configuration of all twins referencing this <em>policy id</em>.</p>
 Furthermore, we add a reference to the in the previous step created <em>policy id</em> in order to define the authorization 
 information of the twin:</p>
 
-    <div class="clipboard"><pre><code>curl -X PUT -u ditto:ditto -H 'Content-Type: application/json' --data '{
+    <div class="clipboard"><pre><code>curl -i -X PUT -u ditto:ditto -H 'Content-Type: application/json' --data '{
   "policyId": "org.acme:my-policy",
   "attributes": {
     "location": "Germany"
