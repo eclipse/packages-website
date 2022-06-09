@@ -11,7 +11,9 @@ entries:
     - name: ditto
       repository: https://eclipse.org/packages/charts/
       version: ~2.4.0
-    description: 'Eclipse IoT Cloud2Edge (C2E) is an integrated suite of services developers can use to build IoT applications that are deployed from the cloud to the edge. The suite currently consists of Eclipse Hono and Eclipse Ditto. '
+    description: 'Eclipse IoT Cloud2Edge (C2E) is an integrated suite of services
+      developers can use to build IoT applications that are deployed from the cloud
+      to the edge. The suite currently consists of Eclipse Hono and Eclipse Ditto. '
     digest: 5f3b526a2d3d69500305dc796d9f85937a35f6eb9cbd2925d63f00c7b5fc2ab9
     home: https://eclipse.org/packages/packages/cloud2edge/
     icon: https://eclipse.org/packages/packages/cloud2edge/images/c2e-logo.svg
@@ -41,7 +43,9 @@ entries:
     - name: ditto
       repository: https://eclipse.org/packages/charts/
       version: ~2.3.3
-    description: 'Eclipse IoT Cloud2Edge (C2E) is an integrated suite of services developers can use to build IoT applications that are deployed from the cloud to the edge. The suite currently consists of Eclipse Hono and Eclipse Ditto. '
+    description: 'Eclipse IoT Cloud2Edge (C2E) is an integrated suite of services
+      developers can use to build IoT applications that are deployed from the cloud
+      to the edge. The suite currently consists of Eclipse Hono and Eclipse Ditto. '
     digest: 1890da8a9aab45463f03d622252e5f89ae907c1047806f44c4fc41f80df294a7
     home: https://eclipse.org/packages/packages/cloud2edge/
     icon: https://eclipse.org/packages/packages/cloud2edge/images/c2e-logo.svg
@@ -71,7 +75,9 @@ entries:
     - name: ditto
       repository: https://eclipse.org/packages/charts/
       version: ~2.3.0
-    description: 'Eclipse IoT Cloud2Edge (C2E) is an integrated suite of services developers can use to build IoT applications that are deployed from the cloud to the edge. The suite currently consists of Eclipse Hono and Eclipse Ditto. '
+    description: 'Eclipse IoT Cloud2Edge (C2E) is an integrated suite of services
+      developers can use to build IoT applications that are deployed from the cloud
+      to the edge. The suite currently consists of Eclipse Hono and Eclipse Ditto. '
     digest: 21c8e0891916e7dd1768082f5f60030a7b8bf3288ba9997726824b2bd74842cc
     home: https://eclipse.org/packages/packages/cloud2edge/
     icon: https://eclipse.org/packages/packages/cloud2edge/images/c2e-logo.svg
@@ -94,7 +100,9 @@ entries:
   - apiVersion: v1
     appVersion: 0.2.1
     created: "2021-06-01T06:12:52.19276884Z"
-    description: 'Eclipse IoT Cloud2Edge (C2E) is an integrated suite of services developers can use to build IoT applications that are deployed from the cloud to the edge. The suite currently consists of Eclipse Hono and Eclipse Ditto. '
+    description: 'Eclipse IoT Cloud2Edge (C2E) is an integrated suite of services
+      developers can use to build IoT applications that are deployed from the cloud
+      to the edge. The suite currently consists of Eclipse Hono and Eclipse Ditto. '
     digest: dc0766528bf4bc8a16116b017ef697bc67b63a55ed9fedf4d269ff528193f556
     home: https://eclipse.org/packages/packages/cloud2edge/
     icon: https://eclipse.org/packages/packages/cloud2edge/images/c2e-logo.svg
@@ -117,7 +125,9 @@ entries:
   - apiVersion: v1
     appVersion: 0.2.0
     created: "2021-05-21T11:43:11.489245765Z"
-    description: 'Eclipse IoT Cloud2Edge (C2E) is an integrated suite of services developers can use to build IoT applications that are deployed from the cloud to the edge. The suite currently consists of Eclipse Hono and Eclipse Ditto. '
+    description: 'Eclipse IoT Cloud2Edge (C2E) is an integrated suite of services
+      developers can use to build IoT applications that are deployed from the cloud
+      to the edge. The suite currently consists of Eclipse Hono and Eclipse Ditto. '
     digest: eac146835376fd5046c47deaecdce94590f97f40198d2636592c5eab76374515
     home: https://eclipse.org/packages/packages/cloud2edge/
     icon: https://eclipse.org/packages/packages/cloud2edge/images/c2e-logo.svg
@@ -140,7 +150,9 @@ entries:
   - apiVersion: v1
     appVersion: 0.1.4
     created: "2021-03-11T11:38:12.713280885Z"
-    description: 'Eclipse IoT Cloud2Edge (C2E) is an integrated suite of services developers can use to build IoT applications that are deployed from the cloud to the edge. The suite currently consists of Eclipse Hono and Eclipse Ditto. '
+    description: 'Eclipse IoT Cloud2Edge (C2E) is an integrated suite of services
+      developers can use to build IoT applications that are deployed from the cloud
+      to the edge. The suite currently consists of Eclipse Hono and Eclipse Ditto. '
     digest: 1e1bca6bd2ccf290feff4e2fe193dbad5d5a0af43b3b41e85cdd520868d85209
     home: https://eclipse.org/packages/packages/cloud2edge/
     icon: https://eclipse.org/packages/packages/cloud2edge/images/c2e-logo.svg
@@ -163,7 +175,9 @@ entries:
   - apiVersion: v1
     appVersion: 0.1.3
     created: "2021-01-20T10:49:04.228663242Z"
-    description: 'Eclipse IoT Cloud2Edge (C2E) is an integrated suite of services developers can use to build IoT applications that are deployed from the cloud to the edge. The suite currently consists of Eclipse Hono and Eclipse Ditto. '
+    description: 'Eclipse IoT Cloud2Edge (C2E) is an integrated suite of services
+      developers can use to build IoT applications that are deployed from the cloud
+      to the edge. The suite currently consists of Eclipse Hono and Eclipse Ditto. '
     digest: 5248d6a002e36373b7e048fde96bb1e812d6dd32214426e64f2f07b7b6b369cd
     home: https://eclipse.org/packages/packages/cloud2edge/
     icon: https://eclipse.org/packages/packages/cloud2edge/images/c2e-logo.svg
@@ -186,7 +200,9 @@ entries:
   - apiVersion: v1
     appVersion: 0.1.2
     created: "2020-09-23T09:43:20.192035283Z"
-    description: 'Eclipse IoT Cloud2Edge (C2E) is an integrated suite of services developers can use to build IoT applications that are deployed from the cloud to the edge. The suite currently consists of Eclipse Hono and Eclipse Ditto. '
+    description: 'Eclipse IoT Cloud2Edge (C2E) is an integrated suite of services
+      developers can use to build IoT applications that are deployed from the cloud
+      to the edge. The suite currently consists of Eclipse Hono and Eclipse Ditto. '
     digest: 0aaf356a83b532ad8829c316c69f88e0669f788b6f158c83ba6c24c700e6c180
     home: https://eclipse.org/packages/packages/cloud2edge/
     icon: https://eclipse.org/packages/packages/cloud2edge/images/c2e-logo.svg
@@ -209,7 +225,9 @@ entries:
   - apiVersion: v1
     appVersion: 0.1.1
     created: "2020-09-21T07:48:07.789289024Z"
-    description: 'Eclipse IoT Cloud2Edge (C2E) is an integrated suite of services developers can use to build IoT applications that are deployed from the cloud to the edge. The suite currently consists of Eclipse Hono and Eclipse Ditto. '
+    description: 'Eclipse IoT Cloud2Edge (C2E) is an integrated suite of services
+      developers can use to build IoT applications that are deployed from the cloud
+      to the edge. The suite currently consists of Eclipse Hono and Eclipse Ditto. '
     digest: 73240526b06ed5ac8307bf6eafeb2800567b07899b1474c918220b5cfcd87e6a
     home: https://eclipse.org/packages/packages/cloud2edge/
     icon: https://eclipse.org/packages/packages/cloud2edge/images/c2e-logo.svg
@@ -232,7 +250,9 @@ entries:
   - apiVersion: v1
     appVersion: 0.1.0
     created: "2020-09-02T13:28:05.025434003Z"
-    description: 'Eclipse IoT Cloud2Edge (C2E) is an integrated suite of services developers can use to build IoT applications that are deployed from the cloud to the edge. The suite currently consists of Eclipse Hono and Eclipse Ditto. '
+    description: 'Eclipse IoT Cloud2Edge (C2E) is an integrated suite of services
+      developers can use to build IoT applications that are deployed from the cloud
+      to the edge. The suite currently consists of Eclipse Hono and Eclipse Ditto. '
     digest: 503e6480517578bc0f39e27466bf159ae6438e5cadf7dda5e736f6eb29eeb3d2
     home: https://eclipse.org/packages/packages/cloud2edge/
     icon: https://eclipse.org/packages/packages/cloud2edge/images/c2e-logo.svg
@@ -255,7 +275,9 @@ entries:
   - apiVersion: v1
     appVersion: 0.0.10
     created: "2020-05-05T07:26:58.495886837Z"
-    description: 'Eclipse IoT Cloud2Edge (C2E) is an integrated suite of services developers can use to build IoT applications that are deployed from the cloud to the edge. The suite currently consists of Eclipse Hono and Eclipse Ditto. '
+    description: 'Eclipse IoT Cloud2Edge (C2E) is an integrated suite of services
+      developers can use to build IoT applications that are deployed from the cloud
+      to the edge. The suite currently consists of Eclipse Hono and Eclipse Ditto. '
     digest: b3896c6f648f9cbd66f583783848eac2b44d3340afd02cd61cd1300a545b67ba
     home: https://eclipse.org/packages/packages/cloud2edge/
     icon: https://eclipse.org/packages/packages/cloud2edge/images/c2e-logo.svg
@@ -278,7 +300,9 @@ entries:
   - apiVersion: v1
     appVersion: 0.0.9
     created: "2020-05-04T07:06:45.851276658Z"
-    description: 'Eclipse IoT Cloud2Edge (C2E) is an integrated suite of services developers can use to build IoT applications that are deployed from the cloud to the edge. The suite currently consists of Eclipse Hono and Eclipse Ditto. '
+    description: 'Eclipse IoT Cloud2Edge (C2E) is an integrated suite of services
+      developers can use to build IoT applications that are deployed from the cloud
+      to the edge. The suite currently consists of Eclipse Hono and Eclipse Ditto. '
     digest: e39b582b5d1e6a1b7e4275ac2add400aded6a285f84bb7f983cf7ec9aac11a68
     home: https://eclipse.org/packages/packages/cloud2edge/
     icon: https://eclipse.org/packages/packages/cloud2edge/images/c2e-logo.svg
@@ -301,7 +325,9 @@ entries:
   - apiVersion: v1
     appVersion: 0.0.8
     created: "2020-04-21T11:28:54.293358661Z"
-    description: 'Eclipse IoT Cloud2Edge (C2E) is an integrated suite of services developers can use to build IoT applications that are deployed from the cloud to the edge. The suite currently consists of Eclipse Hono and Eclipse Ditto. '
+    description: 'Eclipse IoT Cloud2Edge (C2E) is an integrated suite of services
+      developers can use to build IoT applications that are deployed from the cloud
+      to the edge. The suite currently consists of Eclipse Hono and Eclipse Ditto. '
     digest: 603524c6ef74ef90701ea9bef4c52edd09f2fe80c2a6452f9c64e8847ecfb27c
     home: https://eclipse.org/packages/packages/cloud2edge/
     icon: https://eclipse.org/packages/packages/cloud2edge/images/c2e-logo.svg
@@ -324,7 +350,9 @@ entries:
   - apiVersion: v1
     appVersion: 0.0.7
     created: "2020-04-17T11:18:41.052953506Z"
-    description: 'Eclipse IoT Cloud2Edge (C2E) is an integrated suite of services developers can use to build IoT applications that are deployed from the cloud to the edge. The suite currently consists of Eclipse Hono and Eclipse Ditto. '
+    description: 'Eclipse IoT Cloud2Edge (C2E) is an integrated suite of services
+      developers can use to build IoT applications that are deployed from the cloud
+      to the edge. The suite currently consists of Eclipse Hono and Eclipse Ditto. '
     digest: 2a24c7b22828c458000534ff9aa465672064a2fcf788ef81a411fab417163c8d
     home: https://eclipse.org/packages/packages/cloud2edge/
     icon: https://eclipse.org/packages/packages/cloud2edge/images/c2e-logo.svg
@@ -347,7 +375,9 @@ entries:
   - apiVersion: v1
     appVersion: 0.0.6
     created: "2020-03-20T15:39:58.98533807Z"
-    description: 'Eclipse IoT Cloud2Edge (C2E) is an integrated suite of services developers can use to build IoT applications that are deployed from the cloud to the edge. The suite currently consists of Eclipse Hono and Eclipse Ditto. '
+    description: 'Eclipse IoT Cloud2Edge (C2E) is an integrated suite of services
+      developers can use to build IoT applications that are deployed from the cloud
+      to the edge. The suite currently consists of Eclipse Hono and Eclipse Ditto. '
     digest: f20da41578c6be4ae71d8c2dc7a8f8a6f423b86fe3fe72234dff489b7dc3be76
     home: https://eclipse.org/packages/packages/cloud2edge/
     icon: https://eclipse.org/packages/packages/cloud2edge/images/c2e-logo.svg
@@ -370,7 +400,9 @@ entries:
   - apiVersion: v1
     appVersion: 0.0.5
     created: "2020-02-29T06:32:29.216476244Z"
-    description: 'Eclipse IoT Cloud2Edge (C2E) is an integrated suite of services developers can use to build IoT applications that are deployed from the cloud to the edge. The suite currently consists of Eclipse Hono and Eclipse Ditto. '
+    description: 'Eclipse IoT Cloud2Edge (C2E) is an integrated suite of services
+      developers can use to build IoT applications that are deployed from the cloud
+      to the edge. The suite currently consists of Eclipse Hono and Eclipse Ditto. '
     digest: a61d4865fd589f34d82d9d7144acec8531c7b83734a896d56830fcb8e0c515d2
     home: https://eclipse.org/packages/packages/cloud2edge/
     keywords:
@@ -392,7 +424,9 @@ entries:
   - apiVersion: v1
     appVersion: 0.0.4
     created: "2020-02-19T09:43:46.826153968Z"
-    description: 'Eclipse IoT Cloud2Edge (C2E) is an integrated suite of services developers can use to build IoT applications that are deployed from the cloud to the edge. The suite currently consists of Eclipse Hono and Eclipse Ditto. '
+    description: 'Eclipse IoT Cloud2Edge (C2E) is an integrated suite of services
+      developers can use to build IoT applications that are deployed from the cloud
+      to the edge. The suite currently consists of Eclipse Hono and Eclipse Ditto. '
     digest: d308f1b6c65baa280c92a13f427d58feeecc9d78e8cbe0210b37b10706ccdc9d
     home: https://eclipse.org/packages/packages/cloud2edge/
     keywords:
@@ -412,7 +446,9 @@ entries:
   - apiVersion: v1
     appVersion: 0.0.3
     created: "2020-02-16T15:41:47.019521395Z"
-    description: 'Eclipse IoT Cloud2Edge (C2E) is an integrated suite of services developers can use to build IoT applications that are deployed from the cloud to the edge. The suite currently consists of Eclipse Hono and Eclipse Ditto. '
+    description: 'Eclipse IoT Cloud2Edge (C2E) is an integrated suite of services
+      developers can use to build IoT applications that are deployed from the cloud
+      to the edge. The suite currently consists of Eclipse Hono and Eclipse Ditto. '
     digest: aed7a2e17ebc8b28f832c679ea657484c5e95da86d0343417585668fd99054af
     home: https://eclipse.org/packages/packages/cloud2edge/
     keywords:
@@ -432,7 +468,9 @@ entries:
   - apiVersion: v1
     appVersion: 0.0.2
     created: "2020-02-14T18:12:33.115063058Z"
-    description: 'Eclipse IoT Cloud2Edge (C2E) is an integrated suite of services developers can use to build IoT applications that are deployed from the cloud to the edge. The suite currently consists of Eclipse Hono and Eclipse Ditto. '
+    description: 'Eclipse IoT Cloud2Edge (C2E) is an integrated suite of services
+      developers can use to build IoT applications that are deployed from the cloud
+      to the edge. The suite currently consists of Eclipse Hono and Eclipse Ditto. '
     digest: d8d6998ed2918c8a1e0df588f8d3897831f53c662bad48d09cca6bb70cd2985a
     home: https://eclipse.org/packages/packages/cloud2edge/
     keywords:
@@ -452,7 +490,9 @@ entries:
   - apiVersion: v1
     appVersion: 0.0.1
     created: "2020-02-14T12:49:33.788085853Z"
-    description: 'Eclipse IoT Cloud2Edge (C2E) is an integrated suite of services developers can use to build IoT applications that are deployed from the cloud to the edge. The suite currently consists of Eclipse Hono and Eclipse Ditto. '
+    description: 'Eclipse IoT Cloud2Edge (C2E) is an integrated suite of services
+      developers can use to build IoT applications that are deployed from the cloud
+      to the edge. The suite currently consists of Eclipse Hono and Eclipse Ditto. '
     digest: bb805ed547ea88fc2b3d2b2ffb8b07a74124a38d4a7e17db08b034724186b6f4
     home: https://eclipse.org/packages/packages/cloud2edge/
     keywords:
@@ -472,7 +512,9 @@ entries:
   - apiVersion: v1
     appVersion: 0.0.1
     created: "2020-02-13T10:12:01.2908196Z"
-    description: 'Eclipse IoT Cloud2Edge (C2E) is an integrated suite of services developers can use to build IoT applications that are deployed from the cloud to the edge. The suite currently consists of Eclipse Hono and Eclipse Ditto. '
+    description: 'Eclipse IoT Cloud2Edge (C2E) is an integrated suite of services
+      developers can use to build IoT applications that are deployed from the cloud
+      to the edge. The suite currently consists of Eclipse Hono and Eclipse Ditto. '
     digest: 3a65707865878a7c2a6814ed386c5b8a9a04e261275623fd5e24141a315ccbb1
     home: https://eclipse.org/packages/packages/cloud2edge/
     keywords:
@@ -492,13 +534,49 @@ entries:
   ditto:
   - apiVersion: v1
     appVersion: 2.4.0
+    created: "2022-06-09T15:54:01.252417284Z"
+    dependencies:
+    - condition: mongodb.enabled
+      name: mongodb
+      repository: https://charts.bitnami.com/bitnami
+      version: ~11.2.0
+    description: 'Eclipse Ditto™ is a technology in the IoT implementing a software
+      pattern called “digital twins”. A digital twin is a virtual, cloud based, representation
+      of his real world counterpart (real world “Things”, e.g. devices like sensors,
+      smart heating, connected cars, smart grids, EV charging stations etc). '
+    digest: 4265d075fd0739c4bbeeae1e71dfffc5e47f3dc981c6c7ccba8196387df14567
+    home: https://www.eclipse.org/ditto
+    icon: https://www.eclipse.org/ditto/images/ditto.svg
+    keywords:
+    - iot-chart
+    - digital-twin
+    - IoT
+    maintainers:
+    - email: axel.koehler@kiwigrid.com
+      name: axdotl
+    - email: thomas.jaeckle@bosch.io
+      name: thjaeckle
+    - email: stefan.maute@bosch.io
+      name: stmaute
+    name: ditto
+    sources:
+    - https://github.com/eclipse/ditto
+    - https://github.com/eclipse/packages
+    urls:
+    - https://eclipse.org/packages/charts/ditto-2.5.2.tgz
+    version: 2.5.2
+  - apiVersion: v1
+    appVersion: 2.4.0
     created: "2022-05-12T12:33:17.738255291Z"
     dependencies:
     - condition: mongodb.enabled
       name: mongodb
       repository: https://charts.bitnami.com/bitnami
       version: ~7.14.7
-    description: 'Eclipse Ditto™ is a technology in the IoT implementing a software pattern called “digital twins”. A digital twin is a virtual, cloud based, representation of his real world counterpart (real world “Things”, e.g. devices like sensors, smart heating, connected cars, smart grids, EV charging stations etc). '
+    description: 'Eclipse Ditto™ is a technology in the IoT implementing a software
+      pattern called “digital twins”. A digital twin is a virtual, cloud based, representation
+      of his real world counterpart (real world “Things”, e.g. devices like sensors,
+      smart heating, connected cars, smart grids, EV charging stations etc). '
     digest: 0cf648b6d4129f144b544548f13cf45a53d72971f408bc6119e94b3b059578b6
     home: https://www.eclipse.org/ditto
     icon: https://www.eclipse.org/ditto/images/ditto.svg
@@ -528,7 +606,10 @@ entries:
       name: mongodb
       repository: https://charts.bitnami.com/bitnami
       version: ~7.14.7
-    description: 'Eclipse Ditto™ is a technology in the IoT implementing a software pattern called “digital twins”. A digital twin is a virtual, cloud based, representation of his real world counterpart (real world “Things”, e.g. devices like sensors, smart heating, connected cars, smart grids, EV charging stations etc). '
+    description: 'Eclipse Ditto™ is a technology in the IoT implementing a software
+      pattern called “digital twins”. A digital twin is a virtual, cloud based, representation
+      of his real world counterpart (real world “Things”, e.g. devices like sensors,
+      smart heating, connected cars, smart grids, EV charging stations etc). '
     digest: 82ce753d2ccbea774041d268832408865c853afd0e4c4554e1fd29dbdb0a2285
     home: https://www.eclipse.org/ditto
     icon: https://www.eclipse.org/ditto/images/ditto.svg
@@ -558,7 +639,10 @@ entries:
       name: mongodb
       repository: https://charts.bitnami.com/bitnami
       version: ~7.14.7
-    description: 'Eclipse Ditto™ is a technology in the IoT implementing a software pattern called “digital twins”. A digital twin is a virtual, cloud based, representation of his real world counterpart (real world “Things”, e.g. devices like sensors, smart heating, connected cars, smart grids, EV charging stations etc). '
+    description: 'Eclipse Ditto™ is a technology in the IoT implementing a software
+      pattern called “digital twins”. A digital twin is a virtual, cloud based, representation
+      of his real world counterpart (real world “Things”, e.g. devices like sensors,
+      smart heating, connected cars, smart grids, EV charging stations etc). '
     digest: 36a0970e5246926aae834e40be19d595428f2b674aea7a4f800e6490ed363dd9
     home: https://www.eclipse.org/ditto
     icon: https://www.eclipse.org/ditto/images/ditto.svg
@@ -588,7 +672,10 @@ entries:
       name: mongodb
       repository: https://charts.bitnami.com/bitnami
       version: ~7.14.7
-    description: 'Eclipse Ditto™ is a technology in the IoT implementing a software pattern called “digital twins”. A digital twin is a virtual, cloud based, representation of his real world counterpart (real world “Things”, e.g. devices like sensors, smart heating, connected cars, smart grids, EV charging stations etc). '
+    description: 'Eclipse Ditto™ is a technology in the IoT implementing a software
+      pattern called “digital twins”. A digital twin is a virtual, cloud based, representation
+      of his real world counterpart (real world “Things”, e.g. devices like sensors,
+      smart heating, connected cars, smart grids, EV charging stations etc). '
     digest: c9d87e693c07db654da7e02a2a1f667b93bdd2bdf6122337740db203ef79c7c3
     home: https://www.eclipse.org/ditto
     icon: https://www.eclipse.org/ditto/images/ditto.svg
@@ -618,7 +705,10 @@ entries:
       name: mongodb
       repository: https://charts.bitnami.com/bitnami
       version: ~7.14.7
-    description: 'Eclipse Ditto™ is a technology in the IoT implementing a software pattern called “digital twins”. A digital twin is a virtual, cloud based, representation of his real world counterpart (real world “Things”, e.g. devices like sensors, smart heating, connected cars, smart grids, EV charging stations etc). '
+    description: 'Eclipse Ditto™ is a technology in the IoT implementing a software
+      pattern called “digital twins”. A digital twin is a virtual, cloud based, representation
+      of his real world counterpart (real world “Things”, e.g. devices like sensors,
+      smart heating, connected cars, smart grids, EV charging stations etc). '
     digest: ed1c5fbeb29ee772c62b8589cf169a0550a7713d788b2118a208fb748e2d26ca
     home: https://www.eclipse.org/ditto
     icon: https://www.eclipse.org/ditto/images/ditto.svg
@@ -648,7 +738,10 @@ entries:
       name: mongodb
       repository: https://charts.bitnami.com/bitnami
       version: ~7.14.7
-    description: 'Eclipse Ditto™ is a technology in the IoT implementing a software pattern called “digital twins”. A digital twin is a virtual, cloud based, representation of his real world counterpart (real world “Things”, e.g. devices like sensors, smart heating, connected cars, smart grids, EV charging stations etc). '
+    description: 'Eclipse Ditto™ is a technology in the IoT implementing a software
+      pattern called “digital twins”. A digital twin is a virtual, cloud based, representation
+      of his real world counterpart (real world “Things”, e.g. devices like sensors,
+      smart heating, connected cars, smart grids, EV charging stations etc). '
     digest: 19cf2a9277d77464231e98929a8abd7a67058283d7e4af898ecaca5ad6dec276
     home: https://www.eclipse.org/ditto
     icon: https://www.eclipse.org/ditto/images/ditto.svg
@@ -678,7 +771,10 @@ entries:
       name: mongodb
       repository: https://charts.bitnami.com/bitnami
       version: ~7.14.7
-    description: 'Eclipse Ditto™ is a technology in the IoT implementing a software pattern called “digital twins”. A digital twin is a virtual, cloud based, representation of his real world counterpart (real world “Things”, e.g. devices like sensors, smart heating, connected cars, smart grids, EV charging stations etc). '
+    description: 'Eclipse Ditto™ is a technology in the IoT implementing a software
+      pattern called “digital twins”. A digital twin is a virtual, cloud based, representation
+      of his real world counterpart (real world “Things”, e.g. devices like sensors,
+      smart heating, connected cars, smart grids, EV charging stations etc). '
     digest: 73ebdd155fbf101f0cbd2620222457fcd72b4bbb3563ba5f801f8ecd88a46c0f
     home: https://www.eclipse.org/ditto
     icon: https://www.eclipse.org/ditto/images/ditto.svg
@@ -708,7 +804,10 @@ entries:
       name: mongodb
       repository: https://charts.bitnami.com/bitnami
       version: ~7.14.7
-    description: 'Eclipse Ditto™ is a technology in the IoT implementing a software pattern called “digital twins”. A digital twin is a virtual, cloud based, representation of his real world counterpart (real world “Things”, e.g. devices like sensors, smart heating, connected cars, smart grids, EV charging stations etc). '
+    description: 'Eclipse Ditto™ is a technology in the IoT implementing a software
+      pattern called “digital twins”. A digital twin is a virtual, cloud based, representation
+      of his real world counterpart (real world “Things”, e.g. devices like sensors,
+      smart heating, connected cars, smart grids, EV charging stations etc). '
     digest: 2e9a267c0d41f64ce71090d401073dc22487d86cc98e5a66bad42ad95f48c4c2
     home: https://www.eclipse.org/ditto
     icon: https://www.eclipse.org/ditto/images/ditto.svg
@@ -738,7 +837,10 @@ entries:
       name: mongodb
       repository: https://charts.bitnami.com/bitnami
       version: ~7.14.7
-    description: 'Eclipse Ditto™ is a technology in the IoT implementing a software pattern called “digital twins”. A digital twin is a virtual, cloud based, representation of his real world counterpart (real world “Things”, e.g. devices like sensors, smart heating, connected cars, smart grids, EV charging stations etc). '
+    description: 'Eclipse Ditto™ is a technology in the IoT implementing a software
+      pattern called “digital twins”. A digital twin is a virtual, cloud based, representation
+      of his real world counterpart (real world “Things”, e.g. devices like sensors,
+      smart heating, connected cars, smart grids, EV charging stations etc). '
     digest: bb250f08f198da62069f3d5cd52679d5389fcbcaa67a09ce62f97830ff445df5
     home: https://www.eclipse.org/ditto
     icon: https://www.eclipse.org/ditto/images/ditto.svg
@@ -768,7 +870,10 @@ entries:
       name: mongodb
       repository: https://charts.bitnami.com/bitnami
       version: ~7.14.7
-    description: 'Eclipse Ditto™ is a technology in the IoT implementing a software pattern called “digital twins”. A digital twin is a virtual, cloud based, representation of his real world counterpart (real world “Things”, e.g. devices like sensors, smart heating, connected cars, smart grids, EV charging stations etc). '
+    description: 'Eclipse Ditto™ is a technology in the IoT implementing a software
+      pattern called “digital twins”. A digital twin is a virtual, cloud based, representation
+      of his real world counterpart (real world “Things”, e.g. devices like sensors,
+      smart heating, connected cars, smart grids, EV charging stations etc). '
     digest: 5014fef2cfbd725eb4fd6c5554c628a9c8c0693b7cdff57a9c96ffe6b02050b7
     home: https://www.eclipse.org/ditto
     icon: https://www.eclipse.org/ditto/images/ditto.svg
@@ -797,7 +902,10 @@ entries:
       name: mongodb
       repository: https://charts.bitnami.com/bitnami
       version: ~7.14.7
-    description: 'Eclipse Ditto™ is a technology in the IoT implementing a software pattern called “digital twins”. A digital twin is a virtual, cloud based, representation of his real world counterpart (real world “Things”, e.g. devices like sensors, smart heating, connected cars, smart grids, EV charging stations etc). '
+    description: 'Eclipse Ditto™ is a technology in the IoT implementing a software
+      pattern called “digital twins”. A digital twin is a virtual, cloud based, representation
+      of his real world counterpart (real world “Things”, e.g. devices like sensors,
+      smart heating, connected cars, smart grids, EV charging stations etc). '
     digest: 7879ddd6f02e9491fdae16a20537313836a6498c40b829f538e319650d499350
     home: https://www.eclipse.org/ditto
     icon: https://www.eclipse.org/ditto/images/ditto.svg
@@ -826,7 +934,10 @@ entries:
       name: mongodb
       repository: https://charts.bitnami.com/bitnami
       version: ~7.14.7
-    description: 'Eclipse Ditto™ is a technology in the IoT implementing a software pattern called “digital twins”. A digital twin is a virtual, cloud based, representation of his real world counterpart (real world “Things”, e.g. devices like sensors, smart heating, connected cars, smart grids, EV charging stations etc). '
+    description: 'Eclipse Ditto™ is a technology in the IoT implementing a software
+      pattern called “digital twins”. A digital twin is a virtual, cloud based, representation
+      of his real world counterpart (real world “Things”, e.g. devices like sensors,
+      smart heating, connected cars, smart grids, EV charging stations etc). '
     digest: 9d377b4d94ca29b5592592fb10fedd553b77f92072631e55d4dc0a164a82765f
     home: https://www.eclipse.org/ditto
     icon: https://www.eclipse.org/ditto/images/ditto.svg
@@ -855,7 +966,10 @@ entries:
       name: mongodb
       repository: https://charts.bitnami.com/bitnami
       version: ~7.14.7
-    description: 'Eclipse Ditto™ is a technology in the IoT implementing a software pattern called “digital twins”. A digital twin is a virtual, cloud based, representation of his real world counterpart (real world “Things”, e.g. devices like sensors, smart heating, connected cars, smart grids, EV charging stations etc). '
+    description: 'Eclipse Ditto™ is a technology in the IoT implementing a software
+      pattern called “digital twins”. A digital twin is a virtual, cloud based, representation
+      of his real world counterpart (real world “Things”, e.g. devices like sensors,
+      smart heating, connected cars, smart grids, EV charging stations etc). '
     digest: ad6e685961db0626a1a5051c79a593d02fe9298f188eed4df9d3d11d497d69d3
     home: https://www.eclipse.org/ditto
     icon: https://www.eclipse.org/ditto/images/ditto.svg
@@ -884,7 +998,10 @@ entries:
       name: mongodb
       repository: https://charts.bitnami.com/bitnami
       version: ~7.14.7
-    description: 'Eclipse Ditto™ is a technology in the IoT implementing a software pattern called “digital twins”. A digital twin is a virtual, cloud based, representation of his real world counterpart (real world “Things”, e.g. devices like sensors, smart heating, connected cars, smart grids, EV charging stations etc). '
+    description: 'Eclipse Ditto™ is a technology in the IoT implementing a software
+      pattern called “digital twins”. A digital twin is a virtual, cloud based, representation
+      of his real world counterpart (real world “Things”, e.g. devices like sensors,
+      smart heating, connected cars, smart grids, EV charging stations etc). '
     digest: 57bf8f579950880c0895e58158b538a258317bebb67ffa1ef3c03342944054b9
     home: https://www.eclipse.org/ditto
     icon: https://www.eclipse.org/ditto/images/ditto.svg
@@ -913,7 +1030,10 @@ entries:
       name: mongodb
       repository: https://charts.bitnami.com/bitnami
       version: ~7.14.7
-    description: 'Eclipse Ditto™ is a technology in the IoT implementing a software pattern called “digital twins”. A digital twin is a virtual, cloud based, representation of his real world counterpart (real world “Things”, e.g. devices like sensors, smart heating, connected cars, smart grids, EV charging stations etc). '
+    description: 'Eclipse Ditto™ is a technology in the IoT implementing a software
+      pattern called “digital twins”. A digital twin is a virtual, cloud based, representation
+      of his real world counterpart (real world “Things”, e.g. devices like sensors,
+      smart heating, connected cars, smart grids, EV charging stations etc). '
     digest: 23385f3acc09f3711cb30a7b38ede183f424abb71e2154798e97ee1745a618eb
     home: https://www.eclipse.org/ditto
     icon: https://www.eclipse.org/ditto/images/ditto.svg
@@ -942,7 +1062,10 @@ entries:
       name: mongodb
       repository: https://charts.bitnami.com/bitnami
       version: ~7.14.7
-    description: 'Eclipse Ditto™ is a technology in the IoT implementing a software pattern called “digital twins”. A digital twin is a virtual, cloud based, representation of his real world counterpart (real world “Things”, e.g. devices like sensors, smart heating, connected cars, smart grids, EV charging stations etc). '
+    description: 'Eclipse Ditto™ is a technology in the IoT implementing a software
+      pattern called “digital twins”. A digital twin is a virtual, cloud based, representation
+      of his real world counterpart (real world “Things”, e.g. devices like sensors,
+      smart heating, connected cars, smart grids, EV charging stations etc). '
     digest: 00e92be7cd926bf3e62c4effc87fa80feae8d484bdd025e68351eec92176a758
     home: https://www.eclipse.org/ditto
     icon: https://www.eclipse.org/ditto/images/ditto.svg
@@ -966,7 +1089,10 @@ entries:
   - apiVersion: v1
     appVersion: 2.0.1
     created: "2021-05-21T17:43:29.089478812Z"
-    description: 'Eclipse Ditto™ is a technology in the IoT implementing a software pattern called “digital twins”. A digital twin is a virtual, cloud based, representation of his real world counterpart (real world “Things”, e.g. devices like sensors, smart heating, connected cars, smart grids, EV charging stations etc). '
+    description: 'Eclipse Ditto™ is a technology in the IoT implementing a software
+      pattern called “digital twins”. A digital twin is a virtual, cloud based, representation
+      of his real world counterpart (real world “Things”, e.g. devices like sensors,
+      smart heating, connected cars, smart grids, EV charging stations etc). '
     digest: 088297a452bb1422654c73b76fb051ab28300ebff8f9a01dc98922730b288bc7
     home: https://www.eclipse.org/ditto
     icon: https://www.eclipse.org/ditto/images/ditto.svg
@@ -990,7 +1116,10 @@ entries:
   - apiVersion: v1
     appVersion: 2.0.0
     created: "2021-05-06T12:43:17.685304833Z"
-    description: 'Eclipse Ditto™ is a technology in the IoT implementing a software pattern called “digital twins”. A digital twin is a virtual, cloud based, representation of his real world counterpart (real world “Things”, e.g. devices like sensors, smart heating, connected cars, smart grids, EV charging stations etc). '
+    description: 'Eclipse Ditto™ is a technology in the IoT implementing a software
+      pattern called “digital twins”. A digital twin is a virtual, cloud based, representation
+      of his real world counterpart (real world “Things”, e.g. devices like sensors,
+      smart heating, connected cars, smart grids, EV charging stations etc). '
     digest: 26df2cebd2a61f7ba071e361de349e5d5d6b3ad872662d87b79ec87a6a6cee1e
     home: https://www.eclipse.org/ditto
     icon: https://www.eclipse.org/ditto/images/ditto.svg
@@ -1014,7 +1143,10 @@ entries:
   - apiVersion: v1
     appVersion: 1.5.1
     created: "2021-02-03T16:05:27.003146427Z"
-    description: 'Eclipse Ditto™ is a technology in the IoT implementing a software pattern called “digital twins”. A digital twin is a virtual, cloud based, representation of his real world counterpart (real world “Things”, e.g. devices like sensors, smart heating, connected cars, smart grids, EV charging stations etc). '
+    description: 'Eclipse Ditto™ is a technology in the IoT implementing a software
+      pattern called “digital twins”. A digital twin is a virtual, cloud based, representation
+      of his real world counterpart (real world “Things”, e.g. devices like sensors,
+      smart heating, connected cars, smart grids, EV charging stations etc). '
     digest: d1f81ca5f1c3b49c0d20fa2e272463288e5786bcdb4dfc2cf8dd4b326f8badf6
     home: https://www.eclipse.org/ditto
     icon: https://www.eclipse.org/ditto/images/ditto.svg
@@ -1036,7 +1168,10 @@ entries:
   - apiVersion: v1
     appVersion: 1.5.1
     created: "2021-01-20T15:43:24.084121176Z"
-    description: 'Eclipse Ditto™ is a technology in the IoT implementing a software pattern called “digital twins”. A digital twin is a virtual, cloud based, representation of his real world counterpart (real world “Things”, e.g. devices like sensors, smart heating, connected cars, smart grids, EV charging stations etc). '
+    description: 'Eclipse Ditto™ is a technology in the IoT implementing a software
+      pattern called “digital twins”. A digital twin is a virtual, cloud based, representation
+      of his real world counterpart (real world “Things”, e.g. devices like sensors,
+      smart heating, connected cars, smart grids, EV charging stations etc). '
     digest: 22c3b8fc912e3ab7b3796c937c664c53ff3666778faed27712e3abeb7cb79b4a
     home: https://www.eclipse.org/ditto
     icon: https://www.eclipse.org/ditto/images/ditto.svg
@@ -1058,7 +1193,10 @@ entries:
   - apiVersion: v1
     appVersion: 1.5.0
     created: "2020-12-17T10:47:09.284076848Z"
-    description: 'Eclipse Ditto™ is a technology in the IoT implementing a software pattern called “digital twins”. A digital twin is a virtual, cloud based, representation of his real world counterpart (real world “Things”, e.g. devices like sensors, smart heating, connected cars, smart grids, EV charging stations etc). '
+    description: 'Eclipse Ditto™ is a technology in the IoT implementing a software
+      pattern called “digital twins”. A digital twin is a virtual, cloud based, representation
+      of his real world counterpart (real world “Things”, e.g. devices like sensors,
+      smart heating, connected cars, smart grids, EV charging stations etc). '
     digest: 6560ea3bcbf8c1687076234b288f69515c9174fa1c4990d83ec9896121473f01
     home: https://www.eclipse.org/ditto
     icon: https://www.eclipse.org/ditto/images/ditto.svg
@@ -1080,7 +1218,10 @@ entries:
   - apiVersion: v1
     appVersion: 1.5.0
     created: "2020-12-10T16:43:02.900705939Z"
-    description: 'Eclipse Ditto™ is a technology in the IoT implementing a software pattern called “digital twins”. A digital twin is a virtual, cloud based, representation of his real world counterpart (real world “Things”, e.g. devices like sensors, smart heating, connected cars, smart grids, EV charging stations etc). '
+    description: 'Eclipse Ditto™ is a technology in the IoT implementing a software
+      pattern called “digital twins”. A digital twin is a virtual, cloud based, representation
+      of his real world counterpart (real world “Things”, e.g. devices like sensors,
+      smart heating, connected cars, smart grids, EV charging stations etc). '
     digest: 956bb7aec8a5b3e0c950e5288270c09f002829611bb3a845b827bc857fd952b9
     home: https://www.eclipse.org/ditto
     icon: https://www.eclipse.org/ditto/images/ditto.svg
@@ -1102,7 +1243,10 @@ entries:
   - apiVersion: v1
     appVersion: 1.4.0
     created: "2020-11-03T10:13:10.08699552Z"
-    description: 'Eclipse Ditto™ is a technology in the IoT implementing a software pattern called “digital twins”. A digital twin is a virtual, cloud based, representation of his real world counterpart (real world “Things”, e.g. devices like sensors, smart heating, connected cars, smart grids, EV charging stations etc). '
+    description: 'Eclipse Ditto™ is a technology in the IoT implementing a software
+      pattern called “digital twins”. A digital twin is a virtual, cloud based, representation
+      of his real world counterpart (real world “Things”, e.g. devices like sensors,
+      smart heating, connected cars, smart grids, EV charging stations etc). '
     digest: a16df1b98c6c20c83feb5520a96ec513b2911395b898baf91c21172ccc009ac7
     home: https://www.eclipse.org/ditto
     icon: https://www.eclipse.org/ditto/images/ditto.svg
@@ -1124,7 +1268,10 @@ entries:
   - apiVersion: v1
     appVersion: 1.3.0
     created: "2020-10-06T12:53:33.597086149Z"
-    description: 'Eclipse Ditto™ is a technology in the IoT implementing a software pattern called “digital twins”. A digital twin is a virtual, cloud based, representation of his real world counterpart (real world “Things”, e.g. devices like sensors, smart heating, connected cars, smart grids, EV charging stations etc). '
+    description: 'Eclipse Ditto™ is a technology in the IoT implementing a software
+      pattern called “digital twins”. A digital twin is a virtual, cloud based, representation
+      of his real world counterpart (real world “Things”, e.g. devices like sensors,
+      smart heating, connected cars, smart grids, EV charging stations etc). '
     digest: 7f8ca4f71a7a6db810c473293676efb60ddc689a3724d9099763934bb667a3c0
     home: https://www.eclipse.org/ditto
     icon: https://www.eclipse.org/ditto/images/ditto.svg
@@ -1146,7 +1293,10 @@ entries:
   - apiVersion: v1
     appVersion: 1.2.0
     created: "2020-09-01T07:03:09.305954391Z"
-    description: 'Eclipse Ditto™ is a technology in the IoT implementing a software pattern called “digital twins”. A digital twin is a virtual, cloud based, representation of his real world counterpart (real world “Things”, e.g. devices like sensors, smart heating, connected cars, smart grids, EV charging stations etc). '
+    description: 'Eclipse Ditto™ is a technology in the IoT implementing a software
+      pattern called “digital twins”. A digital twin is a virtual, cloud based, representation
+      of his real world counterpart (real world “Things”, e.g. devices like sensors,
+      smart heating, connected cars, smart grids, EV charging stations etc). '
     digest: ae3119114546c8e6b08533a8cd446d9bbf2ac418862d32dc0f9951c70c6fdf30
     home: https://www.eclipse.org/ditto
     icon: https://www.eclipse.org/ditto/images/ditto.svg
@@ -1168,7 +1318,10 @@ entries:
   - apiVersion: v1
     appVersion: 1.1.2
     created: "2020-07-02T15:02:30.786892818Z"
-    description: 'Eclipse Ditto™ is a technology in the IoT implementing a software pattern called “digital twins”. A digital twin is a virtual, cloud based, representation of his real world counterpart (real world “Things”, e.g. devices like sensors, smart heating, connected cars, smart grids, EV charging stations etc). '
+    description: 'Eclipse Ditto™ is a technology in the IoT implementing a software
+      pattern called “digital twins”. A digital twin is a virtual, cloud based, representation
+      of his real world counterpart (real world “Things”, e.g. devices like sensors,
+      smart heating, connected cars, smart grids, EV charging stations etc). '
     digest: 4c45c13e213560eb89cb65b16fcde7a5480b6eb848f399341789f33b8ea431d3
     home: https://www.eclipse.org/ditto
     icon: https://www.eclipse.org/ditto/images/ditto.svg
@@ -1189,7 +1342,10 @@ entries:
   - apiVersion: v1
     appVersion: 1.1.1
     created: "2020-06-09T14:47:04.088836937Z"
-    description: 'Eclipse Ditto™ is a technology in the IoT implementing a software pattern called “digital twins”. A digital twin is a virtual, cloud based, representation of his real world counterpart (real world “Things”, e.g. devices like sensors, smart heating, connected cars, smart grids, EV charging stations etc). '
+    description: 'Eclipse Ditto™ is a technology in the IoT implementing a software
+      pattern called “digital twins”. A digital twin is a virtual, cloud based, representation
+      of his real world counterpart (real world “Things”, e.g. devices like sensors,
+      smart heating, connected cars, smart grids, EV charging stations etc). '
     digest: 40dec289e027ab5c4768cbbae5627124313931a171468f6aac1220ae40c3caf8
     home: https://www.eclipse.org/ditto
     icon: https://www.eclipse.org/ditto/images/ditto.svg
@@ -1210,7 +1366,10 @@ entries:
   - apiVersion: v1
     appVersion: 1.1.0
     created: "2020-04-30T15:46:54.40633469Z"
-    description: 'Eclipse Ditto™ is a technology in the IoT implementing a software pattern called “digital twins”. A digital twin is a virtual, cloud based, representation of his real world counterpart (real world “Things”, e.g. devices like sensors, smart heating, connected cars, smart grids, EV charging stations etc). '
+    description: 'Eclipse Ditto™ is a technology in the IoT implementing a software
+      pattern called “digital twins”. A digital twin is a virtual, cloud based, representation
+      of his real world counterpart (real world “Things”, e.g. devices like sensors,
+      smart heating, connected cars, smart grids, EV charging stations etc). '
     digest: ca383b6f8b0c75c31142a4b2087e59d49f9ab9ae61d52aaa88ba6b44ebf112f3
     home: https://www.eclipse.org/ditto
     icon: https://www.eclipse.org/ditto/images/ditto.svg
@@ -1231,7 +1390,10 @@ entries:
   - apiVersion: v1
     appVersion: 1.0.0
     created: "2020-04-06T13:51:01.42459105Z"
-    description: 'Eclipse Ditto™ is a technology in the IoT implementing a software pattern called “digital twins”. A digital twin is a virtual, cloud based, representation of his real world counterpart (real world “Things”, e.g. devices like sensors, smart heating, connected cars, smart grids, EV charging stations etc). '
+    description: 'Eclipse Ditto™ is a technology in the IoT implementing a software
+      pattern called “digital twins”. A digital twin is a virtual, cloud based, representation
+      of his real world counterpart (real world “Things”, e.g. devices like sensors,
+      smart heating, connected cars, smart grids, EV charging stations etc). '
     digest: 7e777166d13120a7e83f91dfdcacb7f3abf70d0e6ee604ec3eec1628fc317061
     home: https://www.eclipse.org/ditto
     icon: https://www.eclipse.org/ditto/images/ditto.svg
@@ -1252,7 +1414,10 @@ entries:
   - apiVersion: v1
     appVersion: 1.0.0
     created: "2020-03-16T07:27:02.939291281Z"
-    description: 'Eclipse Ditto™ is a technology in the IoT implementing a software pattern called “digital twins”. A digital twin is a virtual, cloud based, representation of his real world counterpart (real world “Things”, e.g. devices like sensors, smart heating, connected cars, smart grids, EV charging stations etc). '
+    description: 'Eclipse Ditto™ is a technology in the IoT implementing a software
+      pattern called “digital twins”. A digital twin is a virtual, cloud based, representation
+      of his real world counterpart (real world “Things”, e.g. devices like sensors,
+      smart heating, connected cars, smart grids, EV charging stations etc). '
     digest: 2129ccf648a24eae572e3363093ec55815d719a3b29f1143103546d28a7a94cc
     home: https://www.eclipse.org/ditto
     icon: https://www.eclipse.org/ditto/images/ditto.svg
@@ -1273,7 +1438,10 @@ entries:
   - apiVersion: v1
     appVersion: 1.0.0
     created: "2020-02-18T08:58:44.807206334Z"
-    description: 'Eclipse Ditto™ is a technology in the IoT implementing a software pattern called “digital twins”. A digital twin is a virtual, cloud based, representation of his real world counterpart (real world “Things”, e.g. devices like sensors, smart heating, connected cars, smart grids, EV charging stations etc). '
+    description: 'Eclipse Ditto™ is a technology in the IoT implementing a software
+      pattern called “digital twins”. A digital twin is a virtual, cloud based, representation
+      of his real world counterpart (real world “Things”, e.g. devices like sensors,
+      smart heating, connected cars, smart grids, EV charging stations etc). '
     digest: b36e7d57c8c52f9ed0b13453f6f5e9a0a9860fd470ab2dedc8953aa1dbf06c0b
     home: https://www.eclipse.org/ditto
     icon: https://www.eclipse.org/ditto/images/ditto.svg
@@ -1294,7 +1462,10 @@ entries:
   - apiVersion: v1
     appVersion: 1.0.0
     created: "2020-02-14T12:49:33.791019694Z"
-    description: 'Eclipse Ditto™ is a technology in the IoT implementing a software pattern called “digital twins”. A digital twin is a virtual, cloud based, representation of his real world counterpart (real world “Things”, e.g. devices like sensors, smart heating, connected cars, smart grids, EV charging stations etc). '
+    description: 'Eclipse Ditto™ is a technology in the IoT implementing a software
+      pattern called “digital twins”. A digital twin is a virtual, cloud based, representation
+      of his real world counterpart (real world “Things”, e.g. devices like sensors,
+      smart heating, connected cars, smart grids, EV charging stations etc). '
     digest: 1d6a9dccd249b486c83f25eea3a1e8164c0510e34ba9ae3858912caa05c0469a
     home: https://www.eclipse.org/ditto
     icon: https://www.eclipse.org/ditto/images/ditto.svg
@@ -1315,7 +1486,10 @@ entries:
   - apiVersion: v1
     appVersion: 1.0.0
     created: "2020-02-13T10:12:01.391134159Z"
-    description: 'Eclipse Ditto™ is a technology in the IoT implementing a software pattern called “digital twins”. A digital twin is a virtual, cloud based, representation of his real world counterpart (real world “Things”, e.g. devices like sensors, smart heating, connected cars, smart grids, EV charging stations etc). '
+    description: 'Eclipse Ditto™ is a technology in the IoT implementing a software
+      pattern called “digital twins”. A digital twin is a virtual, cloud based, representation
+      of his real world counterpart (real world “Things”, e.g. devices like sensors,
+      smart heating, connected cars, smart grids, EV charging stations etc). '
     digest: 8e969b7ff8f608a06f6b7e9ae68f14dc962dc1ce3dbee63141e90fa4b92ed0f6
     home: https://www.eclipse.org/ditto
     icon: https://www.eclipse.org/ditto/images/ditto.svg
@@ -1469,8 +1643,44 @@ entries:
   hawkbit:
   - apiVersion: v1
     appVersion: 0.3.0M6-mysql
+    created: "2022-06-09T15:54:01.341538047Z"
+    dependencies:
+    - condition: mysql.enabled
+      name: mysql
+      repository: https://raw.githubusercontent.com/bitnami/charts/eb5f9a9513d987b519f0ecd732e7031241c50328/bitnami
+      version: 6.14.10
+    - condition: rabbitmq.enabled
+      name: rabbitmq
+      repository: https://raw.githubusercontent.com/bitnami/charts/eb5f9a9513d987b519f0ecd732e7031241c50328/bitnami
+      version: 7.8.0
+    description: 'Eclipse hawkBit™ is a domain independent back-end framework for
+      rolling out software updates to constrained edge devices as well as more powerful
+      controllers and gateways connected to IP based networking infrastructure. '
+    digest: 728b1f30f506ec9e75fceb4ca4fdb425165ab791ab004c85630857af92873f46
+    home: https://www.eclipse.org/hawkbit/
+    icon: https://www.eclipse.org/hawkbit/images/hawkbit_icon.png
+    keywords:
+    - iot-chart
+    maintainers:
+    - email: andre.bauer@kiwigrid.com
+      name: monotek
+    - email: axel.koehler@kiwigrid.com
+      name: axdotl
+    - email: ctron@dentrassi.de
+      name: ctron
+    name: hawkbit
+    sources:
+    - https://github.com/eclipse/hawkbit
+    - https://github.com/eclipse/packages
+    urls:
+    - https://eclipse.org/packages/charts/hawkbit-1.4.1.tgz
+    version: 1.4.1
+  - apiVersion: v1
+    appVersion: 0.3.0M6-mysql
     created: "2021-04-16T13:55:23.662438089Z"
-    description: 'Eclipse hawkBit™ is a domain independent back-end framework for rolling out software updates to constrained edge devices as well as more powerful controllers and gateways connected to IP based networking infrastructure. '
+    description: 'Eclipse hawkBit™ is a domain independent back-end framework for
+      rolling out software updates to constrained edge devices as well as more powerful
+      controllers and gateways connected to IP based networking infrastructure. '
     digest: c4b31619d3361194d82fdf213c2c7a94bd399d8f8c39e7d88c86fc78ea9ef5c8
     home: https://www.eclipse.org/hawkbit/
     icon: https://www.eclipse.org/hawkbit/images/hawkbit_icon.png
@@ -1493,7 +1703,9 @@ entries:
   - apiVersion: v1
     appVersion: 0.3.0M6-mysql
     created: "2021-01-11T07:37:57.011011666Z"
-    description: 'Eclipse hawkBit™ is a domain independent back-end framework for rolling out software updates to constrained edge devices as well as more powerful controllers and gateways connected to IP based networking infrastructure. '
+    description: 'Eclipse hawkBit™ is a domain independent back-end framework for
+      rolling out software updates to constrained edge devices as well as more powerful
+      controllers and gateways connected to IP based networking infrastructure. '
     digest: 6c449f4229f8f197b7b4057598b4572e26f09db03a19f3847bfea86007ed4ed4
     home: https://www.eclipse.org/hawkbit/
     icon: https://www.eclipse.org/hawkbit/images/hawkbit_icon.png
@@ -1516,7 +1728,9 @@ entries:
   - apiVersion: v1
     appVersion: 0.3.0M6-mysql
     created: "2021-01-08T12:48:22.286987828Z"
-    description: 'Eclipse hawkBit™ is a domain independent back-end framework for rolling out software updates to constrained edge devices as well as more powerful controllers and gateways connected to IP based networking infrastructure. '
+    description: 'Eclipse hawkBit™ is a domain independent back-end framework for
+      rolling out software updates to constrained edge devices as well as more powerful
+      controllers and gateways connected to IP based networking infrastructure. '
     digest: 180464382c0f733af27be26486952a8e7e6897df234dc8567874bc17699ce60e
     home: https://www.eclipse.org/hawkbit/
     icon: https://www.eclipse.org/hawkbit/images/hawkbit_icon.png
@@ -1539,7 +1753,9 @@ entries:
   - apiVersion: v1
     appVersion: 0.3.0M6-mysql
     created: "2020-07-29T09:58:48.421037349Z"
-    description: 'Eclipse hawkBit™ is a domain independent back-end framework for rolling out software updates to constrained edge devices as well as more powerful controllers and gateways connected to IP based networking infrastructure. '
+    description: 'Eclipse hawkBit™ is a domain independent back-end framework for
+      rolling out software updates to constrained edge devices as well as more powerful
+      controllers and gateways connected to IP based networking infrastructure. '
     digest: 078944b15acdcc277b688990527dd4e01a8d5c7778569338937aeb9d79995b5d
     home: https://www.eclipse.org/hawkbit/
     icon: https://www.eclipse.org/hawkbit/images/hawkbit_icon.png
@@ -1562,7 +1778,9 @@ entries:
   - apiVersion: v1
     appVersion: 0.3.0M6-mysql
     created: "2020-04-09T12:00:00.489022784Z"
-    description: 'Eclipse hawkBit™ is a domain independent back-end framework for rolling out software updates to constrained edge devices as well as more powerful controllers and gateways connected to IP based networking infrastructure. '
+    description: 'Eclipse hawkBit™ is a domain independent back-end framework for
+      rolling out software updates to constrained edge devices as well as more powerful
+      controllers and gateways connected to IP based networking infrastructure. '
     digest: 3c192c7bdca04d8f6a9c4205edf3835b74f4194d77e6c2c01efe7b182c4d13fe
     home: https://www.eclipse.org/hawkbit/
     icon: https://www.eclipse.org/hawkbit/images/hawkbit_icon.png
@@ -1585,7 +1803,9 @@ entries:
   - apiVersion: v1
     appVersion: 0.3.0M6-mysql
     created: "2020-04-09T11:30:25.787074866Z"
-    description: 'Eclipse hawkBit™ is a domain independent back-end framework for rolling out software updates to constrained edge devices as well as more powerful controllers and gateways connected to IP based networking infrastructure. '
+    description: 'Eclipse hawkBit™ is a domain independent back-end framework for
+      rolling out software updates to constrained edge devices as well as more powerful
+      controllers and gateways connected to IP based networking infrastructure. '
     digest: 0c40f3f9e3a2ddf73a9f8591eddf07f5a264c41bd377f18239db3b8701f4b1d1
     home: https://www.eclipse.org/hawkbit/
     icon: https://www.eclipse.org/hawkbit/images/hawkbit_icon.png
@@ -1608,7 +1828,9 @@ entries:
   - apiVersion: v1
     appVersion: 0.3.0M6-mysql
     created: "2020-03-20T12:59:38.297439824Z"
-    description: 'Eclipse hawkBit™ is a domain independent back-end framework for rolling out software updates to constrained edge devices as well as more powerful controllers and gateways connected to IP based networking infrastructure. '
+    description: 'Eclipse hawkBit™ is a domain independent back-end framework for
+      rolling out software updates to constrained edge devices as well as more powerful
+      controllers and gateways connected to IP based networking infrastructure. '
     digest: 99c37b092a97bb36cee7361382e1f0554b388759a3307e339aae7f4dfd8c60fd
     home: https://www.eclipse.org/hawkbit/
     icon: https://www.eclipse.org/hawkbit/images/hawkbit_icon.png
@@ -1631,7 +1853,9 @@ entries:
   - apiVersion: v1
     appVersion: 0.3.0M6-mysql
     created: "2020-03-18T10:47:38.235164319Z"
-    description: 'Eclipse hawkBit™ is a domain independent back-end framework for rolling out software updates to constrained edge devices as well as more powerful controllers and gateways connected to IP based networking infrastructure. '
+    description: 'Eclipse hawkBit™ is a domain independent back-end framework for
+      rolling out software updates to constrained edge devices as well as more powerful
+      controllers and gateways connected to IP based networking infrastructure. '
     digest: a4bcf27893b0cc690e25cfb0c50e0cdb919dc6aafadefbcb3c8a168e7e8344ad
     home: https://www.eclipse.org/hawkbit/
     icon: https://www.eclipse.org/hawkbit/images/hawkbit_icon.png
@@ -1654,7 +1878,9 @@ entries:
   - apiVersion: v1
     appVersion: 0.3.0M6-mysql
     created: "2020-02-13T10:12:01.485224056Z"
-    description: 'Eclipse hawkBit™ is a domain independent back-end framework for rolling out software updates to constrained edge devices as well as more powerful controllers and gateways connected to IP based networking infrastructure. '
+    description: 'Eclipse hawkBit™ is a domain independent back-end framework for
+      rolling out software updates to constrained edge devices as well as more powerful
+      controllers and gateways connected to IP based networking infrastructure. '
     digest: 1f67f9df27d94313d384795c1a3638c5067c93e8db8ba6b2c2059ae61d92ebf3
     home: https://www.eclipse.org/hawkbit/
     icon: https://www.eclipse.org/hawkbit/images/hawkbit_icon.png
@@ -1712,7 +1938,9 @@ entries:
       name: kafka
       repository: https://charts.bitnami.com/bitnami
       version: ^16.x
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: c54e273141eeb44efb2e84a88797ef48dd9b5c7223758d3b371f69d2c341ad9c
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -1753,7 +1981,9 @@ entries:
       name: kafka
       repository: https://charts.bitnami.com/bitnami
       version: ^14.x
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 870f71fcb151c3882aa9e0925db5be4fdc189b2bddb8035782fdae6cc6a4de7e
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -1794,7 +2024,9 @@ entries:
       name: kafka
       repository: https://charts.bitnami.com/bitnami
       version: ^14.x
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 56bff2b1b5604d6c3c1fbacf12f937dea6b2e8374e2f8c9861944638dab23bdf
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -1835,7 +2067,9 @@ entries:
       name: kafka
       repository: https://charts.bitnami.com/bitnami
       version: ^14.x
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 9a6c87e7c999358d7ee77e35913fa5f95e6e0e6886918fbf59b7513097e8e541
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -1876,7 +2110,9 @@ entries:
       name: kafka
       repository: https://charts.bitnami.com/bitnami
       version: ^14.x
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: ec52f66188af99efaf5b4a22ef9a410ed0a75fb79bae61759c7b30119e59e53e
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -1917,7 +2153,9 @@ entries:
       name: kafka
       repository: https://charts.bitnami.com/bitnami
       version: ^14.x
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 684ee7b5c6d739a61bd2cd29b9e9af6aa17760a517a61f865fb3e1f10871e188
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -1958,7 +2196,9 @@ entries:
       name: kafka
       repository: https://charts.bitnami.com/bitnami
       version: ^14.x
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: df412c3d10c3c5b284eb2174300b95e3055ac9005cf3ba7c20bca7597cf0c939
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -1999,7 +2239,9 @@ entries:
       name: kafka
       repository: https://charts.bitnami.com/bitnami
       version: ^14.x
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: bf0faffdbfc9bd37cdef68c8aa939d9e2a3c9e496c917766041d5fa6bb97f5bf
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -2040,7 +2282,9 @@ entries:
       name: kafka
       repository: https://charts.bitnami.com/bitnami
       version: ^14.x
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: c22dab7f689af1c98f990a8a677ea2668b46271009954715fa0f3fab88c10a05
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -2081,7 +2325,9 @@ entries:
       name: kafka
       repository: https://charts.bitnami.com/bitnami
       version: ^14.x
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: cf337d54047af13205d0afc1ab52e22d0fdc1936fcf4c0aec705d71b1528742b
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -2122,7 +2368,9 @@ entries:
       name: kafka
       repository: https://charts.bitnami.com/bitnami
       version: ^14.x
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 46235eb5cc71bd8bec7855783d89166f2a75def8618cbbae0fe073190ac5fd31
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -2163,7 +2411,9 @@ entries:
       name: kafka
       repository: https://charts.bitnami.com/bitnami
       version: ^14.x
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 6878dc3720701d0e7f6ad29f8c5eb59ae2f726b44011b2ae6dba64503039cdd3
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -2204,7 +2454,9 @@ entries:
       name: kafka
       repository: https://charts.bitnami.com/bitnami
       version: ^14.x
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: f00d344057ef5dd9b7547377382f34be04494402842648060bfce3ef1e762487
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -2245,7 +2497,9 @@ entries:
       name: kafka
       repository: https://charts.bitnami.com/bitnami
       version: ^14.x
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 681693b1f5c74ba85b29fcf6f54aa801cb2e9f371df523abbfadb4f16d017778
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -2286,7 +2540,9 @@ entries:
       name: kafka
       repository: https://charts.bitnami.com/bitnami
       version: ~12.17.6
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 86e834315adb11eb71c8c610b21838a5b4e6bd5ad0dca918b75d221b33eda845
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -2327,7 +2583,9 @@ entries:
       name: kafka
       repository: https://charts.bitnami.com/bitnami
       version: ~12.17.6
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 5cc49b7c0eb470f00528a3e8b5780bf0c0cd3902d662df01652072bb430f67b0
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -2368,7 +2626,9 @@ entries:
       name: kafka
       repository: https://charts.bitnami.com/bitnami
       version: ~12.17.6
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: d108bc02e960ee117f753b7c9f0bc13d8344f43ecc532ce629479f3818005e72
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -2409,7 +2669,9 @@ entries:
       name: kafka
       repository: https://charts.bitnami.com/bitnami
       version: ~12.17.6
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 28bb03cb15f41cd8ec59c705cb46d123685f91551847c7d02510fcf98596a465
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -2450,7 +2712,9 @@ entries:
       name: kafka
       repository: https://charts.bitnami.com/bitnami
       version: ~12.17.6
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 385373bedab8480a29816d5f81b49b9aaa9b51aa44e2d9e11a654fa5055ee9a1
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -2491,7 +2755,9 @@ entries:
       name: kafka
       repository: https://charts.bitnami.com/bitnami
       version: ~12.17.6
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 20a05037ecd299e6e49b0f452578481bbbffa27ac02f0f15fd4df5fcd71d4fc7
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -2532,7 +2798,9 @@ entries:
       name: kafka
       repository: https://charts.bitnami.com/bitnami
       version: ~12.17.6
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: e294c167896822fd19c39dbad27a4c2ff92f7efc38eb8200fb5ea9666e1d28c5
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -2573,7 +2841,9 @@ entries:
       name: kafka
       repository: https://charts.bitnami.com/bitnami
       version: ~12.17.6
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 4cd4fa4b5d7658c1961ea0dc4510c90b18acfd1732ac185776f95158b417ed27
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -2614,7 +2884,9 @@ entries:
       name: kafka
       repository: https://charts.bitnami.com/bitnami
       version: ~12.17.6
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 7d331ab0d5c60a6bfb3ca162fd3111053c5a19ce5be907dbe7547966372e27e0
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -2655,7 +2927,9 @@ entries:
       name: kafka
       repository: https://charts.bitnami.com/bitnami
       version: ~12.17.6
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 57e3c13a4e8662abe685526c274150b1483751b6a08706e11542db4adebb6c49
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -2696,7 +2970,9 @@ entries:
       name: kafka
       repository: https://charts.bitnami.com/bitnami
       version: ~12.17.6
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 89f46081aaef910ed272708614e5884bd3ab6315f44a823a90f8b2d11bcdb961
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -2737,7 +3013,9 @@ entries:
       name: kafka
       repository: https://charts.bitnami.com/bitnami
       version: ~12.17.6
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 8577987fef1fee2fdc39ebb2b352a90785ff4d87659f4de01edd9c3c88b541b8
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -2778,7 +3056,9 @@ entries:
       name: kafka
       repository: https://charts.bitnami.com/bitnami
       version: ~12.17.6
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: aac11e653d95d16bc4887af6e07ec6cede399d95db5d8fe234da129cf14f6da2
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -2819,7 +3099,9 @@ entries:
       name: kafka
       repository: https://charts.bitnami.com/bitnami
       version: ~12.17.6
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 70fd98d6c40c31ce496580e0e9267ac7bd7f751fc0a13cb7166ed76af87b8c98
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -2860,7 +3142,9 @@ entries:
       name: kafka
       repository: https://charts.bitnami.com/bitnami
       version: ~12.17.6
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: b20ac61d56f2b0f7f7ebd622d9c31d32092c8856b65a2f639f870f6493f99f6b
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -2901,7 +3185,9 @@ entries:
       name: kafka
       repository: https://charts.bitnami.com/bitnami
       version: ~12.17.6
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 131bfd92a407894f70b86df381166397e4b830726a4611d3112ced510812fd5a
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -2942,7 +3228,9 @@ entries:
       name: kafka
       repository: https://charts.bitnami.com/bitnami
       version: ~12.17.6
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 6647a45e8ac086eb412c39c666a439c4ab11760429c8c941b16c79d868db0a71
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -2983,7 +3271,9 @@ entries:
       name: kafka
       repository: https://charts.bitnami.com/bitnami
       version: ~12.17.6
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: d1195cf239b17383145e41da0de0e97bf9086678ff30706f7493aa48c8857f26
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -3024,7 +3314,9 @@ entries:
       name: kafka
       repository: https://charts.bitnami.com/bitnami
       version: ~12.17.6
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: c12adb9e3caaa4091a49bb7bd826c9310d773795ae12e2b2ec74a161856e2473
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -3065,7 +3357,9 @@ entries:
       name: kafka
       repository: https://charts.bitnami.com/bitnami
       version: ~12.17.6
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 30ac12215de74df78a46af42cceb591dac6a6e2302b27a368e9dc798a195ba74
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -3106,7 +3400,9 @@ entries:
       name: kafka
       repository: https://charts.bitnami.com/bitnami
       version: ~12.17.6
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: c6f5471ce209f97b08fcb108ad51cb049b0debfa493899ba2f4ddb841db5a56c
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -3147,7 +3443,9 @@ entries:
       name: kafka
       repository: https://charts.bitnami.com/bitnami
       version: ~12.17.6
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 99ff4884c5777d98ea312c047b17a343181b344037cf3f50f23afaf9d90eb4b9
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -3188,7 +3486,9 @@ entries:
       name: kafka
       repository: https://charts.bitnami.com/bitnami
       version: ~12.17.6
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 267098d7e68e971de94de3a5e3133733a867b4d315ac13871d1a1953704f924b
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -3229,7 +3529,9 @@ entries:
       name: kafka
       repository: https://charts.bitnami.com/bitnami
       version: ~12.17.6
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 49fa65f56e53567963c3128313f929745e2a23a273159905f61627fc07624fed
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -3270,7 +3572,9 @@ entries:
       name: kafka
       repository: https://charts.bitnami.com/bitnami
       version: ~12.17.6
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: d1a92c3074ddc8655c00054d15a4b55071bb6cf93fa0708625644a9ff6589b4f
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -3311,7 +3615,9 @@ entries:
       name: kafka
       repository: https://charts.bitnami.com/bitnami
       version: ~12.17.6
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 31a79356cfdf13849e7b9f28bae61443952129abd6fcf02e31e306e2fc2a87e4
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -3352,7 +3658,9 @@ entries:
       name: kafka
       repository: https://charts.bitnami.com/bitnami
       version: ~12.17.6
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 191919390a0e75319455f6724b5bfa57b3b09216b09f6275f7233cabf30a6afe
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -3393,7 +3701,9 @@ entries:
       name: kafka
       repository: https://charts.bitnami.com/bitnami
       version: ~12.17.6
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 62511415d2232f63aa741b2a6888ed47c9856200dfa48fbab8986de7bc7df912
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -3434,7 +3744,9 @@ entries:
       name: kafka
       repository: https://charts.bitnami.com/bitnami
       version: ~12.17.6
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 4fdd80e5e95e0818f5641acb32b1baef01313080c649117040dfb11cb81363c6
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -3475,7 +3787,9 @@ entries:
       name: kafka
       repository: https://charts.bitnami.com/bitnami
       version: ~12.17.6
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: b72039d6bbb2b419ce6746027dcb5aae3de31235cdac166636ea014fb14398c5
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -3516,7 +3830,9 @@ entries:
       name: kafka
       repository: https://charts.bitnami.com/bitnami
       version: ~12.17.6
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: aed33c786bd29be5f67f66fb899e8ced3ad0d7d4a5433716eb8c3fe08c5c858e
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -3557,7 +3873,9 @@ entries:
       name: kafka
       repository: https://charts.bitnami.com/bitnami
       version: ~12.17.6
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 6199c05e45e5779b461216f32d1ffa4dca02de9ca87b54e1f940459c0009859a
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -3598,7 +3916,9 @@ entries:
       name: kafka
       repository: https://charts.bitnami.com/bitnami
       version: ~12.17.6
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: e93440ffc0fae05da276e82cfe489d8d0fba44db4773c7716b47b268fb2de0ce
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -3639,7 +3959,9 @@ entries:
       name: kafka
       repository: https://charts.bitnami.com/bitnami
       version: ~12.17.6
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: f9a18f6dfc57ece5a3a8b2076c4dd815fd99cc3e89779549208e6b166dce1199
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -3663,7 +3985,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.8.0
     created: "2021-06-02T12:34:10.677104189Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: a05010d0fa1051536594c0f75a2a0767d6050594290320e96c2a4aace466ad03
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -3687,7 +4011,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.8.0
     created: "2021-06-01T08:53:47.785087058Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 245342a031fbfaec197baac70538c7307fc414f781e134ca9f06dafee252824c
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -3711,7 +4037,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.8.0
     created: "2021-05-31T07:03:42.493246694Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 46d8a722ad1ff76a64709cbde3239d51addfc675c6db9b3e721f936ede208d2d
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -3735,7 +4063,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.8.0
     created: "2021-05-26T06:32:56.959127047Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: af8055e8abc99de65db7ea86d57df5963a237836e4be4218824be78c6aaee77b
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -3759,7 +4089,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.7.3
     created: "2021-05-21T12:04:05.025333828Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 5a603d56d620afe87f12a5584311d4bd513849374646ff0a40097d36defa5033
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -3783,7 +4115,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.7.3
     created: "2021-05-20T11:27:58.525577184Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 4d77cc743097e76b434b40abcde6fdae8466432e8d867976df88f0f02269fd10
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -3807,7 +4141,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.7.3
     created: "2021-05-19T12:23:42.660311832Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 343d6df83377d057d43f61897668b8fd7ead555d8e2ed6ae2252b2800df4f062
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -3831,7 +4167,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.7.3
     created: "2021-05-19T06:32:39.463727003Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 82420376cec81453892b508699d0c2cdf42379865feaf0c2ca6c5db0fa7dff67
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -3855,7 +4193,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.7.1
     created: "2021-05-14T12:53:23.070325097Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 004700b713b6f326cff065db07903f87e2e54883ddebfc7e1fe7726a4d5674c2
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -3879,7 +4219,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.7.1
     created: "2021-05-03T13:17:02.833315074Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: f82e74af13d3076248e6d56bf251c3fb631f766a06478aa649a00e240dd60753
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -3903,7 +4245,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.7.1
     created: "2021-04-27T08:43:42.885192953Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 133308f96473a4d02a11b9cbf526f01df027cd5be3257685e60ae26f41f3b22f
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -3927,7 +4271,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.7.0
     created: "2021-04-15T14:08:04.554175441Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 1b4a61f96018b9c2e59ca49965d424902c5869fe7d293efd55761c992ebc4fb2
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -3951,7 +4297,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.7.0
     created: "2021-04-08T11:52:53.881349131Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 1fb9baeae750382ce2e34c68c86977fb93ef2d9fb2302b3a2582f67d631e9bf6
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -3975,7 +4323,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.6.1
     created: "2021-04-07T18:15:16.962578943Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 856e55d31dd6ee03b1dd54dff36c6a60567b4b2306075751870a874bbd2ba58f
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -3999,7 +4349,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.6.0
     created: "2021-04-07T11:02:32.349151084Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 59d24482bbdcfcdbb9257cec70308450d8753ceaa78f1cef3e6453ea315d8d62
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -4023,7 +4375,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.6.0
     created: "2021-03-15T16:05:12.670644523Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 188b07af1b2400684be068719727b3cec9e8efb2b61cef0c8e4ccb105122a771
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -4047,7 +4401,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.6.0
     created: "2021-03-15T12:50:46.412036861Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 2200eeb1149540cd6c813d3374e7139d4e27fc2d41ffb2bb80c9035414688264
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -4071,7 +4427,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.6.0
     created: "2021-03-15T09:41:09.800391846Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 5ff039757ff67c3d0d81d47a54b6070fe644ef17ab46fd1e3f54ac6ffcf7133d
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -4095,7 +4453,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.6.0
     created: "2021-03-12T14:04:00.866452995Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: ff8dba5943742fed8e9e7877110d23c3a7b4e5b321fc4b725ca1e523d4ab4838
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -4119,7 +4479,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.6.0
     created: "2021-03-11T08:40:52.30524338Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 2c98e29410025deba704c28125afe59912a0b0068199861e29cd3d2ca33336b8
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -4143,7 +4505,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.6.0
     created: "2021-03-05T21:16:02.319985574Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: bbbc286b3bd68452148600d9f30bf38c0f9857d7188cff8cee2df25b733c89ad
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -4167,7 +4531,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.6.0
     created: "2021-02-16T14:36:18.116935762Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: dbdc278c78a7e10eebf6e76fb191bff5e2dbf32081ad58ceeb33a6864074e726
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -4191,7 +4557,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.6.0
     created: "2021-02-12T07:32:08.063133132Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 4795fcf002529ac3b7044379d218653316dab47b515e72e25b36c54ae418fea1
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -4215,7 +4583,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.6.0
     created: "2021-02-04T12:16:50.696020013Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 13b662e00a140b8c90cba7a211db53890fd94686ac7856f9d7302c9e0952849f
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -4239,7 +4609,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.5.1
     created: "2021-02-03T16:05:27.191021217Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 3b1bbdadfd48ec3629a3076d15e9dfc03ffcb179f39dbe18b6523d51f4755267
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -4263,7 +4635,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.5.1
     created: "2021-01-21T16:23:09.398860085Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: b02704b2b1e73a6392e4c75eb2e0f23a8a9a9ceb5fdfad842ebb1fc4fe6ee6df
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -4287,7 +4661,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.5.1
     created: "2021-01-19T15:49:20.116119266Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 73e3baa6d7603b0aa993946b54aff2fbef6a5bc28982157792d1ced5cacff68f
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -4311,7 +4687,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.5.1
     created: "2021-01-19T13:03:04.680894909Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 7b360d7e1e5a90b285246844ffad59b06e301578324e9c288f60ca3b64aca3ed
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -4335,7 +4713,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.5.1
     created: "2021-01-15T23:50:45.090343953Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 8c5431535785ea7df73009933b24f5ace51f5a8cb56be0561f3f3a1f5979a855
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -4359,7 +4739,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.5.0
     created: "2021-01-07T10:23:23.596668136Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: bfecd8c11510a501ba80c4459179b150dfce71bff7db7bbbb69ab160851005ea
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -4383,7 +4765,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.5.0
     created: "2021-01-06T09:46:36.099213625Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: ee6cd7c8b0c10dee22f80df5261cec263f3726a72fe4a0c6b93c64ef3bc504da
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -4407,7 +4791,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.5.0
     created: "2020-12-17T12:58:33.826850914Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: da1e17c30f37f88b5a111e6c0ae91b37522b28e0a7363891d31b046c012cc1ed
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -4431,7 +4817,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.5.0
     created: "2020-12-17T10:47:09.290389267Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 17cfdfdbe70326c9ff16b4e40e681892e8a5643f704453d98a891eb910e1fa9b
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -4455,7 +4843,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.4.4
     created: "2020-12-16T14:21:22.000260476Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: f776311c12a0d929a132987666a667f8cc068382280e81dfab6d7de7adb61cf2
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -4479,7 +4869,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.4.3
     created: "2020-12-01T15:48:47.381358247Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 81a4599dcc0889327d144fc50376bda9a9815315561fe50eeae496343c1c20c6
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -4503,7 +4895,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.4.3
     created: "2020-11-25T14:43:42.70778663Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 33027db3b31907a4ea44adf4087507b649e4fc564a5196036d7a57cd6408e49a
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -4527,7 +4921,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.4.3
     created: "2020-11-17T16:13:08.572339398Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: b236f0ad9b9be839285f7a56cdd4de9da5c501ab525e9a791dbc19363462673e
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -4551,7 +4947,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.4.3
     created: "2020-11-17T09:13:14.098501198Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: faf6817d0302f65963c8f0d38ef11f98bb678a44bb2996abf05ecd71e674b49b
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -4575,7 +4973,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.4.3
     created: "2020-11-06T10:50:00.284220976Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 5ff478a229c608a608b81d2fae26d6e337ef6491b946300e3e882aa2ac9004ee
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -4599,7 +4999,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.4.0
     created: "2020-11-03T12:23:05.418171793Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 2a1a735aa055145722a67b7a75f17f79601375092185e68ff965f2acadb8982e
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -4623,7 +5025,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.4.0
     created: "2020-11-03T08:33:15.029457234Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: a6b50a322c4a860e996dba125daf390af3fb624ee8123c59f2ceb7626ac7c842
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -4647,7 +5051,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.4.0
     created: "2020-10-12T07:03:18.50236214Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: d33e5c445796925aa9bee54fe1c02e199ef7af9faf08b667840a404fa438e8eb
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -4671,7 +5077,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.4.0
     created: "2020-10-02T15:08:21.990833999Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: fd48406ebc8a6c2935c20b0355d0bb57aa42e38fe1c71d5a462efb4300d9644a
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -4695,7 +5103,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.4.0
     created: "2020-09-30T14:03:36.019199193Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 509be980b854a285e2bc0a120ef9421cfac1694bc9b7bf1eab1010583047704d
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -4719,7 +5129,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.4.0
     created: "2020-09-28T07:28:28.38790948Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 7c3403242c25e145fd841d848bdaea4b187eee7f983b70567f6855628f7a7332
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -4743,7 +5155,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.4.0
     created: "2020-09-25T12:09:24.790660939Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: c5ba6a44d502a008b2cb1ce3c963df22292963708cd483697234d725b085aec8
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -4767,7 +5181,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.4.0
     created: "2020-09-23T08:32:59.229397838Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 6ad034047df6f40054ba8808e47541a578030eeb0f1011b16fd469fe78829ae4
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -4791,7 +5207,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.4.0
     created: "2020-09-22T06:42:53.394141893Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 41282a05ff782900dfdf4b1a3481b13de75f735fa0db0fb44ca0a821ffbd9161
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -4815,7 +5233,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.3.0
     created: "2020-09-21T09:33:18.618932588Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: d202a9740a7196a020995a3d974680c3d5f2c281579760399d9bdaed8762382b
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -4839,7 +5259,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.3.0
     created: "2020-09-18T08:03:27.517802295Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: ea79542144d815465ce97c54c86c28ad37c045f31841f57548ffb4d18469dfaa
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -4863,7 +5285,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.3.0
     created: "2020-07-29T09:58:48.426377119Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 8988d62948a1f2d7919e80285530329d81f4e44aa8f9f0e6da0ab6174f016c41
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -4887,7 +5311,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.2.4
     created: "2020-07-16T11:32:25.517507522Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 5123998f5e3702ef5c725c01e6c96648291a221c79715152e1a598acfedcb25f
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -4911,7 +5337,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.2.4
     created: "2020-07-14T08:34:54.572915925Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: cadf4418a23e0961b63cb9fa5226827219135e748d376eeb7ab2a26b348930ca
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -4935,7 +5363,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.2.4
     created: "2020-07-10T10:02:43.902238446Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 7bcaa7fc233890fbaaedf4b75f3a2b320a84917910964bfa444f085840d2e6b9
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -4959,7 +5389,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.2.4
     created: "2020-07-10T07:03:25.707316552Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: f2cf4e85476787faba3b151e2a14db425a47ec58fea188cf99315ec642e6d8fb
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -4983,7 +5415,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.2.3
     created: "2020-07-01T15:22:46.988324188Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: cbd0a76a9e12a0c5a37ef66f397680d4fc545bbfdcb01959e8d7304efebd3d36
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -5007,7 +5441,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.2.3
     created: "2020-06-10T13:43:45.439950342Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: dd99af1ca61d7de3649e6547b08a4efbecdc1550d46a4c00484e49c1f3733f2b
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -5031,7 +5467,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.2.2
     created: "2020-04-28T08:30:42.582500866Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: d185414b71e9645b0a3c775e26c57564e2b436e2d38b6a2bc44fc63f0b6fe368
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -5055,7 +5493,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.2.2
     created: "2020-04-15T15:38:58.997674866Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: cef5fdab0a528ff45b8ef5f591822eefade28306ddc9d9230d255ea85974a86d
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -5079,7 +5519,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.2.1
     created: "2020-04-02T09:20:42.288268904Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 3ca7575bf778f7d73cbd6eff690192c4d70dce6648d7ed53764fe520ac6f9b97
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -5103,7 +5545,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.2.1
     created: "2020-03-25T16:29:59.396454858Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 9b8b6cff46f3188fe0dc9084ba321bc5112a9f87e10ee6e9383b30ab6549b9be
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -5127,7 +5571,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.2.0
     created: "2020-03-24T17:35:05.175028051Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: c50a6d1249526c614a1de3c59ef1d12a6079de7d66f82902f321e6cdd3af0638
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -5151,7 +5597,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.1.1
     created: "2020-03-24T10:57:03.338054398Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 6e3d5b86c23979c9f8df5df44bf5fb7d2f7ff52a1f912e596e90880d9bccd542
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -5175,7 +5623,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.1.1
     created: "2020-03-20T10:33:36.907681834Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 3fc54fe0191793f2a6fe9567d7eb2c7986f54710a755dc3374061576eb22fe60
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -5199,7 +5649,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.1.1
     created: "2020-03-09T08:24:06.772803601Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 1538da740bbdefc42e34ba703924e7ad9a663bd6ea94cab26da4f3237e597ad9
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -5223,7 +5675,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.1.1
     created: "2020-03-06T11:04:08.827488165Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: c68cbc2b9a8bc8354b99800e1abc549c0b1002f39401e6d9872cd2a3c298337f
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -5247,7 +5701,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.1.1
     created: "2020-03-05T15:32:31.810956662Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 84b7125c5e0a83f679692e10de101f8928f994bda9f84a61f87efb6ce585d891
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -5271,7 +5727,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.1.1
     created: "2020-03-01T17:42:50.422581423Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 89a3a296bd21b5bba5802f7be257f10018e9133a8db1d24757d07c6a76a35dac
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -5295,7 +5753,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.1.1
     created: "2020-02-28T17:34:12.217525729Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: a02d23b55be3300b4c04551bec7371e60102eb33d4da4288f95f51ac5b000dcc
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -5319,7 +5779,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.1.0
     created: "2020-02-13T10:12:01.785338071Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 417796c82ae112ba57f7dd5f53074e4de15f5ea088f51397fc1b770b1e4b826d
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -5343,7 +5805,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.1.0
     created: "2020-02-13T10:12:01.694460267Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 32887f60c67b51e21b7a6fffad0afb2914fe286f5acd1e487f4973abd56cadd6
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -5366,7 +5830,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.1.0
     created: "2020-02-13T10:12:01.689790711Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 90d1447fa39e889f75d5b344092e8c1cca0a90e723ae54611eb5e3934159813b
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -5389,7 +5855,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.1.0
     created: "2020-02-13T10:12:01.685775099Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: c7de1e331db2f3c2557473ef9ed615b1b8bc409040dea8be945689d752d50c78
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -5412,7 +5880,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.0.3
     created: "2020-02-13T10:12:01.58774204Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 45ba83c5841efda04880d48557688ac41a7cdebb296afa928a969ff725f1fe60
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -5435,7 +5905,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.0.3
     created: "2020-02-13T10:12:01.49366467Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: e52e4b739dc8f77fc8292391d3d4e1423282d16ccc1a9e019b2169c2d6929f90
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -5458,7 +5930,9 @@ entries:
   - apiVersion: v1
     appVersion: 1.0.3
     created: "2020-02-13T10:12:01.489163866Z"
-    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting
+      large numbers of IoT devices to a back end and interacting with them in a uniform
+      way regardless of the device communication protocol. '
     digest: 5c52711ff24d230ad326e67bb161c16d9796b4497af790888240dee70593562f
     home: https://www.eclipse.org/hono/
     icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
@@ -5500,7 +5974,9 @@ entries:
     - name: streamsheets
       repository: https://ctron.github.io/helm-charts
       version: ^0.2.3
-    description: 'The Eclipse IoT Telemetry end-to-end package is an example on how to acquire telemetry data and process it in the cloud. Covering the three tiers of IoT (Sensor, Gateway, Cloud) with Eclipse IoT and other Open Source technologies. '
+    description: 'The Eclipse IoT Telemetry end-to-end package is an example on how
+      to acquire telemetry data and process it in the cloud. Covering the three tiers
+      of IoT (Sensor, Gateway, Cloud) with Eclipse IoT and other Open Source technologies. '
     digest: 5b13213977c2d4564c90103456d9521f0024b0314f72fea44c75ac46f42cff83
     home: https://eclipse.org/packages/packages/telemetry-e2e/
     icon: https://eclipse.org/packages/packages/telemetry-e2e/images/telemetry-e2e-icon.svg
@@ -5542,7 +6018,9 @@ entries:
     - name: streamsheets
       repository: https://ctron.github.io/helm-charts
       version: ^0.2.3
-    description: 'The Eclipse IoT Telemetry end-to-end package is an example on how to acquire telemetry data and process it in the cloud. Covering all three tiers of IoT (Sensor, Gateway, Cloud) with Eclipse IoT and other Open Source technologies. '
+    description: 'The Eclipse IoT Telemetry end-to-end package is an example on how
+      to acquire telemetry data and process it in the cloud. Covering all three tiers
+      of IoT (Sensor, Gateway, Cloud) with Eclipse IoT and other Open Source technologies. '
     digest: 2f8f95b4e9f602c4f8f3c7eda6b8c246423a0b326c9c64ec08e2e32334040578
     home: https://eclipse.org/packages/packages/telemetry-e2e/
     icon: https://eclipse.org/packages/packages/telemetry-e2e/images/telemetry-e2e-logo.svg
@@ -5584,7 +6062,9 @@ entries:
     - name: streamsheets
       repository: https://ctron.github.io/helm-charts
       version: ^0.2.3
-    description: 'The Eclipse IoT Telemetry end-to-end package is an example on how to acquire telemetry data and process it in the cloud. Covering all three tiers of IoT (Sensor, Gateway, Cloud) with Eclipse IoT and other Open Source technologies. '
+    description: 'The Eclipse IoT Telemetry end-to-end package is an example on how
+      to acquire telemetry data and process it in the cloud. Covering all three tiers
+      of IoT (Sensor, Gateway, Cloud) with Eclipse IoT and other Open Source technologies. '
     digest: 0183d192ec6dd9a808cb819c6502bdfcda15e286442534d2d0c96acb249086b9
     home: https://eclipse.org/packages/packages/telemetry-e2e/
     icon: https://eclipse.org/packages/packages/telemetry-e2e/images/telemetry-e2e-logo.svg
@@ -5605,4 +6085,4 @@ entries:
     urls:
     - https://eclipse.org/packages/charts/telemetry-e2e-0.0.1-alpha1.tgz
     version: 0.0.1-alpha1
-generated: "2022-05-12T12:33:17.650580771Z"
+generated: "2022-06-09T15:54:01.24410075Z"
