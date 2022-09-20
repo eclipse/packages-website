@@ -2,6 +2,36 @@ apiVersion: v1
 entries:
   cloud2edge:
   - apiVersion: v1
+    appVersion: 0.3.0
+    created: "2022-09-20T14:36:31.748987903Z"
+    dependencies:
+    - name: hono
+      repository: https://eclipse.org/packages/charts/
+      version: ^2.1.0
+    - name: ditto
+      repository: https://eclipse.org/packages/charts/
+      version: ~2.5.8
+    description: 'Eclipse IoT Cloud2Edge (C2E) is an integrated suite of services developers can use to build IoT applications that are deployed from the cloud to the edge. The suite currently consists of Eclipse Hono and Eclipse Ditto. '
+    digest: 6c376ee7c20c1818656afd8c46a337cafdf69dcffb02e501ec3605a6d34b3e63
+    home: https://eclipse.org/packages/packages/cloud2edge/
+    icon: https://eclipse.org/packages/packages/cloud2edge/images/c2e-logo.svg
+    keywords:
+    - iot-package
+    - IoT
+    - messaging
+    - digital twin
+    maintainers:
+    - email: kai.hudalla@bosch.io
+      name: sophokles73
+    - email: thomas.jaeckle@bosch.io
+      name: thjaeckle
+    name: cloud2edge
+    sources:
+    - https://github.com/eclipse/packages/packages/cloud2edge/
+    urls:
+    - https://eclipse.org/packages/charts/cloud2edge-0.3.0.tgz
+    version: 0.3.0
+  - apiVersion: v1
     appVersion: 0.2.5
     created: "2022-09-16T14:52:18.746214407Z"
     dependencies:
@@ -1647,6 +1677,38 @@ entries:
     - https://eclipse.org/packages/charts/ditto-1.0.0-snapshot.tgz
     version: 1.0.0-snapshot
   hawkbit:
+  - apiVersion: v1
+    appVersion: 0.3.0M6-mysql
+    created: "2022-09-20T14:36:31.753540739Z"
+    dependencies:
+    - condition: mysql.enabled
+      name: mysql
+      repository: https://raw.githubusercontent.com/bitnami/charts/archive-full-index/bitnami
+      version: 6.14.10
+    - condition: rabbitmq.enabled
+      name: rabbitmq
+      repository: https://raw.githubusercontent.com/bitnami/charts/archive-full-index/bitnami
+      version: 7.8.0
+    description: 'Eclipse hawkBit™ is a domain independent back-end framework for rolling out software updates to constrained edge devices as well as more powerful controllers and gateways connected to IP based networking infrastructure. '
+    digest: f122e5bb91385462557d75a7d5b8f25db68b67919aef6b66f904f17b1237b34c
+    home: https://www.eclipse.org/hawkbit/
+    icon: https://www.eclipse.org/hawkbit/images/hawkbit_icon.png
+    keywords:
+    - iot-chart
+    maintainers:
+    - email: andre.bauer@kiwigrid.com
+      name: monotek
+    - email: axel.koehler@kiwigrid.com
+      name: axdotl
+    - email: ctron@dentrassi.de
+      name: ctron
+    name: hawkbit
+    sources:
+    - https://github.com/eclipse/hawkbit
+    - https://github.com/eclipse/packages
+    urls:
+    - https://eclipse.org/packages/charts/hawkbit-1.4.2.tgz
+    version: 1.4.2
   - apiVersion: v1
     appVersion: 0.3.0M6-mysql
     created: "2022-06-09T15:54:01.341538047Z"
@@ -6366,4 +6428,4 @@ entries:
     urls:
     - https://eclipse.org/packages/charts/telemetry-e2e-0.0.1-alpha1.tgz
     version: 0.0.1-alpha1
-generated: "2022-09-16T14:52:18.547913374Z"
+generated: "2022-09-20T14:36:31.548229852Z"

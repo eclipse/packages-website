@@ -322,7 +322,7 @@ the namespace of your deployment:
   <span class="na">namespace</span><span class="pi">:</span> <span class="s">ambassador</span>
 <span class="na">spec</span><span class="pi">:</span>
   <span class="na">port</span><span class="pi">:</span> <span class="m">18080</span>
-  <span class="na">service</span><span class="pi">:</span> <span class="pi">{</span><span class="nv">name-of-helm-release</span><span class="pi">}</span><span class="s">-adapter-http-vertx.{kubernetes-namespace}:8080</span>
+  <span class="na">service</span><span class="pi">:</span> <span class="pi">{</span><span class="nv">name-of-helm-release</span><span class="pi">}</span><span class="s">-adapter-http.{kubernetes-namespace}:8080</span>
 <span class="nn">---</span>
 <span class="na">apiVersion</span><span class="pi">:</span> <span class="s">getambassador.io/v2</span>
 <span class="na">kind</span><span class="pi">:</span>  <span class="s">TCPMapping</span>
@@ -331,7 +331,7 @@ the namespace of your deployment:
   <span class="na">namespace</span><span class="pi">:</span> <span class="s">ambassador</span>
 <span class="na">spec</span><span class="pi">:</span>
   <span class="na">port</span><span class="pi">:</span> <span class="m">1883</span>
-  <span class="na">service</span><span class="pi">:</span> <span class="pi">{</span><span class="nv">name-of-helm-release</span><span class="pi">}</span><span class="s">-adapter-mqtt-vertx.{kubernetes-namespace}:1883</span>
+  <span class="na">service</span><span class="pi">:</span> <span class="pi">{</span><span class="nv">name-of-helm-release</span><span class="pi">}</span><span class="s">-adapter-mqtt.{kubernetes-namespace}:1883</span>
 <span class="nn">---</span>
 <span class="na">apiVersion</span><span class="pi">:</span> <span class="s">getambassador.io/v2</span>
 <span class="na">kind</span><span class="pi">:</span>  <span class="s">TCPMapping</span>
