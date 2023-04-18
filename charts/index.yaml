@@ -581,6 +581,37 @@ entries:
     version: 0.0.1-alpha2
   ditto:
   - apiVersion: v2
+    appVersion: 3.2.1
+    created: "2023-04-18T19:27:23.732316024Z"
+    dependencies:
+    - condition: mongodb.enabled
+      name: mongodb
+      repository: https://charts.bitnami.com/bitnami
+      version: ^12.x
+    description: 'Eclipse Ditto™ is a technology in the IoT implementing a software pattern called “digital twins”. A digital twin is a virtual, cloud based, representation of his real world counterpart (real world “Things”, e.g. devices like sensors, smart heating, connected cars, smart grids, EV charging stations etc). '
+    digest: 20b9f9bc5203e572cb8525935d5ec30b77337df1b22be27a6e2fd989ca0345a5
+    home: https://www.eclipse.org/ditto
+    icon: https://www.eclipse.org/ditto/images/ditto.svg
+    keywords:
+    - iot-chart
+    - digital-twin
+    - IoT
+    maintainers:
+    - email: axel.koehler@kiwigrid.com
+      name: axdotl
+    - email: thomas.jaeckle@bosch.io
+      name: thjaeckle
+    - email: stefan.maute@bosch.io
+      name: stmaute
+    name: ditto
+    sources:
+    - https://github.com/eclipse-ditto/ditto
+    - https://github.com/eclipse/packages
+    type: application
+    urls:
+    - https://eclipse.org/packages/charts/ditto-3.2.2.tgz
+    version: 3.2.2
+  - apiVersion: v2
     appVersion: 3.2.0
     created: "2023-03-27T19:16:06.220495369Z"
     dependencies:
@@ -2272,6 +2303,49 @@ entries:
     - https://eclipse.org/packages/charts/hawkbit-1.0.0.tgz
     version: 1.0.0
   hono:
+  - apiVersion: v2
+    appVersion: 2.3.0
+    created: "2023-04-18T19:27:23.925883901Z"
+    dependencies:
+    - condition: prometheus.createInstance
+      name: prometheus
+      repository: https://prometheus-community.github.io/helm-charts
+      version: ^14.x
+    - condition: grafana.enabled
+      name: grafana
+      repository: https://grafana.github.io/helm-charts
+      version: ^6.x
+    - condition: mongodb.createInstance
+      name: mongodb
+      repository: https://charts.bitnami.com/bitnami
+      version: ^13.x
+    - condition: kafkaMessagingClusterExample.enabled
+      name: kafka
+      repository: https://charts.bitnami.com/bitnami
+      version: ^20.x
+    description: 'Eclipse Hono™ provides remote service interfaces for connecting large numbers of IoT devices to a back end and interacting with them in a uniform way regardless of the device communication protocol. '
+    digest: a97bc179fd5119d03407caa5f5094ea65f6d73e1e6d2b2aa816565520444fde8
+    home: https://www.eclipse.org/hono/
+    icon: https://www.eclipse.org/hono/favicon/favicon-48x48.png
+    keywords:
+    - iot-chart
+    - IoT
+    - connectivity
+    - messaging
+    - Kafka
+    maintainers:
+    - email: dbosanac@redhat.com
+      name: dejanb
+    - email: jreimann@redhat.com
+      name: ctron
+    - email: kai.hudalla@bosch.io
+      name: sophokles73
+    name: hono
+    sources:
+    - https://github.com/eclipse-hono/hono
+    urls:
+    - https://eclipse.org/packages/charts/hono-2.4.0.tgz
+    version: 2.4.0
   - apiVersion: v2
     appVersion: 2.3.0
     created: "2023-04-03T13:55:55.231972074Z"
@@ -6992,4 +7066,4 @@ entries:
     urls:
     - https://eclipse.org/packages/charts/telemetry-e2e-0.0.1-alpha1.tgz
     version: 0.0.1-alpha1
-generated: "2023-04-03T13:55:55.122348244Z"
+generated: "2023-04-18T19:27:23.724203568Z"
