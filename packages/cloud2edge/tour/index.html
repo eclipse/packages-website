@@ -123,9 +123,12 @@ in every command shell separately.</p>
 Download the <a href="../scripts/setCloud2EdgeEnv.sh">setCloud2EdgeEnv script</a> and use it
 to set environment variables for the Cloud2Edge package’s service endpoints.</p>
 
-        <div class="clipboard"><pre><code>RELEASE=c2e
+        <div class="clipboard"><pre><code>curl https://www.eclipse.org/packages/packages/cloud2edge/scripts/setCloud2EdgeEnv.sh --output setCloud2EdgeEnv.sh
+chmod u+x setCloud2EdgeEnv.sh
+
+RELEASE=c2e
 NS=cloud2edge
-./setCloud2EdgeEnv.sh $RELEASE $NS</code></pre></div>
+eval $(./setCloud2EdgeEnv.sh $RELEASE $NS)</code></pre></div>
       </div>
 
 <div class="tab-pane" id="variants-1-1" role="tabpanel" aria-labelledby="variants-1-1-tab">
@@ -147,23 +150,23 @@ where the device’s twin representation will be updated with the data published
     <p>The demo device’s digital twin supports a temperature property which will be set to 45
 by means of the following command:</p>
 
-    <div class="clipboard"><pre><code>curl -i -u demo-device@org.eclipse.packages.c2e:demo-secret -H 'application/json' --data-binary '{
+    <div class="clipboard"><pre><code>curl -i -k -u demo-device@org.eclipse.packages.c2e:demo-secret -H 'application/json' --data-binary '{
   "topic": "org.eclipse.packages.c2e/demo-device/things/twin/commands/modify",
   "headers": {},
   "path": "/features/temperature/properties/value",
   "value": 45
-}' http://${HTTP_ADAPTER_IP}:${HTTP_ADAPTER_PORT_HTTP}/telemetry</code></pre></div>
+}' ${HTTP_ADAPTER_BASE_URL:?}/telemetry</code></pre></div>
 
     <h2 id="retrieving-the-digital-twins-current-state">Retrieving the digital twin’s current state</h2>
 
     <p>The updated state of the digital twin can then be retrieved using:</p>
 
-    <div class="clipboard"><pre><code>curl -u ditto:ditto -w '\n' http://$DITTO_API_IP:$DITTO_API_PORT_HTTP/api/2/things/org.eclipse.packages.c2e:demo-device</code></pre></div>
+    <div class="clipboard"><pre><code>curl -u ditto:ditto -w '\n' ${DITTO_API_BASE_URL:?}/api/2/things/org.eclipse.packages.c2e:demo-device</code></pre></div>
 
     <p>Alternatively you can also use the following command to subscribe to Ditto’s
 stream of thing update events:</p>
 
-    <div class="clipboard"><pre><code>curl --http2 -u ditto:ditto -H 'Accept:text/event-stream' -N http://$DITTO_API_IP:$DITTO_API_PORT_HTTP/api/2/things</code></pre></div>
+    <div class="clipboard"><pre><code>curl --http2 -u ditto:ditto -H 'Accept:text/event-stream' -N ${DITTO_API_BASE_URL:?}/api/2/things</code></pre></div>
 
     <h2 id="sending-a-command-to-the-device-via-its-digital-twin">Sending a command to the device via its digital twin</h2>
 
@@ -171,7 +174,7 @@ stream of thing update events:</p>
 
     <div class="clipboard"><pre><code>curl -i -X POST -u ditto:ditto -H 'Content-Type: application/json' -w '\n' --data '{
   "water-amount": "3liters"
-}' http://$DITTO_API_IP:$DITTO_API_PORT_HTTP/api/2/things/org.eclipse.packages.c2e:demo-device/inbox/messages/start-watering?timeout=0</code></pre></div>
+}' ${DITTO_API_BASE_URL:?}/api/2/things/org.eclipse.packages.c2e:demo-device/inbox/messages/start-watering?timeout=0</code></pre></div>
 
     <p>Specifying the <code class="language-plaintext highlighter-rouge">timeout=0</code> parameter indicates that the HTTP request will directly be accepted and Ditto does not wait
 for a response.</p>
@@ -181,18 +184,18 @@ timeout to the amount of seconds to wait:</p>
 
     <div class="clipboard"><pre><code>curl -i -X POST -u ditto:ditto -H 'Content-Type: application/json' -w '\n' --data '{
   "water-amount": "3liters"
-}' http://$DITTO_API_IP:$DITTO_API_PORT_HTTP/api/2/things/org.eclipse.packages.c2e:demo-device/inbox/messages/start-watering?timeout=60</code></pre></div>
+}' ${DITTO_API_BASE_URL:?}/api/2/things/org.eclipse.packages.c2e:demo-device/inbox/messages/start-watering?timeout=60</code></pre></div>
 
     <h3 id="receiving-a-command-at-the-device">Receiving a command at the device</h3>
 
     <p>The device may receive a command by specifying a <code class="language-plaintext highlighter-rouge">ttd</code> when e.g. sending telemetry via HTTP to Hono:</p>
 
-    <div class="clipboard"><pre><code>curl -i -u demo-device@org.eclipse.packages.c2e:demo-secret -H 'hono-ttd: 50' -H 'application/json' -w '\n' --data '{
+    <div class="clipboard"><pre><code>curl -i -k -u demo-device@org.eclipse.packages.c2e:demo-secret -H 'hono-ttd: 50' -H 'application/json' -w '\n' --data '{
   "topic": "org.eclipse.packages.c2e/demo-device/things/twin/commands/modify",
   "headers": {},
   "path": "/features/temperature/properties/value",
   "value": 45
-}' http://${HTTP_ADAPTER_IP}:${HTTP_ADAPTER_PORT_HTTP}/telemetry</code></pre></div>
+}' ${HTTP_ADAPTER_BASE_URL:?}/telemetry</code></pre></div>
 
     <p>An example response for the device containing the command sent via the Ditto twin (see previous step for sending the 
 command) is:</p>
@@ -220,7 +223,7 @@ HTTP header value from the received command.</li>
 with the <code class="language-plaintext highlighter-rouge">"correlation-id"</code> value from the received Ditto Protocol message’s <code class="language-plaintext highlighter-rouge">"headers"</code> object.</li>
     </ul>
 
-    <div class="clipboard"><pre><code>curl -i -X PUT -u demo-device@org.eclipse.packages.c2e:demo-secret -H "content-type: application/json" --data-binary '{
+    <div class="clipboard"><pre><code>curl -i -k -X PUT -u demo-device@org.eclipse.packages.c2e:demo-secret -H "content-type: application/json" --data-binary '{
   "topic": "org.eclipse.packages.c2e/demo-device/things/live/messages/start-watering",
   "headers": {
     "content-type": "application/json",
@@ -231,7 +234,7 @@ with the <code class="language-plaintext highlighter-rouge">"correlation-id"</co
     "starting-watering": true
   },
   "status": 200
-}' http://${HTTP_ADAPTER_IP}:${HTTP_ADAPTER_PORT_HTTP}/command/res/org.eclipse.packages.c2e/org.eclipse.packages.c2e:demo-device/insert-hono-cmd-req-id-here?hono-cmd-status=200</code></pre></div>
+}' ${HTTP_ADAPTER_BASE_URL:?}/command/res/org.eclipse.packages.c2e/org.eclipse.packages.c2e:demo-device/insert-hono-cmd-req-id-here?hono-cmd-status=200</code></pre></div>
 
     <p>An example message response (omitting some additional HTTP headers) at the Ditto twin which waited for the command
  e.g. with a <code class="language-plaintext highlighter-rouge">timeout=60</code> is:</p>
@@ -258,7 +261,7 @@ e.g.: <code class="language-plaintext highlighter-rouge">org.acme:my-device</cod
 
     <p>Create a new tenant named <code class="language-plaintext highlighter-rouge">my-tenant</code> in Hono:</p>
 
-    <div class="clipboard"><pre><code>curl -i -X POST http://${REGISTRY_IP}:${REGISTRY_PORT_HTTP}/v1/tenants/my-tenant</code></pre></div>
+    <div class="clipboard"><pre><code>curl -i -k -X POST ${REGISTRY_BASE_URL:?}/v1/tenants/my-tenant</code></pre></div>
 
     <p>This should return a result of <code class="language-plaintext highlighter-rouge">201 Created</code>.</p>
 
@@ -277,7 +280,7 @@ content-length: 12
 
     <p>Next we can register a new device, named <code class="language-plaintext highlighter-rouge">org.acme:my-device-1</code> for the tenant we just created:</p>
 
-    <div class="clipboard"><pre><code>curl -i -X POST http://${REGISTRY_IP}:${REGISTRY_PORT_HTTP}/v1/devices/my-tenant/org.acme:my-device-1</code></pre></div>
+    <div class="clipboard"><pre><code>curl -i -k -X POST ${REGISTRY_BASE_URL:?}/v1/devices/my-tenant/org.acme:my-device-1</code></pre></div>
 
     <p>This should return a result of <code class="language-plaintext highlighter-rouge">201 Created</code>.</p>
 
@@ -299,14 +302,14 @@ device to directly connect to the platform. This is ok for devices attached via
 a <em>gateway device</em>, but we want this device to be able to connect, so the next step is
 to assign a username/password combination:</p>
 
-    <div class="clipboard"><pre><code>curl -i -X PUT -H "Content-Type: application/json" --data '[
+    <div class="clipboard"><pre><code>curl -i -k -X PUT -H "Content-Type: application/json" --data '[
 {
   "type": "hashed-password",
   "auth-id": "my-auth-id-1",
   "secrets": [{
     "pwd-plain": "my-password"
   }]
-}]' http://${REGISTRY_IP}:${REGISTRY_PORT_HTTP}/v1/credentials/my-tenant/org.acme:my-device-1</code></pre></div>
+}]' ${REGISTRY_BASE_URL:?}/v1/credentials/my-tenant/org.acme:my-device-1</code></pre></div>
 
     <p><details><summary>Example of a successful result</summary><div>
           <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HTTP/1.1 204 No Content
@@ -333,7 +336,7 @@ we use distinct values to show the difference.</p>
 
     <p>In order to create digital twins in Ditto for a newly added Hono tenant, a new connection has to be created.</p>
 
-    <p>The <code class="language-plaintext highlighter-rouge">NS</code> and <code class="language-plaintext highlighter-rouge">RELEASE</code> variables must still be set to the value you chose during the <a href="../installation/#install-the-package">installation</a>.
+    <p>The <code class="language-plaintext highlighter-rouge">NS</code> and <code class="language-plaintext highlighter-rouge">RELEASE</code> variables must still be set to the values you chose during the <a href="../installation/#install-the-package">installation</a>.
 The documented defaults are:</p>
     <div class="clipboard"><pre><code>NS=cloud2edge
 RELEASE=c2e</code></pre></div>
@@ -455,7 +458,7 @@ DITTO_DEVOPS_PWD=$(kubectl --namespace ${NS} get secret ${RELEASE}-ditto-gateway
       ]
     }
   }
-}' http://${DITTO_API_IP}:${DITTO_API_PORT_HTTP}/devops/piggyback/connectivity</code></pre></div>
+}' ${DITTO_API_BASE_URL:?}/devops/piggyback/connectivity</code></pre></div>
 
     <h3 id="create-the-digital-twin">Create the digital twin</h3>
 
@@ -507,7 +510,7 @@ a policy with the id <code class="language-plaintext highlighter-rouge">org.acme
       }
     }
   }
-}' http://${DITTO_API_IP}:${DITTO_API_PORT_HTTP}/api/2/policies/org.acme:my-policy</code></pre></div>
+}' ${DITTO_API_BASE_URL:?}/api/2/policies/org.acme:my-policy</code></pre></div>
 
     <p>This should return a result of <code class="language-plaintext highlighter-rouge">201 Created</code> containing as response body of the created policy JSON.</p>
 
@@ -538,7 +541,7 @@ information of the twin:</p>
       }
     }
   }
-}' http://${DITTO_API_IP}:${DITTO_API_PORT_HTTP}/api/2/things/org.acme:my-device-1</code></pre></div>
+}' ${DITTO_API_BASE_URL:?}/api/2/things/org.acme:my-device-1</code></pre></div>
 
     <p>This should return a result of <code class="language-plaintext highlighter-rouge">201 Created</code> containing as response body of the created thing JSON.</p>
 
