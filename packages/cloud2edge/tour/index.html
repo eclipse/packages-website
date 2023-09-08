@@ -123,7 +123,8 @@ in every command shell separately.</p>
 Download the <a href="../scripts/setCloud2EdgeEnv.sh">setCloud2EdgeEnv script</a> and use it
 to set environment variables for the Cloud2Edge package’s service endpoints.</p>
 
-        <div class="clipboard"><pre><code>curl https://www.eclipse.org/packages/packages/cloud2edge/scripts/setCloud2EdgeEnv.sh --output setCloud2EdgeEnv.sh
+        <div class="clipboard"><pre><code>curl https://www.eclipse.org/packages/packages/cloud2edge/scripts/setCloud2EdgeEnv.sh \
+  --output setCloud2EdgeEnv.sh
 chmod u+x setCloud2EdgeEnv.sh
 
 RELEASE=c2e
@@ -140,6 +141,19 @@ HTTP_ADAPTER_PORT=443</code></pre></div>
       </div>
 
 </div>
+
+    <h2 id="accessing-the-ditto-explorer-user-interface">Accessing the Ditto Explorer User Interface</h2>
+
+    <p>The browser based <a href="https://eclipse.dev/ditto/user-interface.html">Ditto Explorer UI</a> shows Ditto things, policies and connections.
+On Kubernetes, the above-mentioned <code class="language-plaintext highlighter-rouge">setCloud2EdgeEnv</code> script provides environment variables to access and configure it.
+The command</p>
+    <div class="clipboard"><pre><code>echo $DITTO_API_BASE_URL</code></pre></div>
+    <p>prints out the URL where to access the Ditto UI and Ditto API documentation.</p>
+
+    <p>In the Ditto UI, click on the <code class="language-plaintext highlighter-rouge">Environments</code> link at the top and then the <code class="language-plaintext highlighter-rouge">Environment JSON</code> tab. Clicking on “Edit” lets you enter an arbitrary Name (e.g. <code class="language-plaintext highlighter-rouge">default</code>)
+and below a JSON value, to be taken from the output of the following command.</p>
+    <div class="clipboard"><pre><code>echo $DITTO_UI_ENV_JSON</code></pre></div>
+    <p>Clicking on <code class="language-plaintext highlighter-rouge">Create</code> and switching to the created environment in the top bar <code class="language-plaintext highlighter-rouge">Environment</code> dropdown completes the configuration.</p>
 
     <h2 id="publishing-telemetry-data">Publishing telemetry data</h2>
 
@@ -270,7 +284,7 @@ e.g.: <code class="language-plaintext highlighter-rouge">org.acme:my-device</cod
 etag: be547a07-4a03-4c43-a274-d02f63f8d467
 location: /v1/tenants/my-tenant
 content-type: application/json; charset=utf-8
-content-length: 12
+content-length: 18
 
 {"id":"my-tenant"}
 </code></pre></div>          </div>
@@ -287,9 +301,9 @@ content-length: 12
     <p><details><summary>Example of a successful result</summary><div>
           <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HTTP/1.1 201 Created
 etag: d48f4e13-b398-4c73-bbc3-5ac97a81b3e8
-location: /v1/devices/iot/org.acme:my-device-1
+location: /v1/devices/my-tenant/org.acme:my-device-1
 content-type: application/json; charset=utf-8
-content-length: 17
+content-length: 29
 
 {"id":"org.acme:my-device-1"}
 </code></pre></div>          </div>
@@ -347,9 +361,20 @@ the Ditto devops password via <code class="language-plaintext highlighter-rouge"
     <div class="clipboard"><pre><code>HONO_TENANT=my-tenant
 DITTO_DEVOPS_PWD=$(kubectl --namespace ${NS} get secret ${RELEASE}-ditto-gateway-secret -o jsonpath="{.data.devops-password}" | base64 --decode)</code></pre></div>
 
-    <p>Now, create the connection:</p>
+    <p>Now, the connection can be created. By default, a Kafka based connection is to be used. If the cloud2edge chart has been deployed with the
+<a href="https://github.com/eclipse/packages/blob/master/packages/cloud2edge/profileAmqpMessaging.yaml">AMQP messaging profile</a>, a connection of type <code class="language-plaintext highlighter-rouge">amqp-10</code> needs to be created.</p>
 
-    <div class="clipboard"><pre><code>curl -i -X POST -u devops:${DITTO_DEVOPS_PWD} -H 'Content-Type: application/json' --data '{
+    <nav><div class="nav nav-tabs" role="tablist"><a class="nav-item nav-link active" data-toggle="tab" id="variants-2-0-tab" href="#variants-2-0" aria-controls="variants-2-0">Kafka</a><a class="nav-item nav-link" data-toggle="tab" id="variants-2-1-tab" href="#variants-2-1" aria-controls="variants-2-1">AMQP Messaging</a></div></nav>
+    <div class="tab-content">
+
+<div class="tab-pane active show" id="variants-2-0" role="tabpanel" aria-labelledby="variants-2-0-tab">
+        <p>The deployed Kafka instance uses a self-signed certificate. To let the Ditto connection perform certificate validation, the certificate can be obtained and converted into the format expected by the Ditto API call with the following command:</p>
+
+        <div class="clipboard"><pre><code>KAFKA_CERT=$(kubectl --namespace ${NS} get secret ${RELEASE}-kafka-example-keys -o jsonpath="{.data.tls\.crt}" | base64 --decode | tr -d '\n' | sed 's/E-----/E-----\\n/g' | sed 's/-----END/\\n-----END/g')</code></pre></div>
+
+        <p>Then, create the connection:</p>
+
+        <div class="clipboard"><pre><code>curl -i -X POST -u devops:${DITTO_DEVOPS_PWD} -H 'Content-Type: application/json' --data '{
   "targetActorSelection": "/system/sharding/connection",
   "headers": {
     "aggregate": false
@@ -357,7 +382,178 @@ DITTO_DEVOPS_PWD=$(kubectl --namespace ${NS} get secret ${RELEASE}-ditto-gateway
   "piggybackCommand": {
     "type": "connectivity.commands:createConnection",
     "connection": {
-      "id": "hono-connection-for-'"${HONO_TENANT}"'",
+      "id": "hono-kafka-connection-for-'"${HONO_TENANT/./_}"'",
+      "name": "[Hono/Kafka] '"${HONO_TENANT}"'",
+      "connectionType": "kafka",
+      "connectionStatus": "open",
+      "uri": "ssl://ditto-c2e:verysecret@'"${RELEASE}"'-kafka:9092",
+      "ca": "'"${KAFKA_CERT}"'",
+      "failoverEnabled": true,
+      "sources": [
+        {
+          "addresses": [
+            "hono.telemetry.'"${HONO_TENANT}"'"
+          ],
+          "consumerCount": 1,
+          "authorizationContext": [
+            "pre-authenticated:hono-connection-'"${HONO_TENANT}"'"
+          ],
+          "qos": 0,
+          "enforcement": {
+            "input": "",
+            "filters": [
+              ""
+            ]
+          },
+          "headerMapping": {},
+          "payloadMapping": [],
+          "replyTarget": {
+            "enabled": true,
+            "address": "hono.command.'"${HONO_TENANT}"'/",
+            "headerMapping": {
+              "device_id": "",
+              "subject": "-response",
+              "correlation-id": ""
+            },
+            "expectedResponseTypes": [
+              "response",
+              "error"
+            ]
+          },
+          "acknowledgementRequests": {
+            "includes": [],
+            "filter": "fn:delete()"
+          },
+          "declaredAcks": []
+        },
+        {
+          "addresses": [
+            "hono.event.'"${HONO_TENANT}"'"
+          ],
+          "consumerCount": 1,
+          "authorizationContext": [
+            "pre-authenticated:hono-connection-'"${HONO_TENANT}"'"
+          ],
+          "qos": 1,
+          "enforcement": {
+            "input": "",
+            "filters": [
+              ""
+            ]
+          },
+          "headerMapping": {},
+          "payloadMapping": [],
+          "replyTarget": {
+            "enabled": true,
+            "address": "hono.command.'"${HONO_TENANT}"'/",
+            "headerMapping": {
+              "device_id": "",
+              "subject": "-response",
+              "correlation-id": ""
+            },
+            "expectedResponseTypes": [
+              "response",
+              "error"
+            ]
+          },
+          "acknowledgementRequests": {
+            "includes": []
+          },
+          "declaredAcks": []
+        },
+        {
+          "addresses": [
+            "hono.command_response.'"${HONO_TENANT}"'"
+          ],
+          "consumerCount": 1,
+          "authorizationContext": [
+            "pre-authenticated:hono-connection-'"${HONO_TENANT}"'"
+          ],
+          "qos": 0,
+          "enforcement": {
+            "input": "",
+            "filters": [
+              ""
+            ]
+          },
+          "headerMapping": {
+            "correlation-id": "",
+            "status": ""
+          },
+          "payloadMapping": [],
+          "replyTarget": {
+            "enabled": false,
+            "expectedResponseTypes": [
+              "response",
+              "error"
+            ]
+          },
+          "acknowledgementRequests": {
+            "includes": [],
+            "filter": "fn:delete()"
+          },
+          "declaredAcks": []
+        }
+      ],
+      "targets": [
+        {
+          "address": "hono.command.'"${HONO_TENANT}"'/",
+          "authorizationContext": [
+            "pre-authenticated:hono-connection-'"${HONO_TENANT}"'"
+          ],
+          "headerMapping": {
+            "device_id": "",
+            "subject": "",
+            "correlation-id": "",
+            "response-required": ""
+          },
+          "topics": [
+            "_/_/things/live/commands",
+            "_/_/things/live/messages"
+          ]
+        },
+        {
+          "address": "hono.command.'"${HONO_TENANT}"'/",
+          "authorizationContext": [
+            "pre-authenticated:hono-connection-'"${HONO_TENANT}"'"
+          ],
+          "topics": [
+            "_/_/things/twin/events",
+            "_/_/things/live/events"
+          ],
+          "headerMapping": {
+            "device_id": "",
+            "subject": "",
+            "correlation-id": ""
+          }
+        }
+      ],
+      "specificConfig": {
+        "saslMechanism": "plain",
+        "bootstrapServers": "'"${RELEASE}"'-kafka:9092",
+        "groupId": "'"${HONO_TENANT}"'_"
+      },
+      "clientCount": 1,
+      "failoverEnabled": true,
+      "validateCertificates": true
+    }
+  }
+}' ${DITTO_API_BASE_URL:?}/devops/piggyback/connectivity</code></pre></div>
+
+      </div>
+
+<div class="tab-pane" id="variants-2-1" role="tabpanel" aria-labelledby="variants-2-1-tab">
+
+        <div class="clipboard"><pre><code>curl -i -X POST -u devops:${DITTO_DEVOPS_PWD} -H 'Content-Type: application/json' --data '{
+  "targetActorSelection": "/system/sharding/connection",
+  "headers": {
+    "aggregate": false
+  },
+  "piggybackCommand": {
+    "type": "connectivity.commands:createConnection",
+    "connection": {
+      "id": "hono-amqp-connection-for-'"${HONO_TENANT/./_}"'",
+      "name": "[Hono/AMQP1.0] '"${HONO_TENANT}"'",
       "connectionType": "amqp-10",
       "connectionStatus": "open",
       "uri": "amqp://consumer%40HONO:verysecret@'"${RELEASE}"'-dispatch-router-ext:15672",
@@ -369,7 +565,7 @@ DITTO_DEVOPS_PWD=$(kubectl --namespace ${NS} get secret ${RELEASE}-ditto-gateway
             "event/'"${HONO_TENANT}"'"
           ],
           "authorizationContext": [
-            "pre-authenticated:hono-connection"
+            "pre-authenticated:hono-connection-'"${HONO_TENANT}"'"
           ],
           "enforcement": {
             "input": "{{ header:device_id }}",
@@ -405,7 +601,7 @@ DITTO_DEVOPS_PWD=$(kubectl --namespace ${NS} get secret ${RELEASE}-ditto-gateway
             "command_response/'"${HONO_TENANT}"'/replies"
           ],
           "authorizationContext": [
-            "pre-authenticated:hono-connection"
+            "pre-authenticated:hono-connection-'"${HONO_TENANT}"'"
           ],
           "headerMapping": {
             "content-type": "{{ header:content-type }}",
@@ -425,7 +621,7 @@ DITTO_DEVOPS_PWD=$(kubectl --namespace ${NS} get secret ${RELEASE}-ditto-gateway
         {
           "address": "command/'"${HONO_TENANT}"'",
           "authorizationContext": [
-            "pre-authenticated:hono-connection"
+            "pre-authenticated:hono-connection-'"${HONO_TENANT}"'"
           ],
           "topics": [
             "_/_/things/live/commands",
@@ -442,7 +638,7 @@ DITTO_DEVOPS_PWD=$(kubectl --namespace ${NS} get secret ${RELEASE}-ditto-gateway
         {
           "address": "command/'"${HONO_TENANT}"'",
           "authorizationContext": [
-            "pre-authenticated:hono-connection"
+            "pre-authenticated:hono-connection-'"${HONO_TENANT}"'"
           ],
           "topics": [
             "_/_/things/twin/events",
@@ -459,6 +655,10 @@ DITTO_DEVOPS_PWD=$(kubectl --namespace ${NS} get secret ${RELEASE}-ditto-gateway
     }
   }
 }' ${DITTO_API_BASE_URL:?}/devops/piggyback/connectivity</code></pre></div>
+
+      </div>
+
+</div>
 
     <h3 id="create-the-digital-twin">Create the digital twin</h3>
 
@@ -494,7 +694,7 @@ a policy with the id <code class="language-plaintext highlighter-rouge">org.acme
     },
     "HONO": {
       "subjects": {
-        "pre-authenticated:hono-connection": {
+        "pre-authenticated:hono-connection-'"${HONO_TENANT}"'": {
           "type": "Connection to Eclipse Hono"
         }
       },
@@ -548,6 +748,18 @@ information of the twin:</p>
     <p>In order to add more twins, we simply create additional devices via <a href="#register-a-new-device">“Register a new device”</a>
 and add twins for them with the above snippet by simply adjusting the <em>device id</em> and <em>thing id</em> in the URL of both
 HTTP requests.</p>
+
+    <h4 id="publish-telemetry-data">Publish telemetry data</h4>
+
+    <p>To send a telemetry message via Hono’s HTTP protocol adapter and thereby update the device’s twin representation, the
+following command can be used:</p>
+
+    <div class="clipboard"><pre><code>curl -i -k -u my-auth-id-1@my-tenant:my-password -H 'application/json' --data-binary '{
+  "topic": "org.acme/my-device-1/things/twin/commands/modify",
+  "headers": {},
+  "path": "/features/temperature/properties/value",
+  "value": 45
+}' ${HTTP_ADAPTER_BASE_URL:?}/telemetry</code></pre></div>
 
     <h2 id="next-steps">Next Steps</h2>
 
