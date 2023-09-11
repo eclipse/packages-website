@@ -2,6 +2,38 @@ apiVersion: v1
 entries:
   cloud2edge:
   - apiVersion: v1
+    appVersion: 0.5.1
+    created: "2023-09-11T10:54:38.506161205Z"
+    dependencies:
+    - name: hono
+      repository: https://eclipse.org/packages/charts/
+      version: ~2.4.0
+    - name: ditto
+      repository: oci://registry-1.docker.io/eclipse
+      version: ~3.3.6
+    description: 'Eclipse IoT Cloud2Edge (C2E) is an integrated suite of services
+      developers can use to build IoT applications that are deployed from the cloud
+      to the edge. The suite currently consists of Eclipse Hono and Eclipse Ditto. '
+    digest: 5ef141c91728bc5e09d31ce92a37e12151c3836cc9b1deae81fd2e12974380f3
+    home: https://eclipse.org/packages/packages/cloud2edge/
+    icon: https://eclipse.org/packages/packages/cloud2edge/images/c2e-logo.svg
+    keywords:
+    - iot-package
+    - IoT
+    - messaging
+    - digital twin
+    maintainers:
+    - email: kai.hudalla@bosch.io
+      name: sophokles73
+    - email: thomas.jaeckle@bosch.io
+      name: thjaeckle
+    name: cloud2edge
+    sources:
+    - https://github.com/eclipse/packages/packages/cloud2edge/
+    urls:
+    - https://eclipse.org/packages/charts/cloud2edge-0.5.1.tgz
+    version: 0.5.1
+  - apiVersion: v1
     appVersion: 0.5.0
     created: "2023-09-08T09:36:41.21825273Z"
     dependencies:
@@ -7924,4 +7956,4 @@ entries:
     urls:
     - https://eclipse.org/packages/charts/telemetry-e2e-0.0.1-alpha1.tgz
     version: 0.0.1-alpha1
-generated: "2023-09-08T09:36:41.028262301Z"
+generated: "2023-09-11T10:54:37.7987876Z"
