@@ -392,20 +392,20 @@ DITTO_DEVOPS_PWD=$(kubectl --namespace ${NS} get secret ${RELEASE}-ditto-gateway
       ],
       "qos": 0,
       "enforcement": {
-        "input": "",
+        "input": "{{ header:device_id }}",
         "filters": [
-          ""
+          "{{ entity:id }}"
         ]
       },
       "headerMapping": {},
       "payloadMapping": [],
       "replyTarget": {
         "enabled": true,
-        "address": "hono.command.'"${HONO_TENANT}"'/",
+        "address": "hono.command.'"${HONO_TENANT}"'/{{ thing:id }}",
         "headerMapping": {
-          "device_id": "",
-          "subject": "-response",
-          "correlation-id": ""
+          "device_id": "{{ thing:id }}",
+          "subject": "{{ header:subject | fn:default(topic:action-subject) | fn:default(topic:criterion) }}-response",
+          "correlation-id": "{{ header:correlation-id }}"
         },
         "expectedResponseTypes": [
           "response",
@@ -428,20 +428,20 @@ DITTO_DEVOPS_PWD=$(kubectl --namespace ${NS} get secret ${RELEASE}-ditto-gateway
       ],
       "qos": 1,
       "enforcement": {
-        "input": "",
+        "input": "{{ header:device_id }}",
         "filters": [
-          ""
+          "{{ entity:id }}"
         ]
       },
       "headerMapping": {},
       "payloadMapping": [],
       "replyTarget": {
         "enabled": true,
-        "address": "hono.command.'"${HONO_TENANT}"'/",
+        "address": "hono.command.'"${HONO_TENANT}"'/{{ thing:id }}",
         "headerMapping": {
-          "device_id": "",
-          "subject": "-response",
-          "correlation-id": ""
+          "device_id": "{{ thing:id }}",
+          "subject": "{{ header:subject | fn:default(topic:action-subject) | fn:default(topic:criterion) }}-response",
+          "correlation-id": "{{ header:correlation-id }}"
         },
         "expectedResponseTypes": [
           "response",
@@ -463,14 +463,14 @@ DITTO_DEVOPS_PWD=$(kubectl --namespace ${NS} get secret ${RELEASE}-ditto-gateway
       ],
       "qos": 0,
       "enforcement": {
-        "input": "",
+        "input": "{{ header:device_id }}",
         "filters": [
-          ""
+          "{{ entity:id }}"
         ]
       },
       "headerMapping": {
-        "correlation-id": "",
-        "status": ""
+        "correlation-id": "{{ header:correlation-id }}",
+        "status": "{{ header:status }}"
       },
       "payloadMapping": [],
       "replyTarget": {
@@ -489,15 +489,15 @@ DITTO_DEVOPS_PWD=$(kubectl --namespace ${NS} get secret ${RELEASE}-ditto-gateway
   ],
   "targets": [
     {
-      "address": "hono.command.'"${HONO_TENANT}"'/",
+      "address": "hono.command.'"${HONO_TENANT}"'/{{ thing:id }}",
       "authorizationContext": [
         "pre-authenticated:hono-connection-'"${HONO_TENANT}"'"
       ],
       "headerMapping": {
-        "device_id": "",
-        "subject": "",
-        "correlation-id": "",
-        "response-required": ""
+        "device_id": "{{ thing:id }}",
+        "subject": "{{ header:subject | fn:default(topic:action-subject) }}",
+        "correlation-id": "{{ header:correlation-id }}",
+        "response-required": "{{ header:response-required }}"
       },
       "topics": [
         "_/_/things/live/commands",
@@ -505,7 +505,7 @@ DITTO_DEVOPS_PWD=$(kubectl --namespace ${NS} get secret ${RELEASE}-ditto-gateway
       ]
     },
     {
-      "address": "hono.command.'"${HONO_TENANT}"'/",
+      "address": "hono.command.'"${HONO_TENANT}"'/{{thing:id}}",
       "authorizationContext": [
         "pre-authenticated:hono-connection-'"${HONO_TENANT}"'"
       ],
@@ -514,16 +514,16 @@ DITTO_DEVOPS_PWD=$(kubectl --namespace ${NS} get secret ${RELEASE}-ditto-gateway
         "_/_/things/live/events"
       ],
       "headerMapping": {
-        "device_id": "",
-        "subject": "",
-        "correlation-id": ""
+        "device_id": "{{ thing:id }}",
+        "subject": "{{ header:subject | fn:default(topic:action-subject) }}",
+        "correlation-id": "{{ header:correlation-id }}"
       }
     }
   ],
   "specificConfig": {
     "saslMechanism": "plain",
     "bootstrapServers": "'"${RELEASE}"'-kafka:9092",
-    "groupId": "'"${HONO_TENANT}"'_"
+    "groupId": "'"${HONO_TENANT}"'_{{ connection:id }}"
   },
   "clientCount": 1,
   "failoverEnabled": true,
