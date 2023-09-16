@@ -164,7 +164,7 @@ where the device’s twin representation will be updated with the data published
     <p>The demo device’s digital twin supports a temperature property which will be set to 45
 by means of the following command:</p>
 
-    <div class="clipboard"><pre><code>curl -i -k -u demo-device@org.eclipse.packages.c2e:demo-secret -H 'application/json' --data-binary '{
+    <div class="clipboard"><pre><code>curl -i -k -u demo-device@org.eclipse.packages.c2e:demo-secret -H 'Content-Type: application/json' --data-binary '{
   "topic": "org.eclipse.packages.c2e/demo-device/things/twin/commands/modify",
   "headers": {},
   "path": "/features/temperature/properties/value",
@@ -202,14 +202,12 @@ timeout to the amount of seconds to wait:</p>
 
     <h3 id="receiving-a-command-at-the-device">Receiving a command at the device</h3>
 
-    <p>The device may receive a command by specifying a <code class="language-plaintext highlighter-rouge">ttd</code> when e.g. sending telemetry via HTTP to Hono:</p>
+    <p>For the device to receive a command via the HTTP adapter, the device may send a telemetry message with the <code class="language-plaintext highlighter-rouge">hono-ttd</code> header.
+The header value specifies the number of seconds to wait for a command.
+If no telemetry data shall be sent along with the request, the <code class="language-plaintext highlighter-rouge">application/vnd.eclipse-hono-empty-notification</code> header can be used:</p>
 
-    <div class="clipboard"><pre><code>curl -i -k -u demo-device@org.eclipse.packages.c2e:demo-secret -H 'hono-ttd: 50' -H 'application/json' -w '\n' --data '{
-  "topic": "org.eclipse.packages.c2e/demo-device/things/twin/commands/modify",
-  "headers": {},
-  "path": "/features/temperature/properties/value",
-  "value": 45
-}' ${HTTP_ADAPTER_BASE_URL:?}/telemetry</code></pre></div>
+    <div class="clipboard"><pre><code>curl -i -X POST -k -u demo-device@org.eclipse.packages.c2e:demo-secret -H 'hono-ttd: 50' \
+  -H 'Content-Type: application/vnd.eclipse-hono-empty-notification' ${HTTP_ADAPTER_BASE_URL:?}/telemetry</code></pre></div>
 
     <p>An example response for the device containing the command sent via the Ditto twin (see previous step for sending the 
 command) is:</p>
@@ -237,7 +235,7 @@ HTTP header value from the received command.</li>
 with the <code class="language-plaintext highlighter-rouge">"correlation-id"</code> value from the received Ditto Protocol message’s <code class="language-plaintext highlighter-rouge">"headers"</code> object.</li>
     </ul>
 
-    <div class="clipboard"><pre><code>curl -i -k -X PUT -u demo-device@org.eclipse.packages.c2e:demo-secret -H "content-type: application/json" --data-binary '{
+    <div class="clipboard"><pre><code>curl -i -k -X PUT -u demo-device@org.eclipse.packages.c2e:demo-secret -H "Content-Type: application/json" --data-binary '{
   "topic": "org.eclipse.packages.c2e/demo-device/things/live/messages/start-watering",
   "headers": {
     "content-type": "application/json",
@@ -734,7 +732,7 @@ HTTP requests.</p>
     <p>To send a telemetry message via Hono’s HTTP protocol adapter and thereby update the device’s twin representation, the
 following command can be used:</p>
 
-    <div class="clipboard"><pre><code>curl -i -k -u my-auth-id-1@my-tenant:my-password -H 'application/json' --data-binary '{
+    <div class="clipboard"><pre><code>curl -i -k -u my-auth-id-1@my-tenant:my-password -H 'Content-Type: application/json' --data-binary '{
   "topic": "org.acme/my-device-1/things/twin/commands/modify",
   "headers": {},
   "path": "/features/temperature/properties/value",
