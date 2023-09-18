@@ -117,31 +117,39 @@ Server Version: version.Info{Major:"1", Minor:"13+", GitVersion:"v1.13.4+c2a5caf
 
     <p>The Cloud2Edge package consists of multiple components. In order to keep them together and separate
 from other components running in your Kubernetes cluster, it is feasible to install them into
-their own name space. The following command creates the <code class="language-plaintext highlighter-rouge">cloud2edge</code> name space but you can select any
+their own namespace. The following command creates the <code class="language-plaintext highlighter-rouge">cloud2edge</code> namespace, but you can select any
 other name as well.</p>
 
     <div class="clipboard"><pre><code>NS=cloud2edge
 kubectl create namespace $NS</code></pre></div>
 
-    <p>Next, install the package to the name space using Helm.</p>
+    <p>Next, install the package to the namespace using Helm.</p>
 
     <nav><div class="nav nav-tabs" role="tablist"><a class="nav-item nav-link active" data-toggle="tab" id="variants-1-0-tab" href="#variants-1-0" aria-controls="variants-1-0">NodePort</a><a class="nav-item nav-link" data-toggle="tab" id="variants-1-1-tab" href="#variants-1-1" aria-controls="variants-1-1">LoadBalancer</a></div></nav>
     <div class="tab-content">
 
 <div class="tab-pane active show" id="variants-1-0" role="tabpanel" aria-labelledby="variants-1-0-tab">
-        <p>Kubernetes variants like <em>kind</em> or <em>Minikube</em> do not support exposing service endpoints via load balancers
-out of the box. Instead, services are exposed via <em>NodePorts</em>.</p>
+        <p>For a single-node Kubernetes cluster, the most basic and universally supported way to direct traffic to the
+Kubernetes services is done via <em>NodePorts</em>.</p>
+
+        <p>To install the Cloud2Edge package using NodePort services, run the following command:</p>
 
         <div class="clipboard"><pre><code>RELEASE=c2e
-helm install -n $NS --wait --timeout 15m $RELEASE eclipse-iot/cloud2edge</code></pre></div>
+helm install -n $NS --wait --timeout 20m $RELEASE eclipse-iot/cloud2edge</code></pre></div>
       </div>
 
 <div class="tab-pane" id="variants-1-1" role="tabpanel" aria-labelledby="variants-1-1-tab">
         <p>Managed Kubernetes variants usually support exposing service endpoints via load balancers on public
-IP addresses. To install the Cloud2Edge package using load balancers, run the following command:</p>
+IP addresses. On a local Kubernetes cluster, load balancer support requires additional preparation
+(e.g. running <a href="https://minikube.sigs.k8s.io/docs/handbook/accessing/#loadbalancer-access">minikube tunnel</a> on Minikube, 
+or setting up <a href="https://metallb.universe.tf/">MetalLB</a> on <a href="https://kind.sigs.k8s.io/docs/user/loadbalancer/">Kind</a> or <a href="https://microk8s.io/docs/addon-metallb">MicroK8s</a>).</p>
+
+        <p>To install the Cloud2Edge package using load balancers, run the following command:</p>
 
         <div class="clipboard"><pre><code>RELEASE=c2e
-helm install -n $NS --wait --timeout 20m --set hono.useLoadBalancer=true --set ditto.nginx.service.type=LoadBalancer $RELEASE eclipse-iot/cloud2edge</code></pre></div>
+helm install -n $NS --wait --timeout 20m --set hono.useLoadBalancer=true \
+ --set hono.kafka.externalAccess.service.type=LoadBalancer \
+ --set ditto.nginx.service.type=LoadBalancer $RELEASE eclipse-iot/cloud2edge</code></pre></div>
       </div>
 
 </div>
