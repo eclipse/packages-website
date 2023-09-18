@@ -151,7 +151,7 @@ a particular way. An IoT Package must not <em>contain</em> the Helm charts of th
 but instead must only <em>refer</em> to the projects’ Helm charts which are maintained and distributed separately.
 This allows for a modular approach where projects can easily be (re)used in multiple IoT Packages.</p>
 
-<p>The IoT Packages GitHub repository can be used to maintain both individual charts for Eclipse IoT Projects
+<p>The IoT Packages GitHub repository can be used to maintain individual charts for Eclipse IoT Projects
 as well as packages that are comprised of multiple projects:</p>
 
 <ul>
@@ -187,7 +187,7 @@ one project.</li>
   <li>should follow Kubernetes best practices
     <ul>
       <li>include Health Checks wherever practical</li>
-      <li>allow configurable <a href="http://kubernetes.io/docs/user-guide/compute-resources/#resource-requests-and-limits-of-pod-and-container">resource requests and limits</a></li>
+      <li>allow configurable <a href="https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#resource-requests-and-limits-of-pod-and-container">resource requests and limits</a></li>
     </ul>
   </li>
   <li>must provide a method for data persistence (if applicable)</li>
@@ -195,10 +195,10 @@ one project.</li>
   <li>must allow customization of the application configuration by means of Helm properties</li>
   <li>must provide a secure default configuration</li>
   <li>must not leverage alpha features of Kubernetes</li>
-  <li>must include a <a href="https://github.com/helm/helm/blob/master/docs/charts.md#chart-license-readme-and-notes">NOTES.txt</a> explaining how to use the application after install</li>
-  <li>must follow <a href="https://github.com/helm/helm/tree/master/docs/chart_best_practices">best practices</a>
-(especially for <a href="https://github.com/helm/helm/blob/master/docs/chart_best_practices/labels.md">labels</a>
-and <a href="https://github.com/helm/helm/blob/master/docs/chart_best_practices/values.md">values</a>)</li>
+  <li>must include a <a href="https://helm.sh/docs/topics/charts/#chart-license-readme-and-notes">NOTES.txt</a> explaining how to use the application after install</li>
+  <li>must follow <a href="https://helm.sh/docs/chart_best_practices/">best practices</a>
+(especially for <a href="https://helm.sh/docs/chart_best_practices/labels/">labels</a>
+and <a href="https://helm.sh/docs/chart_best_practices/values/">values</a>)</li>
 </ul>
 
 <h3 id="documentation-requirements">Documentation Requirements</h3>
