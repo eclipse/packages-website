@@ -14,16 +14,21 @@
 
 RELEASE=${1:-$RELEASE}
 NS=${2:-$NS}
+TRUSTSTORE_PATH=${3:-$TRUSTSTORE_PATH}
 
-if [[ -z "$RELEASE" ]] || [[ -z "$NS" ]] ; then
-  echo "# Usage: $(basename "$0") [RELEASE] [NS]"
+if [[ -z "$RELEASE" ]] || [[ -z "$NS" ]] || [[ -z "$TRUSTSTORE_PATH" ]]; then
+  echo "# Usage: $(basename "$0") [RELEASE] [NS] [TRUSTSTORE_PATH]"
   echo "#   RELEASE is the release name used for the cloud2edge deployment"
   echo "#   NS is the namespace the cloud2edge chart was deployed in"
-  echo "#  If arguments are omitted, the values of RELEASE and NS environment variables are used, respectively."
+  echo "#   TRUSTSTORE_PATH is the file path that the hono example truststore will be written to"
+  echo "#  If arguments are omitted, the values of RELEASE, NS and TRUSTSTORE_PATH environment variables are used, respectively."
   exit 1
 fi
 
-NODE_IP=$(kubectl get nodes -n $NS -o jsonpath='{.items[0].status.addresses[?(@.type=="InternalIP")].address}' 2> /dev/null)
+NODE_IP=$(kubectl get nodes -o jsonpath='{.items[0].status.addresses[?(@.type=="ExternalIP")].address}' 2> /dev/null)
+if [[ -z "$NODE_IP" ]] ; then
+  NODE_IP=$(kubectl get nodes -o jsonpath='{.items[0].status.addresses[?(@.type=="InternalIP")].address}' 2> /dev/null)
+fi
 
 function getPorts {
   SERVICENAME=$1
@@ -39,12 +44,14 @@ function getPorts {
       NAME=${NAME/query-http/http}
       UPPERCASE_PORT_NAME=$(echo $NAME | tr [a-z\-] [A-Z_])
       echo "export ${ENV_VAR_PREFIX}_PORT_${UPPERCASE_PORT_NAME}=\"$PORT\""
-      if [ "$PORT" = '80' ]; then
-        echo "export ${ENV_VAR_PREFIX}_BASE_URL=\"$NAME://$IP\""
-        declare -g ${ENV_VAR_PREFIX}_BASE_URL="$NAME://$IP"
-      else
-        echo "export ${ENV_VAR_PREFIX}_BASE_URL=\"$NAME://$IP:$PORT\""
-        declare -g ${ENV_VAR_PREFIX}_BASE_URL="$NAME://$IP:$PORT"
+      if [[ $NAME == http* ]]; then
+        if [ "$PORT" = '80' ]; then
+          echo "export ${ENV_VAR_PREFIX}_BASE_URL=\"$NAME://$IP\""
+          declare -g ${ENV_VAR_PREFIX}_BASE_URL="$NAME://$IP"
+        else
+          echo "export ${ENV_VAR_PREFIX}_BASE_URL=\"$NAME://$IP:$PORT\""
+          declare -g ${ENV_VAR_PREFIX}_BASE_URL="$NAME://$IP:$PORT"
+        fi
       fi
     fi
   done
@@ -74,22 +81,26 @@ function getService {
   fi
 }
 
-getService dispatch-router-ext "amqp amqps" AMQP_NETWORK
-getService service-device-registry-ext "http https" REGISTRY
-getService adapter-amqp "amqp amqps" AMQP_ADAPTER
-getService adapter-coap "coap coaps" COAP_ADAPTER
-getService adapter-http "http https" HTTP_ADAPTER
-getService adapter-mqtt "mqtt secure-mqtt" MQTT_ADAPTER
+getService hono-dispatch-router-ext "amqp amqps" AMQP_NETWORK
+getService kafka-0-external "tcp-kafka" KAFKA
+getService hono-service-device-registry-ext "http https" REGISTRY
+getService hono-adapter-amqp "amqp amqps" AMQP_ADAPTER
+getService hono-adapter-coap "coap coaps" COAP_ADAPTER
+getService hono-adapter-http "http https" HTTP_ADAPTER
+getService hono-adapter-mqtt "mqtt secure-mqtt" MQTT_ADAPTER
 getService ditto-nginx "http" DITTO_API
-getService jaeger-query "query-http" JAEGER_QUERY
+getService hono-jaeger-query "query-http" JAEGER_QUERY
 
 DITTO_DEVOPS_PWD=$(kubectl --namespace ${NS} get secret ${RELEASE}-ditto-gateway-secret -o jsonpath="{.data.devops-password}" | base64 --decode)
 echo "export DITTO_DEVOPS_PWD=\"$DITTO_DEVOPS_PWD\""
 echo "export DITTO_UI_ENV_JSON=\"{\\\"api_uri\\\":\\\"${DITTO_API_BASE_URL}\\\",\\\"defaultUsernamePassword\\\":\\\"ditto:ditto\\\",\\\"defaultDittoPreAuthenticatedUsername\\\":null,\\\"defaultUsernamePasswordDevOps\\\":\\\"devops:${DITTO_DEVOPS_PWD}\\\",\\\"mainAuth\\\":\\\"basic\\\",\\\"devopsAuth\\\":\\\"basic\\\"}\""
 
+kubectl get configmaps --namespace ${NS} ${RELEASE}-hono-example-trust-store --template="{{index .data \"ca.crt\"}}" > "${TRUSTSTORE_PATH}"
+echo "export MOSQUITTO_OPTIONS=\"--cafile ${TRUSTSTORE_PATH} --insecure\""
+
 echo
 echo "# Run this command to populate environment variables"
-echo "# with the NodePorts of Hono's and Ditto's API endpoints:"
+echo "# for accessing Hono's and Ditto's API endpoints:"
 echo "#"
 echo "# eval \$(./$(basename "$0") $*)"
 echo
