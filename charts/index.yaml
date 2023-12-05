@@ -2454,6 +2454,40 @@ entries:
   hawkbit:
   - apiVersion: v2
     appVersion: 0.3.0M6-mysql
+    created: "2023-12-05T14:11:46.839334316Z"
+    dependencies:
+    - condition: mysql.enabled
+      name: mysql
+      repository: oci://registry-1.docker.io/bitnamicharts
+      version: ^9.x
+    - condition: rabbitmq.enabled
+      name: rabbitmq
+      repository: oci://registry-1.docker.io/bitnamicharts
+      version: ^10.x
+    description: 'Eclipse hawkBit™ is a domain independent back-end framework for
+      rolling out software updates to constrained edge devices as well as more powerful
+      controllers and gateways connected to IP based networking infrastructure. '
+    digest: 63d850361f1c20bd8152b5cfe0f084dc1703721e67b0ad00a2ffb35222385de0
+    home: https://www.eclipse.org/hawkbit/
+    icon: https://www.eclipse.org/hawkbit/images/hawkbit_icon.png
+    keywords:
+    - iot-chart
+    maintainers:
+    - email: andre.bauer@kiwigrid.com
+      name: monotek
+    - email: axel.koehler@kiwigrid.com
+      name: axdotl
+    - email: ctron@dentrassi.de
+      name: ctron
+    name: hawkbit
+    sources:
+    - https://github.com/eclipse/hawkbit
+    - https://github.com/eclipse/packages
+    urls:
+    - https://eclipse.org/packages/charts/hawkbit-1.6.0.tgz
+    version: 1.6.0
+  - apiVersion: v2
+    appVersion: 0.3.0M6-mysql
     created: "2023-10-26T06:51:12.53399445Z"
     dependencies:
     - condition: mysql.enabled
@@ -8349,4 +8383,4 @@ entries:
     urls:
     - https://eclipse.org/packages/charts/telemetry-e2e-0.0.1-alpha1.tgz
     version: 0.0.1-alpha1
-generated: "2023-11-03T19:51:10.926735241Z"
+generated: "2023-12-05T14:11:46.830946553Z"
