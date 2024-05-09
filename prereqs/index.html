@@ -247,11 +247,11 @@ excellent <a href="https://minikube.sigs.k8s.io/docs/start/">documentation of Mi
     <p>Once you have everything installed, you should be able to start a new cluster via <code class="language-plaintext highlighter-rouge">minikube start</code>, specifying the
 resources you want to allocate for the cluster:</p>
 
-    <div class="clipboard"><pre><code>minikube start --cpus <cpus> --disk-size <size> --memory <memory> --kubernetes-version <version>&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+    <div class="clipboard"><pre><code>minikube start --cpus &lt;cpus&gt; --disk-size &lt;size&gt; --memory &lt;memory&gt; --kubernetes-version &lt;version&gt;</code></pre></div>
 
-You can translate the package resources requirements into these arguments:
+    <p>You can translate the package resources requirements into these arguments:</p>
 
-<dl class="row">
+    <dl class="row">
 
 <dt class="col-sm-2">cpus</dt>
 <dd class="col-sm-10">The number of CPUs you allocate for Minikube (e.g. <code>--cpus 2</code>).</dd>
@@ -274,99 +274,95 @@ The Kubernetes version deployed into the virtual machine (e.g. <code>--kubernete
 
 </dl>
 
-After Minikube got started, you can switch `kubectl` to the context `minikube` and interact with your cluster:
+    <p>After Minikube got started, you can switch <code class="language-plaintext highlighter-rouge">kubectl</code> to the context <code class="language-plaintext highlighter-rouge">minikube</code> and interact with your cluster:</p>
 
-<div class="clipboard"><pre><code>kubectl config use-context minikube</code></pre></div>
+    <div class="clipboard"><pre><code>kubectl config use-context minikube</code></pre></div>
 
-For example, get the current version of the client and server:
+    <p>For example, get the current version of the client and server:</p>
 
-<div class="clipboard"><pre><code>kubectl version</code></pre></div>
+    <div class="clipboard"><pre><code>kubectl version</code></pre></div>
 
-Which should show a proper version for the client **and** the server:
+    <p>Which should show a proper version for the client <strong>and</strong> the server:</p>
 
-```sh
-Client Version: version.Info{Major:"1", Minor:"11+", GitVersion:"v1.11.0+d4cacc0", GitCommit:"d4cacc0", GitTreeState:"clean", BuildDate:"2018-10-10T16:38:01Z", GoVersion:"go1.10.3", Compiler:"gc", Platform:"linux/amd64"}
-Server Version: version.Info{Major:"1", Minor:"13+", GitVersion:"v1.13.4+c2a5caf", GitCommit:"c2a5caf", GitTreeState:"clean", BuildDate:"2019-09-21T02:12:52Z", GoVersion:"go1.11.13", Compiler:"gc", Platform:"linux/amd64"}
-```
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Client Version: version.Info<span class="o">{</span>Major:<span class="s2">"1"</span>, Minor:<span class="s2">"11+"</span>, GitVersion:<span class="s2">"v1.11.0+d4cacc0"</span>, GitCommit:<span class="s2">"d4cacc0"</span>, GitTreeState:<span class="s2">"clean"</span>, BuildDate:<span class="s2">"2018-10-10T16:38:01Z"</span>, GoVersion:<span class="s2">"go1.10.3"</span>, Compiler:<span class="s2">"gc"</span>, Platform:<span class="s2">"linux/amd64"</span><span class="o">}</span>
+Server Version: version.Info<span class="o">{</span>Major:<span class="s2">"1"</span>, Minor:<span class="s2">"13+"</span>, GitVersion:<span class="s2">"v1.13.4+c2a5caf"</span>, GitCommit:<span class="s2">"c2a5caf"</span>, GitTreeState:<span class="s2">"clean"</span>, BuildDate:<span class="s2">"2019-09-21T02:12:52Z"</span>, GoVersion:<span class="s2">"go1.11.13"</span>, Compiler:<span class="s2">"gc"</span>, Platform:<span class="s2">"linux/amd64"</span><span class="o">}</span>
+</code></pre></div>    </div>
 
-#### Starting and stopping
+    <h4 id="starting-and-stopping">Starting and stopping</h4>
 
-When you no longer need your cluster, you can stop it using:
+    <p>When you no longer need your cluster, you can stop it using:</p>
 
-<div class="clipboard"><pre><code>minikube stop</code></pre></div>
+    <div class="clipboard"><pre><code>minikube stop</code></pre></div>
 
-This will suspend the VM so that you can, later on, resume it by
-executing:
+    <p>This will suspend the VM so that you can, later on, resume it by
+executing:</p>
 
-<div class="clipboard"><pre><code>minikube start</code></pre></div>
+    <div class="clipboard"><pre><code>minikube start</code></pre></div>
 
-Or delete it using:
+    <p>Or delete it using:</p>
 
-<div class="clipboard"><pre><code>minikube delete</code></pre></div>
+    <div class="clipboard"><pre><code>minikube delete</code></pre></div>
 
+    <h4 id="load-balancer-support">Load Balancer Support</h4>
 
-#### Load Balancer Support
+    <p>To enable support for load balancer services, run</p>
 
-To enable support for load balancer services, run
+    <div class="clipboard"><pre><code>minikube tunnel</code></pre></div>
 
-<div class="clipboard"><pre><code>minikube tunnel</code></pre></div>
+    <p>in a separate terminal (keeping it running) before installing a package.</p>
 
-in a separate terminal (keeping it running) before installing a package.
+    <h4 id="addons">Addons</h4>
 
-#### Addons
+    <p>Some packages may require additional addons, like the ingress addon for providing a default ingress controllers.</p>
 
-Some packages may require additional addons, like the ingress addon for providing a default ingress controllers.
+    <p>Such addons can be enabled when starting the Minikube instance, using the following flag:</p>
 
-Such addons can be enabled when starting the Minikube instance, using the following flag:
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>minikube start ... <span class="nt">--addons</span> ingress
+</code></pre></div>    </div>
 
-```sh
-minikube start ... --addons ingress
-```
+    <h2 id="helm">Helm</h2>
 
-## Helm
+    <p>You will need an installation of Helm on the machine which is used to deploy the packages. You can find
+installation instructions for Helm in the Helm documentation under <a href="https://helm.sh/docs/intro/install/">Installing Helm</a>.</p>
 
-You will need an installation of Helm on the machine which is used to deploy the packages. You can find
-installation instructions for Helm in the Helm documentation under [Installing Helm](https://helm.sh/docs/intro/install/).
+    <p>The required Helm version is 3.9 or later.</p>
 
-The required Helm version is 3.9 or later.
+    <h3 id="repository">Repository</h3>
 
-### Repository
+    <p>The Eclipse IoT Packages project hosts a Helm chart repository for Eclipse IoT projects.
+Adding the repository can be done on your local machine be executing:</p>
 
-The Eclipse IoT Packages project hosts a Helm chart repository for Eclipse IoT projects.
-Adding the repository can be done on your local machine be executing:
+    <div class="clipboard"><pre><code>helm repo add eclipse-iot https://eclipse.org/packages/charts</code></pre></div>
 
-<div class="clipboard"><pre><code>helm repo add eclipse-iot https://eclipse.org/packages/charts</code></pre></div> 
+    <p>Read more: <a href="/packages/repository" title="title">Helm chart repository</a>.</p>
 
-Read more: [Helm chart repository](/packages/repository "title").
+    <h2 id="command-line-tools">Command line tools</h2>
 
-## Command line tools
+    <p>Some tutorials might require some common command line tool. The installation depends on the
+operating system you are using.</p>
 
-Some tutorials might require some common command line tool. The installation depends on the
-operating system you are using.
+    <p>It is required to have the following tools installed:</p>
 
-It is required to have the following tools installed:
+    <h3 id="bash">Bash</h3>
 
-### Bash
+    <p>Bash is available on Windows, Linux and Mac OS X. True platform independence. So all commands which
+you are supposed to execute can be executed in Bash, version 3 or newer.</p>
 
-Bash is available on Windows, Linux and Mac OS X. True platform independence. So all commands which
-you are supposed to execute can be executed in Bash, version 3 or newer.
+    <h3 id="curl">curl</h3>
 
-### curl
+    <p>For downloading files and execution API calls the tool <code class="language-plaintext highlighter-rouge">curl</code> will be used.</p>
 
-For downloading files and execution API calls the tool `curl` will be used.
+    <h3 id="mosquitto-cli">Mosquitto CLI</h3>
 
-### Mosquitto CLI
+    <p>Mosquitto command line tools: e.g. <code class="language-plaintext highlighter-rouge">mosquitto_pub</code></p>
 
-Mosquitto command line tools: e.g. `mosquitto_pub`
-
-
-&lt;/div&gt;
+  </div>
 
 <div class="col-12 col-md-4 col-lg-3 
 
 ">
 
-                    <div class="position-sticky" style="top: 4rem;">
+    <div class="position-sticky" style="top: 4rem;">
 
 
 <aside>
@@ -383,12 +379,10 @@ Mosquitto command line tools: e.g. `mosquitto_pub`
 
 </div>
 
-                  </div>
+  </div>
 
-&lt;/div&gt;
+</div>
 
-</version></memory></size></cpus></code></pre></div>
-  </div></div>
 
 </div>
 
