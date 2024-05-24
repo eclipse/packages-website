@@ -152,7 +152,7 @@ The command</p>
     <div class="clipboard"><pre><code>echo $DITTO_API_BASE_URL</code></pre></div>
     <p>prints out the URL where to access the Ditto UI and Ditto API documentation.</p>
 
-    <p>In the Ditto UI, click on the <code class="language-plaintext highlighter-rouge">Environments</code> link at the top and then the <code class="language-plaintext highlighter-rouge">Environment JSON</code> tab. Clicking on “Edit” lets you enter an arbitrary Name (e.g. <code class="language-plaintext highlighter-rouge">default</code>)
+    <p>In the Ditto UI, click on the <code class="language-plaintext highlighter-rouge">Environments</code> link at the top and then the <code class="language-plaintext highlighter-rouge">JSON</code> tab. Clicking on “Create” lets you enter an arbitrary Name (e.g. <code class="language-plaintext highlighter-rouge">default</code>)
 and below a JSON value, to be taken from the output of the following command.</p>
     <div class="clipboard"><pre><code>echo $DITTO_UI_ENV_JSON</code></pre></div>
     <p>Clicking on <code class="language-plaintext highlighter-rouge">Create</code> and switching to the created environment in the top bar <code class="language-plaintext highlighter-rouge">Environment</code> dropdown completes the configuration.</p>
@@ -172,6 +172,14 @@ by means of the following command:</p>
   "path": "/features/temperature/properties/value",
   "value": 45
 }' ${HTTP_ADAPTER_BASE_URL:?}/telemetry</code></pre></div>
+
+    <p>In order to publish the telemetry data via MQTT, the <code class="language-plaintext highlighter-rouge">mosquitto_pub</code> command can be used:</p>
+    <div class="clipboard"><pre><code>mosquitto_pub -d -h ${MQTT_ADAPTER_IP} -p ${MQTT_ADAPTER_PORT_MQTTS} -u demo-device@org.eclipse.packages.c2e -P demo-secret ${MOSQUITTO_OPTIONS} -t telemetry -m '{
+"topic": "org.eclipse.packages.c2e/demo-device/things/twin/commands/modify",
+"headers": {},
+"path": "/features/temperature/properties/value",
+"value": 45
+}'</code></pre></div>
 
     <h2 id="retrieving-the-digital-twins-current-state">Retrieving the digital twin’s current state</h2>
 
