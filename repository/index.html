@@ -97,7 +97,7 @@ are labeled explicitly.</p>
 
 <p>You can add the repository with a simple command:</p>
 
-<div class="clipboard"><pre><code>helm repo add eclipse-iot https://eclipse.org/packages/charts</code></pre></div>
+<div class="clipboard"><pre><code>helm repo add eclipse-iot https://eclipse.dev/packages/charts</code></pre></div>
 
 <p>This will add the repository, using the name <code class="language-plaintext highlighter-rouge">eclipse-iot</code>. Of course you may choose
 a different name here. Just take extra care when working through tutorials, as they will
@@ -127,7 +127,7 @@ expect the name to be <code class="language-plaintext highlighter-rouge">eclipse
 
 <h2 id="how-chart-publishing-works">How chart publishing works</h2>
 
-<p>All chart changes will be verified by a <a href="https://github.com/eclipse/packages/actions">Github action</a>, this is done on every pull request.</p>
+<p>All chart changes will be verified by a <a href="https://github.com/eclipse/packages/actions">GitHub action</a>, this is done on every pull request.</p>
 
 <p>Once a pull request is merged, the updated chart will be deployed by a <a href="https://ci.eclipse.org/packages/job/Website/job/master/">Jenkins job</a>.
 This job takes care of publishing the resources and generating an updated <code class="language-plaintext highlighter-rouge">index.yaml</code>.</p>
